@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to the Website of",
+    "section": "",
+    "text": "751-7602-00L Applied Statistical Methods in Animal Sciences"
+  },
+  {
+    "objectID": "index.html#topics-for-master-theses",
+    "href": "index.html#topics-for-master-theses",
+    "title": "Welcome to the Website of",
+    "section": "Topics for Master Theses",
+    "text": "Topics for Master Theses\nTopics for Master Theses at Qualitas AG together with ETH will follow here …"
+  },
+  {
+    "objectID": "index.html#information",
+    "href": "index.html#information",
+    "title": "Welcome to the Website of",
+    "section": "Information",
+    "text": "Information\n\nLecturer: Peter von Rohr\nDate: Montag 8-10\nRoom: LFW C11\n\n\nExercise Platform\n\n\nExam\n\nWritten exam\nDate: 27.05.2024 - 08:15 - 10:00\nRoom: LFW C 11"
+  },
+  {
+    "objectID": "index.html#description",
+    "href": "index.html#description",
+    "title": "Welcome to the Website of",
+    "section": "Description",
+    "text": "Description\nThe following descriptions are taken from the course catalog\n\nApplied Statistical Methods in Animal Science\nGenomic selection is currently the method of choice for improving the genetic potential of selection candidates in livestock breeding programs. This lecture introduces the reason why regression cannot be used in genomic selection. Alternatives to regression analysis that are suitable for genomic selection are presented. The concepts introduced are illustrated by excersises in R.\nThe students are familiar with the properties of multiple linear regression and they are able to analyse simple data sets using regression methods. The students know why multiple linear regression cannot be used for genomic selection. The students know the statistical methods used in genomic selection, such as BLUP-based approaches, Bayesian procedures and LASSO. The students are able to solve simple exercise problems using the statistical framework R."
+  },
+  {
+    "objectID": "index.html#questions",
+    "href": "index.html#questions",
+    "title": "Welcome to the Website of",
+    "section": "Questions",
+    "text": "Questions\nQuestions can be asked during the lecture and during the exercise hour or via e-mail:\n\nPeter von Rohr (peter.vonrohr at usys.ethz.ch)"
+  },
+  {
+    "objectID": "index.html#lecture-program",
+    "href": "index.html#lecture-program",
+    "title": "Welcome to the Website of",
+    "section": "Lecture Program",
+    "text": "Lecture Program\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nLecture Mode\n\n\n\n\n1\n19.02\nIntroduction to Applied Statistical Methods in Animal Science\n\n\n\n2\n26.02\nLinear Regression Models\n\n\n\n3\n04.03\nLinear Fixed Effect Models\n\n\n\n4\n11.03\nModel Selection\n\n\n\n5\n18.03\nPedigree BLUP\n\n\n\n6\n25.03\nVariance Components\n\n\n\n7\n01.04\nEaster Monday (Ostermontag)\n\n\n\n8\n08.04\nGBLUP - Marker-Effects Models\n\n\n\n9\n15.04\nGBLUP - Breeding Value Models\n\n\n\n10\n22.04\nLasso\n\n\n\n11\n29.04\nSVM\n\n\n\n12\n06.05\nBayesian Approaches in Linear Mixed Effects Models\n\n\n\n13\n13.05\nTest Exam\n\n\n\n14\n20.05\nPentcote Monday (Pfingstmontag)\n\n\n\n15\n27.05\nExam\n\n\n\n\n\nLecture modes are either in present (P) or via zoom (Z)"
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Welcome to the Website of",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-02-17 14:01:30 CET (pvr)"
+  }
+]
