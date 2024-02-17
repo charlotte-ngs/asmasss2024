@@ -2,8 +2,6 @@
 title: "About"
 ---
 
-About this site
+## asmas - ss2024
 
-```{r}
-1 + 1
-```
+* Set up initial version of website
