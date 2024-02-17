@@ -46,7 +46,7 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-02-17 14:10:26 CET (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-02-17 14:30:03 CET (pvr)"
   },
   {
     "objectID": "about.html",
@@ -61,5 +61,33 @@
     "title": "About",
     "section": "",
     "text": "Set up initial version of website"
+  },
+  {
+    "objectID": "solutions.html",
+    "href": "solutions.html",
+    "title": "Solutions",
+    "section": "",
+    "text": "List of solutions to exercises"
+  },
+  {
+    "objectID": "course_notes.html",
+    "href": "course_notes.html",
+    "title": "Course Notes",
+    "section": "",
+    "text": "List of chapters in the course notes"
+  },
+  {
+    "objectID": "add_info.html",
+    "href": "add_info.html",
+    "title": "Additional Information",
+    "section": "",
+    "text": "Further information"
+  },
+  {
+    "objectID": "exercises.html",
+    "href": "exercises.html",
+    "title": "Exercises",
+    "section": "",
+    "text": "List of exercises"
   }
 ]
