@@ -4,3 +4,17 @@ title: "Course Notes"
 
 List of chapters in the course notes
 
+```{r}
+#| label: tbl-course-notes
+#| echo: false
+#| results: asis
+s_cn_url <- "https://charlotte-ngs.github.io/asmasss2024/cn/"
+tbl_cn <- tibble::tibble(Nr = c(1, 2),
+                         Date = c(rep("2024-02-19", 2)),
+                         Topic = c(
+                           paste0("[Introduction](", s_cn_url, "intro.pdf)", collapse = ""),
+                           paste0("[Linear Regression](", s_cn_url, "linear_regression.pdf)", collapse = "")
+                         ))
+knitr::kable(tbl_cn)
+```
+
