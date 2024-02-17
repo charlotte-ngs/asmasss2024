@@ -1,0 +1,163 @@
+---
+title: Applied Statistical Methods - `r tools::toTitleCase(params$doctype)` 1
+author: Peter von Rohr
+date: 2023-02-27
+output:
+  bookdown::pdf_document2:
+    toc: false
+    number_sections: false
+    keep_md: false
+    keep_tex: false
+header-includes:
+ \usepackage{longtable}
+ \usepackage{float}
+params:
+  doctype:
+    label: 'Document Type'
+    value: 'solution'
+    choices: ['exercise', 'solution', 'notebook']
+  isonline:
+    label: 'Online (y/n)'
+    value: TRUE
+    choices: [TRUE, FALSE]
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Problem 1: Regression Analysis
+The following dataset on body weight and on futher observations on a number of animals is given.
+
+```{r tbl-ex01-p01-data, echo=FALSE, message=FALSE, warning=FALSE}
+s_ex01_p01_path <- "https://charlotte-ngs.github.io/asmss2023/data/asm_bw_mult_reg.csv"
+tbl_ex01_p01_data <- readr::read_csv(file = s_ex01_p01_path)
+knitr::kable(tbl_ex01_p01_data,
+             booktabs = TRUE,
+             longtable = TRUE,
+             escape = FALSE)
+```
+
+The data can be read from `r s_ex01_p01_path`. The additional columns contain data on body condition score (BCS) and height (HEI).
+
+### Tasks
+
+* Build a regression model of body weight on the other observations using the dataset given above.
+* Set up the matrix $\mathbf{X}$ and the vectors $\mathbf{y}$, $\mathbf{b}$ and $\mathbf{e}$.
+* Compute estimate for the regression coefficients in the model defined above.
+
+
+<!-- your-solution-start
+### Your Solution
+
+* Start by building the model which includes the decision of what type of components go into the vector $\mathbf{b}$. Then write down the model in matrix-vector notation.
+* Determine all the components of $\mathbf{X}$, $\mathbf{y}$, $\mathbf{b}$ and $\mathbf{e}$.
+* Compute the solution for $\hat{\mathbf{b}}
+
+---  your-solution-end -->
+
+
+<!-- master-solution-start -->
+
+### Solution
+
+First, the data has to be read
+
+```{r, message=FALSE, warning=FALSE}
+s_sol01_p01_path <- "https://charlotte-ngs.github.io/asmss2023/data/asm_bw_mult_reg.csv"
+tbl_sol01_p01 <- readr::read_csv(file = s_sol01_p01_path)
+```
+
+* The regression model can be stated as 
+
+$$ \mathbf{y} = \mathbf{X}\mathbf{b} + \mathbf{e}$$
+
+where 
+
+```{r, echo=FALSE, results='asis'}
+n_nr_obs <- nrow(tbl_sol01_p01)
+n_nr_pred <- 4
+vec_y <- tbl_sol01_p01$`Body Weight`
+mat_X <- matrix(c(rep(1, n_nr_obs), 
+                  tbl_sol01_p01$`Breast Circumference`, 
+                  tbl_sol01_p01$BCS, 
+                  tbl_sol01_p01$HEI), ncol = n_nr_pred)
+vec_b <- c("b_0", "b_{BC}", "b_{BCS}", "b_{HEI}")
+vec_e <- rmdhelp::vecGetVecElem(psBaseElement = "e", pnVecLen = n_nr_obs, psResult = "latex")
+cat("$$\n")
+cat(paste0(rmdhelp::bmatrix(pmat = mat_X, ps_name = "\\mathbf{X}"), collapse = ""), "\n")
+cat("\\text{, }\n")
+cat(paste0(rmdhelp::bcolumn_vector(pvec = vec_y, ps_name = "\\mathbf{y}"), collapse = ""), "\n")
+cat("\\text{, }\n")
+cat(paste0(rmdhelp::bcolumn_vector(pvec=vec_e, ps_name = "\\mathbf{e}"), collapse = ""), "\n")
+cat("\\text{, }\n")
+cat(paste0(rmdhelp::bcolumn_vector(pvec = vec_b, ps_name = "\\mathbf{b}"), collapse = ""), "\n")
+cat("$$\n")
+```
+
+The residuals are assumed to have expectation $E(\mathbf{e}) = \mathbf{0}$ and a variance-covariance matrix $var(\mathbf{e}) = I_N * \sigma^2$. 
+
+* The solution for the estimates $\hat{b}$ can be computed as
+
+$$\hat{\mathbf{b}} = (X^TX)^{-1}X^Ty $$
+
+```{r}
+mat_xtx <- crossprod(mat_X)
+mat_xty <- crossprod(mat_X, vec_y)
+mat_sol_bhat <- solve(mat_xtx, mat_xty)
+```
+
+The solution vector is
+
+```{r, echo=FALSE, results='asis'}
+cat(paste0(rmdhelp::bmatrix(pmat = round(mat_sol_bhat, digits = 3), ps_name = "\\hat{b}", ps_env = "$$"), collapse = ""), "\n")
+```
+
+
+<!-- master-solution-end -->
+
+
+## Problem 2
+
+Use the same dataset as in Problem 1 and verify your results using the function `lm()` in R. 
+
+<!-- your-solution-start
+### Your Solution
+
+* Read the data into a dataframe
+* Use the `lm()` function which takes a formula to define the model and a dataframe
+* Use the function `summary()` on the result of `lm()` to show the results
+
+---  your-solution-end -->
+
+
+<!-- master-solution-start -->
+
+### Solution
+
+* Read the data
+
+```{r, message=FALSE, warning=FALSE}
+s_sol01_p02_path <- "https://charlotte-ngs.github.io/asmss2023/data/asm_bw_mult_reg.csv"
+tbl_sol01_p02 <- readr::read_csv(file = s_sol01_p02_path)
+```
+
+* Specify the call to `lm()`
+
+```{r}
+lm_bw_mult <- lm(formula = `Body Weight` ~ `Breast Circumference` + `BCS` + `HEI`, 
+                 data = tbl_sol01_p02)
+summary(lm_bw_mult)
+```
+
+* Solutions are obtained by
+
+```{r}
+coefficients(lm_bw_mult)
+```
+
+
+<!-- master-solution-end -->
+ 
