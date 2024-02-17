@@ -79,7 +79,6 @@ dfCnTable <- tibble::tibble(Week = Week,
 knitr::kable(dfCnTable)
 ```
 
-Lecture modes are either in present (P) or via zoom (Z)
 
 ## License
 
