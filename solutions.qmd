@@ -1,0 +1,6 @@
+---
+title: "Solutions"
+---
+
+List of solutions to exercises
+

@@ -8,6 +8,14 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: course_notes.qmd
+        text: Course Notes
+      - href: exercises.qmd
+        text: Exercises
+      - href: solutions.qmd
+        text: Solutions
+      - href: add_info.qmd
+        text: Additional Information
       - about.qmd
 
 format:
