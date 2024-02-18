@@ -4,3 +4,23 @@ title: "Additional Information"
 
 Further information 
 
+## Slides
+
+```{r}
+#| label: table-slides
+#| echo: false
+#| results: asis
+s_sl_url <- "https://charlotte-ngs.github.io/asmasss2024/slides/"
+tbl_sl <- tibble::tibble(Nr = c(1),
+                         Date = c("2024-02-19"),
+                         Topic = c(
+                           paste0("[Introduction](", 
+                                  tbl_sl, 
+                                  "l01_intro/l01_intro.pdf", 
+                                  collapse = "")
+                         ))
+knitr::kable(tbl_sl)
+```
+
+
+
