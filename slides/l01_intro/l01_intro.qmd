@@ -106,14 +106,166 @@ knitr::kable(dfCnTable)
 
 ## Face Recognition
 
-```{r facerecog, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='12cm'}
+```{r}
+#| label: facerecog
+#| echo: false
+#| out-width: 100%
+#| hook_convert_odg: true
 #rmdhelp::use_odg_graphic(ps_path = 'odg/facerecog.odg')
 knitr::include_graphics(path = "odg/facerecog.png")
 ```
+
 
 ## Smart Farming
 
 - Automated Milking Systems (AMS): Collection of data
 - Sensor systems: SESAM
 - CFIT: automated gathering of feed intake data
+
+
+## SESAM
+
+```{r farm-infrastrucutre, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='12cm'}
+#rmdhelp::use_odg_graphic(ps_path = 'odg/farm-infrastrucutre.odg')
+knitr::include_graphics(path = "odg/farm-infrastrucutre.png")
+```
+
+
+## CFIT
+
+Use video image analysis based on time of flight (TOF) approach for 
+
+- cow identification
+- collection of feed intake data
+
+
+## Cow Identification
+
+```{r cow-iden-tof, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/cow-iden-tof.odg")
+knitr::include_graphics(path = "odg/cow-iden-tof.png")
+```
+
+
+## Traditional Animal Breeding
+
+- Before 2006
+- Data collected for other purposes were used to predict breeding values
+- Predicted breeding values as side-product
+
+
+## Data Logistics
+
+```{r datalogistics, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='11cm'}
+#rmddochelper::use_odg_graphic(ps_path = "odg/datalogistics.odg")
+knitr::include_graphics(path = "odg/datalogistics.png")
+```
+
+ 
+## Genomic Selection
+
+- Same goal as in traditional breeding: Find animals with best genetic potential as parents of next generation
+- New: use additional source of information
+- __Genomic__ information
+    + spread accross whole genome
+    + single nucleotide polymorphisms (SNP)
+- Introduction: 
+
+\small "> Meuwissen THE, Hayes BJ, Goddard ME (2001) Prediction of total genetic value
+using genome-wide dense marker maps. Genetics 157:1819–1829"
+
+- Popularisation:
+
+\small "> L. R. Schaeffer. Strategy for applying genome-wide selection in dairy cat- tle. Journal of Animal Breeding and Genetics, 123(4):218–223, 2006. ISSN 09312668. doi: 10.1111/j.1439-0388.2006.00595.x."
+
+
+## SNP
+
+```{r snparchitecture, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='11cm'}
+#rmddochelper::use_odg_graphic(ps_path = "odg/snparchitecture.odg")
+knitr::include_graphics(path = "odg/snparchitecture.png")
+```
+ 
+
+## QTL
+
+```{r linkagesnpqtl, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='11cm'}
+#rmddochelper::use_odg_graphic(ps_path = "odg/linkagesnpqtl.odg")
+knitr::include_graphics(path = "odg/linkagesnpqtl.png")
+```
+ 
+
+## Linkage
+
+- Flanking SNPs and QTL not independent passed on from parents to progeny
+- Favorable QTL-allele linked with a given SNP-allele
+- QTL is unknown, but use SNPs close to QTL as information for selection
+
+
+## Monogenic Model
+
+- Assume quantitative trait is influenced by one locus only
+- Locus is bi-allelic $\rightarrow$ two alleles ($G_1$ and $G_2$) and three genotypes
+- Look at Distribution of trait values for three different genotypes
+
+
+## Distribution No Effect
+
+```{r monogenicmodeltraitdistributionnoeffect, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='11cm'}
+#rmddochelper::use_odg_graphic(ps_path = "odg/monogenicmodeltraitdistributionnoeffect.odg")
+knitr::include_graphics(path = "odg/monogenicmodeltraitdistributionnoeffect.png")
+```
+
+
+## Distribution With Effect
+
+```{r monogenicmodeltraitdistribution, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='11cm'}
+#rmddochelper::use_odg_graphic(ps_path = "odg/monogenicmodeltraitdistribution.odg")
+knitr::include_graphics(path = "odg/monogenicmodeltraitdistribution.png")
+```
+  
+
+## Breeding Value
+
+- Definition: Two times deviation from large number of offspring from population mean
+- Assume: Hardy-Weinberg equilibrium
+- Compute population mean as expected value of genotypic values
+- Compute expected genotypic value of offspring for each of the three parental genotypes
+- Assume purely additive loci, hence $d = 0$
+
+
+## Genomic Breeding Value
+
+- Take into account many loci
+- Approximate unknown QTL with linked SNP
+- Estimate $a$-effects from monogenic model
+- Compute genomic breeding values for all loci based on $a$ effects
+
+
+## Two Approaches
+
+1. Two Step Procedure (used currently in Swiss Dairy Cattle)
+2. Single Step 
+
+
+## Two Step
+
+```{r twostepprocedure, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='11cm'}
+#rmddochelper::use_odg_graphic(ps_path = "odg/twostepprocedure.odg")
+knitr::include_graphics(path = "odg/twostepprocedure.png")
+```
+
+
+## Single Step
+
+- Combine all information into one single BLUP-based analysis
+- Problem: Determine covariance between animals with and without genomic information
+
+
+## Summary: Traditional versus Genomic Selection
+
+```{r summarytraditionalvsgs, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='11cm'}
+#rmddochelper::use_odg_graphic(ps_path = "odg/summarytraditionalvsgs.odg")
+knitr::include_graphics(path = "odg/summarytraditionalvsgs.png")
+```
 
