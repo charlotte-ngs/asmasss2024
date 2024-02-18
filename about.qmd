@@ -2,6 +2,11 @@
 title: "About"
 ---
 
-## asmas - ss2024
+## asmas - ss2024: v0.1.1
+
+* Chapters 1 and 2 of course notes
+* Slides for introduction
+
+## asmas - ss2024: v0.1.0
 
 * Set up initial version of website
