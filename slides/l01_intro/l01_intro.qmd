@@ -1,0 +1,119 @@
+---
+title: "Applied Statistical Methods In Animal Science"
+author: "Peter von Rohr"
+date: 2024-02-19
+format: beamer
+---
+
+## Administration
+
+- Course: 2 hours of lecture (2 V)
+- Plan: 2 V $\rightarrow$ 1 U + 1 V (i.e., 1 hour of lecture intersperced with time to do exercises) 
+- Exercises: Work on problems in R 
+- Material: course notes, slides, solution to exercises
+- Exam: written, date: 22.05.2023, 08:15-10:00 
+
+
+## Objectives
+
+The students 
+
+- are familiar with the properties of __fixed linear effects models__
+- are able to analyse simple data sets
+- know why least squares cannot be used for genomic selection. 
+- know the statistical methods used in genomic selection, such as 
+    + BLUP-based approaches, 
+    + Bayesian procedures and 
+    + LASSO. 
+- are able to solve simple exercise problems using the statistical framework R.
+
+
+## Lecture Program
+
+```{r}
+#| label: CourseProgram
+#| echo: false
+#| results: asis
+### # header names of tables
+vecTableHeaders <- c("Week", "Date", "Topic")
+# define course start date
+dCourseStart <- as.Date("2024/02/19")
+# set number of weeks in semester
+nNrSemesterWeeks <- 15
+# define columns for weaks, dates, and subjects
+Week <- 1:nNrSemesterWeeks
+Date <- format(seq(dCourseStart, by = "week", length.out = nNrSemesterWeeks), "%d.%m")
+Topic <- vector(mode = "character", length = nNrSemesterWeeks)
+# subjects per week
+Topic[1] <- "Introduction"
+Topic[2] <- "Linear Regression Models"
+Topic[3] <- "Linear Fixed Effect Models"
+Topic[4] <- "Model Selection"
+Topic[5] <- "Pedigree BLUP"
+Topic[6] <- "Variance Components"
+Topic[7] <- "__Easter Monday__ (Ostermontag)"
+Topic[8] <- "GBLUP - Marker-Effects Models"
+Topic[9] <- "GBLUP - Breeding Value Models"
+Topic[10] <- "Lasso"
+Topic[11] <- "SVM"
+Topic[12] <- "Bayesian Approaches in Linear Mixed Effects Models"
+Topic[13] <- "Test Exam"
+Topic[14] <- "__Pentcote Monday__ (Pfingstmontag)"
+Topic[15] <- "Exam" 
+# mode of Lecture
+vecLectureMode <- vector(mode = "character", length = nNrSemesterWeeks)
+
+dfCnTable <- tibble::tibble(Week = Week, 
+                            Date = Date, 
+                            Topic = Topic)
+knitr::kable(dfCnTable)
+```
+
+
+## Information
+
+- Website: https://charlotte-ngs.github.io/asmss2023
+- Topics for master thesis: will follow 
+- Exam: 22.05.2023 08:15 -- 10:00
+
+
+## This Course
+
+- Use dataset that is used to predict genomic breeding values and introduce four methods
+
+1. Fixed Linear Effects Models - Least Squares
+2. GBLUP - genomic version of BLUP
+3. LASSO - still fixed linear effects model, but modified parameter estimation
+4. Bayesian approach to estimate unknown parameter
+
+
+## Significance
+
+- Why is this important? 
+- Is this only relevant for animal breeding? 
+- What about the rest of animal science?
+
+- General trend of collecting data has led to development of `Big Data`
+- Examples
+    + Politics: Elections, such as presidential campains in the US
+    + Health care
+    + Face recognition
+    + ChatGPT, AI in general
+    + Agriculture: Precision Farming
+    + Animal Science: Precision Livestock Farming
+
+
+
+## Face Recognition
+
+```{r facerecog, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width='12cm'}
+#rmdhelp::use_odg_graphic(ps_path = 'odg/facerecog.odg')
+knitr::include_graphics(path = "odg/facerecog.png")
+```
+
+## Smart Farming
+
+- Automated Milking Systems (AMS): Collection of data
+- Sensor systems: SESAM
+- CFIT: automated gathering of feed intake data
+
