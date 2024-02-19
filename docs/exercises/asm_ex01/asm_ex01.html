@@ -235,7 +235,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"dpi":72,"output":"true","fig-cap":"","results":"markup","warning":"true","label":"unnamed-chunk-1","context":"interactive","comment":"","autorun":"false","out-height":"","classes":"","fig-width":7,"message":"true","out-width":"700px","fig-height":5},"code":"# enter data\n\n# plot"}];
+globalThis.qwebrCellDetails = [{"options":{"context":"interactive","classes":"","out-width":"700px","message":"true","out-height":"","label":"unnamed-chunk-1","warning":"true","output":"true","results":"markup","fig-cap":"","fig-width":7,"comment":"","dpi":72,"autorun":"false","fig-height":5},"id":1,"code":"# enter data\n\n\n# plot"},{"options":{"context":"interactive","classes":"","out-width":"700px","message":"true","out-height":"","label":"unnamed-chunk-2","warning":"true","output":"true","results":"markup","fig-cap":"","fig-width":7,"comment":"","dpi":72,"autorun":"false","fig-height":5},"id":2,"code":"# order the data according to width\n\n\n# plot ordered data"},{"options":{"context":"interactive","classes":"","out-width":"700px","message":"true","out-height":"","label":"unnamed-chunk-3","warning":"true","output":"true","results":"markup","fig-cap":"","fig-width":7,"comment":"","dpi":72,"autorun":"false","fig-height":5},"id":3,"code":"# plot the points again\n\n# use abline to do some line fitting"},{"options":{"context":"interactive","classes":"","out-width":"700px","message":"true","out-height":"","label":"unnamed-chunk-4","warning":"true","output":"true","results":"markup","fig-cap":"","fig-width":7,"comment":"","dpi":72,"autorun":"false","fig-height":5},"id":4,"code":"# compute distance of points from  lines"}];
 
 </script>
 <script type="module">
@@ -1190,18 +1190,38 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </div>
 </div>
 <p>Do the ordered version of the plot</p>
-<pre class="{web-r}"><code></code></pre>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 <section id="problem-2-line-fitting" class="level2">
 <h2 class="anchored" data-anchor-id="problem-2-line-fitting">Problem 2: Line Fitting</h2>
 <ul>
 <li>Based on the plotted points above what would be a good description of the relationship of width and height?</li>
-<li>How well would a line describe the relationship?</li>
-<li>Why do we want to use a line?</li>
+<li>How well would a straight line describe the relationship?</li>
+<li>Why do we want to use a straight line?</li>
 <li>What is the meaning of a linear relationship?</li>
-<li>Try to fit different lines throught the plotted points by trial and error.</li>
-<li>Try to make statements about how well a given line fits the points.</li>
+<li>Try to fit different straight lines throught the plotted points by trial and error.</li>
 </ul>
+<p>Fitting different lines through the demo</p>
+<ul>
+<li>Try to make statements about how well a given straight line fits the points.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(vec_width, vec_height)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">180</span>, <span class="dv">0</span>, <span class="at">col=</span><span class="st">"blue"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="dv">170</span>, <span class="fl">0.1</span>, <span class="at">col =</span> <span class="st">"green"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="asm_ex01_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Try to fit some plots for the collected data</p>
+<div id="qwebr-insertion-location-3"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+<ul>
+<li>Do some computations related to how well the lines fit the data</li>
+</ul>
+<div id="qwebr-insertion-location-4"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
 </section>
 
 </main>

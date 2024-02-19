@@ -37,6 +37,7 @@ Do the same with the collected data
 ```{webr-r}
 # enter data
 
+
 # plot
 
 ```
@@ -54,7 +55,11 @@ plot(vec_ord_width, vec_ord_height)
 
 Do the ordered version of the plot
 
-```{web-r}
+```{webr-r}
+# order the data according to width
+
+
+# plot ordered data
 
 ```
 
@@ -65,6 +70,33 @@ Do the ordered version of the plot
 * Why do we want to use a straight line? 
 * What is the meaning of a linear relationship?
 * Try to fit different straight lines throught the plotted points by trial and error. 
+
+Fitting different lines through the demo
+
+
 * Try to make statements about how well a given straight line fits the points. 
 
+```{r}
+plot(vec_width, vec_height)
+abline(180, 0, col="blue")
+abline(170, 0.1, col = "green")
+```
+
+Try to fit some plots for the collected data
+
+```{webr-r}
+# plot the points again
+
+# use abline to do some line fitting
+
+```
+
+
+
+* Do some computations related to how well the lines fit the data
+
+```{webr-r}
+# compute distance of points from  lines
+
+```
 
