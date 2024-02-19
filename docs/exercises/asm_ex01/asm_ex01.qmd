@@ -1,0 +1,70 @@
+---
+title: ASMAS SS2024 - Exercise 1
+author: "Peter von Rohr"
+date: 2024-02-19
+filters: 
+  - webr
+params:
+  doctype:
+    label: 'Document Type'
+    value: 'solution'
+    choices: ['exercise', 'solution', 'notebook']
+  number:
+    label: 'Number'
+    value: 1
+    choices: c(1:15)  
+  isonline:
+    label: 'Online (y/n)'
+    value: TRUE
+    choices: [TRUE, FALSE]
+---
+
+
+## Problem 1: Data Collection and First Inspection
+Measure width of your left hand in mm and your height in cm and enter that data into a table. From that table create a simple plot using the function `plot()`. As a demo, we are first running that with random numbers. After that run the same with the collected data
+
+```{r}
+#| label: demoplot
+set.seed(1902)
+n_nr_obs <- 15
+vec_width <- rnorm(n_nr_obs, mean = 73, sd = 2.5)
+vec_height <- rnorm(n_nr_obs, mean = 175, sd = 7.9)
+plot(vec_width, vec_height)
+```
+
+Do the same with the collected data
+
+```{webr-r}
+# enter data
+
+# plot
+
+```
+
+
+
+Order both variables (width and height) in the data according to the width of the left hand, then repeat the plot
+
+```{r}
+vec_order <- order(vec_width)
+vec_ord_width <- vec_width[vec_order]
+vec_ord_height <- vec_height[vec_order]
+plot(vec_ord_width, vec_ord_height)
+```
+
+Do the ordered version of the plot
+
+```{web-r}
+
+```
+
+
+## Problem 2: Line Fitting
+* Based on the plotted points above what would be a good description of the relationship of width and height?
+* How well would a straight line describe the relationship?
+* Why do we want to use a straight line? 
+* What is the meaning of a linear relationship?
+* Try to fit different straight lines throught the plotted points by trial and error. 
+* Try to make statements about how well a given straight line fits the points. 
+
+
