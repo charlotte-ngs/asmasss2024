@@ -1,0 +1,108 @@
+---
+title: "Linear Regression"
+author: "Peter von Rohr"
+date: 2024-02-26
+format: beamer
+---
+
+## Goal
+
+Assessment of relationship between 
+
+- a given variable (response) and
+- other measurements or observations (predictors) on the same animal
+
+
+## Example
+
+```{r tab-reg-bw-bc, echo=FALSE, results='asis'}
+tbl_reg <- tibble::tibble(Animal = c(1:10),
+                          `Breast Circumference` = c(176, 177, 178, 179, 179, 180, 181, 182,183, 184),
+                          `Body Weight` = c(471, 463, 481, 470, 496, 491, 518, 511, 510, 541))
+n_nr_obs <- nrow(tbl_reg)
+knitr::kable(tbl_reg,
+             booktabs = TRUE,
+             longtable = TRUE,
+             escape = FALSE)
+```
+
+
+## Diagram
+
+```{r fig-reg-bw-bc, echo=FALSE, out.width="100%"}
+library(ggplot2)
+ggplot(tbl_reg, aes(x = `Breast Circumference`, y = `Body Weight`)) +
+  geom_point(color = "blue") 
+```
+
+
+## Observations
+
+- relationship between breast circumference and body weight: heavier animals tend to have larger values for breast circumference
+- same relationship across whole range $\rightarrow$ __linear__ relationship
+
+
+## Regression Model
+
+- quantify relationship between body weight and breast circumference
+- practical application: measure band for animals
+
+```{r measure-band, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/measure-band.odg")
+knitr::include_graphics(path = "odg/measure-band.png")
+```
+
+
+## Model Building
+
+- expected body weight ($E(y)$ in kg) based on an observed value of $x$ cm for breast circumference
+
+\begin{equation}
+E(y) = b_0 + b_1 * x \notag
+\end{equation}
+
+- $b_0$ and $b_1$ are unknown parameters of the model
+- model is linear function of parameters $\rightarrow$ linear model
+
+
+## Parameter Estimation
+
+- How to find values for $b_0$ and $b_1$
+- several techniques available: start with Least Squares
+
+
+## Least Squares
+
+```{r lsq-plot, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/lsq-plot.odg")
+knitr::include_graphics(path = "odg/lsq-plot.png")
+```
+
+
+## Estimators
+
+Find values $\hat{b}_0$ and $\hat{b}_1$ such that 
+
+\begin{equation}
+\mathbf{e}^T\mathbf{e} = \sum_{i=1}^N e_i^2 = \sum_{i=1}^N \left[ y_i - E(e_i) \right]^2 = \sum_{i=1}^N \left[ y_i - b_0 - b_1*x_i \right]^2 \notag
+\end{equation}
+
+is minimal
+
+
+## Minimization
+
+\begin{align}
+\frac{\partial\mathbf{e}^T\mathbf{e}}{\partial b_0} &= -2 \sum_{i=1}^N \left[y_i - b_0 - b_1x_i\right]  \notag \\
+  &= -2\left[\sum_{i=1}^N y_i - Nb_0 - b_1\sum_{i=1}^N x_i\right] \notag
+\end{align}
+
+\begin{align}
+\frac{\partial\mathbf{e}^T\mathbf{e}}{\partial b_1} &= -2 \sum_{i=1}^N x_i\left[y_i - b_0 - b_1x_i\right] \notag \\
+  &= -2 \left[\sum_{i=1}^N x_iy_i - b_0 \sum_{i=1}^N x_i - b_1 \sum_{i=1}^N x_i^2 \right]\notag
+\end{align}
+
+
+## Notation
+
+$$x. = \sum_{i=1}^N x_i$$

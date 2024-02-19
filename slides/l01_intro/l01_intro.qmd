@@ -11,7 +11,7 @@ format: beamer
 - Plan: 2 V $\rightarrow$ 1 U + 1 V (i.e., 1 hour of lecture intersperced with time to do exercises) 
 - Exercises: Work on problems in R 
 - Material: course notes, slides, solution to exercises
-- Exam: written, date: 22.05.2023, 08:15-10:00 
+- Exam: written, date: 27.05.2024 - 08:15 - 10:00
 
 
 ## Objectives
@@ -72,9 +72,9 @@ knitr::kable(dfCnTable)
 
 ## Information
 
-- Website: https://charlotte-ngs.github.io/asmss2023
+- Website: https://charlotte-ngs.github.io/asmasss2024
 - Topics for master thesis: will follow 
-- Exam: 22.05.2023 08:15 -- 10:00
+- Exam: 27.05.2024 - 08:15 - 10:00
 
 
 ## This Course
@@ -97,8 +97,8 @@ knitr::kable(dfCnTable)
 - Examples
     + Politics: Elections, such as presidential campains in the US
     + Health care
-    + Face recognition
-    + ChatGPT, AI in general
+    + Face recognition: https://www.srf.ch/news/schweiz/automatische-gesichtserkennung-so-einfach-ist-es-eine-ueberwachungsmaschine-zu-bauen
+    + Artificial Inteligence (AI): Google, ChatGPT (https://chat.openai.com), Wolfram Alpha (https://www.wolframalpha.com)
     + Agriculture: Precision Farming
     + Animal Science: Precision Livestock Farming
 
@@ -138,6 +138,7 @@ Use video image analysis based on time of flight (TOF) approach for
 - cow identification
 - collection of feed intake data
 
+See: https://youtu.be/XDC-C33HpEw?si=4da_MCjxf6gx9d2A
 
 ## Cow Identification
 
