@@ -23,4 +23,22 @@ knitr::kable(tbl_slides)
 ```
 
 
+## Over-Head Pictures
+
+```{r}
+#| label: ohp-slides
+#| echo: false
+#| results: asis
+s_ohp_url <- "https://charlotte-ngs.github.io/asmasss2024/ohp/"
+tbl_ohp <- tibble::tibble(Nr = c(1),
+                          Date = c("2024-02-19"),
+                          Topic = c(
+                            paste0("[Introduction](",
+                                   s_ohp_url,
+                                   "20240219_ohp_l01.pdf)",
+                                   collapse = "")
+                          ))
+knitr::kable(tbl_ohp)
+```
+
 
