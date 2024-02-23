@@ -5,7 +5,7 @@ title: "Course Notes"
 List of chapters in the course notes
 
 ```{r}
-#| label: tbl-course-notes
+#| label: table-course-notes
 #| echo: false
 #| results: asis
 s_cn_url <- "https://charlotte-ngs.github.io/asmasss2024/cn/"
