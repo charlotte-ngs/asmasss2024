@@ -2,6 +2,10 @@
 title: "About"
 ---
 
+## asmas - ss2024: v0.1.2
+
+* Overhead pictures of lecture 1
+
 ## asmas - ss2024: v0.1.1
 
 * Chapters 1 and 2 of course notes
