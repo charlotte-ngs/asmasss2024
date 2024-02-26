@@ -1,0 +1,60 @@
+---
+title: "Exercise Platform"
+---
+
+There are three different options available to work on examples and exercises. The table below (@tbl-rexplatform) provides some information on these options. 
+
+```{r}
+#| label: tbl-rexplatform
+#| tbl-cap: "R Exercise Platforms"
+#| echo: false
+#| results: asis
+tbl_rexpf <- tibble::tibble(Nr       = c(1:3),
+                            Platform = c("Webr", 
+                                         "Posit Cloud", 
+                                         "Your own installation"),
+                            Link     = c("https://webr.r-wasm.org/latest",
+                                         "https://posit.cloud",
+                                         "https://posit.co/download/rstudio-desktop"))
+knitr::kable(tbl_rexpf)
+```
+
+
+## Description
+The three platforms all have advantages and disadvantages. @tbl-rexpfprosndcons gives and overview of the characteristics of each platform
+
+```{r}
+#| label: tbl-rexpfprosndcons
+#| tbl-cap: "Characteristics of the three available R Exercise Platforms"
+#| echo: false
+#| results: asis
+tbl_rexpf_prosndcons <- tibble::tibble(Platform = c("Webr", 
+                                         "Posit Cloud", 
+                                         "Your own installation"),
+                                       Pros = c("Runs R in the browswer, no installation required.",
+                                                "Provides full RStudio environment, accessible via browser",
+                                                "Full flexibility and maximum possible freedom with respect to customisation, etc."),
+                                       Cons = c("No persistency, reloading browser removes everythiing",
+                                                "Need to register with posit, free version has limitations",
+                                                "All problems are your responsibility, maybe need contacts to expert"))
+knitr::kable(tbl_rexpf_prosndcons)
+```
+
+
+## Further Details
+
+### Webr
+Persistency means that R-code (programs or scripts) that you write are stored somewhere. With webr this storage is only kept as long as the current browser view is active. As soon as you hit the reload button or you close and re-open the browser window, all work (files and directories) is gone and cannot be restored.
+
+Hence it is advisable to either write R-programs in a separate program called an editor (such as VSCode) and to import the programs to webr or to frequently export the R-programs to your local file-system storage.
+
+Because webr runs completely in the browser, there. might be differences between different browsers. The material used in this course will be tested with `Google Chrome`. Other browsers might lead to a different user experience.
+
+
+### Posit Cloud
+The free version of posit cloud has limitations. They can be seen from the posit cloud website. These limitations should not be a problem for what we use the platform in our course.
+
+
+### Your Own Installation
+Running your own versions of R and RStudio gives you maximum flexibility with respect to adapting and configuring the environment. But one frequent problem with this option are the updates. R and RStudio publish new versions on a regular basis and these new versions must be installed. After installing a new version, some adaptations of installed packages must be done which is not always that easy.
+

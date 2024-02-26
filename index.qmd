@@ -15,7 +15,13 @@ Topics for Master Theses at Qualitas AG together with ETH will follow here ...
 
 
 ### Exercise Platform
+Three options are available
 
+1. Webr: https://webr.r-wasm.org/latest/
+2. Posit cloud: https://posit.cloud/
+3. Run your own platform: Follow steps on https://posit.co/download/rstudio-desktop/
+
+A more detailed description is available from [here](https://charlotte-ngs.github.io/asmasss2024/misc/rexpf/rexpf_docu.html)
 
 ### Exam
 - Written exam

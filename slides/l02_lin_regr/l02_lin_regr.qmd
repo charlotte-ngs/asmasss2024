@@ -29,7 +29,7 @@ knitr::kable(tbl_reg,
 
 ## Diagram
 
-```{r fig-reg-bw-bc, echo=FALSE, out.width="100%"}
+```{r figure-reg-bw-bc, echo=FALSE, out.width="100%"}
 library(ggplot2)
 ggplot(tbl_reg, aes(x = `Breast Circumference`, y = `Body Weight`)) +
   geom_point(color = "blue") 

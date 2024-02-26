@@ -18,7 +18,7 @@
     "href": "index.html#information",
     "title": "Welcome to the Website of",
     "section": "Information",
-    "text": "Information\n\nLecturer: Peter von Rohr\nDate: Montag 8-10\nRoom: LFW C11\n\n\nExercise Platform\n\n\nExam\n\nWritten exam\nDate: 27.05.2024 - 08:15 - 10:00\nRoom: LFW C 11"
+    "text": "Information\n\nLecturer: Peter von Rohr\nDate: Montag 8-10\nRoom: LFW C11\n\n\nExercise Platform\nThree options are available\n\nWebr: https://webr.r-wasm.org/latest/\nPosit cloud: https://posit.cloud/\nRun your own platform: Follow steps on https://posit.co/download/rstudio-desktop/\n\nA more detailed description is available from here\n\n\nExam\n\nWritten exam\nDate: 27.05.2024 - 08:15 - 10:00\nRoom: LFW C 11"
   },
   {
     "objectID": "index.html#description",
@@ -46,7 +46,7 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-02-23 17:34:26 CET (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-02-26 07:21:12 CET (pvr)"
   },
   {
     "objectID": "about.html",
@@ -187,5 +187,26 @@
     "title": "About",
     "section": "",
     "text": "Overhead pictures of lecture 1"
+  },
+  {
+    "objectID": "misc/rexpf/rexpf_docu.html",
+    "href": "misc/rexpf/rexpf_docu.html",
+    "title": "Exercise Platform",
+    "section": "",
+    "text": "There are three different options available to work on examples and exercises. The table below (Table 1) provides some information on these options.\nTable 1: R Exercise Platforms\n\n\nNr\nPlatform\nLink\n\n\n\n\n1\nWebr\nhttps://webr.r-wasm.org/latest\n\n\n2\nPosit Cloud\nhttps://posit.cloud\n\n\n3\nYour own installation\nhttps://posit.co/download/rstudio-desktop"
+  },
+  {
+    "objectID": "misc/rexpf/rexpf_docu.html#description",
+    "href": "misc/rexpf/rexpf_docu.html#description",
+    "title": "Exercise Platform",
+    "section": "Description",
+    "text": "Description\nThe three platforms all have advantages and disadvantages. Table 2 gives and overview of the characteristics of each platform\n\n\n\n\nTable 2: Characteristics of the three available R Exercise Platforms\n\n\n\n\n\n\n\nPlatform\nPros\nCons\n\n\n\n\nWebr\nRuns R in the browswer, no installation required.\nNo persistency, reloading browser removes everythiing\n\n\nPosit Cloud\nProvides full RStudio environment, accessible via browser\nNeed to register with posit, free version has limitations\n\n\nYour own installation\nFull flexibility and maximum possible freedom with respect to customisation, etc.\nAll problems are your responsibility, maybe need contacts to expert"
+  },
+  {
+    "objectID": "misc/rexpf/rexpf_docu.html#further-details",
+    "href": "misc/rexpf/rexpf_docu.html#further-details",
+    "title": "Exercise Platform",
+    "section": "Further Details",
+    "text": "Further Details\n\nWebr\nPersistency means that R-code (programs or scripts) that you write are stored somewhere. With webr this storage is only kept as long as the current browser view is active. As soon as you hit the reload button or you close and re-open the browser window, all work (files and directories) is gone and cannot be restored.\nHence it is advisable to either write R-programs in a separate program called an editor (such as VSCode) and to import the programs to webr or to frequently export the R-programs to your local file-system storage.\n\n\nPosit Cloud\nThe free version of posit cloud has limitations. They can be seen from the posit cloud website. These limitations should not be a problem for what we use the platform in our course.\n\n\nYour Own Installation\nRunning your own versions of R and RStudio gives you maximum flexibility with respect to adapting and configuring the environment. But one frequent problem with this option are the updates. R and RStudio publish new versions on a regular basis and these new versions must be installed. After installing a new version, some adaptations of installed packages must be done which is not always that easy."
   }
 ]
