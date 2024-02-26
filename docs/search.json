@@ -53,7 +53,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Description of R exercise platform\nData on width and height"
+    "text": "Description of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -214,6 +214,6 @@
     "href": "about.html#asmas---ss2024-v0.2.0",
     "title": "About",
     "section": "",
-    "text": "Description of R exercise platform\nData on width and height"
+    "text": "Description of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
   }
 ]
