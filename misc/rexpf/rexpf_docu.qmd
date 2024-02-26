@@ -52,7 +52,7 @@ Because webr runs completely in the browser, there. might be differences between
 
 
 ### Posit Cloud
-The free version of posit cloud has limitations. They can be seen from the posit cloud website. These limitations should not be a problem for what we use the platform in our course.
+The free version of posit cloud has limitations. They can be seen from the posit cloud website (https://posit.cloud/plans/free). These limitations should not be a problem for what we use the platform in our course.
 
 
 ### Your Own Installation
