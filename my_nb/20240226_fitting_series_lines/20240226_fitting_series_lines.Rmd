@@ -1,0 +1,49 @@
+---
+title: "Fitting a Series of Lines"
+output: html_notebook
+---
+
+
+```{r}
+vec_width <- c(82,65,76,80,78,70,72,70,65,73)
+vec_height <-c(185,168,168,193,180,181,182,169,165,170)
+vec_height
+
+# green line with 
+a <- 170; b <- 0.1
+vec_y_hat <- a + vec_width * b
+vec_y_hat
+
+# plot
+#plot(vec_width, vec_y_hat)
+#plot(vec_width, vec_height)
+
+# distance in y-direction
+vec_dist_y <- vec_height - vec_y_hat
+vec_dist_y
+vec_dist_y^2
+sum(vec_dist_y^2)
+```
+
+Series of lines
+
+```{r}
+vec_width <- c(82,65,76,80,78,70,72,70,65,73)
+vec_height <-c(185,168,168,193,180,181,182,169,165,170)
+
+# green line with 
+a <- 170; b <- 0.1
+ssq_min <- .Machine$double.max.exp
+for (a in c(min(vec_height):max(vec_height))){
+  for (b in seq(0.1,0.5,0.1)){
+    vec_y_hat <- a + vec_width * b
+    vec_dist_y <- vec_height - vec_y_hat
+    ssq <- sum(vec_dist_y^2)
+    if (ssq < ssq_min) ssq_min <- ssq
+    cat("a: ", a, " b: ", b, " -- ssq: ", ssq, " -- Min ", ssq_min, "\n")
+  }
+}
+
+```
+
+
