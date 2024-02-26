@@ -53,7 +53,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Overhead pictures of lecture 1"
+    "text": "Description of R exercise platform"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -185,8 +185,8 @@
     "objectID": "about.html#asmas---ss2024-v0.1.2",
     "href": "about.html#asmas---ss2024-v0.1.2",
     "title": "About",
-    "section": "",
-    "text": "Overhead pictures of lecture 1"
+    "section": "asmas - ss2024: v0.1.2",
+    "text": "asmas - ss2024: v0.1.2\n\nOverhead pictures of lecture 1"
   },
   {
     "objectID": "misc/rexpf/rexpf_docu.html",
@@ -208,5 +208,12 @@
     "title": "Exercise Platform",
     "section": "Further Details",
     "text": "Further Details\n\nWebr\nPersistency means that R-code (programs or scripts) that you write are stored somewhere. With webr this storage is only kept as long as the current browser view is active. As soon as you hit the reload button or you close and re-open the browser window, all work (files and directories) is gone and cannot be restored.\nHence it is advisable to either write R-programs in a separate program called an editor (such as VSCode) and to import the programs to webr or to frequently export the R-programs to your local file-system storage.\n\n\nPosit Cloud\nThe free version of posit cloud has limitations. They can be seen from the posit cloud website. These limitations should not be a problem for what we use the platform in our course.\n\n\nYour Own Installation\nRunning your own versions of R and RStudio gives you maximum flexibility with respect to adapting and configuring the environment. But one frequent problem with this option are the updates. R and RStudio publish new versions on a regular basis and these new versions must be installed. After installing a new version, some adaptations of installed packages must be done which is not always that easy."
+  },
+  {
+    "objectID": "about.html#asmas---ss2024-v0.2.0",
+    "href": "about.html#asmas---ss2024-v0.2.0",
+    "title": "About",
+    "section": "",
+    "text": "Description of R exercise platform"
   }
 ]
