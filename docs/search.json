@@ -53,7 +53,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Description of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
+    "text": "OHP-L02\n\n\n\n\n\nDescription of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -236,5 +236,19 @@
     "title": "ASMAS-SS2024",
     "section": "OHP Picture 3",
     "text": "OHP Picture 3"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.2.1",
+    "href": "about.html#asmasss2024-0.2.1",
+    "title": "About",
+    "section": "",
+    "text": "OHP-L02"
+  },
+  {
+    "objectID": "NEWS.html",
+    "href": "NEWS.html",
+    "title": "asmasss2024 0.2.1",
+    "section": "",
+    "text": "asmasss2024 0.2.1\n\nInitial CRAN submission."
   }
 ]

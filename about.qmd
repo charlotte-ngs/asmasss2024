@@ -2,12 +2,27 @@
 title: "About"
 ---
 
+```{r}
+#| label: ohp-slides
+#| echo: false
+#| results: asis
+s_ohp_url <- "https://charlotte-ngs.github.io/asmasss2024/ohp/"
+```
+
+# asmas -- ss2024: Week 2
+
+## asmasss2024 0.2.1
+
+* [OHP-L02](`r paste0(s_ohp_url, "20240226_ohp_l02.pdf", collapse = "")`)
+
 ## asmas - ss2024: v0.2.0
 
 * [Description](https://charlotte-ngs.github.io/asmasss2024/misc/rexpf/rexpf_docu.html) of R exercise platform
 * [Data](https://charlotte-ngs.github.io/asmasss2024/data/asm_width_height.xlsx) as Excel sheet on width and height
 * [Data](https://charlotte-ngs.github.io/asmasss2024/data/asm_width_height.csv) as comma separated list
 
+
+# asmas -- ss2024: Week 1
 
 ## asmas - ss2024: v0.1.2
 
