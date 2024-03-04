@@ -84,7 +84,7 @@ knitr::include_graphics(path = "odg/lsq-plot.png")
 Find values $\hat{b}_0$ and $\hat{b}_1$ such that 
 
 \begin{equation}
-\mathbf{e}^T\mathbf{e} = \sum_{i=1}^N e_i^2 = \sum_{i=1}^N \left[ y_i - E(e_i) \right]^2 = \sum_{i=1}^N \left[ y_i - b_0 - b_1*x_i \right]^2 \notag
+\mathbf{e}^T\mathbf{e} = \sum_{i=1}^N e_i^2 = \sum_{i=1}^N \left[ y_i - E(y_i) \right]^2 = \sum_{i=1}^N \left[ y_i - b_0 - b_1*x_i \right]^2 \notag
 \end{equation}
 
 is minimal
