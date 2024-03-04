@@ -53,7 +53,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Slides l02_lin_regr\n\n\n\n\n\nExercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf\n\n\n\n\n\nOHP-L02"
+    "text": "Appendix on Linear Algebra\n\n\n\n\n\nSlides l02_lin_regr\n\n\n\n\n\nExercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf\n\n\n\n\n\nOHP-L02"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -74,7 +74,7 @@
     "href": "course_notes.html",
     "title": "Course Notes",
     "section": "",
-    "text": "List of chapters in the course notes\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-19\nLinear Regression"
+    "text": "List of Chapters in the Course Notes\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-19\nLinear Regression\n\n\n\n\nList of Appendix Chapters\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-03-04\nLinear Algebra"
   },
   {
     "objectID": "add_info.html",
@@ -264,5 +264,12 @@
     "title": "About",
     "section": "",
     "text": "Slides l02_lin_regr"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.3.0",
+    "href": "about.html#asmasss2024-0.3.0",
+    "title": "About",
+    "section": "",
+    "text": "Appendix on Linear Algebra"
   }
 ]
