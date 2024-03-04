@@ -2,7 +2,7 @@
 title: "Course Notes"
 ---
 
-List of chapters in the course notes
+List of Chapters in the Course Notes
 
 ```{r}
 #| label: table-course-notes
@@ -16,5 +16,21 @@ tbl_cn <- tibble::tibble(Nr = c(1, 2),
                            paste0("[Linear Regression](", s_cn_url, "linear_regression.pdf)", collapse = "")
                          ))
 knitr::kable(tbl_cn)
+```
+
+
+List of Appendix Chapters
+
+```{r}
+#| label: table-appendix
+#| echo: false
+#| results: asis
+s_app_url <- s_cn_url
+tbl_app <- tibble::tibble(Nr = c(1),
+                          Date = c("2024-03-04"),
+                          Topic = c(
+                            paste0("[Linear Algebra](", s_app_url, "099_Appendix_A_LinAlg.pdf)", collapse = "")
+                          ))
+knitr::kable(tbl_app)
 ```
 
