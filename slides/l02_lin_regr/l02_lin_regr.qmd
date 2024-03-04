@@ -103,6 +103,111 @@ is minimal
 \end{align}
 
 
+## Minimization II
+
+* Expressions $\frac{\partial\mathbf{e}^T\mathbf{e}}{\partial b_0}$ and $\frac{\partial\mathbf{e}^T\mathbf{e}}{\partial b_1}$ both set to $0$
+* Solutions obtained will be called $\widehat{b_0}$ and $\widehat{b_1}$
+* First introduce simplifying notation
+
+
 ## Notation
 
-$$x. = \sum_{i=1}^N x_i$$
+$$x. = \sum_{i=1}^N x_i \ \text{ and } \  \bar{x}. = {x. \over N}$$
+
+$$y. = \sum_{i=1}^N y_i \ \text{ and } \  \bar{y}. = {y. \over N}$$
+
+$$(x^2). = \sum_{i=1}^N x_i^2$$
+
+$$(xy). = \sum_{i=1}^N x_iy_i$$
+
+
+## Normal Equations
+
+$$N\widehat{b_0} +  \widehat{b_1} x. = y.$$
+
+$$\widehat{b_0} x. + \widehat{b_1} (x^2). = (xy).$$
+
+
+## Solutions
+
+$$\hat{b}_0 = \bar{y}. - \hat{b}_1\bar{x}.$$
+
+$$\hat{b}_1 = \frac{(xy). - N\bar{x}.\bar{y}.}{(x^2). - N\bar{x}.^2}$$
+
+
+## Example Dataset
+
+```{r}
+#| label: estimatorcomp
+#| echo: false
+# formula components
+x_dot <- sum(tbl_reg$`Breast Circumference`)
+x_bar <- x_dot / n_nr_obs
+y_dot <- sum(tbl_reg$`Body Weight`)
+y_bar <- y_dot / n_nr_obs
+xy_dot <- sum(tbl_reg$`Breast Circumference`*tbl_reg$`Body Weight`)
+x2_dot <- sum(tbl_reg$`Breast Circumference`^2)
+# estimators
+b1_hat <- (xy_dot - n_nr_obs * x_bar * y_bar) / (x2_dot - n_nr_obs * x_bar^2)
+b0_hat <- y_bar - b1_hat * x_bar
+```
+
+$$
+N = `r n_nr_obs`,\ \bar{x}. = `r x_bar`,\ \bar{y}. = `r y_bar`
+$$
+
+$$(xy). = `r xy_dot`,\ (x^2). = `r x2_dot`$$
+
+$$
+\hat{b}_1 = \frac{`r xy_dot` - `r n_nr_obs` * `r x_bar` * `r y_bar`}{`r x2_dot` - `r n_nr_obs` * `r x_bar`^2} = `r round(b1_hat, digits=3)`
+$$ 
+
+$$
+\hat{b}_0 = `r y_bar` - `r b1_hat` * `r x_bar` = `r round(b0_hat, digits=3)`
+$$ 
+
+
+
+## Estimates in R
+
+\tiny
+
+```{r}
+#| label: lmbwonbc
+#| echo: true
+lm_bw_bc <- lm(`Body Weight` ~ `Breast Circumference`, data = tbl_reg)
+summary(lm_bw_bc)
+```
+
+\normalsize
+
+
+## General Case
+
+* More $x$ variables ...
+* Matrix Vector Notation
+
+```{r}
+#| label: mat-vec-lm
+#| echo: false
+#| results: asis
+mat_X <- matrix(c("x_{10}", "x_{11}", "x_{12}",
+                  "x_{20}", "x_{21}", "x_{22}",
+                  ".", ".", ".",
+                  ".", ".", ".",
+                  ".", ".", ".",
+                  "x_{N0}", "x_{N1}", "x_{N2}"), ncol = 3, byrow = TRUE)
+vec_y <- c("y_1", "y_2", ".", ".", ".", "y_N")
+vec_e <- c("e_1", "e_2", ".", ".", ".", "e_N")
+vec_b <- c("b_0", "b_1", "b_2")
+
+cat("$$\n")
+cat(paste0(rmdhelp::bmatrix(pmat = mat_X, ps_name = "\\mathbf{X}"), collapse = ""), "\n")
+cat(", \\ \n")
+cat(paste0(rmdhelp::bcolumn_vector(pvec = vec_y, ps_name = "\\mathbf{y}")))
+cat(", \\ \n")
+cat(paste0(rmdhelp::bcolumn_vector(pvec = vec_e, ps_name = "\\mathbf{e}")))
+cat("\\text{ and }\n")
+cat(paste0(rmdhelp::bcolumn_vector(pvec = vec_b, ps_name = "\\mathbf{b}")))
+cat("$$\n")
+```
