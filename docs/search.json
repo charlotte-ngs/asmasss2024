@@ -53,7 +53,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Slides l02_lin_regr\n\n\n\n\n\nExercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf\n\n\n\n\n\nOHP-L02\n\n\n\n\n\nDescription of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
+    "text": "Slides l02_lin_regr\n\n\n\n\n\nExercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf\n\n\n\n\n\nOHP-L02"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -213,8 +213,8 @@
     "objectID": "about.html#asmas---ss2024-v0.2.0",
     "href": "about.html#asmas---ss2024-v0.2.0",
     "title": "About",
-    "section": "",
-    "text": "Description of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
+    "section": "asmas - ss2024: v0.2.0",
+    "text": "asmas - ss2024: v0.2.0\n\nDescription of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
   },
   {
     "objectID": "my_nb/20240226_fitting_series_lines/20240226_fitting_series_lines.html",
