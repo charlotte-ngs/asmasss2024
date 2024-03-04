@@ -16,12 +16,12 @@ tbl_sol <- tibble::tibble(Nr = c(1),
                                   s_sol_url,
                                   "asm_sol01/asm_sol01.html) | [pdf](",
                                   s_sol_url, 
-                                  "asm_sol01/asm_sol1.pdf)", collapse = ""),
+                                  "asm_sol01/asm_sol01.pdf)", collapse = ""),
                            paste0("Read Data [html](", 
                                   s_sol_url,
                                   "asm_sol02/asm_sol02.html) | [pdf](",
                                   s_sol_url,
-                                  "asm_sol01/asm_sol1.pdf)", collapse = "")
+                                  "asm_sol02/asm_sol02.pdf)", collapse = "")
                          ))
 knitr::kable(tbl_sol)
 ```
