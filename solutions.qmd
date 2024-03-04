@@ -4,3 +4,25 @@ title: "Solutions"
 
 List of solutions to exercises
 
+```{r}
+#| label: solutions
+#| echo: false
+#| results: asis
+s_sol_url <- "https://charlotte-ngs.github.io/asmasss2024/solutions/"
+tbl_sol <- tibble::tibble(Nr = c(1),
+                         Date = c("2024-02-19"),
+                         Topic = c(
+                           paste0("Introduction [html](", 
+                                  s_sol_url,
+                                  "asm_sol01/asm_sol01.html) | [pdf](",
+                                  s_sol_url, 
+                                  "asm_sol01/asm_sol1.pdf)", collapse = ""),
+                           paste0("Read Data [html](", 
+                                  s_sol_url,
+                                  "asm_sol02/asm_sol02.html) | [pdf](",
+                                  s_sol_url,
+                                  "asm_sol01/asm_sol1.pdf)", collapse = "")
+                         ))
+knitr::kable(tbl_sol)
+```
+

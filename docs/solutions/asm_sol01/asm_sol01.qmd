@@ -1,0 +1,146 @@
+---
+title: ASMAS SS2024 - Solution 1
+author: "Peter von Rohr"
+date: 2024-02-19
+filters: 
+  - webr
+params:
+  doctype:
+    label: 'Document Type'
+    value: 'solution'
+    choices: ['exercise', 'solution', 'notebook']
+  number:
+    label: 'Number'
+    value: 1
+    choices: c(1:15)  
+  isonline:
+    label: 'Online (y/n)'
+    value: TRUE
+    choices: [TRUE, FALSE]
+---
+
+
+## Problem 1: Data Collection and First Inspection
+Measure width of your left hand in mm and your height in cm and enter that data into a table. From that table create a simple plot using the function `plot()`. As a demo, we are first running that with random numbers. After that run the same with the collected data
+
+```{r}
+#| label: demoplot
+set.seed(1902)
+n_nr_obs <- 15
+vec_width_random <- rnorm(n_nr_obs, mean = 73, sd = 2.5)
+vec_height_random <- rnorm(n_nr_obs, mean = 175, sd = 7.9)
+plot(vec_width_random, vec_height_random)
+```
+
+Do the same with the collected data
+
+```{webr-r}
+# enter data
+vec_width <- c(82,65,76,80,78,70,72,70,65,73)
+vec_height <-c(185,168,168,193,180,181,182,169,165,170)
+
+# plot
+plot(vec_width, vec_height)
+```
+
+
+
+Order both variables (width and height) in the data according to the width of the left hand, then repeat the plot
+
+```{r}
+vec_order_random <- order(vec_width_random)
+vec_ord_width_random <- vec_width_random[vec_order_random]
+vec_ord_height_random <- vec_height_random[vec_order_random]
+plot(vec_ord_width_random, vec_ord_height_random)
+```
+
+Do the ordered version of the plot
+
+```{webr-r}
+# order the data according to width
+vec_order_width <- order(vec_width)
+vec_ord_width <- vec_width[vec_order_width]
+vec_ord_height <- vec_height[vec_order_width] 
+
+# plot ordered data
+plot(vec_ord_width, vec_ord_height)
+```
+
+
+## Problem 2: Line Fitting
+* Based on the plotted points above what would be a good description of the relationship of width and height?
+* How well would a straight line describe the relationship?
+* Why do we want to use a straight line? 
+* What is the meaning of a linear relationship?
+* Try to fit different straight lines throught the plotted points by trial and error. 
+
+Fitting different lines through the demo
+
+
+* Try to make statements about how well a given straight line fits the points. 
+
+```{r}
+plot(vec_width_random, vec_height_random)
+abline(180, 0, col="blue")
+abline(170, 0.1, col = "green")
+```
+
+Try to fit some plots for the collected data
+
+```{webr-r}
+# plot the points again
+plot(vec_width, vec_height)
+# use abline to do some line fitting
+abline(180, 0, col = "blue")
+abline(170, 0.1, col = "green")
+```
+
+
+
+* Do some computations related to how well the lines fit the data
+
+Start with blue line
+
+```{webr-r}
+# compute distance of points from  lines
+# blue line
+a <- 180
+b <- 0
+vec_y_hat <- a + b * vec_width
+(ssq_blue <- sum((vec_height - vec_y_hat)^2))
+```
+
+Green line
+
+```{webr-r}
+a <- 170
+b <- 0.1
+vec_y_hat <- a + b * vec_width
+(ssq_green <- sum((vec_height - vec_y_hat)^2))
+```
+
+
+## Additional Problem: Fit a Series of Lines
+The following code chunk fits a series of lines and finds the minimum sum of squared residuals
+
+```{webr-r}
+ssq_min <- .Machine$double.max.exp
+a_min <- NULL
+b_min <- NULL
+for (a in c(min(vec_height):max(vec_height))){
+  for (b in seq(0.1,0.5,0.1)){
+    vec_y_hat <- a + vec_width * b
+    vec_dist_y <- vec_height - vec_y_hat
+    ssq <- sum(vec_dist_y^2)
+    if (ssq < ssq_min) {
+      ssq_min <- ssq
+      a_min <- a
+      b_min <- b 
+    }
+  }
+}
+cat(" * Minimum SSQ Residuals: ", ssq_min, "\n")
+cat(" * Intercept:             ", a_min, "\n")
+cat(" * Slope:                 ", b_min, "\n")
+```
+

@@ -9,12 +9,16 @@ List of exercises
 #| echo: false
 #| results: asis
 s_ex_url <- "https://charlotte-ngs.github.io/asmasss2024/exercises/"
-tbl_ex <- tibble::tibble(Nr = c(1),
-                         Date = c("2024-02-19"),
+tbl_ex <- tibble::tibble(Nr = c(1, 2),
+                         Date = c("2024-02-19",
+                                  "2024-02-26"),
                          Topic = c(
                            paste0("[Introduction](", 
                                   s_ex_url,
-                                  "asm_ex01/asm_ex01.html)", collapse = "")
+                                  "asm_ex01/asm_ex01.html)", collapse = ""),
+                           paste0("[Read Data](",
+                                  s_ex_url,
+                                  "asm_ex02/asm_ex02.html)", collapse = "")
                          ))
 knitr::kable(tbl_ex)
 ```

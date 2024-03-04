@@ -1,0 +1,118 @@
+---
+title: "ASMAS SS2024 - Exercise 2"
+author: "Peter von Rohr"
+date: 2024-02-26
+format: html
+filters: 
+  - webr
+webr:
+  packages: ['readxl']
+---
+
+## Problem 1: Reading Data
+The first step of a data analysis in R is to read the data. This can be done in different ways which are described below.
+
+### Direct Assignment
+As done in Exercise 1, we have assigned the data directly to different R-objects. To recap, this was done with
+
+```{r}
+vec_width <- c(82,65,76,80,78,70,72,70,65,73)
+vec_height <- c(185,168,168,193,180,181,182,169,165,170)
+```
+
+
+### Reading Files
+
+* From local storage: read data from local file
+* From website: specify link directly
+
+
+### Different Formats
+
+* Excel: An excel file has to be downloaded first and can then be imported.
+
+```{r}
+# download first
+s_wh_data <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_width_height.xlsx"
+s_down_dir <- tempdir()
+s_dest_file <- file.path(s_down_dir, basename(s_wh_data))
+download.file(url = s_wh_data, destfile = s_dest_file)
+# read from local file
+tbl_wh <- readxl::read_excel(s_dest_file)
+# delete downloaded file
+unlink(s_dest_file)
+# show table read from xlsx
+tbl_wh
+```
+
+
+* CSV
+
+```{r}
+s_wh_data <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_width_height.csv"
+tbl_wh <- readr::read_delim(s_wh_data, delim = ",")
+tbl_wh
+```
+
+The downloaded data can be summarized using the function `summary()`.
+
+```{r}
+summary(tbl_wh)
+```
+
+
+## Problem 2: Download Beef-Cattle Data
+There is a dataset on `Breast Circumference` and `Body Weight` for beef cattle animals available in two different formats. 
+
+1. Excel: https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_reg.xlsx
+2. CSV: https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_reg.csv
+
+
+### Tasks
+
+* Read the data from both formats
+* Provide summary statistics of the variables `Breast Circumference` and `Body Weight`
+* Plot `Breast Circumference` on the x-axis and `Body Weight` on the y-axis
+
+
+### Solutions
+
+* Read the data
+Start by reading from Excel workbook
+
+```{webr-r}
+# read data from xlsx workbook
+s_bw_bc_url_xlsx <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_reg.xlsx"
+s_down_dir <- tempdir()
+s_bw_bc_path <- file.path(s_down_dir, basename(s_bw_bc_url_xlsx))
+download.file(s_bw_bc_url_xlsx, s_bw_bc_path)
+tbl_bw_bc_xlsx <- readxl::read_excel(s_bw_bc_path)
+unlink(s_bw_bc_path)
+tbl_bw_bc_xlsx
+```
+
+Read data from CSV-file
+
+```{webr-r}
+# read data from CSV-file
+s_bw_bc_url_csv <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_reg.csv"
+df_bw_bc_csv <- read.table(s_bw_bc_url_csv, header = TRUE, sep = ",")
+df_bw_bc_csv
+```
+
+
+* Summary statistics for `Breast Circumference` and `Body Weight`
+
+```{webr-r}
+# summary statistics
+summary(tbl_bw_bc_xlsx)
+```
+
+
+* Plot
+
+```{webr-r}
+# plot
+plot(tbl_bw_bc_xlsx$`Breast Circumference`, tbl_bw_bc_xlsx$`Body Weight`)
+```
+
