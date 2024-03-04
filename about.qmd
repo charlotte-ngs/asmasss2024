@@ -9,9 +9,14 @@ title: "About"
 s_ohp_url <- "https://charlotte-ngs.github.io/asmasss2024/ohp/"
 s_ex_url <- "https://charlotte-ngs.github.io/asmasss2024/exercises/"
 s_sol_url <- "https://charlotte-ngs.github.io/asmasss2024/solutions/"
+s_sl_url <- "https://charlotte-ngs.github.io/asmasss2024/slides/"
 ```
 
 # asmas -- ss2024: Week 2
+
+## asmasss2024 0.2.3
+
+* Slides [l02_lin_regr](`r paste0(s_sl_url, "l02_lin_regr/l02_lin_regr.pdf", collapse = "")`)
 
 ## asmasss2024 0.2.2
 

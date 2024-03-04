@@ -53,7 +53,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Exercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf\n\n\n\n\n\nOHP-L02\n\n\n\n\n\nDescription of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
+    "text": "Slides l02_lin_regr\n\n\n\n\n\nExercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf\n\n\n\n\n\nOHP-L02\n\n\n\n\n\nDescription of R exercise platform\nData as Excel sheet on width and height\nData as comma separated list"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -144,7 +144,7 @@
     "href": "add_info.html#slides",
     "title": "Additional Information",
     "section": "Slides",
-    "text": "Slides\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction"
+    "text": "Slides\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression"
   },
   {
     "objectID": "add_info.html#over-head-pictures",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.2.1",
+    "title": "asmasss2024 0.2.3",
     "section": "",
-    "text": "asmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -257,5 +257,12 @@
     "title": "About",
     "section": "",
     "text": "Exercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.2.3",
+    "href": "about.html#asmasss2024-0.2.3",
+    "title": "About",
+    "section": "",
+    "text": "Slides l02_lin_regr"
   }
 ]
