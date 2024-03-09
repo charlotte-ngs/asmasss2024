@@ -1,0 +1,3 @@
+from sympy import *
+
+ssqr = summation()

@@ -16,6 +16,11 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 3
 
+## asmasss2024 0.3.1
+
+* [OHP-L03](`r paste0(s_ohp_url, "20240304_ohp_l03.pdf", collapse = "")`)
+
+
 ## asmasss2024 0.3.0
 
 * Appendix on [Linear Algebra](`r paste0(s_app_url, "099_Appendix_A_LinAlg.pdf", collapse="")`) 
