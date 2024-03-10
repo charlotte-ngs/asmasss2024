@@ -14,6 +14,8 @@ l_quarto_yml <- yaml::read_yaml(s_quarto_yml_file)
 s_title <- l_quarto_yml$website$title
 vec_title_comp <- unlist(strsplit(s_title, split = s_title_sep, fixed = T))
 l_quarto_yml$website$title <- paste0(vec_title_comp[1], s_title_sep, s_cur_version, collapse = "")
+# fix problem with toc
+l_quarto_yml$format$html$toc <- 'true'
 yaml::write_yaml(l_quarto_yml, file = s_quarto_yml_file)
 ```
 
