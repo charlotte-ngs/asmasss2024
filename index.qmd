@@ -2,6 +2,21 @@
 title: Welcome to the Website of
 ---
 
+```{r}
+#| label: versionextractor
+#| echo: false
+# constants
+s_quarto_yml_file <- "_quarto.yml"
+s_title_sep <- " | "
+# extract version from DESC
+s_cur_version <- desc::desc_get_version()
+l_quarto_yml <- yaml::read_yaml(s_quarto_yml_file)
+s_title <- l_quarto_yml$website$title
+vec_title_comp <- unlist(strsplit(s_title, split = s_title_sep, fixed = T))
+l_quarto_yml$website$title <- paste0(vec_title_comp[1], s_title_sep, s_cur_version, collapse = "")
+yaml::write_yaml(l_quarto_yml, file = s_quarto_yml_file)
+```
+
 [751-7602-00L  Applied Statistical Methods in Animal Sciences](https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2024S&ansicht=ALLE&lerneinheitId=178644&lang=en)
 
 ## Topics for Master Theses
