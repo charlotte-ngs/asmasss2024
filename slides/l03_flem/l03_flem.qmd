@@ -155,7 +155,11 @@ $\rightarrow$ Biological meaning of genotype code: count number of $G_1$ alleles
 
 ## Genomic Regression
 
-```{r genomic-regression, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+```{r}
+#| label: genomic-regression
+#| hook_convert_odg: true
+#| fig_path: "odg"
+#| out-width: "100%"
 #rmdhelp::use_odg_graphic(ps_path = "odg/genomic-regression.odg", ps_odg_template = "odg_draw_a4_landscape")
 knitr::include_graphics(path = "odg/genomic-regression.png")
 ```
