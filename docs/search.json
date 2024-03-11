@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-10 06:59:14 CET (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-11 05:22:48 CET (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "OHP-L03\n\n\n\n\n\nAppendix on Linear Algebra\n\n\n\n\n\nSlides l02_lin_regr\n\n\n\n\n\nExercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf\n\n\n\n\n\nOHP-L02"
+    "text": "Exercise asm_ex03"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -88,7 +88,7 @@
     "href": "exercises.html",
     "title": "Exercises",
     "section": "",
-    "text": "List of exercises\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRead Data"
+    "text": "List of exercises\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRead Data\n\n\n3\n2024-03-11\nLinear Regression"
   },
   {
     "objectID": "exercises/asm_ex01/asm_ex01.html",
@@ -241,43 +241,43 @@
     "objectID": "about.html#asmasss2024-0.2.1",
     "href": "about.html#asmasss2024-0.2.1",
     "title": "About",
-    "section": "",
-    "text": "OHP-L02"
+    "section": "asmasss2024 0.2.1",
+    "text": "asmasss2024 0.2.1\n\nOHP-L02"
   },
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.4.0",
+    "title": "asmasss2024 0.4.1",
     "section": "",
-    "text": "asmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
     "href": "about.html#asmasss2024-0.2.2",
     "title": "About",
-    "section": "",
-    "text": "Exercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf"
+    "section": "asmasss2024 0.2.2",
+    "text": "asmasss2024 0.2.2\n\nExercise 2: asm-ex02\nSolutions 1: html | pdf\nSolutions 2: html | pdf"
   },
   {
     "objectID": "about.html#asmasss2024-0.2.3",
     "href": "about.html#asmasss2024-0.2.3",
     "title": "About",
-    "section": "",
-    "text": "Slides l02_lin_regr"
+    "section": "asmasss2024 0.2.3",
+    "text": "asmasss2024 0.2.3\n\nSlides l02_lin_regr"
   },
   {
     "objectID": "about.html#asmasss2024-0.3.0",
     "href": "about.html#asmasss2024-0.3.0",
     "title": "About",
-    "section": "",
-    "text": "Appendix on Linear Algebra"
+    "section": "asmasss2024 0.3.0",
+    "text": "asmasss2024 0.3.0\n\nAppendix on Linear Algebra"
   },
   {
     "objectID": "about.html#asmasss2024-0.3.1",
     "href": "about.html#asmasss2024-0.3.1",
     "title": "About",
-    "section": "",
-    "text": "OHP-L03"
+    "section": "asmasss2024 0.3.1",
+    "text": "asmasss2024 0.3.1\n\nOHP-L03"
   },
   {
     "objectID": "ohp/20240304_ohp_l03/20240304_ohp_l03.html#ohp-picture-2",
@@ -327,5 +327,12 @@
     "title": "ASMAS-SS2024",
     "section": "OHP Picture 8",
     "text": "OHP Picture 8"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.4.1",
+    "href": "about.html#asmasss2024-0.4.1",
+    "title": "About",
+    "section": "",
+    "text": "Exercise asm_ex03"
   }
 ]

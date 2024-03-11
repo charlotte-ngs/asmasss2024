@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 website:
-  title: ASMAS-SS2024 | 0.4.0
+  title: ASMAS-SS2024 | 0.4.1
   navbar:
     left:
     - href: index.qmd
@@ -20,4 +20,4 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    toc: 'true'
+    toc: true

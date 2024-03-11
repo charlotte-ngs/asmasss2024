@@ -17,6 +17,9 @@ l_quarto_yml$website$title <- paste0(vec_title_comp[1], s_title_sep, s_cur_versi
 # fix problem with toc
 l_quarto_yml$format$html$toc <- 'true'
 yaml::write_yaml(l_quarto_yml, file = s_quarto_yml_file)
+# remove quote
+vec_yml <- readLines(file(s_quarto_yml_file))
+writeLines(gsub("'", "", vec_yml, fixed = T), file(s_quarto_yml_file))
 ```
 
 [751-7602-00L  Applied Statistical Methods in Animal Sciences](https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2024S&ansicht=ALLE&lerneinheitId=178644&lang=en)

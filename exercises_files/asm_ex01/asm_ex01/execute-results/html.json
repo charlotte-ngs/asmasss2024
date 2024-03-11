@@ -1,0 +1,16 @@
+{
+  "hash": "e4bc247e1eec3ae4f4d7495e9c70f05d",
+  "result": {
+    "markdown": "---\ntitle: Applied Statistical Methods - Solution 1\nauthor: Peter von Rohr\ndate: 2023-02-27\nfilters: \n  - webr\nparams:\n  doctype:\n    label: 'Document Type'\n    value: 'solution'\n    choices: ['exercise', 'solution', 'notebook']\n  isonline:\n    label: 'Online (y/n)'\n    value: TRUE\n    choices: [TRUE, FALSE]\n---\n\n\n## Problem 1: Regression Analysis\nThe following dataset on body weight and on futher observations on a number of animals is given.\n\n\n::: {#tbl-ex01-p01-data .cell}\n::: {.cell-output-display}\n| Animal| Breast Circumference| Body Weight| BCS| HEI|\n|------:|--------------------:|-----------:|---:|---:|\n|      1|                  176|         471| 5.0| 161|\n|      2|                  177|         463| 4.2| 121|\n|      3|                  178|         481| 4.9| 157|\n|      4|                  179|         470| 3.0| 165|\n|      5|                  179|         496| 6.8| 136|\n|      6|                  180|         491| 4.9| 123|\n|      7|                  181|         518| 4.4| 163|\n|      8|                  182|         511| 4.4| 149|\n|      9|                  183|         510| 3.5| 143|\n|     10|                  184|         541| 4.7| 130|\n:::\n:::\n\n\nThe data can be read from https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_mult_reg.csv. The additional columns contain data on body condition score (BCS) and height (HEI).\n\n### Tasks\n\n* Build a regression model of body weight on the other observations using the dataset given above.\n* Set up the matrix $\\mathbf{X}$ and the vectors $\\mathbf{y}$, $\\mathbf{b}$ and $\\mathbf{e}$.\n* Compute estimate for the regression coefficients in the model defined above.\n\n\n<!-- your-solution-start\n### Your Solution\n\n* Start by building the model which includes the decision of what type of components go into the vector $\\mathbf{b}$. Then write down the model in matrix-vector notation.\n* Determine all the components of $\\mathbf{X}$, $\\mathbf{y}$, $\\mathbf{b}$ and $\\mathbf{e}$.\n* Compute the solution for $\\hat{\\mathbf{b}}\n\n---  your-solution-end -->\n\n\n<!-- master-solution-start -->\n\n### Solution\n\nFirst, the data has to be read\n\n```{web-r}\ns_sol01_p01_path <- \"https://charlotte-ngs.github.io/asmss2023/data/asm_bw_mult_reg.csv\"\ntbl_sol01_p01 <- readr::read_csv(file = s_sol01_p01_path)\n```\n\n",
+    "supporting": [
+      "asm_ex01_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
