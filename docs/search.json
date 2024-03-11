@@ -46,7 +46,7 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-11 08:12:24 CET (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-11 11:15:23 CET (pvr)"
   },
   {
     "objectID": "about.html",
@@ -341,5 +341,89 @@
     "title": "About",
     "section": "",
     "text": "Course notes chapter 3"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html",
+    "href": "slides/l03_flem/l03_flem.html",
+    "title": "Fixed Linear Effects Models",
+    "section": "",
+    "text": "Animal\nBC\nBody Weight\nBCS\nHEI\nBreed\n\n\n\n\n1\n176\n471\n5.0\n161\nAngus\n\n\n2\n177\n463\n4.2\n121\nAngus\n\n\n3\n178\n481\n4.9\n157\nSimmental\n\n\n4\n179\n470\n3.0\n165\nAngus\n\n\n5\n179\n496\n6.8\n136\nSimmental\n\n\n6\n180\n491\n4.9\n123\nSimmental\n\n\n7\n181\n518\n4.4\n163\nLimousin\n\n\n8\n182\n511\n4.4\n149\nLimousin\n\n\n9\n183\n510\n3.5\n143\nLimousin\n\n\n10\n184\n541\n4.7\n130\nLimousin"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#extension-of-dataset-on-body-weight",
+    "href": "slides/l03_flem/l03_flem.html#extension-of-dataset-on-body-weight",
+    "title": "Fixed Linear Effects Models",
+    "section": "",
+    "text": "Animal\nBC\nBody Weight\nBCS\nHEI\nBreed\n\n\n\n\n1\n176\n471\n5.0\n161\nAngus\n\n\n2\n177\n463\n4.2\n121\nAngus\n\n\n3\n178\n481\n4.9\n157\nSimmental\n\n\n4\n179\n470\n3.0\n165\nAngus\n\n\n5\n179\n496\n6.8\n136\nSimmental\n\n\n6\n180\n491\n4.9\n123\nSimmental\n\n\n7\n181\n518\n4.4\n163\nLimousin\n\n\n8\n182\n511\n4.4\n149\nLimousin\n\n\n9\n183\n510\n3.5\n143\nLimousin\n\n\n10\n184\n541\n4.7\n130\nLimousin"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#include-breed-into-model",
+    "href": "slides/l03_flem/l03_flem.html#include-breed-into-model",
+    "title": "Fixed Linear Effects Models",
+    "section": "Include Breed into Model",
+    "text": "Include Breed into Model\n\nBreed has an influence on body weight\nPredictor variables must be numeric\nBreed must be converted to numeric code\nAssignment of codes to breeds is rather arbitrary"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#breed-codes",
+    "href": "slides/l03_flem/l03_flem.html#breed-codes",
+    "title": "Fixed Linear Effects Models",
+    "section": "Breed Codes",
+    "text": "Breed Codes\n\n\n\n\n\nCode\nBreed\n\n\n\n\n1\nAngus\n\n\n2\nLimousin\n\n\n3\nSimmental\n\n\n\n\n\nIn R: Encoding based on alpha-numeric order of factor names\n\nlevels(as.factor(tbl_flem$Breed))\n\n[1] \"Angus\"     \"Limousin\"  \"Simmental\"\n\n\n\nas.integer(as.factor(tbl_flem$Breed))\n\n [1] 1 1 3 1 3 3 2 2 2 2"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#dataset-with-breed-codes",
+    "href": "slides/l03_flem/l03_flem.html#dataset-with-breed-codes",
+    "title": "Fixed Linear Effects Models",
+    "section": "Dataset with Breed Codes",
+    "text": "Dataset with Breed Codes\n\n\n\n\n\nAnimal\nBody Weight\nBreed\nBreed Code\n\n\n\n\n1\n471\nAngus\n1\n\n\n2\n463\nAngus\n1\n\n\n3\n481\nSimmental\n3\n\n\n4\n470\nAngus\n1\n\n\n5\n496\nSimmental\n3\n\n\n6\n491\nSimmental\n3\n\n\n7\n518\nLimousin\n2\n\n\n8\n511\nLimousin\n2\n\n\n9\n510\nLimousin\n2\n\n\n10\n541\nLimousin\n2"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#modelling-effect-of-breed",
+    "href": "slides/l03_flem/l03_flem.html#modelling-effect-of-breed",
+    "title": "Fixed Linear Effects Models",
+    "section": "Modelling Effect of Breed",
+    "text": "Modelling Effect of Breed\n\nSimplification: “breed” is the only predictor\nTake breed code of animal \\(i\\) as the predictor value \\(x_i\\)\nExpected body weight (\\(y_i\\)) for animal \\(i\\)\n\n\\[E(y_i) = b_0 + b_1 x_i\\]"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#problems",
+    "href": "slides/l03_flem/l03_flem.html#problems",
+    "title": "Fixed Linear Effects Models",
+    "section": "Problems",
+    "text": "Problems\n\nNothing wrong with previous model\nBut the following relations might give a hint to some problems\n\n\\[\\begin{equation}\n\\left.\n\\begin{array}{l}\n\\text{Animal i of breed Angus} \\\\\n\\text{Animal j of breed Limousin} \\\\\n\\text{Animal k of breed Simmental}\n\\end{array}\n\\right\\}\n\\rightarrow\n\\left\\{\n\\begin{array}{l}\nE(y_i) = b_0 + b_1 * 1 \\\\\nE(y_j) = b_0 + b_1 * 2 \\\\\nE(y_k) = b_0 + b_1 * 3 \\\\\n\\end{array}\n\\right.\n\\notag\n\\end{equation}\\]\nThis means, for expected differences between body weights of animals of different breeds\n\\[\\begin{align}\nE(y_j) - E(y_i) &= E(y_k) - E(y_j) = b_1 \\notag \\\\\nE(y_k) - E(y_i) &= 2 * b_1  \\notag\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#consequences",
+    "href": "slides/l03_flem/l03_flem.html#consequences",
+    "title": "Fixed Linear Effects Models",
+    "section": "Consequences",
+    "text": "Consequences\n\nAllocation of numerical codes imposes relations between expected values\nRelations might be unreasonable\nRegression analysis only yields estimates for \\(b_0\\) and \\(b_1\\), effects of other breeds are determined\nConclusion: regression on numerical codes of discrete variables are in most cases unreasonable\nException: Estimation of marker effects"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#linear-regression-analysis-for-genomic-data",
+    "href": "slides/l03_flem/l03_flem.html#linear-regression-analysis-for-genomic-data",
+    "title": "Fixed Linear Effects Models",
+    "section": "Linear Regression Analysis for Genomic Data",
+    "text": "Linear Regression Analysis for Genomic Data"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#marker-effect-estimation",
+    "href": "slides/l03_flem/l03_flem.html#marker-effect-estimation",
+    "title": "Fixed Linear Effects Models",
+    "section": "Marker Effect Estimation",
+    "text": "Marker Effect Estimation\n\nAssume: marker and QTL are very close, such they can no longer be distinguished\nFit regression of observations (y) on marker genotypes of locus \\(G\\)\nAssume \\(G_1\\) is the allele with a positive effect on observed trait\nUse the following encoding of marker genotypes to numeric values\n\n\n\n\n\n\nGenotype\nCode\n\n\n\n\n\\(G_1G_1\\)\n2\n\n\n\\(G_1G_2\\)\n1\n\n\n\\(G_2G_2\\)\n0\n\n\n\n\n\n\\(\\rightarrow\\) Biological meaning of genotype code: count number of \\(G_1\\) alleles"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#genomic-regression",
+    "href": "slides/l03_flem/l03_flem.html#genomic-regression",
+    "title": "Fixed Linear Effects Models",
+    "section": "Genomic Regression",
+    "text": "Genomic Regression"
+  },
+  {
+    "objectID": "slides/l03_flem/l03_flem.html#model-fit",
+    "href": "slides/l03_flem/l03_flem.html#model-fit",
+    "title": "Fixed Linear Effects Models",
+    "section": "Model Fit",
+    "text": "Model Fit\n\nTake only homozygous genotypes \\(G_1G1\\) and \\(G_2G_2\\) from dataset\nWhy only homozygotes? Look at extreme values for \\(d\\) with over- and under-dominance\nFit regression line and compute marker effect \\(a\\)\nShift \\(x\\)- axis, such that homozygotes have values \\(-a\\) and \\(a\\)\nCompute \\(d\\) as deviation of heterozygotes from \\(0\\)"
   }
 ]
