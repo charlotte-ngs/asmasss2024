@@ -16,6 +16,10 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 4
 
+## asmasss2024 0.4.2
+
+* Course notes [chapter 3](`r paste0(s_cn_url, "flem.pdf", collapse = "")`)
+
 ## asmasss2024 0.4.1
 
 * Exercise [asm_ex03](`r paste0(s_ex_url, "asm_ex03/asm_ex03.html", collapse = "")`)
