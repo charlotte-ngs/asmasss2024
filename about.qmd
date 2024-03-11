@@ -14,6 +14,12 @@ s_cn_url <- "https://charlotte-ngs.github.io/asmasss2024/cn/"
 s_app_url <- s_cn_url
 ```
 
+# asmas -- ss2024: Week 4
+
+## asmasss2024 0.4.1
+
+* Exercise [asm_ex03](`r paste0(s_ex_url, "asm_ex03/asm_ex03.html", collapse = "")`)
+
 # asmas -- ss2024: Week 3
 
 ## asmasss2024 0.3.1
@@ -35,12 +41,13 @@ s_app_url <- s_cn_url
 * Solutions 1: [html](`r paste0(s_sol_url, "asm_sol01/asm_sol01.html", collapse = "")`) | [pdf](`r paste0(s_sol_url, "asm_sol01/asm_sol01.pdf", collapse = "")`)
 * Solutions 2: [html](`r paste0(s_sol_url, "asm_sol02/asm_sol02.html", collapse = "")`) | [pdf](`r paste0(s_sol_url, "asm_sol02/asm_sol02.pdf", collapse = "")`)
 
+
+# asmas -- ss2024: Week 2
+
 ## asmasss2024 0.2.1
 
 * [OHP-L02](`r paste0(s_ohp_url, "20240226_ohp_l02.pdf", collapse = "")`)
 
-
-# asmas -- ss2024: Week 2
 
 ## asmas - ss2024: v0.2.0
 
