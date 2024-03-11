@@ -1,0 +1,53 @@
+---
+title: Applied Statistical Methods - Solution 3
+author: Peter von Rohr
+date: 2024-03-11
+filters: 
+  - webr
+---
+
+```{r}
+#| label: asm_sol3_setup
+#| echo: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p1 <- paste(s_data_url_root, "asm_width_height.csv", sep = "/")
+```
+
+
+## Problem 1: Simple Linear Regression
+Use the data on `Width` and `Height` that we collected during the class to fit a linear regression model to the data. Use the formula derived in class to compute estimates $\widehat{b}_0$ and $\widehat{b}_1$ for the intercept ($b_0$) and the slope ($b_1$) that define the linear regression line. Verify the obtained results using the function `lm()` in R. 
+
+### Tasks
+
+* Read data from ` `r s_data_url_p1` ` using the function `read.table()`
+
+```{webr-r}
+# read data to data.frame
+
+```
+
+* Compute estimate $\widehat{b}_1$ for the slope $b_1$ using the formula from class
+
+
+```{webr-r}
+# estimate of slope
+
+```
+
+* Compute estimate $\widehat{b}_0$ for the slope $b_0$ using the formula from class
+
+
+```{webr-r}
+# estimate intercept
+
+```
+
+
+* Validation with R
+
+```{webr-r}
+# validation in R using lm()
+
+```
+
+

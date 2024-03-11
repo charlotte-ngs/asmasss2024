@@ -9,16 +9,20 @@ List of exercises
 #| echo: false
 #| results: asis
 s_ex_url <- "https://charlotte-ngs.github.io/asmasss2024/exercises/"
-tbl_ex <- tibble::tibble(Nr = c(1, 2),
+tbl_ex <- tibble::tibble(Nr = c(1, 2, 3),
                          Date = c("2024-02-19",
-                                  "2024-02-26"),
+                                  "2024-02-26",
+                                  "2024-03-11"),
                          Topic = c(
                            paste0("[Introduction](", 
                                   s_ex_url,
                                   "asm_ex01/asm_ex01.html)", collapse = ""),
                            paste0("[Read Data](",
                                   s_ex_url,
-                                  "asm_ex02/asm_ex02.html)", collapse = "")
+                                  "asm_ex02/asm_ex02.html)", collapse = ""),
+                           paste0("[Linear Regression](",
+                                  s_ex_url,
+                                  "asm_ex03/asm_ex03.html)", collapse = "")
                          ))
 knitr::kable(tbl_ex)
 ```
