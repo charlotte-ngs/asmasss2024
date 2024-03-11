@@ -1,0 +1,64 @@
+---
+title: Applied Statistical Methods - Solution 3
+author: Peter von Rohr
+date: 2024-03-11
+filters: 
+  - webr
+---
+
+```{r}
+#| label: asm_sol3_setup
+#| echo: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p1 <- paste(s_data_url_root, "asm_width_height.csv", sep = "/")
+```
+
+
+## Problem 1: Simple Linear Regression
+Use the data on `Width` and `Height` that we collected during the class to fit a linear regression model to the data. Use the formula derived in class to compute estimates $\widehat{b}_0$ and $\widehat{b}_1$ for the intercept ($b_0$) and the slope ($b_1$) that define the linear regression line. Verify the obtained results using the function `lm()` in R. 
+
+### Tasks
+
+* Read data from ` `r s_data_url_p1` ` using the function `read.table()`
+
+```{webr-r}
+# read data to data.frame
+s_data_url_p1 <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_width_height.csv"
+df_width_height <- read.table(s_data_url_p1, header = T, sep = ",")
+df_width_height
+```
+
+* Compute estimate $\widehat{b}_1$ for the slope $b_1$ using the formula from class given as
+
+$$\widehat{b}_1 = \frac{(xy). - N\bar{x}.\bar{y}.}{(x^2). - N\bar{x}.^2}$$
+
+```{webr-r}
+# estimate of slope
+N <- nrow(df_width_height)
+x_y_dot <- sum(df_width_height$Width * df_width_height$Height)
+x_dot_bar <- mean(df_width_height$Width)
+y_dot_bar <- mean(df_width_height$Height)
+x2_dot <- sum(df_width_height$Width^2)
+b_1_hat <- (x_y_dot - N * x_dot_bar * y_dot_bar) / (x2_dot - N * x_dot_bar^2)
+b_1_hat
+```
+
+* Compute estimate $\widehat{b}_0$ for the slope $b_0$ using the formula from class given as
+
+$$\hat{b}_0 = \bar{y}. - \hat{b}_1\bar{x}. $$
+
+```{webr-r}
+# estimate intercept
+b_0_hat <- y_dot_bar - b_1_hat * x_dot_bar
+b_0_hat
+```
+
+
+* Validation with R
+
+```{webr-r}
+# validation in R using lm()
+lm_hei_wid <- lm(Height ~ Width, data = df_width_height)
+summary(lm_hei_wid)
+```
+

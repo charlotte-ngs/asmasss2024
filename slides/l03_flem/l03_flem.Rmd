@@ -1,0 +1,160 @@
+---
+title: Fixed Linear Effects Models
+author: Peter von Rohr
+date: "2023-03-06"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# rmdhelp::show_knit_hook_call() 
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
+```
+
+## Extension of Dataset on Body Weight
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+s_data_dir <- file.path(here::here(), "docs", "data")
+s_flem_path <- file.path(s_data_dir, "asm_bw_flem.csv")
+tbl_flem <- readr::read_csv(file = s_flem_path)
+tbl_flem <- dplyr::rename(tbl_flem, BC = `Breast Circumference`)
+knitr::kable(tbl_flem,
+             booktabs = TRUE,
+             longtable = TRUE,
+             escape = FALSE)
+```
+
+
+## Include Breed into Model
+
+* Breed has an influence on body weight
+* Predictor variables must be numeric
+* Breed must be converted to numeric code
+* Assignment of codes to breeds is rather arbitrary
+
+
+## Breed Codes
+
+```{r, echo=FALSE}
+n_nr_breed <- nlevels(as.factor(tbl_flem$Breed))
+tbl_breed_map <- tibble::tibble(Code = c(1:n_nr_breed),
+                                Breed = c(unique(sort(tbl_flem$Breed))))
+knitr::kable(tbl_breed_map,
+             booktabs = TRUE,
+             longtable = TRUE,
+             escape = FALSE)
+```
+
+In R: Encoding based on alpha-numeric order of factor names
+
+```{r, echo=TRUE}
+levels(as.factor(tbl_flem$Breed))
+```
+
+```{r, echo=TRUE}
+as.integer(as.factor(tbl_flem$Breed))
+```
+
+
+## Dataset with Breed Codes
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+tbl_flem_bcode <- tbl_flem %>%
+  bind_cols(tibble::tibble(`Breed Code` = as.integer(as.factor(tbl_flem$Breed)))) %>%
+  select(Animal, `Body Weight`, Breed, `Breed Code`)
+knitr::kable(tbl_flem_bcode)
+```
+
+
+
+## Modelling Effect of Breed
+
+* Simplification: "breed" is the only predictor
+* Take breed code of animal $i$ as the predictor value $x_i$
+* Expected body weight ($y_i$) for animal $i$
+
+$$E(y_i) = b_0 + b_1 x_i$$
+
+
+## Problems
+
+* Nothing wrong with previous model
+* But the following relations might give a hint to some problems
+
+\begin{equation}
+\left.
+\begin{array}{l}
+\text{Animal i of breed Angus} \\
+\text{Animal j of breed Limousin} \\
+\text{Animal k of breed Simmental}
+\end{array}
+\right\}
+\rightarrow
+\left\{
+\begin{array}{l}
+E(y_i) = b_0 + b_1 * 1 \\
+E(y_j) = b_0 + b_1 * 2 \\
+E(y_k) = b_0 + b_1 * 3 \\
+\end{array}
+\right.
+\notag
+\end{equation}
+
+This means, for expected differences between body weights of animals of different breeds
+
+
+\begin{align}
+E(y_j) - E(y_i) &= E(y_k) - E(y_j) = b_1 \notag \\
+E(y_k) - E(y_i) &= 2 * b_1  \notag
+\end{align}
+
+
+## Consequences
+
+* Allocation of numerical codes imposes relations between expected values
+* Relations might be unreasonable
+* Regression analysis only yields estimates for $b_0$ and $b_1$, effects of other breeds are determined
+* Conclusion: regression on numerical codes of discrete variables are in most cases unreasonable
+* Exception: Estimation of marker effects
+
+
+## Linear Regression Analysis for Genomic Data
+
+```{r datastucturegbv, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmddochelper::use_odg_graphic(ps_path = "odg/datastucturegbv.odg")
+knitr::include_graphics(path = "odg/datastucturegbv.png")
+```
+
+
+## Marker Effect Estimation
+
+* Assume: marker and QTL are very close, such they can no longer be distinguished
+* Fit regression of observations (y) on marker genotypes of locus $G$
+* Assume $G_1$ is the allele with a positive effect on observed trait
+* Use the following encoding of marker genotypes to numeric values
+
+```{r}
+tbl_geno_code <- tibble::tibble(Genotype = c("$G_1G_1$", "$G_1G_2$", "$G_2G_2$"),
+                                Code = c(2, 1, 0))
+knitr::kable(tbl_geno_code, escape = FALSE)
+```
+
+$\rightarrow$ Biological meaning of genotype code: count number of $G_1$ alleles
+
+
+## Genomic Regression
+
+```{r genomic-regression, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/genomic-regression.odg", ps_odg_template = "odg_draw_a4_landscape")
+knitr::include_graphics(path = "odg/genomic-regression.png")
+```
+   
+
+## Model Fit
+
+* Take only homozygous genotypes $G_1G1$ and $G_2G_2$ from dataset
+* Why only homozygotes? Look at extreme values for $d$ with over- and under-dominance
+* Fit regression line and compute marker effect $a$
+* Shift $x$- axis, such that homozygotes have values $-a$ and $a$
+* Compute $d$ as deviation of heterozygotes from $0$

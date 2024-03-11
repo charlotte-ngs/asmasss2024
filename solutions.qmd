@@ -9,8 +9,10 @@ List of solutions to exercises
 #| echo: false
 #| results: asis
 s_sol_url <- "https://charlotte-ngs.github.io/asmasss2024/solutions/"
-tbl_sol <- tibble::tibble(Nr = c(1),
-                         Date = c("2024-02-19"),
+tbl_sol <- tibble::tibble(Nr = c(1, 2, 3),
+                         Date = c("2024-02-19",
+                                  "2024-02-26",
+                                  "2024-03-11"),
                          Topic = c(
                            paste0("Introduction [html](", 
                                   s_sol_url,
@@ -21,7 +23,12 @@ tbl_sol <- tibble::tibble(Nr = c(1),
                                   s_sol_url,
                                   "asm_sol02/asm_sol02.html) | [pdf](",
                                   s_sol_url,
-                                  "asm_sol02/asm_sol02.pdf)", collapse = "")
+                                  "asm_sol02/asm_sol02.pdf)", collapse = ""),
+                           paste0("Simple Linear Regression [html](",
+                                  s_sol_url,
+                                  "asm_sol03/asm_sol03.html) | [pdf](",
+                                  s_sol_url,
+                                  "asm_sol03/asm_sol03.pdf)", collapse = "")
                          ))
 knitr::kable(tbl_sol)
 ```
