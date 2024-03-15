@@ -9,13 +9,15 @@ List of Chapters in the Course Notes
 #| echo: false
 #| results: asis
 s_cn_url <- "https://charlotte-ngs.github.io/asmasss2024/cn/"
-tbl_cn <- tibble::tibble(Nr = c(1, 2, 3),
+tbl_cn <- tibble::tibble(Nr = c(1, 2, 3, 4),
                          Date = c(rep("2024-02-19", 2),
-                                  "2024.03-11"),
+                                  "2024-03-11",
+                                  "2024-03-18"),
                          Topic = c(
                            paste0("[Introduction](", s_cn_url, "intro.pdf)", collapse = ""),
                            paste0("[Linear Regression](", s_cn_url, "linear_regression.pdf)", collapse = ""),
-                           paste0("[Fixed Linear Effects Model](", s_cn_url, "flem.pdf)", collapse = "")
+                           paste0("[Fixed Linear Effects Model](", s_cn_url, "flem.pdf)", collapse = ""),
+                           paste0("[Interactions](", s_cn_url, "interactions.pdf)", collapse = "")
                          ))
 knitr::kable(tbl_cn)
 ```

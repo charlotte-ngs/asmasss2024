@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
 website:
-  title: ASMAS-SS2024 | 0.4.4
+  title: ASMAS-SS2024 | 0.5.0
   navbar:
     left:
     - href: index.qmd
