@@ -1,0 +1,154 @@
+---
+title: "Estimable Functions"
+author: "Peter von Rohr"
+format: beamer
+---
+
+## Estimable Functions
+
+```{r ex-estimable-function-data, echo=FALSE}
+n_nr_rec_est_fun <- 6
+tbl_est_fun <- tibble::tibble(Animal = c(1:n_nr_rec_est_fun),
+                              Breed  = c(rep("Angus", 3), "Limousin", rep("Simmental", 2)),
+                              Observation = c(16, 10, 19, 27, 11, 13))
+
+knitr::kable(tbl_est_fun,
+             booktabs = TRUE,
+             longtable = FALSE,
+             escape = FALSE)
+```
+
+
+## Model
+
+$$\mathbf{y} = \mathbf{Xb} + \mathbf{e}$$
+
+```{r, echo=FALSE, results='asis'}
+# design matrix X
+mat_x_est_fun <- model.matrix(lm(Observation ~ 0 + Breed, data = tbl_est_fun))
+attr(mat_x_est_fun, "assign") <- NULL
+attr(mat_x_est_fun, "contrasts") <- NULL
+colnames(mat_x_est_fun) <- NULL
+mat_x_est_fun <- cbind(matrix(rep(1, nrow(mat_x_est_fun)), ncol = 1), mat_x_est_fun)
+# parameter vector b
+vec_b <- c("\\mu", "\\alpha_1", "\\alpha_2", "\\alpha_3")
+cat("$$\n")
+cat(paste0(rmdhelp::bcolumn_vector(pvec = tbl_est_fun$Observation, ps_name = "\\mathbf{y}"), collapse = '\n'))
+cat("\\text{, }")
+cat(paste0(rmdhelp::bmatrix(pmat = mat_x_est_fun, ps_name = "\\mathbf{X}"), collapse = "\n"))
+cat("\\text{ and }")
+cat(paste0(rmdhelp::bcolumn_vector(pvec = vec_b, ps_name =  "\\mathbf{b}"), collapse = "\n"), "\n")
+cat("$$\n")
+```
+
+
+## Normal Equations
+
+$$ X^TXb^{(0)} = X^Ty$$
+
+```{r, echo=FALSE, results='asis'}
+mat_xtx_est_fun <- crossprod(mat_x_est_fun)
+mat_xty_est_fun <- crossprod(mat_x_est_fun, tbl_est_fun$Observation)
+vec_b0 <- c("\\mu^0", "\\alpha_1^0", "\\alpha_2^0", "\\alpha_3^0")
+cat("$$\n")
+cat(paste0(rmdhelp::bmatrix(mat_xtx_est_fun), collapse = '\n'))
+cat(paste0(rmdhelp::bcolumn_vector(pvec = vec_b0), collapse = '\n'))
+cat(" = ")
+cat(paste0(rmdhelp::bmatrix(pmat = mat_xty_est_fun), collapse = '\n'))
+cat("$$\n")
+```
+
+A solution
+
+```{r, echo=FALSE, results='asis'}
+mat_b_sol <- crossprod(MASS::ginv(mat_xtx_est_fun), mat_xty_est_fun)
+cat(paste0(rmdhelp::bmatrix(round(mat_b_sol, digits = 1), ps_name = "b^{(0)}", ps_env = "$$"), collapse = '\n'))
+
+```
+
+
+## Solutions to Normal Equations
+
+```{r, echo=FALSE}
+# verify given solutions
+mat_b_sol_given <- matrix(c(16, -1, 11, -4, 14, 1, 13, -2, 27, -12, 0, -15,-2982, 2997, 3009, 2994), ncol = 4)
+crossprod(t(mat_x_est_fun), mat_b_sol_given)
+mat_xty_est_fun
+```
+
+```{r est-fun-sol, echo=FALSE}
+tbl_est_fun_sol <- tibble::tibble(`Elements of Solution` = c("$\\mu^0$", "$\\alpha_1^0$", "$\\alpha_2^0$", "$\\alpha_3^0$"),
+                                  `$b_1^0$` = c(16, -1, -4, 11),
+                                  `$b_2^0$` = c(),
+                                  `$b_3^0$` = c(27, -12, -15, 0),
+                                  `$b_4^0$` = c(-2982, 2997, 2994, 3009))
+knitr::kable(tbl_est_fun_sol,
+             booktabs = TRUE,
+             longtable = FALSE,
+             escape = FALSE)
+```
+
+
+## Functions of Solutions
+
+```{r lin-fun-sol, echo=FALSE}
+tbl_lin_fun_sol <- tibble::tibble(`Linear Function` = c("$\\alpha_1^0 - \\alpha_2^0$", "$\\mu^0 + \\alpha_1^0$", "$\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)$"),
+                                  `$b_1^0$` = c(3, 15, 19.5),
+                                  `$b_2^0$` = c(3, 15, 19.5),
+                                  `$b_3^0$` = c(3, 15, 19.5),
+                                  `$b_4^0$` = c(3, 15, 19.5))
+knitr::kable(tbl_lin_fun_sol,
+             booktabs = TRUE,
+             longtable = FALSE,
+             escape = FALSE)
+```
+
+* $\alpha_1^0 - \alpha_2^0$: estimate of the difference between breed effects for Angus and Simmental
+* $\mu^0 + \alpha_1^0$: estimate of the general mean plus the breed effect of Angus
+* $\mu^0 + 1/2(\alpha_2^0 + \alpha_3^0)$: estimate of the general mean plus mean effect of breeds Simmental and Limousin
+
+
+## Definition of Estimable Functions 
+
+$$\mathbf{q}^T\mathbf{b} = \mathbf{t}^TE(\mathbf{y})$$
+
+* Why is $\mathbf{q}^T\mathbf{b}$ estimable? 
+* Based on the defintion of $\mathbf{b}$ and $E(\mathbf{y})$
+
+$$\mathbf{q}^T\mathbf{b} = \mathbf{t}^T\mathbf{XGX}^T\mathbf{y} $$
+where $\mathbf{XGX}^T$ is the same for all choices of $\mathbf{G}$
+
+
+## Examples
+
+$$E(y_{1j}) = \mu + \alpha_1$$
+with $\mathbf{t}^T = \left[\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \end{array}\right]$ and $\mathbf{q}^T = \left[\begin{array}{cccc} 1 & 1 & 0 & 0 \end{array} \right]$
+
+$$E(y_{2j}) = \mu + \alpha_2$$
+
+$$E(y_{3j}) = \mu + \alpha_3$$
+
+## Property
+
+Based on the definition, the following property can be derived
+
+$$\mathbf{q}^t = \mathbf{t}^T\mathbf{X}$$
+with the definition of an estimable function $\mathbf{q}^T\mathbf{b}$, we get 
+
+$$\mathbf{q}^T\mathbf{b} = \mathbf{t}^TE(\mathbf{y})$$
+$$\mathbf{q}^T\mathbf{G}\mathbf{X}^T\mathbf{y} = \mathbf{t}^T\mathbf{X}\mathbf{G}\mathbf{X}^T\mathbf{y}$$
+hence for any $\mathbf{G}$, $\mathbf{q}^t = \mathbf{t}^T\mathbf{X}$ which is helpful to find $\mathbf{q}$ for a given $\mathbf{t}$
+
+## Test
+
+When we want to test whether a certain vector $\mathbf{q}$ can establish an estimable function, we can test wheter
+
+$$\mathbf{q}^T\mathbf{H} = \mathbf{q}^T$$
+
+with $\mathbf{H} = \mathbf{GX}^T\mathbf{X}$
+
+Setting $\mathbf{q}^T = \mathbf{t}^T\mathbf{X}$, we get 
+
+$$\mathbf{q}^T\mathbf{H} = \mathbf{t}^T\mathbf{X}\mathbf{H} = \mathbf{t}^T\mathbf{X} =  \mathbf{q}^T $$
+
+

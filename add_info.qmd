@@ -11,9 +11,10 @@ Further information
 #| echo: false
 #| results: asis
 s_sl_url <- "https://charlotte-ngs.github.io/asmasss2024/slides/"
-tbl_slides <- tibble::tibble(Nr = c(1, 2),
+tbl_slides <- tibble::tibble(Nr = c(1, 2, 3),
                          Date = c("2024-02-19",
-                                  "2024-02-26"),
+                                  "2024-02-26",
+                                  "2024-03-18"),
                          Topic = c(
                            paste0("[Introduction](", 
                                   s_sl_url, 
@@ -22,7 +23,10 @@ tbl_slides <- tibble::tibble(Nr = c(1, 2),
                            paste0("[Linear Regression](",
                                   s_sl_url,
                                   "l02_lin_regr/l02_lin_regr.pdf)",
-                                  collapse = "")
+                                  collapse = ""),
+                           paste0("[Fixed Linear Effects Models](",
+                                  s_sl_url,
+                                  "l03_flem/l03_flem.pdf")
                          ))
 knitr::kable(tbl_slides)
 ```

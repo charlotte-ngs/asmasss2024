@@ -1,7 +1,7 @@
 ---
 title: "Fixed Linear Effects Models"
 author: "Peter von Rohr"
-date: "2024-03-11"
+date: "2024-03-18"
 format: beamer
 ---
 
@@ -213,5 +213,189 @@ $$E(G_1G_1) - E(G_2G_2) = 2a_G$$
 
 ## Example Dataset
 
-* Exercise 3, Problem 1
+* Exercise 5, Problem 1
+
+```{r}
+#| label: table-flem-geno
+#| echo: false
+s_flem_geno <- here::here("docs", "data", "asm_flem_genomic_data.csv")
+tbl_flem_geno <- readr::read_delim(s_flem_geno, delim = ",")
+knitr::kable(head(tbl_flem_geno, 10))
+```
+
+
+## Regression On Dummy Variables
+
+* Cases that are not like genomic data
+* Example with breeds
+* Discrete independent variables are called __Factors__ (e.g. Breed)
+* Different values that a factor can take are called __Levels__
+* Levels for our example factor `Breed` are: `Angus`, `Limousin` and `Simmental`
+
+
+## Levels To Independent Variables
+
+Use "separate" $x$-variable for each level, hence each of the breeds
+
+```{r asm-flem-breed-var-assign, echo=FALSE, results='asis', message=FALSE, warning=FALSE}
+s_data_dir <- file.path(here::here(), "docs", "data")
+s_flem_path <- file.path(s_data_dir, "asm_bw_flem.csv")
+tbl_flem <- readr::read_csv(file = s_flem_path)
+tbl_breed_assign <- tibble::tibble(Breed = c(unique(sort(tbl_flem$Breed))),
+                                   `Independent Variable`= c("$x_1$", "$x_2$", "$x_3$"))
+
+knitr::kable(tbl_breed_assign,
+             booktabs = TRUE,
+             longtable = TRUE,
+             escape = FALSE)
+```
+
+
+
+## Model
+
+* Observation $y_{ij}$ stands for birth weight for animal $j$ in breed $i$
+
+\begin{align} 
+y_{11} &= b_0 + b_1 * 1 + b_2 * 0 + b_3 * 0 + e_{11} \notag \\
+y_{12} &= b_0 + b_1 * 1 + b_2 * 0 + b_3 * 0 + e_{12} \notag \\
+\cdots &= \cdots \notag \\
+y_{33} &= b_0 + b_1 * 0 + b_2 * 0 + b_3 * 1 + e_{33} \notag
+\end{align} 
+
+* Sort animals according to breeds
+
+
+## Sorted Data
+
+```{r}
+#| echo: false
+#| message: false
+library(dplyr)
+tbl_bw_breed <- tbl_bw_bc_breed %>% select(-BC)
+tbl_bw_breed_sorted <- tbl_bw_breed %>% arrange(Breed)
+knitr::kable(tbl_bw_breed_sorted)
+```
+
+
+
+## Matrix - Vector Notation
+
+\begin{equation}
+\mathbf{y} = \mathbf{X}\mathbf{b} + \mathbf{e} \notag
+\end{equation}
+
+with 
+
+* vectors $y$ and $e$ defined as in linear regression
+* vector $b$ contains intercept $b_0$ and separate effects for each breed
+
+$$b = \left[\begin{array}{c}b_0 \\ b_{Angus} \\ b_{Limousin} \\ b_{Simmental} \end{array} \right] $$
+
+
+## Matrix $X$
+
+* Matrix $X$ is an incidence matrix linking factor levels to observations
+
+```{r}
+#| echo: false
+#| results: asis
+mat_X <- model.matrix(lm(`Body Weight` ~ 0 + Breed, data = tbl_bw_breed_sorted))
+attr(mat_X, "assign") <- NULL
+attr(mat_X, "contrasts") <- NULL
+dimnames(mat_X) <- NULL
+mat_X <- cbind(matrix(rep(1, nrow(tbl_bw_breed_sorted)), ncol = 1), mat_X)
+#mat_X
+cat(paste0(rmdhelp::bmatrix(mat_X, ps_name = "X", ps_env = "$$"), collapse = "\n"), "\n")
+```
+
+
+## Models Not Of Full Rank
+
+* Model
+
+\begin{equation}
+\mathbf{y} = \mathbf{X}\mathbf{b} + \mathbf{e} \notag
+\end{equation}
+
+* Least squares normal equations
+
+\begin{equation}
+\mathbf{X}^T\mathbf{X}\mathbf{b}^{(0)} = \mathbf{X}^T\mathbf{y} \notag
+\end{equation}
+
+
+## Solutions
+
+* matrix $\mathbf{X}$ not of full rank, use Matrix::rankMatrix() to check
+* $\mathbf{X}^T\mathbf{X}$ cannot be inverted
+* solution
+
+\begin{equation}
+  \mathbf{b}^{(0)} = (\mathbf{X}^T\mathbf{X})^-\mathbf{X}^T\mathbf{y} \notag
+\end{equation}
+
+where $(\mathbf{X}^T\mathbf{X})^-$ stands for a __generalized inverse__
+
+
+## Generalized Inverse
+
+* matrix $\mathbf{G}$ is a generalized inverse of matrix $\mathbf{A}$, if 
+
+$$\mathbf{AGA} = \mathbf{A}$$
+
+$$(\mathbf{AGA})^T = \mathbf{A}^T$$
+
+* Use `MASS::ginv()` in R
+
+
+## Systems of Equations
+
+* For a consistent system of equations
+
+$$Ax = y$$
+
+* Solution 
+
+$$x = Gy$$
+if $G$ is a generalized inverse of $A$. 
+
+$$x = Gy$$
+$$Ax = AGy$$
+$$Ax = AGAx$$
+
+
+## Non Uniqueness
+
+* Solution $x = Gy$ is not unique
+
+$$\tilde{\mathbf{x}} = \mathbf{Gy} + (\mathbf{GA} - \mathbf{I})\mathbf{z}$$
+yields a different solution for an arbitrary vector $\mathbf{z}$
+
+$$\mathbf{A}\tilde{\mathbf{x}} = \mathbf{A}\mathbf{Gy} + (\mathbf{A}\mathbf{GA} - \mathbf{A})\mathbf{z}$$
+
+## Least Squares Normal Equations
+
+* Instead of $Ax = y$, we have
+
+\begin{equation}
+\mathbf{X}^T\mathbf{X}\mathbf{b}^{(0)} = \mathbf{X}^T\mathbf{y} \notag
+\end{equation}
+
+* With generalized inverse $\mathbf{G}$ of $\mathbf{X}^T\mathbf{X}$
+
+\begin{equation}
+\mathbf{b}^{(0)} = \mathbf{G} \mathbf{X}^T\mathbf{y} \notag
+\end{equation}
+
+is a solution to the least squares normal equations
+
+
+## Parameter Estimator
+
+But $\mathbf{b}^{(0)}$ is not an estimator for the parameter $\mathbf{b}$, because
+
+* it is not unique
+* Expectation $E(\mathbf{b}^{(0)}) = E(\mathbf{G} \mathbf{X}^T\mathbf{y}) = \mathbf{G} \mathbf{X}^T \mathbf{Xb} \ne \mathbf{b}$
+
 
