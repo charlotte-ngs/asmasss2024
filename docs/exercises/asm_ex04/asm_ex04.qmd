@@ -1,5 +1,5 @@
 ---
-title: "Applied Statistical Methods - Solution 4"
+title: "Applied Statistical Methods - Exercise 4"
 author: "Peter von Rohr"
 date: 2024-03-18
 filters: 
@@ -7,7 +7,7 @@ filters:
 ---
 
 ```{r}
-#| label: asm_sol3_p01_setup
+#| label: asm_ex04_p01_setup
 #| include: false
 s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
 s_bw_bc_url <- paste(s_data_url_root, "asm_bw_bc_reg.csv", sep = "/")
@@ -52,7 +52,7 @@ the vector $y$ is taken from the dataset directly
 Use the dataset on `Body Weight` and multiple other predictor variables to fit a multiple linear regression. 
 
 ```{r}
-#| label: asm_sol3_p02_setup
+#| label: asm_ex04_p02_setup
 #| include: false
 s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
 s_bw_mlr_url <- paste(s_data_url_root, "asm_bw_mult_reg.csv", sep = "/")
