@@ -7,7 +7,7 @@ filters:
 ---
 
 ```{r}
-#| label: asm_sol3_setup
+#| label: asm_sol04_p01_setup
 #| include: false
 s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
 s_bw_bc_url <- paste(s_data_url_root, "asm_bw_bc_reg.csv", sep = "/")
@@ -61,7 +61,7 @@ b_hat
 Use the dataset on `Body Weight` and multiple other predictor variables to fit a multiple linear regression. 
 
 ```{r}
-#| label: asm_sol3_p02_setup
+#| label: asm_sol04_p02_setup
 #| include: false
 s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
 s_bw_mlr_url <- paste(s_data_url_root, "asm_bw_mult_reg.csv", sep = "/")
