@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-15 17:32:30 CET (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-18 07:39:41 CET (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Chapter 3.6 on Interactions"
+    "text": "Exercise asm_ex04\n\n\n\n\n\nChapter 3.6 on Interactions"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -144,7 +144,7 @@
     "href": "add_info.html#slides",
     "title": "Additional Information",
     "section": "Slides",
-    "text": "Slides\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression"
+    "text": "Slides\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\n[Fixed Linear Effects Models](https://charlotte-ngs.github.io/asmasss2024/slides/l03_flem/l03_flem.pdf"
   },
   {
     "objectID": "add_info.html#over-head-pictures",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.5.0",
+    "title": "asmasss2024 0.5.1",
     "section": "",
-    "text": "asmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -481,5 +481,82 @@
     "title": "About",
     "section": "",
     "text": "Chapter 3.6 on Interactions"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.5.1",
+    "href": "about.html#asmasss2024-0.5.1",
+    "title": "About",
+    "section": "",
+    "text": "Exercise asm_ex04"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html",
+    "href": "slides/l04_est_fun/l04_est_fun.html",
+    "title": "Estimable Functions",
+    "section": "",
+    "text": "Animal\nBreed\nObservation\n\n\n\n\n1\nAngus\n16\n\n\n2\nAngus\n10\n\n\n3\nAngus\n19\n\n\n4\nLimousin\n27\n\n\n5\nSimmental\n11\n\n\n6\nSimmental\n13"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#estimable-functions",
+    "href": "slides/l04_est_fun/l04_est_fun.html#estimable-functions",
+    "title": "Estimable Functions",
+    "section": "",
+    "text": "Animal\nBreed\nObservation\n\n\n\n\n1\nAngus\n16\n\n\n2\nAngus\n10\n\n\n3\nAngus\n19\n\n\n4\nLimousin\n27\n\n\n5\nSimmental\n11\n\n\n6\nSimmental\n13"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#model",
+    "href": "slides/l04_est_fun/l04_est_fun.html#model",
+    "title": "Estimable Functions",
+    "section": "Model",
+    "text": "Model\n\\[\\mathbf{y} = \\mathbf{Xb} + \\mathbf{e}\\]\n\\[\n\\mathbf{y} = \\begin{bmatrix} 16 \\\\10 \\\\19 \\\\27 \\\\11 \\\\13\\end{bmatrix}\\text{, }\\mathbf{X} = \\begin{bmatrix} 1 & 1 & 0 & 0 \\\\1 & 1 & 0 & 0 \\\\1 & 1 & 0 & 0 \\\\1 & 0 & 1 & 0 \\\\1 & 0 & 0 & 1 \\\\1 & 0 & 0 & 1\\end{bmatrix}\\text{ and }\\mathbf{b} = \\begin{bmatrix} \\mu \\\\\\alpha_1 \\\\\\alpha_2 \\\\\\alpha_3\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#normal-equations",
+    "href": "slides/l04_est_fun/l04_est_fun.html#normal-equations",
+    "title": "Estimable Functions",
+    "section": "Normal Equations",
+    "text": "Normal Equations\n\\[ X^TXb^{(0)} = X^Ty\\]\n\\[\n\\begin{bmatrix} 6 & 3 & 1 & 2 \\\\3 & 3 & 0 & 0 \\\\1 & 0 & 1 & 0 \\\\2 & 0 & 0 & 2\\end{bmatrix}\\begin{bmatrix} \\mu^0 \\\\\\alpha_1^0 \\\\\\alpha_2^0 \\\\\\alpha_3^0\\end{bmatrix} = \\begin{bmatrix} 96 \\\\45 \\\\27 \\\\24\\end{bmatrix}\\]\nA solution\n\\[b^{(0)} = \\begin{bmatrix} 13.5 \\\\1.5 \\\\13.5 \\\\-1.5\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#solutions-to-normal-equations",
+    "href": "slides/l04_est_fun/l04_est_fun.html#solutions-to-normal-equations",
+    "title": "Estimable Functions",
+    "section": "Solutions to Normal Equations",
+    "text": "Solutions to Normal Equations\n\n\n  [,1] [,2] [,3] [,4]\n1   15   15   15   15\n2   15   15   15   15\n3   15   15   15   15\n4   27   27   27   27\n5   12   12   12   12\n6   12   12   12   12\n\n\n     [,1]\n[1,]   96\n[2,]   45\n[3,]   27\n[4,]   24\n\n\n\n\n\n\n\nElements of Solution\n\\(b_1^0\\)\n\\(b_3^0\\)\n\\(b_4^0\\)\n\n\n\n\n\\(\\mu^0\\)\n16\n27\n-2982\n\n\n\\(\\alpha_1^0\\)\n-1\n-12\n2997\n\n\n\\(\\alpha_2^0\\)\n-4\n-15\n2994\n\n\n\\(\\alpha_3^0\\)\n11\n0\n3009"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#functions-of-solutions",
+    "href": "slides/l04_est_fun/l04_est_fun.html#functions-of-solutions",
+    "title": "Estimable Functions",
+    "section": "Functions of Solutions",
+    "text": "Functions of Solutions\n\n\n\n\n\n\n\n\n\n\n\n\nLinear Function\n\\(b_1^0\\)\n\\(b_2^0\\)\n\\(b_3^0\\)\n\\(b_4^0\\)\n\n\n\n\n\\(\\alpha_1^0 - \\alpha_2^0\\)\n3.0\n3.0\n3.0\n3.0\n\n\n\\(\\mu^0 + \\alpha_1^0\\)\n15.0\n15.0\n15.0\n15.0\n\n\n\\(\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)\\)\n19.5\n19.5\n19.5\n19.5\n\n\n\n\n\n\n\\(\\alpha_1^0 - \\alpha_2^0\\): estimate of the difference between breed effects for Angus and Simmental\n\\(\\mu^0 + \\alpha_1^0\\): estimate of the general mean plus the breed effect of Angus\n\\(\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)\\): estimate of the general mean plus mean effect of breeds Simmental and Limousin"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#definition-of-estimable-functions",
+    "href": "slides/l04_est_fun/l04_est_fun.html#definition-of-estimable-functions",
+    "title": "Estimable Functions",
+    "section": "Definition of Estimable Functions",
+    "text": "Definition of Estimable Functions\n\\[\\mathbf{q}^T\\mathbf{b} = \\mathbf{t}^TE(\\mathbf{y})\\]\n\nWhy is \\(\\mathbf{q}^T\\mathbf{b}\\) estimable?\nBased on the defintion of \\(\\mathbf{b}\\) and \\(E(\\mathbf{y})\\)\n\n\\[\\mathbf{q}^T\\mathbf{b} = \\mathbf{t}^T\\mathbf{XGX}^T\\mathbf{y} \\] where \\(\\mathbf{XGX}^T\\) is the same for all choices of \\(\\mathbf{G}\\)"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#examples",
+    "href": "slides/l04_est_fun/l04_est_fun.html#examples",
+    "title": "Estimable Functions",
+    "section": "Examples",
+    "text": "Examples\n\\[E(y_{1j}) = \\mu + \\alpha_1\\] with \\(\\mathbf{t}^T = \\left[\\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \\end{array}\\right]\\) and \\(\\mathbf{q}^T = \\left[\\begin{array}{cccc} 1 & 1 & 0 & 0 \\end{array} \\right]\\)\n\\[E(y_{2j}) = \\mu + \\alpha_2\\]\n\\[E(y_{3j}) = \\mu + \\alpha_3\\]"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#property",
+    "href": "slides/l04_est_fun/l04_est_fun.html#property",
+    "title": "Estimable Functions",
+    "section": "Property",
+    "text": "Property\nBased on the definition, the following property can be derived\n\\[\\mathbf{q}^t = \\mathbf{t}^T\\mathbf{X}\\] with the definition of an estimable function \\(\\mathbf{q}^T\\mathbf{b}\\), we get\n\\[\\mathbf{q}^T\\mathbf{b} = \\mathbf{t}^TE(\\mathbf{y})\\] \\[\\mathbf{q}^T\\mathbf{G}\\mathbf{X}^T\\mathbf{y} = \\mathbf{t}^T\\mathbf{X}\\mathbf{G}\\mathbf{X}^T\\mathbf{y}\\] hence for any \\(\\mathbf{G}\\), \\(\\mathbf{q}^t = \\mathbf{t}^T\\mathbf{X}\\) which is helpful to find \\(\\mathbf{q}\\) for a given \\(\\mathbf{t}\\)"
+  },
+  {
+    "objectID": "slides/l04_est_fun/l04_est_fun.html#test",
+    "href": "slides/l04_est_fun/l04_est_fun.html#test",
+    "title": "Estimable Functions",
+    "section": "Test",
+    "text": "Test\nWhen we want to test whether a certain vector \\(\\mathbf{q}\\) can establish an estimable function, we can test wheter\n\\[\\mathbf{q}^T\\mathbf{H} = \\mathbf{q}^T\\]\nwith \\(\\mathbf{H} = \\mathbf{GX}^T\\mathbf{X}\\)\nSetting \\(\\mathbf{q}^T = \\mathbf{t}^T\\mathbf{X}\\), we get\n\\[\\mathbf{q}^T\\mathbf{H} = \\mathbf{t}^T\\mathbf{X}\\mathbf{H} = \\mathbf{t}^T\\mathbf{X} =  \\mathbf{q}^T \\]"
   }
 ]

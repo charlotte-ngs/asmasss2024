@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Peter von Rohr">
 
-<title>ASMAS-SS2024 | 0.5.0 - Additional Information</title>
+<title>ASMAS-SS2024 | 0.5.0 - Estimable Functions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,8 +61,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -71,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ASMAS-SS2024 | 0.5.0</span>
     </a>
   </div>
@@ -82,27 +85,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./course_notes.html" rel="" target="">
+    <a class="nav-link" href="../../course_notes.html" rel="" target="">
  <span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exercises.html" rel="" target="">
+    <a class="nav-link" href="../../exercises.html" rel="" target="">
  <span class="menu-text">Exercises</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./solutions.html" rel="" target="">
+    <a class="nav-link" href="../../solutions.html" rel="" target="">
  <span class="menu-text">Solutions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./add_info.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../add_info.html" rel="" target="">
  <span class="menu-text">Additional Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -121,23 +124,36 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slides" id="toc-slides" class="nav-link active" data-scroll-target="#slides">Slides</a></li>
-  <li><a href="#over-head-pictures" id="toc-over-head-pictures" class="nav-link" data-scroll-target="#over-head-pictures">Over-Head Pictures</a></li>
+  <li><a href="#estimable-functions" id="toc-estimable-functions" class="nav-link active" data-scroll-target="#estimable-functions">Estimable Functions</a></li>
+  <li><a href="#model" id="toc-model" class="nav-link" data-scroll-target="#model">Model</a></li>
+  <li><a href="#normal-equations" id="toc-normal-equations" class="nav-link" data-scroll-target="#normal-equations">Normal Equations</a></li>
+  <li><a href="#solutions-to-normal-equations" id="toc-solutions-to-normal-equations" class="nav-link" data-scroll-target="#solutions-to-normal-equations">Solutions to Normal Equations</a></li>
+  <li><a href="#functions-of-solutions" id="toc-functions-of-solutions" class="nav-link" data-scroll-target="#functions-of-solutions">Functions of Solutions</a></li>
+  <li><a href="#definition-of-estimable-functions" id="toc-definition-of-estimable-functions" class="nav-link" data-scroll-target="#definition-of-estimable-functions">Definition of Estimable Functions</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
+  <li><a href="#property" id="toc-property" class="nav-link" data-scroll-target="#property">Property</a></li>
+  <li><a href="#test" id="toc-test" class="nav-link" data-scroll-target="#test">Test</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="l04_est_fun.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Additional Information</h1>
+<h1 class="title">Estimable Functions</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Peter von Rohr </p>
+          </div>
+  </div>
     
   
     
@@ -146,73 +162,211 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Further information</p>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<section id="estimable-functions" class="level2">
+<h2 class="anchored" data-anchor-id="estimable-functions">Estimable Functions</h2>
+<div class="cell">
 <div class="cell-output-display">
-<table class="table">
+<table class="table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th style="text-align: right;">Nr</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
+<th style="text-align: right;">Animal</th>
+<th style="text-align: left;">Breed</th>
+<th style="text-align: right;">Observation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;">1</td>
-<td style="text-align: left;">2024-02-19</td>
-<td style="text-align: left;"><a href="https://charlotte-ngs.github.io/asmasss2024/slides/l01_intro/l01_intro.pdf">Introduction</a></td>
+<td style="text-align: left;">Angus</td>
+<td style="text-align: right;">16</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">2</td>
-<td style="text-align: left;">2024-02-26</td>
-<td style="text-align: left;"><a href="https://charlotte-ngs.github.io/asmasss2024/slides/l02_lin_regr/l02_lin_regr.pdf">Linear Regression</a></td>
+<td style="text-align: left;">Angus</td>
+<td style="text-align: right;">10</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">3</td>
-<td style="text-align: left;">2024-03-18</td>
-<td style="text-align: left;">[Fixed Linear Effects Models](https://charlotte-ngs.github.io/asmasss2024/slides/l03_flem/l03_flem.pdf</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="over-head-pictures" class="level2">
-<h2 class="anchored" data-anchor-id="over-head-pictures">Over-Head Pictures</h2>
-<div class="cell-output-display">
-<table class="table">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Nr</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">2024-02-19</td>
-<td style="text-align: left;"><a href="https://charlotte-ngs.github.io/asmasss2024/ohp/20240219_ohp_l01.pdf">Introduction</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">2024-02-26</td>
-<td style="text-align: left;"><a href="https://charlotte-ngs.github.io/asmasss2024/ohp/20240226_ohp_l02.pdf">Regression Residuals</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">2024-03-04</td>
-<td style="text-align: left;"><a href="https://charlotte-ngs.github.io/asmasss2024/ohp/20240304_ohp_l03.pdf">Derive Regression Line</a></td>
+<td style="text-align: left;">Angus</td>
+<td style="text-align: right;">19</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">4</td>
-<td style="text-align: left;">2024-03-11</td>
-<td style="text-align: left;"><a href="https://charlotte-ngs.github.io/asmasss2024/ohp/20240311_ohp_l04.pdf">Multiple Linear Regression</a></td>
+<td style="text-align: left;">Limousin</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Simmental</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Simmental</td>
+<td style="text-align: right;">13</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
+</section>
+<section id="model" class="level2">
+<h2 class="anchored" data-anchor-id="model">Model</h2>
+<p><span class="math display">\[\mathbf{y} = \mathbf{Xb} + \mathbf{e}\]</span></p>
+<p><span class="math display">\[
+\mathbf{y} = \begin{bmatrix} 16 \\10 \\19 \\27 \\11 \\13\end{bmatrix}\text{, }\mathbf{X} = \begin{bmatrix} 1 &amp; 1 &amp; 0 &amp; 0 \\1 &amp; 1 &amp; 0 &amp; 0 \\1 &amp; 1 &amp; 0 &amp; 0 \\1 &amp; 0 &amp; 1 &amp; 0 \\1 &amp; 0 &amp; 0 &amp; 1 \\1 &amp; 0 &amp; 0 &amp; 1\end{bmatrix}\text{ and }\mathbf{b} = \begin{bmatrix} \mu \\\alpha_1 \\\alpha_2 \\\alpha_3\end{bmatrix}
+\]</span></p>
+</section>
+<section id="normal-equations" class="level2">
+<h2 class="anchored" data-anchor-id="normal-equations">Normal Equations</h2>
+<p><span class="math display">\[ X^TXb^{(0)} = X^Ty\]</span></p>
+<p><span class="math display">\[
+\begin{bmatrix} 6 &amp; 3 &amp; 1 &amp; 2 \\3 &amp; 3 &amp; 0 &amp; 0 \\1 &amp; 0 &amp; 1 &amp; 0 \\2 &amp; 0 &amp; 0 &amp; 2\end{bmatrix}\begin{bmatrix} \mu^0 \\\alpha_1^0 \\\alpha_2^0 \\\alpha_3^0\end{bmatrix} = \begin{bmatrix} 96 \\45 \\27 \\24\end{bmatrix}\]</span></p>
+<p>A solution</p>
+<p><span class="math display">\[b^{(0)} = \begin{bmatrix} 13.5 \\1.5 \\13.5 \\-1.5\end{bmatrix}\]</span></p>
+</section>
+<section id="solutions-to-normal-equations" class="level2">
+<h2 class="anchored" data-anchor-id="solutions-to-normal-equations">Solutions to Normal Equations</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  [,1] [,2] [,3] [,4]
+1   15   15   15   15
+2   15   15   15   15
+3   15   15   15   15
+4   27   27   27   27
+5   12   12   12   12
+6   12   12   12   12</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1]
+[1,]   96
+[2,]   45
+[3,]   27
+[4,]   24</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Elements of Solution</th>
+<th style="text-align: right;"><span class="math inline">\(b_1^0\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(b_3^0\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(b_4^0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\mu^0\)</span></td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">-2982</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\alpha_1^0\)</span></td>
+<td style="text-align: right;">-1</td>
+<td style="text-align: right;">-12</td>
+<td style="text-align: right;">2997</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\alpha_2^0\)</span></td>
+<td style="text-align: right;">-4</td>
+<td style="text-align: right;">-15</td>
+<td style="text-align: right;">2994</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\alpha_3^0\)</span></td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3009</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="functions-of-solutions" class="level2">
+<h2 class="anchored" data-anchor-id="functions-of-solutions">Functions of Solutions</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 54%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Linear Function</th>
+<th style="text-align: right;"><span class="math inline">\(b_1^0\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(b_2^0\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(b_3^0\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(b_4^0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\alpha_1^0 - \alpha_2^0\)</span></td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">3.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\mu^0 + \alpha_1^0\)</span></td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">15.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\mu^0 + 1/2(\alpha_2^0 + \alpha_3^0)\)</span></td>
+<td style="text-align: right;">19.5</td>
+<td style="text-align: right;">19.5</td>
+<td style="text-align: right;">19.5</td>
+<td style="text-align: right;">19.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li><span class="math inline">\(\alpha_1^0 - \alpha_2^0\)</span>: estimate of the difference between breed effects for Angus and Simmental</li>
+<li><span class="math inline">\(\mu^0 + \alpha_1^0\)</span>: estimate of the general mean plus the breed effect of Angus</li>
+<li><span class="math inline">\(\mu^0 + 1/2(\alpha_2^0 + \alpha_3^0)\)</span>: estimate of the general mean plus mean effect of breeds Simmental and Limousin</li>
+</ul>
+</section>
+<section id="definition-of-estimable-functions" class="level2">
+<h2 class="anchored" data-anchor-id="definition-of-estimable-functions">Definition of Estimable Functions</h2>
+<p><span class="math display">\[\mathbf{q}^T\mathbf{b} = \mathbf{t}^TE(\mathbf{y})\]</span></p>
+<ul>
+<li>Why is <span class="math inline">\(\mathbf{q}^T\mathbf{b}\)</span> estimable?</li>
+<li>Based on the defintion of <span class="math inline">\(\mathbf{b}\)</span> and <span class="math inline">\(E(\mathbf{y})\)</span></li>
+</ul>
+<p><span class="math display">\[\mathbf{q}^T\mathbf{b} = \mathbf{t}^T\mathbf{XGX}^T\mathbf{y} \]</span> where <span class="math inline">\(\mathbf{XGX}^T\)</span> is the same for all choices of <span class="math inline">\(\mathbf{G}\)</span></p>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p><span class="math display">\[E(y_{1j}) = \mu + \alpha_1\]</span> with <span class="math inline">\(\mathbf{t}^T = \left[\begin{array}{cccccc} 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]\)</span> and <span class="math inline">\(\mathbf{q}^T = \left[\begin{array}{cccc} 1 &amp; 1 &amp; 0 &amp; 0 \end{array} \right]\)</span></p>
+<p><span class="math display">\[E(y_{2j}) = \mu + \alpha_2\]</span></p>
+<p><span class="math display">\[E(y_{3j}) = \mu + \alpha_3\]</span></p>
+</section>
+<section id="property" class="level2">
+<h2 class="anchored" data-anchor-id="property">Property</h2>
+<p>Based on the definition, the following property can be derived</p>
+<p><span class="math display">\[\mathbf{q}^t = \mathbf{t}^T\mathbf{X}\]</span> with the definition of an estimable function <span class="math inline">\(\mathbf{q}^T\mathbf{b}\)</span>, we get</p>
+<p><span class="math display">\[\mathbf{q}^T\mathbf{b} = \mathbf{t}^TE(\mathbf{y})\]</span> <span class="math display">\[\mathbf{q}^T\mathbf{G}\mathbf{X}^T\mathbf{y} = \mathbf{t}^T\mathbf{X}\mathbf{G}\mathbf{X}^T\mathbf{y}\]</span> hence for any <span class="math inline">\(\mathbf{G}\)</span>, <span class="math inline">\(\mathbf{q}^t = \mathbf{t}^T\mathbf{X}\)</span> which is helpful to find <span class="math inline">\(\mathbf{q}\)</span> for a given <span class="math inline">\(\mathbf{t}\)</span></p>
+</section>
+<section id="test" class="level2">
+<h2 class="anchored" data-anchor-id="test">Test</h2>
+<p>When we want to test whether a certain vector <span class="math inline">\(\mathbf{q}\)</span> can establish an estimable function, we can test wheter</p>
+<p><span class="math display">\[\mathbf{q}^T\mathbf{H} = \mathbf{q}^T\]</span></p>
+<p>with <span class="math inline">\(\mathbf{H} = \mathbf{GX}^T\mathbf{X}\)</span></p>
+<p>Setting <span class="math inline">\(\mathbf{q}^T = \mathbf{t}^T\mathbf{X}\)</span>, we get</p>
+<p><span class="math display">\[\mathbf{q}^T\mathbf{H} = \mathbf{t}^T\mathbf{X}\mathbf{H} = \mathbf{t}^T\mathbf{X} =  \mathbf{q}^T \]</span></p>
 
 
 </section>
