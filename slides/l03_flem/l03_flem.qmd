@@ -20,10 +20,9 @@ knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
 #| message: false
 #| warning: false
 s_data_dir <- file.path(here::here(), "docs", "data")
-s_flem_path <- file.path(s_data_dir, "asm_bw_flem.csv")
-tbl_flem <- readr::read_csv(file = s_flem_path)
-tbl_flem <- dplyr::rename(tbl_flem, BC = `Breast Circumference`)
-knitr::kable(tbl_flem,
+s_bw_bc_breed_path <- file.path(s_data_dir, "asm_bw_bc_breed.csv")
+tbl_bw_bc_breed <- readr::read_delim(s_bw_bc_breed_path, delim = ",")
+knitr::kable(tbl_bw_bc_breed,
              booktabs = TRUE,
              longtable = TRUE,
              escape = FALSE)
@@ -42,9 +41,9 @@ knitr::kable(tbl_flem,
 
 ```{r}
 #| echo: false
-n_nr_breed <- nlevels(as.factor(tbl_flem$Breed))
+n_nr_breed <- nlevels(as.factor(tbl_bw_bc_breed$Breed))
 tbl_breed_map <- tibble::tibble(Code = c(1:n_nr_breed),
-                                Breed = c(unique(sort(tbl_flem$Breed))))
+                                Breed = c(unique(sort(tbl_bw_bc_breed$Breed))))
 knitr::kable(tbl_breed_map,
              booktabs = TRUE,
              longtable = TRUE,
@@ -55,12 +54,12 @@ In R: Encoding based on alpha-numeric order of factor names
 
 ```{r}
 #| echo: true
-levels(as.factor(tbl_flem$Breed))
+levels(as.factor(tbl_bw_bc_breed$Breed))
 ```
 
 ```{r}
 #| echo: true
-as.integer(as.factor(tbl_flem$Breed))
+as.integer(as.factor(tbl_bw_bc_breed$Breed))
 ```
 
 
@@ -70,17 +69,17 @@ as.integer(as.factor(tbl_flem$Breed))
 #| warning: false
 #| message: false
 library(dplyr)
-tbl_flem_bcode <- tbl_flem %>%
-  bind_cols(tibble::tibble(`Breed Code` = as.integer(as.factor(tbl_flem$Breed)))) %>%
+tbl_bw_bc_breed_bcode <- tbl_bw_bc_breed %>%
+  bind_cols(tibble::tibble(`Breed Code` = as.integer(as.factor(tbl_bw_bc_breed$Breed)))) %>%
   select(Animal, `Body Weight`, Breed, `Breed Code`)
-knitr::kable(tbl_flem_bcode)
+knitr::kable(tbl_bw_bc_breed_bcode)
 ```
 
 
 
 ## Modelling Effect of Breed
 
-* Simplification: "breed" is the only predictor
+* Simplification: "breed" is the only predictor, ignore BC
 * Take breed code of animal $i$ as the predictor value $x_i$
 * Expected body weight ($y_i$) for animal $i$
 
@@ -167,8 +166,52 @@ knitr::include_graphics(path = "odg/genomic-regression.png")
 
 ## Model Fit
 
-* Take only homozygous genotypes $G_1G1$ and $G_2G_2$ from dataset
+* Take only homozygous genotypes $G_1G_1$ and $G_2G_2$ from dataset
 * Why only homozygotes? Look at extreme values for $d$ with over- and under-dominance
 * Fit regression line and compute marker effect $a$
 * Shift $x$- axis, such that homozygotes have values $-a$ and $a$
 * Compute $d$ as deviation of heterozygotes from $0$
+
+
+## Single Locus Model
+
+```{r single-locus-model, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/single-locus-model.odg")
+knitr::include_graphics(path = "odg/single-locus-model.png")
+```
+ 
+* Assuming $d=0$ $\rightarrow$ genotypic value of $G_1G_2$ between homozygotes
+* Shifting origin to genotypic value of $G_2G_2$
+
+
+## Modified Single Locus Model
+
+```{r mod-slm, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/mod-slm.odg")
+knitr::include_graphics(path = "odg/mod-slm.png")
+```
+
+* Transformation of regression on genotypes to regression on number of "positive" alleles ($G_1$)
+* Relationships imposed by regression are meaningful
+
+
+## Relationships
+
+* Expected value for observation for a given genotype
+
+\begin{align}
+E(G_2G_2) &= b_0 + 0 * a_G \notag \\
+E(G_1G_2) &= b_0 + 1 * a_G \notag \\
+E(G_1G_1) &= b_0 + 2 * a_G \notag
+\end{align}
+
+* Differences
+
+$$E(G_1G_2) - E(G_2G_2) =  E(G_1G_1) - E(G_1G_2) = a_G$$
+$$E(G_1G_1) - E(G_2G_2) = 2a_G$$
+
+
+## Example Dataset
+
+* Exercise 3, Problem 1
+

@@ -1,0 +1,104 @@
+---
+title: "Applied Statistical Methods - Solution 4"
+author: "Peter von Rohr"
+date: 2024-03-18
+filters: 
+  - webr
+---
+
+```{r}
+#| label: asm_sol3_p01_setup
+#| include: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_bw_bc_url <- paste(s_data_url_root, "asm_bw_bc_reg.csv", sep = "/")
+```
+
+## Problem 1: Matrix-Vector Notation
+Use the dataset on `Body Weight` and `Breast Circumference` to show that the matrix-vector notation of the regression model yields the same result as the scalar notation. 
+
+### Tasks
+
+* Read data from `r s_bw_bc_url`
+
+```{webr-r}
+# read data
+
+```
+
+* Set up the matrix $X$ and the vector $y$
+
+```{webr-r}
+# matrix X
+
+```
+
+the vector $y$ is taken from the dataset directly
+
+```{webr-r}
+# vector y
+
+```
+
+
+* Compute the solution for $\hat{b}$
+
+```{webr-r}
+# compute solution
+
+```
+
+
+## Problem 2: Multiple Linear Regression
+Use the dataset on `Body Weight` and multiple other predictor variables to fit a multiple linear regression. 
+
+```{r}
+#| label: asm_sol3_p02_setup
+#| include: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_bw_mlr_url <- paste(s_data_url_root, "asm_bw_mult_reg.csv", sep = "/")
+```
+
+The dataset is available from `r s_bw_mlr_url`. 
+
+## Tasks
+The same as in Problem 1
+
+
+* Read data from `r s_bw_mlr_url`
+
+```{webr-r}
+# read data
+
+```
+
+* Set up the matrix $X$ and the vector $y$
+
+```{webr-r}
+# matrix X
+
+```
+
+the vector $y$ is taken from the dataset directly
+
+```{webr-r}
+# vector y
+
+```
+
+
+* Compute the solution for $\hat{b}$
+
+```{webr-r}
+# compute solution
+
+```
+
+
+* Validation with `lm()` in R
+
+```{webr-r}
+# fit model with lm()
+
+```
+
+

@@ -1,0 +1,127 @@
+---
+title: "Applied Statistical Methods - Solution 4"
+author: "Peter von Rohr"
+date: 2024-03-18
+filters: 
+  - webr
+---
+
+```{r}
+#| label: asm_sol3_setup
+#| include: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_bw_bc_url <- paste(s_data_url_root, "asm_bw_bc_reg.csv", sep = "/")
+```
+
+## Problem 1: Matrix-Vector Notation
+Use the dataset on `Body Weight` and `Breast Circumference` to show that the matrix-vector notation of the regression model yields the same result as the scalar notation. 
+
+### Tasks
+
+* Read data from `r s_bw_bc_url`
+
+```{webr-r}
+# read data
+s_bw_bc_url <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_reg.csv"
+df_bw_bc <- read.table(s_bw_bc_url, header = T, sep = ",")
+df_bw_bc
+```
+
+* Set up the matrix $X$ and the vector $y$
+
+```{webr-r}
+# matrix X
+X <- matrix(data = c(rep(1, nrow(df_bw_bc)), 
+                     df_bw_bc$Breast.Circumference), 
+            nrow = nrow(df_bw_bc), ncol = 2)
+X
+```
+
+the vector $y$ is taken from the dataset directly
+
+```{webr-r}
+# vector y
+y <- df_bw_bc$Body.Weight
+y
+```
+
+
+* Compute the solution for $\hat{b}$
+
+```{webr-r}
+# compute solution
+xtx <- crossprod(X)
+xty <- crossprod(X,y)
+b_hat <- solve(xtx,xty)
+b_hat
+```
+
+
+## Problem 2: Multiple Linear Regression
+Use the dataset on `Body Weight` and multiple other predictor variables to fit a multiple linear regression. 
+
+```{r}
+#| label: asm_sol3_p02_setup
+#| include: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_bw_mlr_url <- paste(s_data_url_root, "asm_bw_mult_reg.csv", sep = "/")
+```
+
+The dataset is available from `r s_bw_mlr_url`. 
+
+## Tasks
+The same as in Problem 1
+
+
+* Read data from `r s_bw_mlr_url`
+
+```{webr-r}
+# read data
+s_bw_mlr_url <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_mult_reg.csv"
+df_bw_mlr <- read.table(s_bw_mlr_url, header = T, sep = ",")
+df_bw_mlr
+```
+
+* Set up the matrix $X$ and the vector $y$
+
+```{webr-r}
+# matrix X
+X <- matrix(data = c(rep(1, nrow(df_bw_mlr)),
+                     df_bw_mlr$Breast.Circumference,
+                     df_bw_mlr$BCS,
+                     df_bw_mlr$HEI),
+            nrow = nrow(df_bw_mlr))
+X
+```
+
+the vector $y$ is taken from the dataset directly
+
+```{webr-r}
+# vector y
+# vector y
+y <- df_bw_mlr$Body.Weight
+y
+```
+
+
+* Compute the solution for $\hat{b}$
+
+```{webr-r}
+# compute solution
+xtx <- crossprod(X)
+xty <- crossprod(X,y)
+b_hat <- solve(xtx,xty)
+b_hat
+```
+
+
+* Validation with `lm()` in R
+
+```{webr-r}
+# fit model with lm()
+lm_bw_mlr <- lm(Body.Weight ~ Breast.Circumference + BCS + HEI, 
+                data = df_bw_mlr)
+summary(lm_bw_mlr)
+```
+
+
