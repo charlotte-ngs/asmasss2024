@@ -26,7 +26,7 @@ tbl_slides <- tibble::tibble(Nr = c(1, 2, 3),
                                   collapse = ""),
                            paste0("[Fixed Linear Effects Models](",
                                   s_sl_url,
-                                  "l03_flem/l03_flem.pdf")
+                                  "l03_flem/l03_flem.pdf)")
                          ))
 knitr::kable(tbl_slides)
 ```
