@@ -19,6 +19,7 @@ s_app_url <- s_cn_url
 ## asmasss2024 0.5.1
 
 * Exercise [asm_ex04](`r paste0(s_ex_url, "asm_ex04/asm_ex04.html", collapse = "")`)
+* Slides [l03_flem](`r paste0(s_sl_url, "l03_flem/l03_flem.pdf", collapse = "")`)
 
 ## asmasss2024 0.5.0
 
