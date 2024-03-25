@@ -74,14 +74,20 @@ cat(paste0(rmdhelp::bmatrix(round(mat_b_sol, digits = 1), ps_name = "b^{(0)}", p
 mat_b_sol_given <- matrix(c(16, -1, 11, -4, 14, 1, 13, -2, 27, -12, 0, -15,-2982, 2997, 3009, 2994), ncol = 4)
 #crossprod(t(mat_x_est_fun), mat_b_sol_given)
 #mat_xty_est_fun
+
+n_nr_sol <- nrow(mat_b_sol)
+mat_G <- MASS::ginv(mat_xtx_est_fun)
+vec_z <- rep(1, n_nr_sol)
+mat_b_sol_1 <- mat_b_sol + (crossprod(mat_G, mat_xtx_est_fun) - diag(nrow = n_nr_sol)) %*% vec_z
+vec_z <- 1:n_nr_sol
+mat_b_sol_2 <- mat_b_sol + (crossprod(mat_G, mat_xtx_est_fun) - diag(nrow = n_nr_sol)) %*% vec_z
 ```
 
 ```{r est-fun-sol, echo=FALSE}
 tbl_est_fun_sol <- tibble::tibble(`Elements of Solution` = c("$\\mu^0$", "$\\alpha_1^0$", "$\\alpha_2^0$", "$\\alpha_3^0$"),
-                                  `$b_1^0$` = c(16, -1, -4, 11),
-                                  `$b_2^0$` = c(),
-                                  `$b_3^0$` = c(27, -12, -15, 0),
-                                  `$b_4^0$` = c(-2982, 2997, 2994, 3009))
+                                  `$b_1^0$` = mat_b_sol_1[,1],
+                                  `$b_2^0$` = mat_b_sol[,1],
+                                  `$b_3^0$` = mat_b_sol_2[,1])
 knitr::kable(tbl_est_fun_sol,
              booktabs = TRUE,
              longtable = FALSE,
@@ -93,10 +99,15 @@ knitr::kable(tbl_est_fun_sol,
 
 ```{r lin-fun-sol, echo=FALSE}
 tbl_lin_fun_sol <- tibble::tibble(`Linear Function` = c("$\\alpha_1^0 - \\alpha_2^0$", "$\\mu^0 + \\alpha_1^0$", "$\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)$"),
-                                  `$b_1^0$` = c(3, 15, 19.5),
-                                  `$b_2^0$` = c(3, 15, 19.5),
-                                  `$b_3^0$` = c(3, 15, 19.5),
-                                  `$b_4^0$` = c(3, 15, 19.5))
+                                  `$b_1^0$` = c(mat_b_sol_1[2,1]-mat_b_sol_1[3,1], 
+                                                mat_b_sol_1[1,1] + mat_b_sol_1[2,1], 
+                                                mat_b_sol_1[1,1] + 0.5 * (mat_b_sol_1[3,1] + mat_b_sol_1[4,1])),
+                                  `$b_2^0$` = c(mat_b_sol[2,1]-mat_b_sol[3,1], 
+                                                mat_b_sol[1,1] + mat_b_sol[2,1], 
+                                                mat_b_sol[1,1] + 0.5 * (mat_b_sol[3,1] + mat_b_sol[4,1])),
+                                  `$b_3^0$` = c(mat_b_sol_2[2,1]-mat_b_sol_2[3,1], 
+                                                mat_b_sol_2[1,1] + mat_b_sol_2[2,1], 
+                                                mat_b_sol_2[1,1] + 0.5 * (mat_b_sol_2[3,1] + mat_b_sol_2[4,1])))
 knitr::kable(tbl_lin_fun_sol,
              booktabs = TRUE,
              longtable = FALSE,
