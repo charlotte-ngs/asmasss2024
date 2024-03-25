@@ -254,13 +254,14 @@ knitr::kable(tbl_breed_assign,
 
 ## Model
 
+* Instead of $E(y_i) = b_0 + b_1 * x_i$
 * Observation $y_{ij}$ stands for birth weight for animal $j$ in breed $i$
 
 \begin{align} 
-y_{11} &= b_0 + b_1 * 1 + b_2 * 0 + b_3 * 0 + e_{11} \notag \\
-y_{12} &= b_0 + b_1 * 1 + b_2 * 0 + b_3 * 0 + e_{12} \notag \\
+E(y_{11}) &= b_0 + b_1 * 1 + b_2 * 0 + b_3 * 0 \notag \\
+E(y_{12)} &= b_0 + b_1 * 1 + b_2 * 0 + b_3 * 0 \notag \\
 \cdots &= \cdots \notag \\
-y_{33} &= b_0 + b_1 * 0 + b_2 * 0 + b_3 * 1 + e_{33} \notag
+E(y_{33}) &= b_0 + b_1 * 0 + b_2 * 0 + b_3 * 1 \notag
 \end{align} 
 
 * Sort animals according to breeds
@@ -353,26 +354,26 @@ $$(\mathbf{AGA})^T = \mathbf{A}^T$$
 
 * For a consistent system of equations
 
-$$Ax = y$$
+$$Ab = r$$
 
 * Solution 
 
-$$x = Gy$$
+$$b = Gr$$
 if $G$ is a generalized inverse of $A$. 
 
-$$x = Gy$$
-$$Ax = AGy$$
-$$Ax = AGAx$$
+$$b = Gr$$
+$$Ab = AGr$$
+$$Ab = AGAb$$
 
 
 ## Non Uniqueness
 
-* Solution $x = Gy$ is not unique
+* Solution $b = Gr$ is not unique
 
-$$\tilde{\mathbf{x}} = \mathbf{Gy} + (\mathbf{GA} - \mathbf{I})\mathbf{z}$$
+$$\tilde{\mathbf{b}} = \mathbf{Gr} + (\mathbf{GA} - \mathbf{I})\mathbf{z}$$
 yields a different solution for an arbitrary vector $\mathbf{z}$
 
-$$\mathbf{A}\tilde{\mathbf{x}} = \mathbf{A}\mathbf{Gy} + (\mathbf{A}\mathbf{GA} - \mathbf{A})\mathbf{z}$$
+$$\mathbf{A}\tilde{\mathbf{b}} = \mathbf{A}\mathbf{Gr} + (\mathbf{A}\mathbf{GA} - \mathbf{A})\mathbf{z}$$
 
 ## Least Squares Normal Equations
 
@@ -398,4 +399,5 @@ But $\mathbf{b}^{(0)}$ is not an estimator for the parameter $\mathbf{b}$, becau
 * it is not unique
 * Expectation $E(\mathbf{b}^{(0)}) = E(\mathbf{G} \mathbf{X}^T\mathbf{y}) = \mathbf{G} \mathbf{X}^T \mathbf{Xb} \ne \mathbf{b}$
 
+$\rightarrow$ Require different concept: estimable functions
 

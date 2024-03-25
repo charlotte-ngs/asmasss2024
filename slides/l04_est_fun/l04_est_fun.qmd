@@ -72,8 +72,8 @@ cat(paste0(rmdhelp::bmatrix(round(mat_b_sol, digits = 1), ps_name = "b^{(0)}", p
 ```{r, echo=FALSE}
 # verify given solutions
 mat_b_sol_given <- matrix(c(16, -1, 11, -4, 14, 1, 13, -2, 27, -12, 0, -15,-2982, 2997, 3009, 2994), ncol = 4)
-crossprod(t(mat_x_est_fun), mat_b_sol_given)
-mat_xty_est_fun
+#crossprod(t(mat_x_est_fun), mat_b_sol_given)
+#mat_xty_est_fun
 ```
 
 ```{r est-fun-sol, echo=FALSE}

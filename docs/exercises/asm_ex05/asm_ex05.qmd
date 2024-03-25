@@ -1,0 +1,42 @@
+---
+title: "Applied Statistical Methods - Solution 5"
+author: "Peter von Rohr"
+date: 2024-03-25
+filters: 
+  - webr
+---
+
+```{r}
+#| label: asm_ex05_p01_setup
+#| include: false
+s_ex5p01_geno_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_flem_genomic_data.csv"
+```
+
+## Problem 1: Linear Regression on Genomic Information
+Use the genomic dataset given at `r s_ex5p01_geno_data_path` to fit a linear regression model of the given observation on the two genomic locations. Assume that both loci have a purely linear effect on the observation. 
+
+
+### Tasks
+
+* Read the data from `r s_ex5p01_geno_data_path`
+
+```{webr-r}
+# read data
+
+```
+
+
+* Count number of favorable alleles $G_1$ and $H_1$
+
+```{webr-r}
+# counting number of favorable alleles
+
+```
+
+* Fit regression of observation on count of favorable alleles
+
+```{webr-r}
+# fit linear model of observation on allele counts
+
+```
+
