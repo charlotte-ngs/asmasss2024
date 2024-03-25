@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-24 06:57:31 CET (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-25 07:37:40 CET (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Overhead ohp_l05\n\n\n\n\n\nSolution asm_sol04\n\n\n\n\n\nExercise asm_ex04\nSlides l03_flem\n\n\n\n\n\nChapter 3.6 on Interactions"
+    "text": "Slides on estimable functions l04_est_fun"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -144,7 +144,7 @@
     "href": "add_info.html#slides",
     "title": "Additional Information",
     "section": "Slides",
-    "text": "Slides\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models"
+    "text": "Slides\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions"
   },
   {
     "objectID": "add_info.html#over-head-pictures",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.5.3",
+    "title": "asmasss2024 0.6.0",
     "section": "",
-    "text": "asmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -479,15 +479,15 @@
     "objectID": "about.html#asmasss2024-0.5.0",
     "href": "about.html#asmasss2024-0.5.0",
     "title": "About",
-    "section": "",
-    "text": "Chapter 3.6 on Interactions"
+    "section": "asmasss2024 0.5.0",
+    "text": "asmasss2024 0.5.0\n\nChapter 3.6 on Interactions"
   },
   {
     "objectID": "about.html#asmasss2024-0.5.1",
     "href": "about.html#asmasss2024-0.5.1",
     "title": "About",
-    "section": "",
-    "text": "Exercise asm_ex04\nSlides l03_flem"
+    "section": "asmasss2024 0.5.1",
+    "text": "asmasss2024 0.5.1\n\nExercise asm_ex04\nSlides on fixed linear effects models l03_flem"
   },
   {
     "objectID": "slides/l04_est_fun/l04_est_fun.html",
@@ -570,15 +570,15 @@
     "objectID": "about.html#asmasss2024-0.5.2",
     "href": "about.html#asmasss2024-0.5.2",
     "title": "About",
-    "section": "",
-    "text": "Solution asm_sol04"
+    "section": "asmasss2024 0.5.2",
+    "text": "asmasss2024 0.5.2\n\nSolution asm_sol04"
   },
   {
     "objectID": "about.html#asmasss2024-0.5.3",
     "href": "about.html#asmasss2024-0.5.3",
     "title": "About",
-    "section": "",
-    "text": "Overhead ohp_l05"
+    "section": "asmasss2024 0.5.3",
+    "text": "asmasss2024 0.5.3\n\nOverhead ohp_l05"
   },
   {
     "objectID": "ohp/20240318_ohp_l05/20240318_ohp_l05.html#ohp-picture-2",
@@ -628,5 +628,12 @@
     "title": "ASMAS-SS2024 | 0.5.2",
     "section": "OHP Picture 8",
     "text": "OHP Picture 8"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.6.0",
+    "href": "about.html#asmasss2024-0.6.0",
+    "title": "About",
+    "section": "",
+    "text": "Slides on estimable functions l04_est_fun"
   }
 ]

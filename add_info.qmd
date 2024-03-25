@@ -11,10 +11,11 @@ Further information
 #| echo: false
 #| results: asis
 s_sl_url <- "https://charlotte-ngs.github.io/asmasss2024/slides/"
-tbl_slides <- tibble::tibble(Nr = c(1, 2, 3),
+tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4),
                          Date = c("2024-02-19",
                                   "2024-02-26",
-                                  "2024-03-18"),
+                                  "2024-03-18",
+                                  "2024-03-25"),
                          Topic = c(
                            paste0("[Introduction](", 
                                   s_sl_url, 
@@ -27,6 +28,10 @@ tbl_slides <- tibble::tibble(Nr = c(1, 2, 3),
                            paste0("[Fixed Linear Effects Models](",
                                   s_sl_url,
                                   "l03_flem/l03_flem.pdf)",
+                                  collapse = ""),
+                           paste0("[Estimable Functions](",
+                                  s_sl_url,
+                                  "l04_est_fun/l04_est_fun.pdf)",
                                   collapse = "")
                          ))
 knitr::kable(tbl_slides)
