@@ -74,20 +74,23 @@ cat(paste0(rmdhelp::bmatrix(round(mat_b_sol, digits = 1), ps_name = "b^{(0)}", p
 mat_b_sol_given <- matrix(c(16, -1, 11, -4, 14, 1, 13, -2, 27, -12, 0, -15,-2982, 2997, 3009, 2994), ncol = 4)
 #crossprod(t(mat_x_est_fun), mat_b_sol_given)
 #mat_xty_est_fun
-
-n_nr_sol <- nrow(mat_b_sol)
+# generate some random solutions
+set.seed(2503)
 mat_G <- MASS::ginv(mat_xtx_est_fun)
-vec_z <- rep(1, n_nr_sol)
-mat_b_sol_1 <- mat_b_sol + (crossprod(mat_G, mat_xtx_est_fun) - diag(nrow = n_nr_sol)) %*% vec_z
-vec_z <- 1:n_nr_sol
-mat_b_sol_2 <- mat_b_sol + (crossprod(mat_G, mat_xtx_est_fun) - diag(nrow = n_nr_sol)) %*% vec_z
+mat_b_sol <- crossprod(mat_G, mat_xty_est_fun)
+n_nr_sol <- nrow(mat_b_sol)
+n_nr_vec_b <- 3
+mat_z <- matrix(sample(1:n_nr_sol, n_nr_sol * n_nr_vec_b, replace = T), nrow = n_nr_sol)
+mat_b_sol_rand <- matrix(mat_b_sol, nrow = n_nr_sol, ncol = n_nr_vec_b) + 
+  (crossprod(mat_G, mat_xtx_est_fun) - diag(nrow = n_nr_sol)) %*% mat_z
 ```
 
 ```{r est-fun-sol, echo=FALSE}
 tbl_est_fun_sol <- tibble::tibble(`Elements of Solution` = c("$\\mu^0$", "$\\alpha_1^0$", "$\\alpha_2^0$", "$\\alpha_3^0$"),
-                                  `$b_1^0$` = mat_b_sol_1[,1],
-                                  `$b_2^0$` = mat_b_sol[,1],
-                                  `$b_3^0$` = mat_b_sol_2[,1])
+                                  `$b_1^0$` = mat_b_sol[,1],
+                                  `$b_2^0$` = mat_b_sol_rand[,1],
+                                  `$b_3^0$` = mat_b_sol_rand[,2],
+                                  `$b_4^0$` = mat_b_sol_rand[,3])
 knitr::kable(tbl_est_fun_sol,
              booktabs = TRUE,
              longtable = FALSE,
@@ -99,15 +102,18 @@ knitr::kable(tbl_est_fun_sol,
 
 ```{r lin-fun-sol, echo=FALSE}
 tbl_lin_fun_sol <- tibble::tibble(`Linear Function` = c("$\\alpha_1^0 - \\alpha_2^0$", "$\\mu^0 + \\alpha_1^0$", "$\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)$"),
-                                  `$b_1^0$` = c(mat_b_sol_1[2,1]-mat_b_sol_1[3,1], 
-                                                mat_b_sol_1[1,1] + mat_b_sol_1[2,1], 
-                                                mat_b_sol_1[1,1] + 0.5 * (mat_b_sol_1[3,1] + mat_b_sol_1[4,1])),
-                                  `$b_2^0$` = c(mat_b_sol[2,1]-mat_b_sol[3,1], 
+                                  `$b_1^0$` = c(mat_b_sol[2,1]-mat_b_sol[3,1], 
                                                 mat_b_sol[1,1] + mat_b_sol[2,1], 
                                                 mat_b_sol[1,1] + 0.5 * (mat_b_sol[3,1] + mat_b_sol[4,1])),
-                                  `$b_3^0$` = c(mat_b_sol_2[2,1]-mat_b_sol_2[3,1], 
-                                                mat_b_sol_2[1,1] + mat_b_sol_2[2,1], 
-                                                mat_b_sol_2[1,1] + 0.5 * (mat_b_sol_2[3,1] + mat_b_sol_2[4,1])))
+                                  `$b_2^0$` = c(mat_b_sol_rand[2,1]-mat_b_sol_rand[3,1], 
+                                                mat_b_sol_rand[1,1] + mat_b_sol_rand[2,1], 
+                                                mat_b_sol_rand[1,1] + 0.5 * (mat_b_sol_rand[3,1] + mat_b_sol_rand[4,1])),
+                                  `$b_3^0$` = c(mat_b_sol_rand[2,2]-mat_b_sol_rand[3,2], 
+                                                mat_b_sol_rand[1,2] + mat_b_sol_rand[2,2], 
+                                                mat_b_sol_rand[1,2] + 0.5 * (mat_b_sol_rand[3,2] + mat_b_sol_rand[4,2])),
+                                  `$b_4^0$` = c(mat_b_sol_rand[2,3]-mat_b_sol_rand[3,3], 
+                                                mat_b_sol_rand[1,3] + mat_b_sol_rand[2,3], 
+                                                mat_b_sol_rand[1,3] + 0.5 * (mat_b_sol_rand[3,3] + mat_b_sol_rand[4,3])))
 knitr::kable(tbl_lin_fun_sol,
              booktabs = TRUE,
              longtable = FALSE,
@@ -126,11 +132,15 @@ $$\mathbf{q}^T\mathbf{b} = \mathbf{t}^TE(\mathbf{y})$$
 * Why is $\mathbf{q}^T\mathbf{b}$ estimable? 
 * Based on the defintion of $\mathbf{b}$ and $E(\mathbf{y})$
 
-$$\mathbf{q}^T\mathbf{b} = \mathbf{t}^T\mathbf{XGX}^T\mathbf{y} $$
+$$\mathbf{q}^T\mathbf{b} = \mathbf{t}^T\mathbf{XGX}^T\mathbf{b} \leftrightarrow 
+\mathbf{q}^T = \mathbf{t}^T\mathbf{X}$$
 where $\mathbf{XGX}^T$ is the same for all choices of $\mathbf{G}$
 
 
 ## Examples
+
+$$E(y_{1j} - y_{2j}) = \alpha_1 - \alpha_2$$
+with $\mathbf{t}^T = \left[\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \end{array}\right]$ and $\mathbf{q}^T = \left[\begin{array}{cccc} 0 & 1 & -1 & 0 \end{array} \right]$
 
 $$E(y_{1j}) = \mu + \alpha_1$$
 with $\mathbf{t}^T = \left[\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \end{array}\right]$ and $\mathbf{q}^T = \left[\begin{array}{cccc} 1 & 1 & 0 & 0 \end{array} \right]$

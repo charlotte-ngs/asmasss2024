@@ -17,6 +17,10 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 6
 
+## asmasss2024 0.6.1
+
+* Overhead [ohp_l06](`r paste0(s_ohp_url, "20240325_ohp_l06.pdf", collapse = "")`)
+
 ## asmasss2024 0.6.0
 
 * Slides on estimable functions [l04_est_fun](`r paste0(s_sl_url, "l04_est_fun/l04_est_fun.pdf", collapse = "")`)
