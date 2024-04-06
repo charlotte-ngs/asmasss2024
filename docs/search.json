@@ -39,21 +39,21 @@
     "href": "index.html#lecture-program",
     "title": "Welcome to the Website of",
     "section": "Lecture Program",
-    "text": "Lecture Program\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nLecture Mode\n\n\n\n\n1\n19.02\nIntroduction to Applied Statistical Methods in Animal Science\n\n\n\n2\n26.02\nLinear Regression Models\n\n\n\n3\n04.03\nLinear Fixed Effect Models\n\n\n\n4\n11.03\nModel Selection\n\n\n\n5\n18.03\nPedigree BLUP\n\n\n\n6\n25.03\nVariance Components\n\n\n\n7\n01.04\nEaster Monday (Ostermontag)\n\n\n\n8\n08.04\nGBLUP - Marker-Effects Models\n\n\n\n9\n15.04\nGBLUP - Breeding Value Models\n\n\n\n10\n22.04\nLasso\n\n\n\n11\n29.04\nSVM\n\n\n\n12\n06.05\nBayesian Approaches in Linear Mixed Effects Models\n\n\n\n13\n13.05\nTest Exam\n\n\n\n14\n20.05\nPentcote Monday (Pfingstmontag)\n\n\n\n15\n27.05\nExam"
+    "text": "Lecture Program\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nLecture Mode\n\n\n\n\n1\n19.02\nIntroduction to Applied Statistical Methods in Animal Science\n\n\n\n2\n26.02\nLinear Regression Models\n\n\n\n3\n04.03\nLinear Fixed Effect Models\n\n\n\n4\n11.03\nModel Selection\n\n\n\n5\n18.03\nPedigree BLUP\n\n\n\n6\n25.03\nVariance Components\n\n\n\n7\n01.04\nEaster Monday (Ostermontag)\n\n\n\n8\n08.04\nGBLUP - Marker-Effects Models\n\n\n\n9\n15.04\nGBLUP - Breeding Value Models\n\n\n\n10\n22.04\nLasso\n\n\n\n11\n29.04\nSVM\n\n\n\n12\n06.05\nBayesian Approaches in Linear Mixed Effects Models\n\n\n\n13\n13.05\nTest Exam\n\n\n\n14\n20.05\nPentcote Monday (Pfingstmontag)\n\n\n\n15\n27.05\nExam"
   },
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-03-25 07:38:27 CET (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-06 07:51:08 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Slides on estimable functions l04_est_fun"
+    "text": "Overhead ohp_l06\n\n\n\n\n\nSlides on estimable functions l04_est_fun"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -144,14 +144,14 @@
     "href": "add_info.html#slides",
     "title": "Additional Information",
     "section": "Slides",
-    "text": "Slides\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions"
+    "text": "Slides\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions"
   },
   {
     "objectID": "add_info.html#over-head-pictures",
     "href": "add_info.html#over-head-pictures",
     "title": "Additional Information",
     "section": "Over-Head Pictures",
-    "text": "Over-Head Pictures\n\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models"
+    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations"
   },
   {
     "objectID": "ohp/20240219_ohp_l01/20240219_ohp_l01.html#ohp-picture-2",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.6.0",
+    "title": "asmasss2024 0.6.1",
     "section": "",
-    "text": "asmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -522,28 +522,28 @@
     "href": "slides/l04_est_fun/l04_est_fun.html#solutions-to-normal-equations",
     "title": "Estimable Functions",
     "section": "Solutions to Normal Equations",
-    "text": "Solutions to Normal Equations\n\n\n  [,1] [,2] [,3] [,4]\n1   15   15   15   15\n2   15   15   15   15\n3   15   15   15   15\n4   27   27   27   27\n5   12   12   12   12\n6   12   12   12   12\n\n\n     [,1]\n[1,]   96\n[2,]   45\n[3,]   27\n[4,]   24\n\n\n\n\n\n\n\nElements of Solution\n\\(b_1^0\\)\n\\(b_3^0\\)\n\\(b_4^0\\)\n\n\n\n\n\\(\\mu^0\\)\n16\n27\n-2982\n\n\n\\(\\alpha_1^0\\)\n-1\n-12\n2997\n\n\n\\(\\alpha_2^0\\)\n-4\n-15\n2994\n\n\n\\(\\alpha_3^0\\)\n11\n0\n3009"
+    "text": "Solutions to Normal Equations\n\n\n\n\n\nElements of Solution\n\\(b_1^0\\)\n\\(b_2^0\\)\n\\(b_3^0\\)\n\\(b_4^0\\)\n\n\n\n\n\\(\\mu^0\\)\n13.5\n15\n15.25\n15.5\n\n\n\\(\\alpha_1^0\\)\n1.5\n0\n-0.25\n-0.5\n\n\n\\(\\alpha_2^0\\)\n13.5\n12\n11.75\n11.5\n\n\n\\(\\alpha_3^0\\)\n-1.5\n-3\n-3.25\n-3.5"
   },
   {
     "objectID": "slides/l04_est_fun/l04_est_fun.html#functions-of-solutions",
     "href": "slides/l04_est_fun/l04_est_fun.html#functions-of-solutions",
     "title": "Estimable Functions",
     "section": "Functions of Solutions",
-    "text": "Functions of Solutions\n\n\n\n\n\n\n\n\n\n\n\n\nLinear Function\n\\(b_1^0\\)\n\\(b_2^0\\)\n\\(b_3^0\\)\n\\(b_4^0\\)\n\n\n\n\n\\(\\alpha_1^0 - \\alpha_2^0\\)\n3.0\n3.0\n3.0\n3.0\n\n\n\\(\\mu^0 + \\alpha_1^0\\)\n15.0\n15.0\n15.0\n15.0\n\n\n\\(\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)\\)\n19.5\n19.5\n19.5\n19.5\n\n\n\n\n\n\n\\(\\alpha_1^0 - \\alpha_2^0\\): estimate of the difference between breed effects for Angus and Simmental\n\\(\\mu^0 + \\alpha_1^0\\): estimate of the general mean plus the breed effect of Angus\n\\(\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)\\): estimate of the general mean plus mean effect of breeds Simmental and Limousin"
+    "text": "Functions of Solutions\n\n\n\n\n\n\n\n\n\n\n\n\nLinear Function\n\\(b_1^0\\)\n\\(b_2^0\\)\n\\(b_3^0\\)\n\\(b_4^0\\)\n\n\n\n\n\\(\\alpha_1^0 - \\alpha_2^0\\)\n-12.0\n-12.0\n-12.0\n-12.0\n\n\n\\(\\mu^0 + \\alpha_1^0\\)\n15.0\n15.0\n15.0\n15.0\n\n\n\\(\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)\\)\n19.5\n19.5\n19.5\n19.5\n\n\n\n\n\n\n\\(\\alpha_1^0 - \\alpha_2^0\\): estimate of the difference between breed effects for Angus and Simmental\n\\(\\mu^0 + \\alpha_1^0\\): estimate of the general mean plus the breed effect of Angus\n\\(\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)\\): estimate of the general mean plus mean effect of breeds Simmental and Limousin"
   },
   {
     "objectID": "slides/l04_est_fun/l04_est_fun.html#definition-of-estimable-functions",
     "href": "slides/l04_est_fun/l04_est_fun.html#definition-of-estimable-functions",
     "title": "Estimable Functions",
     "section": "Definition of Estimable Functions",
-    "text": "Definition of Estimable Functions\n\\[\\mathbf{q}^T\\mathbf{b} = \\mathbf{t}^TE(\\mathbf{y})\\]\n\nWhy is \\(\\mathbf{q}^T\\mathbf{b}\\) estimable?\nBased on the defintion of \\(\\mathbf{b}\\) and \\(E(\\mathbf{y})\\)\n\n\\[\\mathbf{q}^T\\mathbf{b} = \\mathbf{t}^T\\mathbf{XGX}^T\\mathbf{y} \\] where \\(\\mathbf{XGX}^T\\) is the same for all choices of \\(\\mathbf{G}\\)"
+    "text": "Definition of Estimable Functions\n\\[\\mathbf{q}^T\\mathbf{b} = \\mathbf{t}^TE(\\mathbf{y})\\]\n\nWhy is \\(\\mathbf{q}^T\\mathbf{b}\\) estimable?\nBased on the defintion of \\(\\mathbf{b}\\) and \\(E(\\mathbf{y})\\)\n\n\\[\\mathbf{q}^T\\mathbf{b} = \\mathbf{t}^T\\mathbf{XGX}^T\\mathbf{b} \\leftrightarrow\n\\mathbf{q}^T = \\mathbf{t}^T\\mathbf{X}\\] where \\(\\mathbf{XGX}^T\\) is the same for all choices of \\(\\mathbf{G}\\)"
   },
   {
     "objectID": "slides/l04_est_fun/l04_est_fun.html#examples",
     "href": "slides/l04_est_fun/l04_est_fun.html#examples",
     "title": "Estimable Functions",
     "section": "Examples",
-    "text": "Examples\n\\[E(y_{1j}) = \\mu + \\alpha_1\\] with \\(\\mathbf{t}^T = \\left[\\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \\end{array}\\right]\\) and \\(\\mathbf{q}^T = \\left[\\begin{array}{cccc} 1 & 1 & 0 & 0 \\end{array} \\right]\\)\n\\[E(y_{2j}) = \\mu + \\alpha_2\\]\n\\[E(y_{3j}) = \\mu + \\alpha_3\\]"
+    "text": "Examples\n\\[E(y_{1j} - y_{2j}) = \\alpha_1 - \\alpha_2\\] with \\(\\mathbf{t}^T = \\left[\\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \\end{array}\\right]\\) and \\(\\mathbf{q}^T = \\left[\\begin{array}{cccc} 0 & 1 & -1 & 0 \\end{array} \\right]\\)\n\\[E(y_{1j}) = \\mu + \\alpha_1\\] with \\(\\mathbf{t}^T = \\left[\\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \\end{array}\\right]\\) and \\(\\mathbf{q}^T = \\left[\\begin{array}{cccc} 1 & 1 & 0 & 0 \\end{array} \\right]\\)\n\\[E(y_{2j}) = \\mu + \\alpha_2\\]\n\\[E(y_{3j}) = \\mu + \\alpha_3\\]"
   },
   {
     "objectID": "slides/l04_est_fun/l04_est_fun.html#property",
@@ -635,5 +635,54 @@
     "title": "About",
     "section": "",
     "text": "Slides on estimable functions l04_est_fun"
+  },
+  {
+    "objectID": "my_scripts/02_least_squares_regression/02_least_squares_regression.html",
+    "href": "my_scripts/02_least_squares_regression/02_least_squares_regression.html",
+    "title": "Validation of Least Squares Regression",
+    "section": "",
+    "text": "# read beef cattle data\ns_bw_bc_url &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_reg.csv\"\ndf_bw_bc &lt;- read.table(s_bw_bc_url, header = T, sep = \",\")\ndf_bw_bc\n\n   Animal Breast.Circumference Body.Weight\n1       1                  176         471\n2       2                  177         463\n3       3                  178         481\n4       4                  179         470\n5       5                  179         496\n6       6                  180         491\n7       7                  181         518\n8       8                  182         511\n9       9                  183         510\n10     10                  184         541\n\n# Computations for slope estimate\nx &lt;- df_bw_bc$Breast.Circumference\ny &lt;- df_bw_bc$Body.Weight\nN &lt;- nrow(df_bw_bc)\n\nx_y_dot &lt;- sum(x*y)\nx_dot_bar &lt;- mean(x)\ny_dot_bar &lt;- mean(y)\nx_sq_dot &lt;- sum(x*x)\nb_1_hat &lt;- (x_y_dot - N * x_dot_bar * y_dot_bar) / (x_sq_dot - N * x_dot_bar^2)\nb_1_hat\n\n[1] 8.673235\n\n# Compuations for intercept\nb_0_hat &lt;- y_dot_bar - b_1_hat * x_dot_bar\nb_0_hat\n\n[1] -1065.115\n\n# Validation\nlm_bw_bc &lt;- lm(Body.Weight ~ Breast.Circumference, data = df_bw_bc)\nsummary(lm_bw_bc)\n\n\nCall:\nlm(formula = Body.Weight ~ Breast.Circumference, data = df_bw_bc)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-17.3941  -6.5525  -0.0673   9.3707  13.2594 \n\nCoefficients:\n                      Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)          -1065.115    255.483  -4.169 0.003126 ** \nBreast.Circumference     8.673      1.420   6.108 0.000287 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 11.08 on 8 degrees of freedom\nMultiple R-squared:  0.8234,    Adjusted R-squared:  0.8014 \nF-statistic: 37.31 on 1 and 8 DF,  p-value: 0.000287"
+  },
+  {
+    "objectID": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-2",
+    "href": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-2",
+    "title": "ASMAS-SS2024 | 0.6.0",
+    "section": "OHP Picture 2",
+    "text": "OHP Picture 2"
+  },
+  {
+    "objectID": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-3",
+    "href": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-3",
+    "title": "ASMAS-SS2024 | 0.6.0",
+    "section": "OHP Picture 3",
+    "text": "OHP Picture 3"
+  },
+  {
+    "objectID": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-4",
+    "href": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-4",
+    "title": "ASMAS-SS2024 | 0.6.0",
+    "section": "OHP Picture 4",
+    "text": "OHP Picture 4"
+  },
+  {
+    "objectID": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-5",
+    "href": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-5",
+    "title": "ASMAS-SS2024 | 0.6.0",
+    "section": "OHP Picture 5",
+    "text": "OHP Picture 5"
+  },
+  {
+    "objectID": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-6",
+    "href": "ohp/20240325_ohp_l06/20240325_ohp_l06.html#ohp-picture-6",
+    "title": "ASMAS-SS2024 | 0.6.0",
+    "section": "OHP Picture 6",
+    "text": "OHP Picture 6"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.6.1",
+    "href": "about.html#asmasss2024-0.6.1",
+    "title": "About",
+    "section": "",
+    "text": "Overhead ohp_l06"
   }
 ]
