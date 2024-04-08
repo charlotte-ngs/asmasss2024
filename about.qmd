@@ -14,6 +14,9 @@ s_cn_url <- "https://charlotte-ngs.github.io/asmasss2024/cn/"
 s_app_url <- s_cn_url
 ```
 
+# asmas -- ss2024: Week 7
+
+## asmasss2024 0.7.0
 
 # asmas -- ss2024: Week 6
 

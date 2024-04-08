@@ -23,7 +23,7 @@ knitr::kable(tbl_cn)
 ```
 
 
-List of Appendix Chapters
+## List of Appendix Chapters
 
 ```{r}
 #| label: table-appendix
