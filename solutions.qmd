@@ -9,11 +9,12 @@ List of solutions to exercises
 #| echo: false
 #| results: asis
 s_sol_url <- "https://charlotte-ngs.github.io/asmasss2024/solutions/"
-tbl_sol <- tibble::tibble(Nr = c(1, 2, 3, 4),
+tbl_sol <- tibble::tibble(Nr = c(1, 2, 3, 4, 5),
                          Date = c("2024-02-19",
                                   "2024-02-26",
                                   "2024-03-11",
-                                  "2024-03-18"),
+                                  "2024-03-18",
+                                  "2024-04-08"),
                          Topic = c(
                            paste0("Introduction [html](", 
                                   s_sol_url,
@@ -34,7 +35,12 @@ tbl_sol <- tibble::tibble(Nr = c(1, 2, 3, 4),
                                   s_sol_url,
                                   "asm_sol04/asm_sol04.html) | [pdf](",
                                   s_sol_url,
-                                  "asm_sol04/asm_sol04.pdf)", collapse = "")
+                                  "asm_sol04/asm_sol04.pdf)", collapse = "") #,
+#                           paste0("Genomic Regression [html](",
+#                                  s_sol_url,
+#                                  "asm_sol05/asm_sol05.html) | [pdf](",
+#                                  s_sol_url,
+#                                  "asm_sol05/asm_sol05.pdf)", collapse = "")
                          ))
 knitr::kable(tbl_sol)
 ```

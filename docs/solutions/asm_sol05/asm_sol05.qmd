@@ -40,7 +40,7 @@ df_geno$Count.SNP.H <- sapply(df_geno$SNP.H, function(x)
                                                length(grep("1",
                                                  unlist(strsplit(x, "")))),
                               USE.NAMES = F)
-
+df_geno
 ```
 
 * Fit regression of observation on count of favorable alleles
