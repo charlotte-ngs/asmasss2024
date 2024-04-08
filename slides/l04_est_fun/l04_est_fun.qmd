@@ -75,22 +75,28 @@ mat_b_sol_given <- matrix(c(16, -1, 11, -4, 14, 1, 13, -2, 27, -12, 0, -15,-2982
 #crossprod(t(mat_x_est_fun), mat_b_sol_given)
 #mat_xty_est_fun
 # generate some random solutions
-set.seed(2503)
-mat_G <- MASS::ginv(mat_xtx_est_fun)
-mat_b_sol <- crossprod(mat_G, mat_xty_est_fun)
-n_nr_sol <- nrow(mat_b_sol)
-n_nr_vec_b <- 3
-mat_z <- matrix(sample(1:n_nr_sol, n_nr_sol * n_nr_vec_b, replace = T), nrow = n_nr_sol)
-mat_b_sol_rand <- matrix(mat_b_sol, nrow = n_nr_sol, ncol = n_nr_vec_b) + 
-  (crossprod(mat_G, mat_xtx_est_fun) - diag(nrow = n_nr_sol)) %*% mat_z
+set.seed(0408)
+n_nr_sol <- 4
+n_nr_eqs <- nrow(mat_xtx_est_fun)
+mat_Z <- matrix(c(rep(1, n_nr_sol),
+                  1:n_nr_sol,
+                  sample(10, n_nr_sol),
+                  3000 + sample(20, n_nr_sol)), nrow = n_nr_eqs)
+# solutions based on MASS::ginv
+mat_xtx_ginv <- MASS::ginv(mat_xtx_est_fun)
+mat_sol <- crossprod(mat_xtx_ginv, mat_xty_est_fun)
+mat_B0 <- matrix(data = c(rep(mat_sol, n_nr_sol)), ncol = n_nr_sol)
+# additional solutions
+mat_B_tilde <- mat_B0 + (crossprod(mat_xtx_ginv, mat_xtx_est_fun) - diag(nrow = n_nr_sol)) %*% mat_Z
+
 ```
 
 ```{r est-fun-sol, echo=FALSE}
 tbl_est_fun_sol <- tibble::tibble(`Elements of Solution` = c("$\\mu^0$", "$\\alpha_1^0$", "$\\alpha_2^0$", "$\\alpha_3^0$"),
-                                  `$b_1^0$` = mat_b_sol[,1],
-                                  `$b_2^0$` = mat_b_sol_rand[,1],
-                                  `$b_3^0$` = mat_b_sol_rand[,2],
-                                  `$b_4^0$` = mat_b_sol_rand[,3])
+                                  `$b_1^0$` = mat_B_tilde[,1],
+                                  `$b_2^0$` = mat_B_tilde[,2],
+                                  `$b_3^0$` = mat_B_tilde[,3],
+                                  `$b_4^0$` = mat_B_tilde[,4])
 knitr::kable(tbl_est_fun_sol,
              booktabs = TRUE,
              longtable = FALSE,
@@ -102,18 +108,18 @@ knitr::kable(tbl_est_fun_sol,
 
 ```{r lin-fun-sol, echo=FALSE}
 tbl_lin_fun_sol <- tibble::tibble(`Linear Function` = c("$\\alpha_1^0 - \\alpha_2^0$", "$\\mu^0 + \\alpha_1^0$", "$\\mu^0 + 1/2(\\alpha_2^0 + \\alpha_3^0)$"),
-                                  `$b_1^0$` = c(mat_b_sol[2,1]-mat_b_sol[3,1], 
-                                                mat_b_sol[1,1] + mat_b_sol[2,1], 
-                                                mat_b_sol[1,1] + 0.5 * (mat_b_sol[3,1] + mat_b_sol[4,1])),
-                                  `$b_2^0$` = c(mat_b_sol_rand[2,1]-mat_b_sol_rand[3,1], 
-                                                mat_b_sol_rand[1,1] + mat_b_sol_rand[2,1], 
-                                                mat_b_sol_rand[1,1] + 0.5 * (mat_b_sol_rand[3,1] + mat_b_sol_rand[4,1])),
-                                  `$b_3^0$` = c(mat_b_sol_rand[2,2]-mat_b_sol_rand[3,2], 
-                                                mat_b_sol_rand[1,2] + mat_b_sol_rand[2,2], 
-                                                mat_b_sol_rand[1,2] + 0.5 * (mat_b_sol_rand[3,2] + mat_b_sol_rand[4,2])),
-                                  `$b_4^0$` = c(mat_b_sol_rand[2,3]-mat_b_sol_rand[3,3], 
-                                                mat_b_sol_rand[1,3] + mat_b_sol_rand[2,3], 
-                                                mat_b_sol_rand[1,3] + 0.5 * (mat_b_sol_rand[3,3] + mat_b_sol_rand[4,3])))
+                                  `$b_1^0$` = c(mat_B_tilde[2,1] - mat_B_tilde[3,1], 
+                                                mat_B_tilde[1,1] + mat_B_tilde[2,1], 
+                                                mat_B_tilde[1,1] + 0.5*(mat_B_tilde[3,1]+mat_B_tilde[4,1])),
+                                  `$b_2^0$` = c(mat_B_tilde[2,2] - mat_B_tilde[3,2], 
+                                                mat_B_tilde[1,2] + mat_B_tilde[2,2], 
+                                                mat_B_tilde[1,2] + 0.5*(mat_B_tilde[3,2]+mat_B_tilde[4,2])),
+                                  `$b_3^0$` = c(mat_B_tilde[2,3] - mat_B_tilde[3,3], 
+                                                mat_B_tilde[1,3] + mat_B_tilde[2,3], 
+                                                mat_B_tilde[1,3] + 0.5*(mat_B_tilde[3,3]+mat_B_tilde[4,3])),
+                                  `$b_4^0$` = c(mat_B_tilde[2,4] - mat_B_tilde[3,4], 
+                                                mat_B_tilde[1,4] + mat_B_tilde[2,4], 
+                                                mat_B_tilde[1,4] + 0.5*(mat_B_tilde[3,4]+mat_B_tilde[4,4])))
 knitr::kable(tbl_lin_fun_sol,
              booktabs = TRUE,
              longtable = FALSE,
@@ -129,21 +135,18 @@ knitr::kable(tbl_lin_fun_sol,
 
 $$\mathbf{q}^T\mathbf{b} = \mathbf{t}^TE(\mathbf{y})$$
 
-* Why is $\mathbf{q}^T\mathbf{b}$ estimable? 
-* Based on the defintion of $\mathbf{b}$ and $E(\mathbf{y})$
-
-$$\mathbf{q}^T\mathbf{b} = \mathbf{t}^T\mathbf{XGX}^T\mathbf{b} \leftrightarrow 
-\mathbf{q}^T = \mathbf{t}^T\mathbf{X}$$
+* Why is $\mathbf{q}^T\mathbf{b}$ estimable? $\rightarrow$ invariance to solution $b^{(0)}$
+ 
+$$\mathbf{q}^T\mathbf{b}^{(0)} = \mathbf{t}^TE(\mathbf{y}) = \mathbf{t}^T X\mathbf{b}^{(0)} = \mathbf{t}^T XGX^Ty$$
 where $\mathbf{XGX}^T$ is the same for all choices of $\mathbf{G}$
 
 
 ## Examples
 
 $$E(y_{1j} - y_{2j}) = \alpha_1 - \alpha_2$$
-with $\mathbf{t}^T = \left[\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \end{array}\right]$ and $\mathbf{q}^T = \left[\begin{array}{cccc} 0 & 1 & -1 & 0 \end{array} \right]$
+with $\mathbf{t}^T = \left[\begin{array}{cccccc}  1 & 1 & 1 & -1 & 0 & 0 \end{array}\right]$ and $\mathbf{q}^T = \left[\begin{array}{cccc} 0 & 1 & -1 & 0 \end{array} \right]$
 
 $$E(y_{1j}) = \mu + \alpha_1$$
-with $\mathbf{t}^T = \left[\begin{array}{cccccc} 1 & 1 & 1 & 0 & 0 & 0 \end{array}\right]$ and $\mathbf{q}^T = \left[\begin{array}{cccc} 1 & 1 & 0 & 0 \end{array} \right]$
 
 $$E(y_{2j}) = \mu + \alpha_2$$
 
@@ -159,6 +162,7 @@ with the definition of an estimable function $\mathbf{q}^T\mathbf{b}$, we get
 $$\mathbf{q}^T\mathbf{b} = \mathbf{t}^TE(\mathbf{y})$$
 $$\mathbf{q}^T\mathbf{G}\mathbf{X}^T\mathbf{y} = \mathbf{t}^T\mathbf{X}\mathbf{G}\mathbf{X}^T\mathbf{y}$$
 hence for any $\mathbf{G}$, $\mathbf{q}^t = \mathbf{t}^T\mathbf{X}$ which is helpful to find $\mathbf{q}$ for a given $\mathbf{t}$
+
 
 ## Test
 
