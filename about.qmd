@@ -17,8 +17,13 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 8
 
+## asmasss2024 0.8.1
+
+* Overhead [ohp_l08](`r paste0(s_ohp_url, "20240415_ohp_l08.pdf", collapse = "")`)
+
 ## asmasss2024 0.8.0
 
+* Exercise on contrasts [asm_ex07](`r paste0(s_ex_url, "asm_ex07/asm_ex07.html", collapse = "")`)
 * Exercise on fixed linear effects model [asm_ex06](`r paste0(s_ex_url, "asm_ex06/asm_ex06.html", collapse = "")`)
 
 # asmas -- ss2024: Week 7

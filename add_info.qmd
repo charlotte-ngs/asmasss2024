@@ -49,14 +49,15 @@ knitr::kable(tbl_slides)
 #| echo: false
 #| results: asis
 s_ohp_url <- "https://charlotte-ngs.github.io/asmasss2024/ohp/"
-tbl_ohp <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7),
+tbl_ohp <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8),
                           Date = c("2024-02-19",
                                    "2024-02-26",
                                    "2024-03-04",
                                    "2024-03-11",
                                    "2024-03-18",
                                    "2024-03-25",
-                                   "2024-04-08"),
+                                   "2024-04-08",
+                                   "2024-04-15"),
                           Topic = c(
                             paste0("[Introduction](",
                                    s_ohp_url,
@@ -85,6 +86,10 @@ tbl_ohp <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7),
                             paste0("[Estimable Functions](",
                                    s_ohp_url,
                                    "20240408_ohp_l07.pdf)",
+                                   collapse = ""),
+                            paste0("[Contrasts](",
+                                   s_ohp_url,
+                                   "20240415_ohp_l08.pdf)",
                                    collapse = "")
                           ))
 knitr::kable(tbl_ohp)

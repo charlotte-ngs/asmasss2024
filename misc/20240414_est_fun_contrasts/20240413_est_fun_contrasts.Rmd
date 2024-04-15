@@ -5,7 +5,70 @@ output: html_notebook
 
 
 ## Disclaimer
-This is an update on the synthesis and derivation notebook of the two previous years. 
+This is an update on the synthesis and derivation notebook of the two previous years. After the lecture, we start with the development of new material. The new material is only based on group means and contrasts of group means.
+
+
+## Data
+We are using the dataset on body weight and breed. 
+
+```{r}
+s_bw_breed_path <- here::here("docs", "data", "asm_bw_breed.csv")
+tbl_bw_breed <- readr::read_delim(s_bw_breed_path, delim = ",")
+tbl_bw_breed
+```
+
+
+
+## Regression on Dummy Variables
+Let us assume that we are interested in the difference between body weights of animals of the breed `Limousin` compared to the body weight of animals of breed `Angus`. This difference can be visualized by the following plot
+
+```{r}
+# filter data
+library(dplyr)
+tbl_bw_an_li <- tbl_bw_breed %>% 
+  filter(Breed != "Simmental")
+tbl_bw_an_li
+```
+
+Show the plot
+
+```{r}
+library(ggplot2)
+plot_bw_diff_li_an <- ggplot(tbl_bw_an_li, aes(x = Breed, y = `Body Weight`)) + 
+  geom_point(color = "blue")
+plot_bw_diff_li_an
+```
+
+The difference of mean body weight between animals of the two breeds can be shown by fitting a regression of body weight on a breed code where Angus animals are assigned the code $0$ and animals of breed Limousin are assigned the code $1$. 
+
+```{r}
+tbl_bw_an_li$BreedCodeLi <- as.numeric(as.factor(tbl_bw_an_li$Breed)) - 1
+tbl_bw_an_li
+```
+
+The regression of `Body Weight` on `BreedCode` is 
+
+```{r}
+lm_bw_brc_li <- lm(`Body Weight` ~ BreedCodeLi, data = tbl_bw_an_li)
+(smry_bw_brc_li <- summary(lm_bw_brc_li))
+```
+
+Adding the resuting regression line to the above plot leads to 
+
+```{r}
+plot_bw_brc_li_an <- ggplot(tbl_bw_an_li, aes(x = BreedCodeLi, y = `Body Weight`)) + 
+  geom_point(color = "blue") + 
+  geom_abline(intercept = smry_bw_brc_li$coefficients["(Intercept)", "Estimate"],
+              slope = smry_bw_brc_li$coefficients["BreedCodeLi", "Estimate"],
+              color = "red")
+plot_bw_brc_li_an
+```
+
+The intersection of the red regression line with $x=0$ on the one hand shows the intercept of the regression line and on the other hand corresponds to the mean Angus body weight
+
+
+## Old Stuff Below Here
+The material from 2024 and before was mostly based on explaining parameter estimates via estimable functions of solutions of least squares normal equations. While this is possible and can work, it adds un-necessary complexity. For documentation, the previously used material is left in here.
 
 
 ## References
