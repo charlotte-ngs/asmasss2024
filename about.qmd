@@ -15,6 +15,12 @@ s_data_url <- "https://charlotte-ngs.github.io/asmasss2024/data/"
 s_app_url <- s_cn_url
 ```
 
+# asmas -- ss2024: Week 8
+
+## asmasss2024 0.8.0
+
+* Exercise on fixed linear effects model [asm_ex06](`r paste0(s_ex_url, "asm_ex06/asm_ex06.html", collapse = "")`)
+
 # asmas -- ss2024: Week 7
 
 ## asmasss2024 0.7.2
@@ -24,8 +30,8 @@ s_app_url <- s_cn_url
 ## asmasss2024 0.7.1
 
 * Data set on [estimable functions](`r paste0(s_data_url, "est_fun_breed_data.csv", collapse = "")`)
-* Exercise on genomic regression [asm_ex04](`r paste0(s_ex_url, "asm_ex05/asm_ex05.html", collapse = "")`)
-* Solutions on genomic regression [asm_sol04](`r paste0(s_sol_url, "asm_sol05/asm_sol05.html", collapse = "")`)
+* Exercise on genomic regression [asm_ex05](`r paste0(s_ex_url, "asm_ex05/asm_ex05.html", collapse = "")`)
+* Solutions on genomic regression [asm_sol05](`r paste0(s_sol_url, "asm_sol05/asm_sol05.html", collapse = "")`)
 
 ## asmasss2024 0.7.0
 

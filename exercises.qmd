@@ -9,12 +9,13 @@ List of exercises
 #| echo: false
 #| results: asis
 s_ex_url <- "https://charlotte-ngs.github.io/asmasss2024/exercises/"
-tbl_ex <- tibble::tibble(Nr = c(1, 2, 3, 4, 5),
+tbl_ex <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6),
                          Date = c("2024-02-19",
                                   "2024-02-26",
                                   "2024-03-11",
                                   "2024-03-18",
-                                  "2024-04-08"),
+                                  "2024-04-08",
+                                  "2024-04-15"),
                          Topic = c(
                            paste0("[Introduction](", 
                                   s_ex_url,
@@ -30,7 +31,13 @@ tbl_ex <- tibble::tibble(Nr = c(1, 2, 3, 4, 5),
                                   "asm_ex04/asm_ex04.html)", collapse = ""),
                            paste0("[Genomic Regression](",
                                   s_ex_url,
-                                  "asm_ex05/asm_ex05.html", collapse = "")
+                                  "asm_ex05/asm_ex05.html)", collapse = ""),
+                           paste0("[Fixed Linear Effects Model](",
+                                  s_ex_url, 
+                                  "asm_ex06/asm_ex06.html)", collapse = ""),
+                           paste0("[Contrasts](",
+                                  s_ex_url,
+                                  "asm_ex07/asm_ex07.html)", collapse = "")
                          ))
 knitr::kable(tbl_ex)
 ```

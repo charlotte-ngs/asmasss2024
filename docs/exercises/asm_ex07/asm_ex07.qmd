@@ -1,0 +1,112 @@
+---
+title: "Applied Statistical Methods - Exercise 7"
+author: "Peter von Rohr"
+date: 2024-04-22
+filters: 
+  - webr
+webr:
+  packages: ['MASS', 'dplyr']  
+---
+
+
+## Problem 1: Sum Contrasts
+Use the following dataset on Body.Weight and `Breed` of beef cattle animals. The data is available from
+
+```{r, echo=FALSE}
+s_ex07p01_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed.csv"
+s_ex07p01_data_path
+```
+
+Fit a fixed linear model with Body.Weight as response and `Breed` as predictor variable. Use the `sum` contrasts for reporting the different effects in the model. Validate the estimates by computing the estimates based on a solution of the least squares normal equations. 
+
+
+### Tasks
+
+* Read the data
+
+```{webr-r}
+# read data using read.table()
+
+```
+
+* Change contrasts and fit linear model
+The type of contrasts can directly be specified when fitting the linear model. For more information see the help function of `contrasts`
+
+```{webr-r}
+# fit linear model with sum contrasts
+
+# show results with summary function
+
+```
+
+* Solutions of Least Squares Normal Equations
+
+```{webr-r}
+# compute solutions to least squares normal equations
+
+```
+
+* Contrasts Matrix for Sum Contrasts
+From the contrasts matrix, we get the matrix of estimable functions.
+
+```{webr-r}
+# get inverse of contrasts matrix
+
+```
+
+The first row of the above matrix `est_mat_breed_sum` shows how the intercept estimate is computed from the observation means. This means that with the sum contrasts, the intercept is the weighted mean of the mean observation for all breeds. Hence, we get
+
+```{webr-r}
+# get the group means for the breeds
+
+```
+
+Comparing that to the result of `lm()` from above, we see that they are equal.
+
+```{webr-r}
+# get intercept estimate to compare
+
+```
+
+For the effects estimates, we are looking at the second and the third row of the matrix `est_mat_breed_sum`. We are prepending a column of zeroes to the second and the third row of `est_mat_breed_sum`.
+
+```{webr-r}
+# multiply matrix of estimable functions with solutions
+
+```
+
+These values correspond to the effect estimates from `lm()` 
+
+```{webr-r}
+# compare estimates from lm()
+
+```
+
+
+## Problem 2: Custom Contrasts
+Use the dataset from Problem 1 and use your own contrasts. Your new contrasts should compute the intercept estimate as is done in the `sum` contrasts. The `Breed` effects should be computed the same way as is done in the `treatment` contrast.
+
+* Read the dataset
+
+```{webr-r}
+# read data
+
+```
+
+* Matrix of Estimable Functions
+The matrix of estimable functions is a combination of the matrices from the sum contrasts and from the treatment contrasts.
+
+```{webr-r}
+# create own contrasts matrix
+
+```
+
+Using that contrasts matrix in lm leads to 
+
+```{webr-r}
+# run lm() with constructed contrasts
+
+# show results with summary()
+
+```
+

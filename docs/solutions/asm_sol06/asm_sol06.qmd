@@ -1,0 +1,41 @@
+---
+title: "Applied Statistical Methods - Solution 6"
+author: "Peter von Rohr"
+date: 2024-04-15
+filters: 
+  - webr
+---
+
+
+## Problem 1: Regression On Dummy Variables
+```{r, echo=FALSE}
+s_ex06p01_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_flem.csv"
+```
+
+Use the dataset with the breeds assigned to every animal and find out the influence of the breed on the response variable `body weight`. The data is available from
+
+```{r echo=FALSE}
+cat(s_ex06p01_data_path, "\n")
+```
+
+Start by fitting a linear model with `Breed` as the only factor in the model, hence ignore the independent variables such as `Breast Circumference`, `BCS` and `HEI`. 
+
+
+### Tasks
+
+* Read the data
+
+```{webr-r}
+s_ex06p01_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_flem.csv"
+tbl_ex06p01_data <- read.table(s_ex06p01_data_path, 
+                               header = T, sep = ",")
+tbl_ex06p01_data
+```
+
+* Fit a linear model including breed as a factor
+
+```{webr-r}
+lm_reg_dummy_bw_breed <- lm(Body.Weight ~ Breed, 
+                            data = tbl_ex06p01_data)
+summary(lm_reg_dummy_bw_breed)
+```
