@@ -1,0 +1,209 @@
+---
+title: "Estimable Functions and Contrasts in R"
+output: html_notebook
+---
+
+
+## Disclaimer
+This is an update on the synthesis and derivation notebook of the two previous years. 
+
+
+## References
+
+[1] Notebooks on contrasts from previous years
+[2] Material from https://bookdown.org/pingapang9/linear_models_bookdown/chap-contrasts.html
+
+
+## Data
+The data set used is the one on a synthetic observation and on breeds of animals.
+
+```{r}
+s_data_path <- here::here("docs", "data", "est_fun_breed_data.csv")
+tbl_est_fun <- readr::read_delim(s_data_path, delim = ",")
+tbl_est_fun
+```
+
+Use a second dataset with body weight and breed
+
+```{r}
+s_bw_breed_path <- here::here("docs", "data", "asm_bw_breed.csv")
+tbl_bw_breed <- readr::read_delim(s_bw_breed_path, delim = ",")
+tbl_bw_breed
+```
+
+
+## Use Regression To Describe Group Means
+Start by looking only at breeds Angus and Limousin in the dataset on body weight. Then use the dummy coding where Angus animals receive a value of $0$ and Limousin animals receive a code of $1$. The regression of body weight on that dummy coding results in a regression line that goes through the mean body weights for both breeds. That means, we get
+
+```{r}
+library(dplyr)
+tbl_bw_breed <- tbl_bw_breed %>%
+  filter(Breed != "Simmental")
+tbl_bw_breed$BreedFactor <- as.numeric(as.factor(tbl_bw_breed$Breed))-1
+tbl_bw_breed
+```
+
+Fit regression
+
+```{r}
+lm_bw_breed <- lm(`Body Weight` ~ BreedFactor, data = tbl_bw_breed)
+(smry_bw_breed <- summary(lm_bw_breed))
+```
+
+Create a plot
+
+```{r}
+library(ggplot2)
+pl_bw_breed <- ggplot(tbl_bw_breed, aes(x = BreedFactor, y = `Body Weight`)) + 
+  geom_point() + 
+  geom_abline(slope = smry_bw_breed$coefficients["BreedFactor", "Estimate"], 
+              intercept = smry_bw_breed$coefficients["(Intercept)", "Estimate"])
+pl_bw_breed
+```
+
+The intersection of the regression line at the two values $0$ and $1$ for BreedFactor are at the mean value for body weight for the two breeds AN and LI. The writing the parameter vector $b$ as 
+
+$$b = \left[ \begin{array}{c} b_0 \\ b_1 \end{array}\right] $$
+
+We see in the next section how to express $b$ as contrasts of group means $M_{AN}$ and $M_{LI}$. 
+
+
+## Idea of Contrasts
+According to chapter 7 of [2], contrasts can be explained as follows. 
+
+A __contrast__ is a linear combination of parameters or statistics. An alternative term for "linear combination" is __weighted sum__. We are currently focusing on statistics from two levels of a given factor. In our dataset this corresponds to two levels of the factor breed. As an example, we have a look at the observation for Simmental and for Angus animals. 
+
+Let $M_{AN}$ be the mean observation for all animals of breed Angus and $M_{SI}$ be the mean observation for all Simmental animals. The sum of the two means can be written as
+
+$$L_1 = M_{AN} + M_{SI} 
+= \left[\begin{array}{cc} 1 & 1 \end{array}\right] \cdot \left[ \begin{array}{c} M_{AN} \\  M_{SI}  \end{array}\right]
+= l_1^T \cdot m$$
+
+
+A different contrast ($L_2$) insepects the difference between the two means.
+
+$$L_2 = M_{AN} - M_{SI}
+= \left[\begin{array}{cc} 1 & -1 \end{array}\right] \cdot \left[ \begin{array}{c} M_{AN} \\  M_{SI}  \end{array}\right]
+= l_2^T \cdot m$$
+
+These contrasts $l_1$ and $l_2$ can be combined into a matrix $L$
+
+$$L = \left[\begin{array}{cc} l_1 & l_2 \end{array} \right] $$
+
+Then we can write the above two contrasts as
+
+$$L^T \cdot m$$
+
+As seen in the previous section, the estimate of the parameter vector $b$ can be written as contrasts of group means and as a consequence, the group means can be written as a function of parameter estimates
+
+$$m =  \left[ \begin{array}{c} M_{AN} \\  M_{SI}  \end{array}\right]
+ = \left[ \begin{array}{c} \widehat{b_0} \\  \widehat{b_0} + \widehat{b_1}  \end{array}\right]
+ =  \left[\begin{array}{cc} 1 & 0 \\ 1 & 1 \end{array}\right] 
+    \cdot \left[ \begin{array}{c} \widehat{b_0} \\  \widehat{b_1}  \end{array}\right] 
+ = L^T \cdot  \widehat{b}$$
+
+With this, the vector of group means $m$ is expressed as linear function or linear transformation of the vector of parameter estimates $ \widehat{b}$. Solving for $\widehat{b}$ yields the parameter estimates as linear function of group means.
+
+$$\widehat{b} = (L^T)^{-1} \cdot m$$
+
+As shown below, the matrix $L^T$ is used to determine what type of contrasts are used in R.
+
+## Contrasts in R
+For a given dataset, the contrast matrix can be obtained as a result of the function `contrasts()`. For our original example with three breeds this yields in 
+
+```{r, message=FALSE, warning=FALSE}
+tbl_bw_breed <- readr::read_delim(s_bw_breed_path, delim = ",")
+mat_ctr_br <- contrasts(as.factor(tbl_bw_breed$Breed))
+mat_ctr_br
+```
+
+The above shown contrasts matrix shows in the rows, the original factor levels in the dataset. The columns stand for the new variables that are introduced in the re-dimensioned model. How the codes for the new model are assigned to the observations can be seen from the result of the function `model.matrix`. 
+
+```{r}
+mat_mod_br <- model.matrix(`Body Weight` ~ Breed, tbl_bw_breed)
+mat_mod_br
+```
+
+Adding a column representing the intercept to the contrasts matrix and taking its inverse, results in the matrix of estimable functions
+
+```{r}
+mat_ctr_br_ext <- cbind(matrix(rep(1, nrow(mat_ctr_br))), mat_ctr_br)
+colnames(mat_ctr_br_ext)[1] <- "(Intercept)"
+mat_ctr_br_ext
+```
+
+Then the inverse
+
+```{r}
+mat_est_fun <- solve(mat_ctr_br_ext)
+mat_est_fun
+```
+
+The first row indicates which group mean is used for the intercept. The remaining rows represent the estimable functions used for the effect with the corresponding row name.
+
+
+## Validation
+The results on the investigated connection between contrasts and estimable functions is validated with our example dataset. For this validation, we first need a set of solutions to the least squares normal equations. As the first step, we set up the design matrix $\mathbf{X}$ and use it to compute the crossproduct $\mathbf{X}^T\mathbf{X}$ 
+
+```{r}
+#tbl_flem_bw_breed
+mat_X <- model.matrix(`Body Weight` ~ 0 + Breed, tbl_bw_breed)
+mat_X <- cbind(matrix(1, nrow = nrow(tbl_bw_breed), ncol = 1), mat_X)
+dimnames(mat_X) <- NULL
+mat_xtx <- crossprod(mat_X)
+mat_xtx
+```
+
+The solution to the normal equations are obtained by
+
+```{r}
+vec_y <- tbl_bw_breed$`Body Weight`
+mat_xty <- crossprod(mat_X, vec_y)
+mat_xtx_ginv <- MASS::ginv(mat_xtx)
+mat_b_sol <- crossprod(t(mat_xtx_ginv), mat_xty)
+mat_b_sol
+```
+
+The intercept in the treatment contrasts are computed as the mean observations for the first factor level. For the factor `Breed` this corresponds to the mean of all animals of breed `Angus`. This is verified by 
+
+```{r}
+library(dplyr)
+mean((tbl_bw_breed %>% filter(Breed == "Angus"))$`Body Weight`)
+```
+
+Based on the matrix of estimable functions, the effect assigned to the `BreedLimousin` corresponds to the difference between the third and the second component of the solution vector
+
+```{r}
+mat_b_sol[3] - mat_b_sol[2] 
+```
+
+The effect assigned to `BreedSimmental` is the difference between the last and the second component of the solution vector
+
+```{r}
+mat_b_sol[4] - mat_b_sol[2]
+```
+
+These effects can also be found in the summary output of the `lm` -object.
+
+```{r}
+lm_bw_br <- lm(`Body Weight` ~ Breed, data = tbl_bw_breed)
+(smry_lm_bw_br <- summary(lm_bw_br))
+```
+
+
+## Vector of Group Means
+The vector $m$ is the vector of group means
+
+```{r}
+n_mean_AN <- mean((tbl_bw_breed %>% filter(Breed == "Angus"))$`Body Weight`)
+n_mean_LI <- mean((tbl_bw_breed %>% filter(Breed == "Limousin"))$`Body Weight`)
+n_mean_SI <- mean((tbl_bw_breed %>% filter(Breed == "Simmental"))$`Body Weight`)
+(vec_group_mean <- c(n_mean_AN, n_mean_LI, n_mean_SI))
+```
+
+Pre-multiplication of the vector of group means with the matrix of estimable functions yields
+
+```{r}
+crossprod(t(mat_est_fun), vec_group_mean)
+```
+

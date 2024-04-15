@@ -1,0 +1,103 @@
+---
+title: "Contrasts"
+author: "Peter von Rohr"
+date: "2024-04-15"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Contrasts
+
+* Linear combination of parameters
+* In R used to determine which estimable functions are shown as factor level effects
+
+
+## Example Dataset
+
+```{r tbl-flem-bw-breed, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+s_data_dir <- file.path(here::here(), "docs", "data")
+s_flem_path <- file.path(s_data_dir, "asm_bw_flem.csv")
+tbl_flem <- readr::read_csv(file = s_flem_path)
+tbl_flem_bw_breed <- tbl_flem %>% 
+  select(Animal, `Body Weight`, Breed) %>% 
+  arrange(Breed)
+knitr::kable(tbl_flem_bw_breed,
+             booktabs = TRUE,
+             longtable = FALSE,
+             caption = "Body Weight and Breed of Beef Cattle Animals",
+             escape = FALSE)
+```
+
+
+## Contrasts in R
+
+```{r, echo=TRUE}
+(mat_ctr <- contrasts(as.factor(tbl_flem_bw_breed$Breed)))
+```
+
+
+## Model Matrix
+
+```{r, echo=TRUE}
+model.matrix(lm(`Body Weight` ~ Breed, 
+                data = tbl_flem_bw_breed))
+```
+
+
+## Estimable Functions
+
+* extend contrasts matrix by one row of all ones for the intercept
+
+```{r}
+mat_ctr_ext <- cbind(matrix(rep(1,nrow(mat_ctr)),ncol = 1), mat_ctr)
+colnames(mat_ctr_ext)[1] <- "(Intercept)"
+mat_ctr_ext
+```
+
+
+## Estimable Functions II
+
+* Inverse of extended contrasts matrix
+
+```{r}
+(mat_est_fun <- solve(mat_ctr_ext))
+```
+
+* First row: which group means are used for intercept
+* Other rows: vectors $q^T$ representing estimable functions
+
+
+## Validation
+
+* Compute a solution of least squares normal equation
+* Use matrix of estimable functions to validate effects estimates
+
+
+## Default Contrasts
+
+* Per default: `treatment` contrasts
+* Factor levels in alphabetical order
+* First level corresponds to control, other levels are treatments
+* Intercept estimate as mean observation for control group
+* Effects estimates as difference between treatment and control solutions of normal equations
+
+
+## Other Contasts
+
+* Helmert
+* sum
+* poly
+
+
+## Custom Contrasts
+
+* Construct own matrix of estimable functions
+* Invert that matrix
+* Ignore first column
+* Use remaining matrix of contrasts as argument in `lm()`
+
+

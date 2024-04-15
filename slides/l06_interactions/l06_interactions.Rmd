@@ -1,0 +1,150 @@
+---
+title: "Interactions"
+author: "Peter von Rohr"
+date: "2023-04-03"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Definition
+
+* Effect of given predictor variable depends on level or value of other predictor variable
+* Examples:
+    + Regression of `Body Weight` on `Breast Circumference` is different for different breeds
+    + Effect of `Breed` on `Body Weight` is different for different male and female animals
+
+
+## Types of Interactions
+
+* continuous by continuous
+* continuous by categorical
+* categorical by categorical
+
+
+## Continuous by Categorical
+
+* In a model, expected value of response depends on regression variable plus discrete factor
+* Example: Regression of `Body Weight` on `Breast Circumference` plus the factor `Breed`
+* Interaction is present, if regression of `Body Weight` on `Breast Circumference` is different for different breeds
+
+
+## Interaction Plot
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+s_data_dir <- file.path(here::here(), "docs", "data")
+s_flem_path <- file.path(s_data_dir, "asm_bw_flem.csv")
+tbl_flem <- readr::read_csv(file = s_flem_path)
+tbl_flem_bw_bc_br <- tbl_flem %>%
+  select(Animal, `Breast Circumference`, `Body Weight`, Breed)
+tbl_flem_bw_bc_br <- tbl_flem_bw_bc_br %>% arrange(Breed)
+formula_bw_bc <- `Body Weight` ~ `Breast Circumference`
+tbl_flem_bw_bc_br_an <- tbl_flem_bw_bc_br %>%
+  filter(Breed == "Angus")
+lm_bw_bc_br_an <- lm(formula = formula_bw_bc, data = tbl_flem_bw_bc_br_an)
+#lm_bw_bc_br_an$coefficients[["(Intercept)"]]
+#lm_bw_bc_br_an$coefficients[["`Breast Circumference`"]]
+tbl_flem_bw_bc_br_li <- tbl_flem_bw_bc_br %>%
+  filter(Breed == "Limousin")
+lm_bw_bc_br_li <- lm(formula = formula_bw_bc, data = tbl_flem_bw_bc_br_li)
+tbl_flem_bw_bc_br_si <- tbl_flem_bw_bc_br %>%
+  filter(Breed == "Simmental")
+lm_bw_bc_br_si <- lm(formula = formula_bw_bc, data = tbl_flem_bw_bc_br_si)
+
+# plots
+library(ggplot2)
+p <- ggplot(data = tbl_flem_bw_bc_br, aes(x=`Breast Circumference`, y = `Body Weight`, group = Breed)) + 
+  geom_point(aes(color = Breed)) + 
+  geom_abline(intercept = lm_bw_bc_br_an$coefficients[["(Intercept)"]],
+              slope = lm_bw_bc_br_an$coefficients[["`Breast Circumference`"]],
+              color = "red") + 
+  geom_abline(intercept = lm_bw_bc_br_li$coefficients[["(Intercept)"]],
+              slope = lm_bw_bc_br_li$coefficients[["`Breast Circumference`"]],
+              color = "green") + 
+  geom_abline(intercept = lm_bw_bc_br_si$coefficients[["(Intercept)"]],
+              slope = lm_bw_bc_br_si$coefficients[["`Breast Circumference`"]],
+              color = "blue")
+p
+```
+
+
+## Interaction Model
+
+* Start with model without interactions
+
+$$y_i = b_0 + b_1 \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i + e_i$$
+
+* Assume linear relationship of $b_1$ with `Breed`
+
+$$b_1 = a + b_4 \times BrLi + b_5 \times BrSi$$
+
+* Insert
+
+$$y_i = b_0 + (a + b_4 \times BrLi + b_5 \times BrSi) \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i + e_i$$
+
+* Simplify
+
+\begin{align}
+y_i &= b_0 + a \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i \notag \\
+    &  + b_4 \times BrLi \times BC_i + b_5 \times BrSi \times BC_i + e_i \notag
+\end{align}
+
+
+## Continuous by Continuous
+
+* Similar to continuous by categorical
+* No interaction
+
+\begin{equation}
+y_0 = b_0 + b_1 \times BC_i + b_2 \times HE_i + e_i \notag
+\end{equation}
+
+* Interaction by dependence of one regression coefficient on other coefficient
+
+$$b_1 = b_3 + b_4 \times HE_i $$
+
+$$y_0 = b_0 + b_2 \times HE_i + b_3 \times BC_i + b_4 \times HE_i \times BC_i + e_i$$
+
+
+## Categorical by Categorical 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+tbl_flem_bw_br_sex <- tbl_flem_bw_bc_br %>%
+  select(Animal, `Body Weight`, Breed)
+tbl_flem_bw_br_sex <- tbl_flem_bw_br_sex %>% 
+  bind_cols(tibble::tibble(Sex = c("M", rep("F",2),
+                                   rep("F", 2), "M", "F",
+                                   "F", "M","F")))
+library(ggplot2)
+p <- ggplot(data = tbl_flem_bw_br_sex, 
+            aes(x = Breed, 
+                y = `Body Weight`,
+                group = Sex)) + 
+  geom_point(aes(color = Sex))
+p
+
+```
+
+
+## Model Matrix
+
+\tiny
+
+```{r}
+lm_bw_br_sex <- lm(`Body Weight` ~ Breed * Sex, data = tbl_flem_bw_br_sex)
+model.matrix(lm_bw_br_sex)
+```
+
+
+## Summary
+
+\tiny
+
+```{r}
+summary(lm_bw_br_sex)
+```
+
