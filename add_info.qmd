@@ -33,7 +33,7 @@ tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4, 5),
                            paste0("[Estimable Functions](",
                                   s_sl_url,
                                   "l04_est_fun/l04_est_fun.pdf)",
-                                  collapse = "")
+                                  collapse = ""),
                            paste0("[Contrasts](",
                                   s_sl_url,
                                   "l05_contrasts/l05_contrasts.pdf)", collapse = "")
