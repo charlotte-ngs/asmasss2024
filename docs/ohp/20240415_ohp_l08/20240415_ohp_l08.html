@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Peter von Rohr">
-<meta name="dcterms.date" content="2024-04-22">
 
-<title>ASMAS-SS2024 | 0.8.1 - Interactions</title>
+<title>ASMAS-SS2024 | 0.8.1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,35 +67,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -159,205 +128,77 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
-  <li><a href="#types-of-interactions" id="toc-types-of-interactions" class="nav-link" data-scroll-target="#types-of-interactions">Types of Interactions</a></li>
-  <li><a href="#continuous-by-categorical" id="toc-continuous-by-categorical" class="nav-link" data-scroll-target="#continuous-by-categorical">Continuous by Categorical</a></li>
-  <li><a href="#interaction-plot" id="toc-interaction-plot" class="nav-link" data-scroll-target="#interaction-plot">Interaction Plot</a></li>
-  <li><a href="#interaction-model" id="toc-interaction-model" class="nav-link" data-scroll-target="#interaction-model">Interaction Model</a></li>
-  <li><a href="#continuous-by-continuous" id="toc-continuous-by-continuous" class="nav-link" data-scroll-target="#continuous-by-continuous">Continuous by Continuous</a></li>
-  <li><a href="#categorical-by-categorical" id="toc-categorical-by-categorical" class="nav-link" data-scroll-target="#categorical-by-categorical">Categorical by Categorical</a></li>
-  <li><a href="#model-matrix" id="toc-model-matrix" class="nav-link" data-scroll-target="#model-matrix">Model Matrix</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#ohp-picture-1" id="toc-ohp-picture-1" class="nav-link active" data-scroll-target="#ohp-picture-1">OHP Picture 1</a></li>
+  <li><a href="#ohp-picture-2" id="toc-ohp-picture-2" class="nav-link" data-scroll-target="#ohp-picture-2">OHP Picture 2</a></li>
+  <li><a href="#ohp-picture-3" id="toc-ohp-picture-3" class="nav-link" data-scroll-target="#ohp-picture-3">OHP Picture 3</a></li>
+  <li><a href="#ohp-picture-4" id="toc-ohp-picture-4" class="nav-link" data-scroll-target="#ohp-picture-4">OHP Picture 4</a></li>
+  <li><a href="#ohp-picture-5" id="toc-ohp-picture-5" class="nav-link" data-scroll-target="#ohp-picture-5">OHP Picture 5</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Interactions</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Peter von Rohr </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 22, 2024</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<ul>
-<li>Effect of given predictor variable depends on level or value of other predictor variable</li>
-<li>Examples:
-<ul>
-<li>Regression of <code>Body Weight</code> on <code>Breast Circumference</code> is different for different breeds</li>
-<li>Effect of <code>Breed</code> on <code>Body Weight</code> is different for different male and female animals</li>
-</ul></li>
-</ul>
-</section>
-<section id="types-of-interactions" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-interactions">Types of Interactions</h2>
-<ul>
-<li>continuous by continuous</li>
-<li>continuous by categorical</li>
-<li>categorical by categorical</li>
-</ul>
-</section>
-<section id="continuous-by-categorical" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-by-categorical">Continuous by Categorical</h2>
-<ul>
-<li>In a model, expected value of response depends on regression variable plus discrete factor</li>
-<li>Example: Regression of <code>Body Weight</code> on <code>Breast Circumference</code> plus the factor <code>Breed</code></li>
-<li>Interaction is present, if regression of <code>Body Weight</code> on <code>Breast Circumference</code> is different for different breeds</li>
-</ul>
-</section>
-<section id="interaction-plot" class="level2">
-<h2 class="anchored" data-anchor-id="interaction-plot">Interaction Plot</h2>
-<div class="cell">
+<section id="ohp-picture-1" class="level2">
+<h2 class="anchored" data-anchor-id="ohp-picture-1">OHP Picture 1</h2>
+<div class="cell" data-hook_convert_odg="true" data-fig_path="odg">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="l06_interactions_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="odg/ohp-page4169.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="interaction-model" class="level2">
-<h2 class="anchored" data-anchor-id="interaction-model">Interaction Model</h2>
-<ul>
-<li>Start with model without interactions</li>
-</ul>
-<p><span class="math display">\[y_i = b_0 + b_1 \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i + e_i\]</span></p>
-<ul>
-<li>Assume linear relationship of <span class="math inline">\(b_1\)</span> with <code>Breed</code></li>
-</ul>
-<p><span class="math display">\[b_1 = a + b_4 \times BrLi + b_5 \times BrSi\]</span></p>
-<ul>
-<li>Insert</li>
-</ul>
-<p><span class="math display">\[y_i = b_0 + (a + b_4 \times BrLi + b_5 \times BrSi) \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i + e_i\]</span></p>
-<ul>
-<li>Simplify</li>
-</ul>
-<p><span class="math display">\[\begin{align}
-y_i &amp;= b_0 + a \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i \notag \\
-    &amp;  + b_4 \times BrLi \times BC_i + b_5 \times BrSi \times BC_i + e_i \notag
-\end{align}\]</span></p>
-</section>
-<section id="continuous-by-continuous" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-by-continuous">Continuous by Continuous</h2>
-<ul>
-<li>Similar to continuous by categorical</li>
-<li>No interaction</li>
-</ul>
-<p><span class="math display">\[\begin{equation}
-y_0 = b_0 + b_1 \times BC_i + b_2 \times HE_i + e_i \notag
-\end{equation}\]</span></p>
-<ul>
-<li>Interaction by dependence of one regression coefficient on other coefficient</li>
-</ul>
-<p><span class="math display">\[b_1 = b_3 + b_4 \times HE_i \]</span></p>
-<p><span class="math display">\[y_0 = b_0 + b_2 \times HE_i + b_3 \times BC_i + b_4 \times HE_i \times BC_i + e_i\]</span></p>
-</section>
-<section id="categorical-by-categorical" class="level2">
-<h2 class="anchored" data-anchor-id="categorical-by-categorical">Categorical by Categorical</h2>
-<div class="cell">
+<section id="ohp-picture-2" class="level2">
+<h2 class="anchored" data-anchor-id="ohp-picture-2">OHP Picture 2</h2>
+<div class="cell" data-hook_convert_odg="true" data-fig_path="odg">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="l06_interactions_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="odg/ohp-page4170.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="model-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="model-matrix">Model Matrix</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>   (Intercept) BreedLimousin BreedSimmental SexM BreedLimousin:SexM
-1            1             0              0    1                  0
-2            1             0              0    0                  0
-3            1             0              0    0                  0
-4            1             1              0    0                  0
-5            1             1              0    0                  0
-6            1             1              0    1                  1
-7            1             1              0    0                  0
-8            1             0              1    0                  0
-9            1             0              1    1                  0
-10           1             0              1    0                  0
-   BreedSimmental:SexM
-1                    0
-2                    0
-3                    0
-4                    0
-5                    0
-6                    0
-7                    0
-8                    0
-9                    1
-10                   0
-attr(,"assign")
-[1] 0 1 1 2 3 3
-attr(,"contrasts")
-attr(,"contrasts")$Breed
-[1] "contr.treatment"
-
-attr(,"contrasts")$Sex
-[1] "contr.treatment"</code></pre>
+<section id="ohp-picture-3" class="level2">
+<h2 class="anchored" data-anchor-id="ohp-picture-3">OHP Picture 3</h2>
+<div class="cell" data-hook_convert_odg="true" data-fig_path="odg">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="odg/ohp-page4171.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = `Body Weight` ~ Breed * Sex, data = tbl_flem_bw_br_sex)
-
-Residuals:
-         1          2          3          4          5          6          7 
- 3.726e-15 -3.500e+00  3.500e+00 -5.333e+00 -1.233e+01 -1.703e-15  1.767e+01 
-         8          9         10 
--5.000e+00 -6.458e-16  5.000e+00 
-
-Coefficients:
-                    Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)           466.50       8.42  55.404 6.35e-07 ***
-BreedLimousin          56.83      10.87   5.228  0.00639 ** 
-BreedSimmental         19.50      11.91   1.638  0.17685    
-SexM                    4.50      14.58   0.309  0.77306    
-BreedLimousin:SexM    -17.83      20.04  -0.890  0.42389    
-BreedSimmental:SexM     5.50      20.62   0.267  0.80291    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 11.91 on 4 degrees of freedom
-Multiple R-squared:  0.8981,    Adjusted R-squared:  0.7706 
-F-statistic: 7.048 on 5 and 4 DF,  p-value: 0.04092</code></pre>
+<section id="ohp-picture-4" class="level2">
+<h2 class="anchored" data-anchor-id="ohp-picture-4">OHP Picture 4</h2>
+<div class="cell" data-hook_convert_odg="true" data-fig_path="odg">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="odg/ohp-page4172.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ohp-picture-5" class="level2">
+<h2 class="anchored" data-anchor-id="ohp-picture-5">OHP Picture 5</h2>
+<div class="cell" data-hook_convert_odg="true" data-fig_path="odg">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="odg/ohp-page4173.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
 </div>
 </div>
 

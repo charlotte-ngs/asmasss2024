@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-15 13:29:09 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-21 06:55:41 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Overhead ohp_l08\n\n\n\n\n\nExercise on contrasts asm_ex07\nExercise on fixed linear effects model asm_ex06"
+    "text": "Slides on interactions l06_interactions"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -144,7 +144,7 @@
     "href": "add_info.html#slides",
     "title": "Additional Information",
     "section": "Slides",
-    "text": "Slides\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions\n\n\n5\n2024-04-15\nContrasts"
+    "text": "Slides\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions\n\n\n5\n2024-04-15\nContrasts\n\n\n6\n2024-04-22\nInteractions"
   },
   {
     "objectID": "add_info.html#over-head-pictures",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.7.0",
+    "title": "asmasss2024 0.9.0",
     "section": "",
-    "text": "asmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -717,14 +717,210 @@
     "objectID": "about.html#asmasss2024-0.8.0",
     "href": "about.html#asmasss2024-0.8.0",
     "title": "About",
-    "section": "",
-    "text": "Exercise on contrasts asm_ex07\nExercise on fixed linear effects model asm_ex06"
+    "section": "asmasss2024 0.8.0",
+    "text": "asmasss2024 0.8.0\n\nExercise on contrasts asm_ex07\nExercise on fixed linear effects model asm_ex06"
   },
   {
     "objectID": "about.html#asmasss2024-0.8.1",
     "href": "about.html#asmasss2024-0.8.1",
     "title": "About",
+    "section": "asmasss2024 0.8.1",
+    "text": "asmasss2024 0.8.1\n\nOverhead ohp_l08"
+  },
+  {
+    "objectID": "my_scripts/20240415_contrasts/contrasts.html",
+    "href": "my_scripts/20240415_contrasts/contrasts.html",
+    "title": "Contrasts in Linear Models",
     "section": "",
-    "text": "Overhead ohp_l08"
+    "text": "s_bw_br &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed.csv\"\ndf_bw_br &lt;- read.table(s_bw_br, header = T, sep=\",\")\ndf_bw_br\n\n   Animal Body.Weight     Breed\n1       1         471     Angus\n2       2         463     Angus\n3       4         470     Angus\n4       7         518  Limousin\n5       8         511  Limousin\n6       9         510  Limousin\n7      10         541  Limousin\n8       3         481 Simmental\n9       5         496 Simmental\n10      6         491 Simmental\n\n# contrasts for breed\nmat_ctr &lt;- contrasts(as.factor(df_bw_br$Breed))\n\n# assignment of new variable\nmodel.matrix(Body.Weight ~ Breed, df_bw_br)\n\n   (Intercept) BreedLimousin BreedSimmental\n1            1             0              0\n2            1             0              0\n3            1             0              0\n4            1             1              0\n5            1             1              0\n6            1             1              0\n7            1             1              0\n8            1             0              1\n9            1             0              1\n10           1             0              1\nattr(,\"assign\")\n[1] 0 1 1\nattr(,\"contrasts\")\nattr(,\"contrasts\")$Breed\n[1] \"contr.treatment\"\n\n# understand output of\nsummary(lm(Body.Weight ~ Breed, df_bw_br))\n\n\nCall:\nlm(formula = Body.Weight ~ Breed, data = df_bw_br)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.0000  -7.5000  -0.1667   2.7500  21.0000 \n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     468.000      6.097  76.758 1.68e-11 ***\nBreedLimousin    52.000      8.066   6.447 0.000351 ***\nBreedSimmental   21.333      8.623   2.474 0.042575 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 10.56 on 7 degrees of freedom\nMultiple R-squared:  0.8597,    Adjusted R-squared:  0.8196 \nF-statistic: 21.44 on 2 and 7 DF,  p-value: 0.001035\n\n# extend mat_ctr\nmat_ctr_ext &lt;- cbind(matrix(rep(1, nrow(mat_ctr))), mat_ctr)\ncolnames(mat_ctr_ext)[1] &lt;- \"(Intercept)\"\nmat_ctr_ext\n\n          (Intercept) Limousin Simmental\nAngus               1        0         0\nLimousin            1        1         0\nSimmental           1        0         1\n\n# inverse\nmat_ctr_ext_inv &lt;- solve(mat_ctr_ext)\nmat_ctr_ext_inv\n\n            Angus Limousin Simmental\n(Intercept)     1        0         0\nLimousin       -1        1         0\nSimmental      -1        0         1\n\n# group means\nn_mean_bw_an &lt;- mean(df_bw_br$Body.Weight[df_bw_br$Breed == \"Angus\"])\nn_mean_bw_li &lt;- mean(df_bw_br$Body.Weight[df_bw_br$Breed == \"Limousin\"])\nn_mean_bw_si &lt;- mean(df_bw_br$Body.Weight[df_bw_br$Breed == \"Simmental\"])\nvec_gr_mean_bw &lt;- c(n_mean_bw_an, n_mean_bw_li, n_mean_bw_si)\nvec_gr_mean_bw\n\n[1] 468.0000 520.0000 489.3333\n\n# estimates\nvec_b_hat &lt;- mat_ctr_ext_inv %*% vec_gr_mean_bw\nvec_b_hat\n\n                 [,1]\n(Intercept) 468.00000\nLimousin     52.00000\nSimmental    21.33333\n\n# solutions of least squares normal equations\nmat_X &lt;- model.matrix(Body.Weight ~ 0 + Breed, df_bw_br)\nmat_X &lt;- cbind(matrix(rep(1, nrow(mat_X))), mat_X)\nmat_X\n\n     BreedAngus BreedLimousin BreedSimmental\n1  1          1             0              0\n2  1          1             0              0\n3  1          1             0              0\n4  1          0             1              0\n5  1          0             1              0\n6  1          0             1              0\n7  1          0             1              0\n8  1          0             0              1\n9  1          0             0              1\n10 1          0             0              1\n\nmat_xtx &lt;- crossprod(mat_X)\nmat_xtx_ginv &lt;- MASS::ginv(mat_xtx)\nmat_xty &lt;- crossprod(mat_X, df_bw_br$Body.Weight)\nmat_sol &lt;- crossprod(mat_xtx_ginv, mat_xty)\nmat_sol\n\n          [,1]\n[1,] 369.33333\n[2,]  98.66667\n[3,] 150.66667\n[4,] 120.00000\n\nmat_sol[3] - mat_sol[2]\n\n[1] 52\n\nmat_sol[4] - mat_sol[2]\n\n[1] 21.33333"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html",
+    "href": "slides/l06_interactions/l06_interactions.html",
+    "title": "Interactions",
+    "section": "",
+    "text": "Effect of given predictor variable depends on level or value of other predictor variable\nExamples:\n\nRegression of Body Weight on Breast Circumference is different for different breeds\nEffect of Breed on Body Weight is different for different male and female animals"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#definition",
+    "href": "slides/l06_interactions/l06_interactions.html#definition",
+    "title": "Interactions",
+    "section": "",
+    "text": "Effect of given predictor variable depends on level or value of other predictor variable\nExamples:\n\nRegression of Body Weight on Breast Circumference is different for different breeds\nEffect of Breed on Body Weight is different for different male and female animals"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#types-of-interactions",
+    "href": "slides/l06_interactions/l06_interactions.html#types-of-interactions",
+    "title": "Interactions",
+    "section": "Types of Interactions",
+    "text": "Types of Interactions\n\ncontinuous by continuous\ncontinuous by categorical\ncategorical by categorical"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#continuous-by-categorical",
+    "href": "slides/l06_interactions/l06_interactions.html#continuous-by-categorical",
+    "title": "Interactions",
+    "section": "Continuous by Categorical",
+    "text": "Continuous by Categorical\n\nIn a model, expected value of response depends on regression variable plus discrete factor\nExample: Regression of Body Weight on Breast Circumference plus the factor Breed\nInteraction is present, if regression of Body Weight on Breast Circumference is different for different breeds"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#interaction-plot",
+    "href": "slides/l06_interactions/l06_interactions.html#interaction-plot",
+    "title": "Interactions",
+    "section": "Interaction Plot",
+    "text": "Interaction Plot"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#interaction-model",
+    "href": "slides/l06_interactions/l06_interactions.html#interaction-model",
+    "title": "Interactions",
+    "section": "Interaction Model",
+    "text": "Interaction Model\n\nStart with model without interactions\n\n\\[y_i = b_0 + b_1 \\times BC_i + b_2 \\times BrLi_i + b_3 \\times BrSi_i + e_i\\]\n\nAssume linear relationship of \\(b_1\\) with Breed\n\n\\[b_1 = a + b_4 \\times BrLi + b_5 \\times BrSi\\]\n\nInsert\n\n\\[y_i = b_0 + (a + b_4 \\times BrLi + b_5 \\times BrSi) \\times BC_i + b_2 \\times BrLi_i + b_3 \\times BrSi_i + e_i\\]\n\nSimplify\n\n\\[\\begin{align}\ny_i &= b_0 + a \\times BC_i + b_2 \\times BrLi_i + b_3 \\times BrSi_i \\notag \\\\\n    &  + b_4 \\times BrLi \\times BC_i + b_5 \\times BrSi \\times BC_i + e_i \\notag\n\\end{align}\\]"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#continuous-by-continuous",
+    "href": "slides/l06_interactions/l06_interactions.html#continuous-by-continuous",
+    "title": "Interactions",
+    "section": "Continuous by Continuous",
+    "text": "Continuous by Continuous\n\nSimilar to continuous by categorical\nNo interaction\n\n\\[\\begin{equation}\ny_0 = b_0 + b_1 \\times BC_i + b_2 \\times HE_i + e_i \\notag\n\\end{equation}\\]\n\nInteraction by dependence of one regression coefficient on other coefficient\n\n\\[b_1 = b_3 + b_4 \\times HE_i \\]\n\\[y_0 = b_0 + b_2 \\times HE_i + b_3 \\times BC_i + b_4 \\times HE_i \\times BC_i + e_i\\]"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#categorical-by-categorical",
+    "href": "slides/l06_interactions/l06_interactions.html#categorical-by-categorical",
+    "title": "Interactions",
+    "section": "Categorical by Categorical",
+    "text": "Categorical by Categorical"
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#model-matrix",
+    "href": "slides/l06_interactions/l06_interactions.html#model-matrix",
+    "title": "Interactions",
+    "section": "Model Matrix",
+    "text": "Model Matrix\n\n\n   (Intercept) BreedLimousin BreedSimmental SexM BreedLimousin:SexM\n1            1             0              0    1                  0\n2            1             0              0    0                  0\n3            1             0              0    0                  0\n4            1             1              0    0                  0\n5            1             1              0    0                  0\n6            1             1              0    1                  1\n7            1             1              0    0                  0\n8            1             0              1    0                  0\n9            1             0              1    1                  0\n10           1             0              1    0                  0\n   BreedSimmental:SexM\n1                    0\n2                    0\n3                    0\n4                    0\n5                    0\n6                    0\n7                    0\n8                    0\n9                    1\n10                   0\nattr(,\"assign\")\n[1] 0 1 1 2 3 3\nattr(,\"contrasts\")\nattr(,\"contrasts\")$Breed\n[1] \"contr.treatment\"\n\nattr(,\"contrasts\")$Sex\n[1] \"contr.treatment\""
+  },
+  {
+    "objectID": "slides/l06_interactions/l06_interactions.html#summary",
+    "href": "slides/l06_interactions/l06_interactions.html#summary",
+    "title": "Interactions",
+    "section": "Summary",
+    "text": "Summary\n\n\n\nCall:\nlm(formula = `Body Weight` ~ Breed * Sex, data = tbl_flem_bw_br_sex)\n\nResiduals:\n         1          2          3          4          5          6          7 \n 3.726e-15 -3.500e+00  3.500e+00 -5.333e+00 -1.233e+01 -1.703e-15  1.767e+01 \n         8          9         10 \n-5.000e+00 -6.458e-16  5.000e+00 \n\nCoefficients:\n                    Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)           466.50       8.42  55.404 6.35e-07 ***\nBreedLimousin          56.83      10.87   5.228  0.00639 ** \nBreedSimmental         19.50      11.91   1.638  0.17685    \nSexM                    4.50      14.58   0.309  0.77306    \nBreedLimousin:SexM    -17.83      20.04  -0.890  0.42389    \nBreedSimmental:SexM     5.50      20.62   0.267  0.80291    \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 11.91 on 4 degrees of freedom\nMultiple R-squared:  0.8981,    Adjusted R-squared:  0.7706 \nF-statistic: 7.048 on 5 and 4 DF,  p-value: 0.04092"
+  },
+  {
+    "objectID": "ohp/20240415_ohp_l08/20240415_ohp_l08.html#ohp-picture-2",
+    "href": "ohp/20240415_ohp_l08/20240415_ohp_l08.html#ohp-picture-2",
+    "title": "ASMAS-SS2024 | 0.8.1",
+    "section": "OHP Picture 2",
+    "text": "OHP Picture 2"
+  },
+  {
+    "objectID": "ohp/20240415_ohp_l08/20240415_ohp_l08.html#ohp-picture-3",
+    "href": "ohp/20240415_ohp_l08/20240415_ohp_l08.html#ohp-picture-3",
+    "title": "ASMAS-SS2024 | 0.8.1",
+    "section": "OHP Picture 3",
+    "text": "OHP Picture 3"
+  },
+  {
+    "objectID": "ohp/20240415_ohp_l08/20240415_ohp_l08.html#ohp-picture-4",
+    "href": "ohp/20240415_ohp_l08/20240415_ohp_l08.html#ohp-picture-4",
+    "title": "ASMAS-SS2024 | 0.8.1",
+    "section": "OHP Picture 4",
+    "text": "OHP Picture 4"
+  },
+  {
+    "objectID": "ohp/20240415_ohp_l08/20240415_ohp_l08.html#ohp-picture-5",
+    "href": "ohp/20240415_ohp_l08/20240415_ohp_l08.html#ohp-picture-5",
+    "title": "ASMAS-SS2024 | 0.8.1",
+    "section": "OHP Picture 5",
+    "text": "OHP Picture 5"
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "",
+    "text": "This is an update on the synthesis and derivation notebook of the two previous years. After the lecture, we start with the development of new material. The new material is only based on group means and contrasts of group means."
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#disclaimer",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#disclaimer",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "",
+    "text": "This is an update on the synthesis and derivation notebook of the two previous years. After the lecture, we start with the development of new material. The new material is only based on group means and contrasts of group means."
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#data",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#data",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Data",
+    "text": "Data\nWe are using the dataset on body weight and breed.\n\ns_bw_breed_path &lt;- here::here(\"docs\", \"data\", \"asm_bw_breed.csv\")\ntbl_bw_breed &lt;- readr::read_delim(s_bw_breed_path, delim = \",\")\n\nRows: 10 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Breed\ndbl (2): Animal, Body Weight\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\ntbl_bw_breed\n\n# A tibble: 10 × 3\n   Animal `Body Weight` Breed    \n    &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;    \n 1      1           471 Angus    \n 2      2           463 Angus    \n 3      4           470 Angus    \n 4      7           518 Limousin \n 5      8           511 Limousin \n 6      9           510 Limousin \n 7     10           541 Limousin \n 8      3           481 Simmental\n 9      5           496 Simmental\n10      6           491 Simmental"
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#regression-on-dummy-variables",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#regression-on-dummy-variables",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Regression on Dummy Variables",
+    "text": "Regression on Dummy Variables\nLet us assume that we are interested in the difference between body weights of animals of the breed Limousin compared to the body weight of animals of breed Angus. This difference can be visualized by the following plot\n\n# filter data\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\ntbl_bw_an_li &lt;- tbl_bw_breed %&gt;% \n  filter(Breed != \"Simmental\")\ntbl_bw_an_li\n\n# A tibble: 7 × 3\n  Animal `Body Weight` Breed   \n   &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;   \n1      1           471 Angus   \n2      2           463 Angus   \n3      4           470 Angus   \n4      7           518 Limousin\n5      8           511 Limousin\n6      9           510 Limousin\n7     10           541 Limousin\n\n\nShow the plot\n\nlibrary(ggplot2)\nplot_bw_diff_li_an &lt;- ggplot(tbl_bw_an_li, aes(x = Breed, y = `Body Weight`)) + \n  geom_point(color = \"blue\")\nplot_bw_diff_li_an\n\n\n\n\n\n\n\n\nThe difference of mean body weight between animals of the two breeds can be shown by fitting a regression of body weight on a breed code where Angus animals are assigned the code \\(0\\) and animals of breed Limousin are assigned the code \\(1\\).\n\ntbl_bw_an_li$BreedCodeLi &lt;- as.numeric(as.factor(tbl_bw_an_li$Breed)) - 1\ntbl_bw_an_li\n\n# A tibble: 7 × 4\n  Animal `Body Weight` Breed    BreedCodeLi\n   &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1      1           471 Angus              0\n2      2           463 Angus              0\n3      4           470 Angus              0\n4      7           518 Limousin           1\n5      8           511 Limousin           1\n6      9           510 Limousin           1\n7     10           541 Limousin           1\n\n\nThe regression of Body Weight on BreedCode is\n\nlm_bw_brc_li &lt;- lm(`Body Weight` ~ BreedCodeLi, data = tbl_bw_an_li)\n(smry_bw_brc_li &lt;- summary(lm_bw_brc_li))\n\n\nCall:\nlm(formula = `Body Weight` ~ BreedCodeLi, data = tbl_bw_an_li)\n\nResiduals:\n  1   2   3   4   5   6   7 \n  3  -5   2  -2  -9 -10  21 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  468.000      6.653  70.341  1.1e-08 ***\nBreedCodeLi   52.000      8.802   5.908  0.00198 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 11.52 on 5 degrees of freedom\nMultiple R-squared:  0.8747,    Adjusted R-squared:  0.8496 \nF-statistic: 34.91 on 1 and 5 DF,  p-value: 0.001978\n\n\nAdding the resuting regression line to the above plot leads to\n\nplot_bw_brc_li_an &lt;- ggplot(tbl_bw_an_li, aes(x = BreedCodeLi, y = `Body Weight`)) + \n  geom_point(color = \"blue\") + \n  geom_abline(intercept = smry_bw_brc_li$coefficients[\"(Intercept)\", \"Estimate\"],\n              slope = smry_bw_brc_li$coefficients[\"BreedCodeLi\", \"Estimate\"],\n              color = \"red\")\nplot_bw_brc_li_an\n\n\n\n\n\n\n\n\nThe intersection of the red regression line with \\(x=0\\) on the one hand shows the intercept of the regression line and on the other hand corresponds to the mean Angus body weight"
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#old-stuff-below-here",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#old-stuff-below-here",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Old Stuff Below Here",
+    "text": "Old Stuff Below Here\nThe material from 2024 and before was mostly based on explaining parameter estimates via estimable functions of solutions of least squares normal equations. While this is possible and can work, it adds un-necessary complexity. For documentation, the previously used material is left in here."
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#references",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#references",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "References",
+    "text": "References\n[1] Notebooks on contrasts from previous years [2] Material from https://bookdown.org/pingapang9/linear_models_bookdown/chap-contrasts.html"
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#data-1",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#data-1",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Data",
+    "text": "Data\nThe data set used is the one on a synthetic observation and on breeds of animals.\n\ns_data_path &lt;- here::here(\"docs\", \"data\", \"est_fun_breed_data.csv\")\ntbl_est_fun &lt;- readr::read_delim(s_data_path, delim = \",\")\n\nRows: 6 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Breed\ndbl (2): Animal, Observation\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\ntbl_est_fun\n\n# A tibble: 6 × 3\n  Animal Breed     Observation\n   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n1      1 Angus              16\n2      2 Angus              10\n3      3 Angus              19\n4      4 Simmental          11\n5      5 Simmental          13\n6      6 Limousin           27\n\n\nUse a second dataset with body weight and breed\n\ns_bw_breed_path &lt;- here::here(\"docs\", \"data\", \"asm_bw_breed.csv\")\ntbl_bw_breed &lt;- readr::read_delim(s_bw_breed_path, delim = \",\")\n\nRows: 10 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Breed\ndbl (2): Animal, Body Weight\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\ntbl_bw_breed\n\n# A tibble: 10 × 3\n   Animal `Body Weight` Breed    \n    &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;    \n 1      1           471 Angus    \n 2      2           463 Angus    \n 3      4           470 Angus    \n 4      7           518 Limousin \n 5      8           511 Limousin \n 6      9           510 Limousin \n 7     10           541 Limousin \n 8      3           481 Simmental\n 9      5           496 Simmental\n10      6           491 Simmental"
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#use-regression-to-describe-group-means",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#use-regression-to-describe-group-means",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Use Regression To Describe Group Means",
+    "text": "Use Regression To Describe Group Means\nStart by looking only at breeds Angus and Limousin in the dataset on body weight. Then use the dummy coding where Angus animals receive a value of \\(0\\) and Limousin animals receive a code of \\(1\\). The regression of body weight on that dummy coding results in a regression line that goes through the mean body weights for both breeds. That means, we get\n\nlibrary(dplyr)\ntbl_bw_breed &lt;- tbl_bw_breed %&gt;%\n  filter(Breed != \"Simmental\")\ntbl_bw_breed$BreedFactor &lt;- as.numeric(as.factor(tbl_bw_breed$Breed))-1\ntbl_bw_breed\n\n# A tibble: 7 × 4\n  Animal `Body Weight` Breed    BreedFactor\n   &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1      1           471 Angus              0\n2      2           463 Angus              0\n3      4           470 Angus              0\n4      7           518 Limousin           1\n5      8           511 Limousin           1\n6      9           510 Limousin           1\n7     10           541 Limousin           1\n\n\nFit regression\n\nlm_bw_breed &lt;- lm(`Body Weight` ~ BreedFactor, data = tbl_bw_breed)\n(smry_bw_breed &lt;- summary(lm_bw_breed))\n\n\nCall:\nlm(formula = `Body Weight` ~ BreedFactor, data = tbl_bw_breed)\n\nResiduals:\n  1   2   3   4   5   6   7 \n  3  -5   2  -2  -9 -10  21 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  468.000      6.653  70.341  1.1e-08 ***\nBreedFactor   52.000      8.802   5.908  0.00198 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 11.52 on 5 degrees of freedom\nMultiple R-squared:  0.8747,    Adjusted R-squared:  0.8496 \nF-statistic: 34.91 on 1 and 5 DF,  p-value: 0.001978\n\n\nCreate a plot\n\nlibrary(ggplot2)\npl_bw_breed &lt;- ggplot(tbl_bw_breed, aes(x = BreedFactor, y = `Body Weight`)) + \n  geom_point() + \n  geom_abline(slope = smry_bw_breed$coefficients[\"BreedFactor\", \"Estimate\"], \n              intercept = smry_bw_breed$coefficients[\"(Intercept)\", \"Estimate\"])\npl_bw_breed\n\n\n\n\n\n\n\n\nThe intersection of the regression line at the two values \\(0\\) and \\(1\\) for BreedFactor are at the mean value for body weight for the two breeds AN and LI. The writing the parameter vector \\(b\\) as\n\\[b = \\left[ \\begin{array}{c} b_0 \\\\ b_1 \\end{array}\\right] \\]\nWe see in the next section how to express \\(b\\) as contrasts of group means \\(M_{AN}\\) and \\(M_{LI}\\)."
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#idea-of-contrasts",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#idea-of-contrasts",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Idea of Contrasts",
+    "text": "Idea of Contrasts\nAccording to chapter 7 of [2], contrasts can be explained as follows.\nA contrast is a linear combination of parameters or statistics. An alternative term for “linear combination” is weighted sum. We are currently focusing on statistics from two levels of a given factor. In our dataset this corresponds to two levels of the factor breed. As an example, we have a look at the observation for Simmental and for Angus animals.\nLet \\(M_{AN}\\) be the mean observation for all animals of breed Angus and \\(M_{SI}\\) be the mean observation for all Simmental animals. The sum of the two means can be written as\n\\[L_1 = M_{AN} + M_{SI}\n= \\left[\\begin{array}{cc} 1 & 1 \\end{array}\\right] \\cdot \\left[ \\begin{array}{c} M_{AN} \\\\  M_{SI}  \\end{array}\\right]\n= l_1^T \\cdot m\\]\nA different contrast (\\(L_2\\)) insepects the difference between the two means.\n\\[L_2 = M_{AN} - M_{SI}\n= \\left[\\begin{array}{cc} 1 & -1 \\end{array}\\right] \\cdot \\left[ \\begin{array}{c} M_{AN} \\\\  M_{SI}  \\end{array}\\right]\n= l_2^T \\cdot m\\]\nThese contrasts \\(l_1\\) and \\(l_2\\) can be combined into a matrix \\(L\\)\n\\[L = \\left[\\begin{array}{cc} l_1 & l_2 \\end{array} \\right] \\]\nThen we can write the above two contrasts as\n\\[L^T \\cdot m\\]\nAs seen in the previous section, the estimate of the parameter vector \\(b\\) can be written as contrasts of group means and as a consequence, the group means can be written as a function of parameter estimates\n\\[m =  \\left[ \\begin{array}{c} M_{AN} \\\\  M_{SI}  \\end{array}\\right]\n= \\left[ \\begin{array}{c} \\widehat{b_0} \\\\  \\widehat{b_0} + \\widehat{b_1}  \\end{array}\\right]\n=  \\left[\\begin{array}{cc} 1 & 0 \\\\ 1 & 1 \\end{array}\\right]\n    \\cdot \\left[ \\begin{array}{c} \\widehat{b_0} \\\\  \\widehat{b_1}  \\end{array}\\right]\n= L^T \\cdot  \\widehat{b}\\]\nWith this, the vector of group means \\(m\\) is expressed as linear function or linear transformation of the vector of parameter estimates $ $. Solving for \\(\\widehat{b}\\) yields the parameter estimates as linear function of group means.\n\\[\\widehat{b} = (L^T)^{-1} \\cdot m\\]\nAs shown below, the matrix \\(L^T\\) is used to determine what type of contrasts are used in R."
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#contrasts-in-r",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#contrasts-in-r",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Contrasts in R",
+    "text": "Contrasts in R\nFor a given dataset, the contrast matrix can be obtained as a result of the function contrasts(). For our original example with three breeds this yields in\n\ntbl_bw_breed &lt;- readr::read_delim(s_bw_breed_path, delim = \",\")\nmat_ctr_br &lt;- contrasts(as.factor(tbl_bw_breed$Breed))\nmat_ctr_br\n\n          Limousin Simmental\nAngus            0         0\nLimousin         1         0\nSimmental        0         1\n\n\nThe above shown contrasts matrix shows in the rows, the original factor levels in the dataset. The columns stand for the new variables that are introduced in the re-dimensioned model. How the codes for the new model are assigned to the observations can be seen from the result of the function model.matrix.\n\nmat_mod_br &lt;- model.matrix(`Body Weight` ~ Breed, tbl_bw_breed)\nmat_mod_br\n\n   (Intercept) BreedLimousin BreedSimmental\n1            1             0              0\n2            1             0              0\n3            1             0              0\n4            1             1              0\n5            1             1              0\n6            1             1              0\n7            1             1              0\n8            1             0              1\n9            1             0              1\n10           1             0              1\nattr(,\"assign\")\n[1] 0 1 1\nattr(,\"contrasts\")\nattr(,\"contrasts\")$Breed\n[1] \"contr.treatment\"\n\n\nAdding a column representing the intercept to the contrasts matrix and taking its inverse, results in the matrix of estimable functions\n\nmat_ctr_br_ext &lt;- cbind(matrix(rep(1, nrow(mat_ctr_br))), mat_ctr_br)\ncolnames(mat_ctr_br_ext)[1] &lt;- \"(Intercept)\"\nmat_ctr_br_ext\n\n          (Intercept) Limousin Simmental\nAngus               1        0         0\nLimousin            1        1         0\nSimmental           1        0         1\n\n\nThen the inverse\n\nmat_est_fun &lt;- solve(mat_ctr_br_ext)\nmat_est_fun\n\n            Angus Limousin Simmental\n(Intercept)     1        0         0\nLimousin       -1        1         0\nSimmental      -1        0         1\n\n\nThe first row indicates which group mean is used for the intercept. The remaining rows represent the estimable functions used for the effect with the corresponding row name."
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#validation",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#validation",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Validation",
+    "text": "Validation\nThe results on the investigated connection between contrasts and estimable functions is validated with our example dataset. For this validation, we first need a set of solutions to the least squares normal equations. As the first step, we set up the design matrix \\(\\mathbf{X}\\) and use it to compute the crossproduct \\(\\mathbf{X}^T\\mathbf{X}\\)\n\n#tbl_flem_bw_breed\nmat_X &lt;- model.matrix(`Body Weight` ~ 0 + Breed, tbl_bw_breed)\nmat_X &lt;- cbind(matrix(1, nrow = nrow(tbl_bw_breed), ncol = 1), mat_X)\ndimnames(mat_X) &lt;- NULL\nmat_xtx &lt;- crossprod(mat_X)\nmat_xtx\n\n     [,1] [,2] [,3] [,4]\n[1,]   10    3    4    3\n[2,]    3    3    0    0\n[3,]    4    0    4    0\n[4,]    3    0    0    3\n\n\nThe solution to the normal equations are obtained by\n\nvec_y &lt;- tbl_bw_breed$`Body Weight`\nmat_xty &lt;- crossprod(mat_X, vec_y)\nmat_xtx_ginv &lt;- MASS::ginv(mat_xtx)\nmat_b_sol &lt;- crossprod(t(mat_xtx_ginv), mat_xty)\nmat_b_sol\n\n          [,1]\n[1,] 369.33333\n[2,]  98.66667\n[3,] 150.66667\n[4,] 120.00000\n\n\nThe intercept in the treatment contrasts are computed as the mean observations for the first factor level. For the factor Breed this corresponds to the mean of all animals of breed Angus. This is verified by\n\nlibrary(dplyr)\nmean((tbl_bw_breed %&gt;% filter(Breed == \"Angus\"))$`Body Weight`)\n\n[1] 468\n\n\nBased on the matrix of estimable functions, the effect assigned to the BreedLimousin corresponds to the difference between the third and the second component of the solution vector\n\nmat_b_sol[3] - mat_b_sol[2] \n\n[1] 52\n\n\nThe effect assigned to BreedSimmental is the difference between the last and the second component of the solution vector\n\nmat_b_sol[4] - mat_b_sol[2]\n\n[1] 21.33333\n\n\nThese effects can also be found in the summary output of the lm -object.\n\nlm_bw_br &lt;- lm(`Body Weight` ~ Breed, data = tbl_bw_breed)\n(smry_lm_bw_br &lt;- summary(lm_bw_br))\n\n\nCall:\nlm(formula = `Body Weight` ~ Breed, data = tbl_bw_breed)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-10.0000  -7.5000  -0.1667   2.7500  21.0000 \n\nCoefficients:\n               Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)     468.000      6.097  76.758 1.68e-11 ***\nBreedLimousin    52.000      8.066   6.447 0.000351 ***\nBreedSimmental   21.333      8.623   2.474 0.042575 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 10.56 on 7 degrees of freedom\nMultiple R-squared:  0.8597,    Adjusted R-squared:  0.8196 \nF-statistic: 21.44 on 2 and 7 DF,  p-value: 0.001035"
+  },
+  {
+    "objectID": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#vector-of-group-means",
+    "href": "misc/20240414_est_fun_contrasts/20240413_est_fun_contrasts.html#vector-of-group-means",
+    "title": "Estimable Functions and Contrasts in R",
+    "section": "Vector of Group Means",
+    "text": "Vector of Group Means\nThe vector \\(m\\) is the vector of group means\n\nn_mean_AN &lt;- mean((tbl_bw_breed %&gt;% filter(Breed == \"Angus\"))$`Body Weight`)\nn_mean_LI &lt;- mean((tbl_bw_breed %&gt;% filter(Breed == \"Limousin\"))$`Body Weight`)\nn_mean_SI &lt;- mean((tbl_bw_breed %&gt;% filter(Breed == \"Simmental\"))$`Body Weight`)\n(vec_group_mean &lt;- c(n_mean_AN, n_mean_LI, n_mean_SI))\n\n[1] 468.0000 520.0000 489.3333\n\n\nPre-multiplication of the vector of group means with the matrix of estimable functions yields\n\ncrossprod(t(mat_est_fun), vec_group_mean)\n\n                 [,1]\n(Intercept) 468.00000\nLimousin     52.00000\nSimmental    21.33333"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.9.0",
+    "href": "about.html#asmasss2024-0.9.0",
+    "title": "About",
+    "section": "",
+    "text": "Slides on interactions l06_interactions"
   }
 ]

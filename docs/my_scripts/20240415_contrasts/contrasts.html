@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Peter von Rohr">
-<meta name="dcterms.date" content="2024-04-22">
+<meta name="dcterms.date" content="2024-04-15">
 
-<title>ASMAS-SS2024 | 0.8.1 - Interactions</title>
+<title>ASMAS-SS2024 | 0.8.1 - Contrasts in Linear Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -69,35 +102,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -155,45 +159,25 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
-  <li><a href="#types-of-interactions" id="toc-types-of-interactions" class="nav-link" data-scroll-target="#types-of-interactions">Types of Interactions</a></li>
-  <li><a href="#continuous-by-categorical" id="toc-continuous-by-categorical" class="nav-link" data-scroll-target="#continuous-by-categorical">Continuous by Categorical</a></li>
-  <li><a href="#interaction-plot" id="toc-interaction-plot" class="nav-link" data-scroll-target="#interaction-plot">Interaction Plot</a></li>
-  <li><a href="#interaction-model" id="toc-interaction-model" class="nav-link" data-scroll-target="#interaction-model">Interaction Model</a></li>
-  <li><a href="#continuous-by-continuous" id="toc-continuous-by-continuous" class="nav-link" data-scroll-target="#continuous-by-continuous">Continuous by Continuous</a></li>
-  <li><a href="#categorical-by-categorical" id="toc-categorical-by-categorical" class="nav-link" data-scroll-target="#categorical-by-categorical">Categorical by Categorical</a></li>
-  <li><a href="#model-matrix" id="toc-model-matrix" class="nav-link" data-scroll-target="#model-matrix">Model Matrix</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Interactions</h1>
+<h1 class="title">Contrasts in Linear Models</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Peter von Rohr </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 22, 2024</p>
+      <p class="date">April 15, 2024</p>
     </div>
   </div>
   
@@ -205,164 +189,146 @@ window.Quarto = {
 </header>
 
 
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<ul>
-<li>Effect of given predictor variable depends on level or value of other predictor variable</li>
-<li>Examples:
-<ul>
-<li>Regression of <code>Body Weight</code> on <code>Breast Circumference</code> is different for different breeds</li>
-<li>Effect of <code>Breed</code> on <code>Body Weight</code> is different for different male and female animals</li>
-</ul></li>
-</ul>
-</section>
-<section id="types-of-interactions" class="level2">
-<h2 class="anchored" data-anchor-id="types-of-interactions">Types of Interactions</h2>
-<ul>
-<li>continuous by continuous</li>
-<li>continuous by categorical</li>
-<li>categorical by categorical</li>
-</ul>
-</section>
-<section id="continuous-by-categorical" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-by-categorical">Continuous by Categorical</h2>
-<ul>
-<li>In a model, expected value of response depends on regression variable plus discrete factor</li>
-<li>Example: Regression of <code>Body Weight</code> on <code>Breast Circumference</code> plus the factor <code>Breed</code></li>
-<li>Interaction is present, if regression of <code>Body Weight</code> on <code>Breast Circumference</code> is different for different breeds</li>
-</ul>
-</section>
-<section id="interaction-plot" class="level2">
-<h2 class="anchored" data-anchor-id="interaction-plot">Interaction Plot</h2>
 <div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="l06_interactions_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="interaction-model" class="level2">
-<h2 class="anchored" data-anchor-id="interaction-model">Interaction Model</h2>
-<ul>
-<li>Start with model without interactions</li>
-</ul>
-<p><span class="math display">\[y_i = b_0 + b_1 \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i + e_i\]</span></p>
-<ul>
-<li>Assume linear relationship of <span class="math inline">\(b_1\)</span> with <code>Breed</code></li>
-</ul>
-<p><span class="math display">\[b_1 = a + b_4 \times BrLi + b_5 \times BrSi\]</span></p>
-<ul>
-<li>Insert</li>
-</ul>
-<p><span class="math display">\[y_i = b_0 + (a + b_4 \times BrLi + b_5 \times BrSi) \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i + e_i\]</span></p>
-<ul>
-<li>Simplify</li>
-</ul>
-<p><span class="math display">\[\begin{align}
-y_i &amp;= b_0 + a \times BC_i + b_2 \times BrLi_i + b_3 \times BrSi_i \notag \\
-    &amp;  + b_4 \times BrLi \times BC_i + b_5 \times BrSi \times BC_i + e_i \notag
-\end{align}\]</span></p>
-</section>
-<section id="continuous-by-continuous" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-by-continuous">Continuous by Continuous</h2>
-<ul>
-<li>Similar to continuous by categorical</li>
-<li>No interaction</li>
-</ul>
-<p><span class="math display">\[\begin{equation}
-y_0 = b_0 + b_1 \times BC_i + b_2 \times HE_i + e_i \notag
-\end{equation}\]</span></p>
-<ul>
-<li>Interaction by dependence of one regression coefficient on other coefficient</li>
-</ul>
-<p><span class="math display">\[b_1 = b_3 + b_4 \times HE_i \]</span></p>
-<p><span class="math display">\[y_0 = b_0 + b_2 \times HE_i + b_3 \times BC_i + b_4 \times HE_i \times BC_i + e_i\]</span></p>
-</section>
-<section id="categorical-by-categorical" class="level2">
-<h2 class="anchored" data-anchor-id="categorical-by-categorical">Categorical by Categorical</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="l06_interactions_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="model-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="model-matrix">Model Matrix</h2>
-<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s_bw_br <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed.csv"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df_bw_br <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_bw_br, <span class="at">header =</span> T, <span class="at">sep=</span><span class="st">","</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df_bw_br</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   (Intercept) BreedLimousin BreedSimmental SexM BreedLimousin:SexM
-1            1             0              0    1                  0
-2            1             0              0    0                  0
-3            1             0              0    0                  0
-4            1             1              0    0                  0
-5            1             1              0    0                  0
-6            1             1              0    1                  1
-7            1             1              0    0                  0
-8            1             0              1    0                  0
-9            1             0              1    1                  0
-10           1             0              1    0                  0
-   BreedSimmental:SexM
-1                    0
-2                    0
-3                    0
-4                    0
-5                    0
-6                    0
-7                    0
-8                    0
-9                    1
-10                   0
+<pre><code>   Animal Body.Weight     Breed
+1       1         471     Angus
+2       2         463     Angus
+3       4         470     Angus
+4       7         518  Limousin
+5       8         511  Limousin
+6       9         510  Limousin
+7      10         541  Limousin
+8       3         481 Simmental
+9       5         496 Simmental
+10      6         491 Simmental</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># contrasts for breed</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mat_ctr <span class="ot">&lt;-</span> <span class="fu">contrasts</span>(<span class="fu">as.factor</span>(df_bw_br<span class="sc">$</span>Breed))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># assignment of new variable</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">model.matrix</span>(Body.Weight <span class="sc">~</span> Breed, df_bw_br)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   (Intercept) BreedLimousin BreedSimmental
+1            1             0              0
+2            1             0              0
+3            1             0              0
+4            1             1              0
+5            1             1              0
+6            1             1              0
+7            1             1              0
+8            1             0              1
+9            1             0              1
+10           1             0              1
 attr(,"assign")
-[1] 0 1 1 2 3 3
+[1] 0 1 1
 attr(,"contrasts")
 attr(,"contrasts")$Breed
-[1] "contr.treatment"
-
-attr(,"contrasts")$Sex
 [1] "contr.treatment"</code></pre>
 </div>
-</div>
-</section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># understand output of</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">lm</span>(Body.Weight <span class="sc">~</span> Breed, df_bw_br))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = `Body Weight` ~ Breed * Sex, data = tbl_flem_bw_br_sex)
+lm(formula = Body.Weight ~ Breed, data = df_bw_br)
 
 Residuals:
-         1          2          3          4          5          6          7 
- 3.726e-15 -3.500e+00  3.500e+00 -5.333e+00 -1.233e+01 -1.703e-15  1.767e+01 
-         8          9         10 
--5.000e+00 -6.458e-16  5.000e+00 
+     Min       1Q   Median       3Q      Max 
+-10.0000  -7.5000  -0.1667   2.7500  21.0000 
 
 Coefficients:
-                    Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)           466.50       8.42  55.404 6.35e-07 ***
-BreedLimousin          56.83      10.87   5.228  0.00639 ** 
-BreedSimmental         19.50      11.91   1.638  0.17685    
-SexM                    4.50      14.58   0.309  0.77306    
-BreedLimousin:SexM    -17.83      20.04  -0.890  0.42389    
-BreedSimmental:SexM     5.50      20.62   0.267  0.80291    
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     468.000      6.097  76.758 1.68e-11 ***
+BreedLimousin    52.000      8.066   6.447 0.000351 ***
+BreedSimmental   21.333      8.623   2.474 0.042575 *  
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 11.91 on 4 degrees of freedom
-Multiple R-squared:  0.8981,    Adjusted R-squared:  0.7706 
-F-statistic: 7.048 on 5 and 4 DF,  p-value: 0.04092</code></pre>
+Residual standard error: 10.56 on 7 degrees of freedom
+Multiple R-squared:  0.8597,    Adjusted R-squared:  0.8196 
+F-statistic: 21.44 on 2 and 7 DF,  p-value: 0.001035</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extend mat_ctr</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mat_ctr_ext <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(mat_ctr))), mat_ctr)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mat_ctr_ext)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"(Intercept)"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>mat_ctr_ext</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          (Intercept) Limousin Simmental
+Angus               1        0         0
+Limousin            1        1         0
+Simmental           1        0         1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># inverse</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mat_ctr_ext_inv <span class="ot">&lt;-</span> <span class="fu">solve</span>(mat_ctr_ext)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mat_ctr_ext_inv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Angus Limousin Simmental
+(Intercept)     1        0         0
+Limousin       -1        1         0
+Simmental      -1        0         1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group means</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>n_mean_bw_an <span class="ot">&lt;-</span> <span class="fu">mean</span>(df_bw_br<span class="sc">$</span>Body.Weight[df_bw_br<span class="sc">$</span>Breed <span class="sc">==</span> <span class="st">"Angus"</span>])</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>n_mean_bw_li <span class="ot">&lt;-</span> <span class="fu">mean</span>(df_bw_br<span class="sc">$</span>Body.Weight[df_bw_br<span class="sc">$</span>Breed <span class="sc">==</span> <span class="st">"Limousin"</span>])</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>n_mean_bw_si <span class="ot">&lt;-</span> <span class="fu">mean</span>(df_bw_br<span class="sc">$</span>Body.Weight[df_bw_br<span class="sc">$</span>Breed <span class="sc">==</span> <span class="st">"Simmental"</span>])</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>vec_gr_mean_bw <span class="ot">&lt;-</span> <span class="fu">c</span>(n_mean_bw_an, n_mean_bw_li, n_mean_bw_si)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>vec_gr_mean_bw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 468.0000 520.0000 489.3333</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estimates</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>vec_b_hat <span class="ot">&lt;-</span> mat_ctr_ext_inv <span class="sc">%*%</span> vec_gr_mean_bw</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>vec_b_hat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 [,1]
+(Intercept) 468.00000
+Limousin     52.00000
+Simmental    21.33333</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># solutions of least squares normal equations</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mat_X <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(Body.Weight <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> Breed, df_bw_br)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>mat_X <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="fu">nrow</span>(mat_X))), mat_X)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>mat_X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     BreedAngus BreedLimousin BreedSimmental
+1  1          1             0              0
+2  1          1             0              0
+3  1          1             0              0
+4  1          0             1              0
+5  1          0             1              0
+6  1          0             1              0
+7  1          0             1              0
+8  1          0             0              1
+9  1          0             0              1
+10 1          0             0              1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>mat_xtx <span class="ot">&lt;-</span> <span class="fu">crossprod</span>(mat_X)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>mat_xtx_ginv <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">ginv</span>(mat_xtx)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>mat_xty <span class="ot">&lt;-</span> <span class="fu">crossprod</span>(mat_X, df_bw_br<span class="sc">$</span>Body.Weight)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>mat_sol <span class="ot">&lt;-</span> <span class="fu">crossprod</span>(mat_xtx_ginv, mat_xty)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>mat_sol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          [,1]
+[1,] 369.33333
+[2,]  98.66667
+[3,] 150.66667
+[4,] 120.00000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mat_sol[<span class="dv">3</span>] <span class="sc">-</span> mat_sol[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 52</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mat_sol[<span class="dv">4</span>] <span class="sc">-</span> mat_sol[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 21.33333</code></pre>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
