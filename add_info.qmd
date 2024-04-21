@@ -11,12 +11,13 @@ Further information
 #| echo: false
 #| results: asis
 s_sl_url <- "https://charlotte-ngs.github.io/asmasss2024/slides/"
-tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4, 5),
+tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6),
                          Date = c("2024-02-19",
                                   "2024-02-26",
                                   "2024-03-18",
                                   "2024-03-25",
-                                  "2024-04-15"),
+                                  "2024-04-15",
+                                  "2024-04-22"),
                          Topic = c(
                            paste0("[Introduction](", 
                                   s_sl_url, 
@@ -36,7 +37,11 @@ tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4, 5),
                                   collapse = ""),
                            paste0("[Contrasts](",
                                   s_sl_url,
-                                  "l05_contrasts/l05_contrasts.pdf)", collapse = "")
+                                  "l05_contrasts/l05_contrasts.pdf)", collapse = ""),
+                           paste0("[Interactions](",
+                                  s_sl_url,
+                                  "l06_interactions/l06_interactions.pdf)",
+                                  collapse = "")
                          ))
 knitr::kable(tbl_slides)
 ```

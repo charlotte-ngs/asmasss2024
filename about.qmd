@@ -15,6 +15,13 @@ s_data_url <- "https://charlotte-ngs.github.io/asmasss2024/data/"
 s_app_url <- s_cn_url
 ```
 
+# asmas -- ss2024: Week 9
+
+## asmasss2024 0.9.0
+
+* Slides on interactions [l06_interactions](`r paste0(s_sl_url, "l06_interactions/l06_interactions.pdf", collapse = "")`)
+
+
 # asmas -- ss2024: Week 8
 
 ## asmasss2024 0.8.1
@@ -25,6 +32,7 @@ s_app_url <- s_cn_url
 
 * Exercise on contrasts [asm_ex07](`r paste0(s_ex_url, "asm_ex07/asm_ex07.html", collapse = "")`)
 * Exercise on fixed linear effects model [asm_ex06](`r paste0(s_ex_url, "asm_ex06/asm_ex06.html", collapse = "")`)
+
 
 # asmas -- ss2024: Week 7
 
