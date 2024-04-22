@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-22 07:59:12 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-22 07:59:49 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Data for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem\n\n\n\n\n\nSlides on simulation l07_simulation\n\n\n\n\n\nSlides on interactions l06_interactions"
+    "text": "Course notes 04_mlem\n\n\n\n\n\nData for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem\n\n\n\n\n\nSlides on simulation l07_simulation\n\n\n\n\n\nSlides on interactions l06_interactions"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -1020,5 +1020,12 @@
     "title": "Simulations",
     "section": "More Examples",
     "text": "More Examples\n\nDifferences between feeds …\nDifferences between treatment and controls …\nDifferences betwween healthy and diseased …"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.9.3",
+    "href": "about.html#asmasss2024-0.9.3",
+    "title": "About",
+    "section": "",
+    "text": "Course notes 04_mlem"
   }
 ]
