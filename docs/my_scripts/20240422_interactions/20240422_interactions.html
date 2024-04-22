@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2024-04-22">
 
-<title>ASMAS-SS2024 | 0.9.1 - Welcome to the Website of</title>
+<title>ASMAS-SS2024 | 0.9.1 - Interactions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ASMAS-SS2024 | 0.9.1</span>
     </a>
   </div>
@@ -89,27 +124,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./course_notes.html"> 
+    <a class="nav-link" href="../../course_notes.html"> 
 <span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exercises.html"> 
+    <a class="nav-link" href="../../exercises.html"> 
 <span class="menu-text">Exercises</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./solutions.html"> 
+    <a class="nav-link" href="../../solutions.html"> 
 <span class="menu-text">Solutions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./add_info.html"> 
+    <a class="nav-link" href="../../add_info.html"> 
 <span class="menu-text">Additional Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -124,32 +159,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#topics-for-master-theses" id="toc-topics-for-master-theses" class="nav-link active" data-scroll-target="#topics-for-master-theses">Topics for Master Theses</a></li>
-  <li><a href="#information" id="toc-information" class="nav-link" data-scroll-target="#information">Information</a>
-  <ul class="collapse">
-  <li><a href="#exercise-platform" id="toc-exercise-platform" class="nav-link" data-scroll-target="#exercise-platform">Exercise Platform</a></li>
-  <li><a href="#exam" id="toc-exam" class="nav-link" data-scroll-target="#exam">Exam</a></li>
-  </ul></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a>
-  <ul class="collapse">
-  <li><a href="#applied-statistical-methods-in-animal-science" id="toc-applied-statistical-methods-in-animal-science" class="nav-link" data-scroll-target="#applied-statistical-methods-in-animal-science">Applied Statistical Methods in Animal Science</a></li>
-  </ul></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#lecture-program" id="toc-lecture-program" class="nav-link" data-scroll-target="#lecture-program">Lecture Program</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to the Website of</h1>
+<h1 class="title">Interactions</h1>
 </div>
 
 
@@ -157,6 +174,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 22, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -166,172 +189,56 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2024S&amp;ansicht=ALLE&amp;lerneinheitId=178644&amp;lang=en">751-7602-00L Applied Statistical Methods in Animal Sciences</a></p>
-<section id="topics-for-master-theses" class="level2">
-<h2 class="anchored" data-anchor-id="topics-for-master-theses">Topics for Master Theses</h2>
-<p>Topics for Master Theses at Qualitas AG together with ETH will follow here …</p>
-</section>
-<section id="information" class="level2">
-<h2 class="anchored" data-anchor-id="information">Information</h2>
-<ul>
-<li>Lecturer: Peter von Rohr</li>
-<li>Date: Montag 8-10</li>
-<li>Room: LFW C11</li>
-</ul>
-<section id="exercise-platform" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-platform">Exercise Platform</h3>
-<p>Three options are available</p>
-<ol type="1">
-<li>Webr: <a href="https://webr.r-wasm.org/latest">https://webr.r-wasm.org/latest</a></li>
-<li>Posit cloud: <a href="https://posit.cloud">https://posit.cloud</a></li>
-<li>Run your own platform: Follow steps on <a href="https://posit.co/download/rstudio-desktop">https://posit.co/download/rstudio-desktop</a></li>
-</ol>
-<p>A more detailed description is available from <a href="https://charlotte-ngs.github.io/asmasss2024/misc/rexpf/rexpf_docu.html">here</a></p>
-</section>
-<section id="exam" class="level3">
-<h3 class="anchored" data-anchor-id="exam">Exam</h3>
-<ul>
-<li>Written exam</li>
-<li>Date: 27.05.2024 - 08:15 - 10:00</li>
-<li>Room: LFW C 11</li>
-</ul>
-</section>
-</section>
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>The following descriptions are taken from the course catalog</p>
-<section id="applied-statistical-methods-in-animal-science" class="level3">
-<h3 class="anchored" data-anchor-id="applied-statistical-methods-in-animal-science">Applied Statistical Methods in Animal Science</h3>
-<p>Genomic selection is currently the method of choice for improving the genetic potential of selection candidates in livestock breeding programs. This lecture introduces the reason why regression cannot be used in genomic selection. Alternatives to regression analysis that are suitable for genomic selection are presented. The concepts introduced are illustrated by excersises in R.</p>
-<p>The students are familiar with the properties of multiple linear regression and they are able to analyse simple data sets using regression methods. The students know why multiple linear regression cannot be used for genomic selection. The students know the statistical methods used in genomic selection, such as BLUP-based approaches, Bayesian procedures and LASSO. The students are able to solve simple exercise problems using the statistical framework R.</p>
-</section>
-</section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>Questions can be asked during the lecture and during the exercise hour or via e-mail:</p>
-<ul>
-<li>Peter von Rohr (peter.vonrohr <code>at</code> usys.ethz.ch)</li>
-</ul>
-</section>
-<section id="lecture-program" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-program">Lecture Program</h2>
-<table class="table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 72%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Week</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Lecture Mode</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">19.02</td>
-<td style="text-align: left;">Introduction to Applied Statistical Methods in Animal Science</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">26.02</td>
-<td style="text-align: left;">Linear Regression Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">04.03</td>
-<td style="text-align: left;">Linear Fixed Effect Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">11.03</td>
-<td style="text-align: left;">Model Selection</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">18.03</td>
-<td style="text-align: left;">Pedigree BLUP</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">25.03</td>
-<td style="text-align: left;">Variance Components</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">01.04</td>
-<td style="text-align: left;"><strong>Easter Monday</strong> (Ostermontag)</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">08.04</td>
-<td style="text-align: left;">GBLUP - Marker-Effects Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">15.04</td>
-<td style="text-align: left;">GBLUP - Breeding Value Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">22.04</td>
-<td style="text-align: left;">Lasso</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">29.04</td>
-<td style="text-align: left;">SVM</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">06.05</td>
-<td style="text-align: left;">Bayesian Approaches in Linear Mixed Effects Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">13.05</td>
-<td style="text-align: left;">Test Exam</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14</td>
-<td style="text-align: left;">20.05</td>
-<td style="text-align: left;">Pentcote Monday (Pfingstmontag)</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">27.05</td>
-<td style="text-align: left;">Exam</td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
-<hr>
-<p><em>Latest Changes: 2024-04-22 07:41:56 CEST (pvr)</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>b_is_online <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (b_is_online){</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  s_flem_path <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_flem.csv"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  s_flem_path <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>()(<span class="st">"docs"</span>, <span class="st">"data"</span>, <span class="st">"asm_bw_flem.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df_flem <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_flem_path, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df_flem</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Animal Breast.Circumference Body.Weight BCS HEI     Breed
+1       1                  176         471 5.0 161     Angus
+2       2                  177         463 4.2 121     Angus
+3       3                  178         481 4.9 157 Simmental
+4       4                  179         470 3.0 165     Angus
+5       5                  179         496 6.8 136 Simmental
+6       6                  180         491 4.9 123 Simmental
+7       7                  181         518 4.4 163  Limousin
+8       8                  182         511 4.4 149  Limousin
+9       9                  183         510 3.5 143  Limousin
+10     10                  184         541 4.7 130  Limousin</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lm_bw_bc_br <span class="ot">&lt;-</span> <span class="fu">lm</span>(Body.Weight <span class="sc">~</span> Breast.Circumference <span class="sc">*</span> Breed, <span class="at">data =</span> df_flem)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_bw_bc_br)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = Body.Weight ~ Breast.Circumference * Breed, data = df_flem)
+
+Residuals:
+      1       2       3       4       5       6       7       8       9      10 
+  3.286  -4.929  -3.333   1.643   6.667  -3.333   8.200  -5.600 -13.400  10.800 
+
+Coefficients:
+                                      Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)                           430.0000   917.1235   0.469    0.664
+Breast.Circumference                    0.2143     5.1716   0.041    0.969
+BreedLimousin                       -1151.0000  1293.2741  -0.890    0.424
+BreedSimmental                       -835.6667  1685.4451  -0.496    0.646
+Breast.Circumference:BreedLimousin      6.5857     7.1908   0.916    0.412
+Breast.Circumference:BreedSimmental     4.7857     9.4420   0.507    0.639
+
+Residual standard error: 11.17 on 4 degrees of freedom
+Multiple R-squared:  0.9103,    Adjusted R-squared:  0.7981 
+F-statistic: 8.115 on 5 and 4 DF,  p-value: 0.03212</code></pre>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

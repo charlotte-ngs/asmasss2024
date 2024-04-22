@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-22 07:26:14 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-22 07:41:56 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Slides on simulation l07_simulation\n\n\n\n\n\nSlides on interactions l06_interactions"
+    "text": "Data for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem\n\n\n\n\n\nSlides on simulation l07_simulation\n\n\n\n\n\nSlides on interactions l06_interactions"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.9.0",
+    "title": "asmasss2024 0.9.2",
     "section": "",
-    "text": "asmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -929,5 +929,96 @@
     "title": "About",
     "section": "",
     "text": "Slides on simulation l07_simulation"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.9.2",
+    "href": "about.html#asmasss2024-0.9.2",
+    "title": "About",
+    "section": "",
+    "text": "Data for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem"
+  },
+  {
+    "objectID": "my_scripts/20240422_interactions/20240422_interactions.html",
+    "href": "my_scripts/20240422_interactions/20240422_interactions.html",
+    "title": "Interactions",
+    "section": "",
+    "text": "b_is_online &lt;- TRUE\nif (b_is_online){\n  s_flem_path &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_flem.csv\"\n} else {\n  s_flem_path &lt;- here::here()(\"docs\", \"data\", \"asm_bw_flem.csv\")\n}\n\ndf_flem &lt;- read.table(s_flem_path, header = T, sep = \",\")\ndf_flem\n\n   Animal Breast.Circumference Body.Weight BCS HEI     Breed\n1       1                  176         471 5.0 161     Angus\n2       2                  177         463 4.2 121     Angus\n3       3                  178         481 4.9 157 Simmental\n4       4                  179         470 3.0 165     Angus\n5       5                  179         496 6.8 136 Simmental\n6       6                  180         491 4.9 123 Simmental\n7       7                  181         518 4.4 163  Limousin\n8       8                  182         511 4.4 149  Limousin\n9       9                  183         510 3.5 143  Limousin\n10     10                  184         541 4.7 130  Limousin\n\nlm_bw_bc_br &lt;- lm(Body.Weight ~ Breast.Circumference * Breed, data = df_flem)\nsummary(lm_bw_bc_br)\n\n\nCall:\nlm(formula = Body.Weight ~ Breast.Circumference * Breed, data = df_flem)\n\nResiduals:\n      1       2       3       4       5       6       7       8       9      10 \n  3.286  -4.929  -3.333   1.643   6.667  -3.333   8.200  -5.600 -13.400  10.800 \n\nCoefficients:\n                                      Estimate Std. Error t value Pr(&gt;|t|)\n(Intercept)                           430.0000   917.1235   0.469    0.664\nBreast.Circumference                    0.2143     5.1716   0.041    0.969\nBreedLimousin                       -1151.0000  1293.2741  -0.890    0.424\nBreedSimmental                       -835.6667  1685.4451  -0.496    0.646\nBreast.Circumference:BreedLimousin      6.5857     7.1908   0.916    0.412\nBreast.Circumference:BreedSimmental     4.7857     9.4420   0.507    0.639\n\nResidual standard error: 11.17 on 4 degrees of freedom\nMultiple R-squared:  0.9103,    Adjusted R-squared:  0.7981 \nF-statistic: 8.115 on 5 and 4 DF,  p-value: 0.03212"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html",
+    "href": "slides/l07_simulation/l07_simulation.html",
+    "title": "Simulations",
+    "section": "",
+    "text": "When is the best time to think about data analysis?"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#timing-of-data-analysis",
+    "href": "slides/l07_simulation/l07_simulation.html#timing-of-data-analysis",
+    "title": "Simulations",
+    "section": "",
+    "text": "When is the best time to think about data analysis?"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#problems",
+    "href": "slides/l07_simulation/l07_simulation.html#problems",
+    "title": "Simulations",
+    "section": "Problems",
+    "text": "Problems\n\nDataset is given\nAnalysis comes after data collection\nStructure of data cannot be changed"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#improvement",
+    "href": "slides/l07_simulation/l07_simulation.html#improvement",
+    "title": "Simulations",
+    "section": "Improvement",
+    "text": "Improvement"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#solution",
+    "href": "slides/l07_simulation/l07_simulation.html#solution",
+    "title": "Simulations",
+    "section": "Solution",
+    "text": "Solution\n\nPlan data analysis before data collection\nExperimental design\nUse simulation …"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#simulation",
+    "href": "slides/l07_simulation/l07_simulation.html#simulation",
+    "title": "Simulations",
+    "section": "Simulation",
+    "text": "Simulation\nWhat is simulation?"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#procedure",
+    "href": "slides/l07_simulation/l07_simulation.html#procedure",
+    "title": "Simulations",
+    "section": "Procedure",
+    "text": "Procedure\n\nGiven there is an effect between characteristics of variables\nGenerate data that contains the effects\nRe-analyse generated data\nCan effects be found?"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#first-example",
+    "href": "slides/l07_simulation/l07_simulation.html#first-example",
+    "title": "Simulations",
+    "section": "First Example",
+    "text": "First Example\nBody Weight on Breast Circumference\n\n# read data\ndf_bw_bc &lt;- read.table(s_bw_bc_url, header = T, sep = \",\")\n# fit regression\nlm_bw_bc &lt;- lm(Body.Weight ~ Breast.Circumference, \n               data = df_bw_bc)\nsmry_bw_bc &lt;- summary(lm_bw_bc)"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#first-example-ii-simulation",
+    "href": "slides/l07_simulation/l07_simulation.html#first-example-ii-simulation",
+    "title": "Simulations",
+    "section": "First Example II: Simulation",
+    "text": "First Example II: Simulation\n\n# parameter from results\nb_0 &lt;- smry_bw_bc$coefficients[\"(Intercept)\", \"Estimate\"]\nb_1 &lt;- smry_bw_bc$coefficients[\"Breast.Circumference\", \n                               \"Estimate\"]\nsd_e &lt;- smry_bw_bc$sigma\n# simulate data\nset.seed(2204)\nn_nr_sim_obs &lt;- 30\nX_sim &lt;- rnorm(n_nr_sim_obs, \n               mean = mean(df_bw_bc$Breast.Circumference), \n               sd = sd(df_bw_bc$Breast.Circumference))\nY_sim &lt;- b_0 + b_1 * X_sim + \n  rnorm(n_nr_sim_obs, mean = 0, sd = sd_e)"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#first-example-iii-data-analysis",
+    "href": "slides/l07_simulation/l07_simulation.html#first-example-iii-data-analysis",
+    "title": "Simulations",
+    "section": "First Example III: Data Analysis",
+    "text": "First Example III: Data Analysis\n\ndf_sim &lt;- data.frame(X.sim = X_sim, Y.sim = Y_sim)\nlm_sim &lt;- lm(Y.sim ~ X.sim, data = df_sim)\nsummary(lm_sim)\n\n\nCall:\nlm(formula = Y.sim ~ X.sim, data = df_sim)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-19.1698  -4.7765   0.4339   7.0468  17.1173 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) -1294.5609   127.0850  -10.19 6.39e-11 ***\nX.sim           9.9453     0.7107   13.99 3.66e-14 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 9.78 on 28 degrees of freedom\nMultiple R-squared:  0.8749,    Adjusted R-squared:  0.8704 \nF-statistic: 195.8 on 1 and 28 DF,  p-value: 3.656e-14"
+  },
+  {
+    "objectID": "slides/l07_simulation/l07_simulation.html#more-examples",
+    "href": "slides/l07_simulation/l07_simulation.html#more-examples",
+    "title": "Simulations",
+    "section": "More Examples",
+    "text": "More Examples\n\nDifferences between feeds …\nDifferences between treatment and controls …\nDifferences betwween healthy and diseased …"
   }
 ]
