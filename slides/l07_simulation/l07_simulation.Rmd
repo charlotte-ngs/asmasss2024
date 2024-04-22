@@ -1,0 +1,124 @@
+---
+title: "Simulations"
+author: "Peter von Rohr"
+date: "2024-04-22"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+#rmdhelp::show_knit_hook_call()
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
+```
+
+## Timing of Data Analysis
+
+When is the best time to think about data analysis?
+
+```{r timing-data-analysis, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/timing-data-analysis.odg")
+knitr::include_graphics(path = "odg/timing-data-analysis.png")
+```
+
+
+## Problems
+
+* Dataset is given
+* Analysis comes after data collection
+* Structure of data cannot be changed
+
+
+## Improvement
+
+```{r improve-experimental-design, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/improve-experimental-design.odg")
+knitr::include_graphics(path = "odg/improve-experimental-design.png")
+```
+
+## Solution
+
+* Plan data analysis before data collection
+* Experimental design
+* Use simulation ...
+    
+    
+## Simulation
+
+What is simulation?
+
+```{r simulation-how-to, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/simulation-how-to.odg")
+knitr::include_graphics(path = "odg/simulation-how-to.png")
+```
+
+
+## Procedure
+
+* Given there is an effect between characteristics of variables
+* Generate data that contains the effects
+* Re-analyse generated data
+* Can effects be found?
+
+
+## First Example
+
+`Body Weight` on `Breast Circumference` 
+
+```{r echo=FALSE}
+# define where data is taken from
+b_is_online <- F
+if (b_is_online){
+  s_bw_bc_url <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_reg.csv"
+} else {
+  s_bw_bc_url <- "/Users/pvr/Data/Projects/Github/charlotte-ngs/asmss2024_proj-root/website/asmasss2024/docs/data/asm_bw_bc_reg.csv"
+}
+```
+
+```{r, echo=TRUE}
+# read data
+df_bw_bc <- read.table(s_bw_bc_url, header = T, sep = ",")
+# fit regression
+lm_bw_bc <- lm(Body.Weight ~ Breast.Circumference, 
+               data = df_bw_bc)
+smry_bw_bc <- summary(lm_bw_bc)
+
+```
+
+
+## First Example II: Simulation
+
+```{r, echo=TRUE}
+# parameter from results
+b_0 <- smry_bw_bc$coefficients["(Intercept)", "Estimate"]
+b_1 <- smry_bw_bc$coefficients["Breast.Circumference", 
+                               "Estimate"]
+sd_e <- smry_bw_bc$sigma
+# simulate data
+set.seed(2204)
+n_nr_sim_obs <- 30
+X_sim <- rnorm(n_nr_sim_obs, 
+               mean = mean(df_bw_bc$Breast.Circumference), 
+               sd = sd(df_bw_bc$Breast.Circumference))
+Y_sim <- b_0 + b_1 * X_sim + 
+  rnorm(n_nr_sim_obs, mean = 0, sd = sd_e)
+
+```
+
+
+## First Example III: Data Analysis
+
+```{r, echo=TRUE}
+df_sim <- data.frame(X.sim = X_sim, Y.sim = Y_sim)
+lm_sim <- lm(Y.sim ~ X.sim, data = df_sim)
+summary(lm_sim)
+```
+
+
+## More Examples
+
+* Differences between feeds ...
+* Differences between treatment and controls ...
+* Differences betwween healthy and diseased ...
+
+
+   
