@@ -17,6 +17,11 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 9
 
+## asmasss2024 0.9.2
+
+* Data for simulation [asm_bw_bc_reg](`r paste0(s_data_url, "asm_bw_bc_reg.csv", collapse = "")`)
+* Data on interactions [asm_bw_flem](`r paste0(s_data_url, "asm_bw_flem.csv", collapse = "")`)
+
 ## asmasss2024 0.9.1
 
 * Slides on simulation [l07_simulation](`r paste0(s_sl_url, "l07_simulation/l07_simulation.pdf", collapse = "")`)
