@@ -164,3 +164,13 @@ s_app_url <- s_cn_url
 ## asmas - ss2024: v0.1.0
 
 * Set up initial version of website
+
+
+
+```{r}
+#| label: latest-change
+#| echo: false
+#| results: asis
+cat(rmdhelp::get_latest_change())
+```
+

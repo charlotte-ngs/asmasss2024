@@ -111,3 +111,10 @@ knitr::kable(tbl_ohp)
 ```
 
 
+
+```{r}
+#| label: latest-change
+#| echo: false
+#| results: asis
+cat(rmdhelp::get_latest_change())
+```
