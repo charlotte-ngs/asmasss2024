@@ -43,3 +43,13 @@ tbl_ex <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7),
 knitr::kable(tbl_ex)
 ```
 
+
+
+```{r}
+#| label: latest-change
+#| echo: false
+#| results: asis
+cat(rmdhelp::get_latest_change())
+```
+
+

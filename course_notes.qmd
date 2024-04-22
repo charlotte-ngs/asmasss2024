@@ -40,3 +40,13 @@ tbl_app <- tibble::tibble(Nr = c(1),
 knitr::kable(tbl_app)
 ```
 
+
+
+
+```{r}
+#| label: latest-change
+#| echo: false
+#| results: asis
+cat(rmdhelp::get_latest_change())
+```
+

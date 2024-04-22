@@ -45,3 +45,13 @@ tbl_sol <- tibble::tibble(Nr = c(1, 2, 3, 4, 5),
 knitr::kable(tbl_sol)
 ```
 
+
+
+
+```{r}
+#| label: latest-change
+#| echo: false
+#| results: asis
+cat(rmdhelp::get_latest_change())
+```
+
