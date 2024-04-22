@@ -53,7 +53,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Course notes 04_mlem\n\n\n\n\n\nData for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem\n\n\n\n\n\nSlides on simulation l07_simulation\n\n\n\n\n\nSlides on interactions l06_interactions"
+    "text": "Overhead pictures ohp_l09\n\n\n\n\n\nCourse notes 04_mlem\n\n\n\n\n\nData for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem\n\n\n\n\n\nSlides on simulation l07_simulation\n\n\n\n\n\nSlides on interactions l06_interactions"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -151,7 +151,7 @@
     "href": "add_info.html#over-head-pictures",
     "title": "Additional Information",
     "section": "Over-Head Pictures",
-    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts"
+    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation"
   },
   {
     "objectID": "ohp/20240219_ohp_l01/20240219_ohp_l01.html#ohp-picture-2",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.9.2",
+    "title": "asmasss2024 0.9.4",
     "section": "",
-    "text": "asmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1027,5 +1027,47 @@
     "title": "About",
     "section": "",
     "text": "Course notes 04_mlem"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.9.4",
+    "href": "about.html#asmasss2024-0.9.4",
+    "title": "About",
+    "section": "",
+    "text": "Overhead pictures ohp_l09"
+  },
+  {
+    "objectID": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-2",
+    "href": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-2",
+    "title": "ASMAS-SS2024 | 0.9.3",
+    "section": "OHP Picture 2",
+    "text": "OHP Picture 2"
+  },
+  {
+    "objectID": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-3",
+    "href": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-3",
+    "title": "ASMAS-SS2024 | 0.9.3",
+    "section": "OHP Picture 3",
+    "text": "OHP Picture 3"
+  },
+  {
+    "objectID": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-4",
+    "href": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-4",
+    "title": "ASMAS-SS2024 | 0.9.3",
+    "section": "OHP Picture 4",
+    "text": "OHP Picture 4"
+  },
+  {
+    "objectID": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-5",
+    "href": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-5",
+    "title": "ASMAS-SS2024 | 0.9.3",
+    "section": "OHP Picture 5",
+    "text": "OHP Picture 5"
+  },
+  {
+    "objectID": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-6",
+    "href": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-6",
+    "title": "ASMAS-SS2024 | 0.9.3",
+    "section": "OHP Picture 6",
+    "text": "OHP Picture 6"
   }
 ]
