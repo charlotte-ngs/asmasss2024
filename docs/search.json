@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-27 07:31:37 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-27 07:33:07 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Overhead pictures ohp_l09\n\n\n\n\n\nCourse notes 04_mlem\n\n\n\n\n\nData for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem\n\n\n\n\n\nSlides on simulation l07_simulation\n\n\n\n\n\nSlides on interactions l06_interactions"
+    "text": "Solution asm_sol07\nSolution asm_sol06"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -67,7 +67,7 @@
     "href": "solutions.html",
     "title": "Solutions",
     "section": "",
-    "text": "List of solutions to exercises\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction html | pdf\n\n\n2\n2024-02-26\nRead Data html | pdf\n\n\n3\n2024-03-11\nSimple Linear Regression html | pdf\n\n\n4\n2024-03-18\nMatrix-Vector-Notation html | pdf\n\n\n5\n2024-04-08\nGenomic Regression html | pdf\n\n\n6\n2024-04-29\nFixed Linear Effects Model html | pdf\n\n\n7\n2024-04-29\nContrasts html | pdf\n\n\n\n\nLatest Changes: 2024-04-27 07:31:45 CEST (pvr)"
+    "text": "List of solutions to exercises\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction html | pdf\n\n\n2\n2024-02-26\nRead Data html | pdf\n\n\n3\n2024-03-11\nSimple Linear Regression html | pdf\n\n\n4\n2024-03-18\nMatrix-Vector-Notation html | pdf\n\n\n5\n2024-04-08\nGenomic Regression html | pdf\n\n\n6\n2024-04-29\nFixed Linear Effects Model html | pdf\n\n\n7\n2024-04-29\nContrasts html | pdf\n\n\n\n\nLatest Changes: 2024-04-27 07:32:40 CEST (pvr)"
   },
   {
     "objectID": "course_notes.html",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-22 12:01:31 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-27 07:32:58 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -920,22 +920,22 @@
     "objectID": "about.html#asmasss2024-0.9.0",
     "href": "about.html#asmasss2024-0.9.0",
     "title": "About",
-    "section": "",
-    "text": "Slides on interactions l06_interactions"
+    "section": "asmasss2024 0.9.0",
+    "text": "asmasss2024 0.9.0\n\nSlides on interactions l06_interactions"
   },
   {
     "objectID": "about.html#asmasss2024-0.9.1",
     "href": "about.html#asmasss2024-0.9.1",
     "title": "About",
-    "section": "",
-    "text": "Slides on simulation l07_simulation"
+    "section": "asmasss2024 0.9.1",
+    "text": "asmasss2024 0.9.1\n\nSlides on simulation l07_simulation"
   },
   {
     "objectID": "about.html#asmasss2024-0.9.2",
     "href": "about.html#asmasss2024-0.9.2",
     "title": "About",
-    "section": "",
-    "text": "Data for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem"
+    "section": "asmasss2024 0.9.2",
+    "text": "asmasss2024 0.9.2\n\nData for simulation asm_bw_bc_reg\nData on interactions asm_bw_flem"
   },
   {
     "objectID": "my_scripts/20240422_interactions/20240422_interactions.html",
@@ -1025,15 +1025,15 @@
     "objectID": "about.html#asmasss2024-0.9.3",
     "href": "about.html#asmasss2024-0.9.3",
     "title": "About",
-    "section": "",
-    "text": "Course notes 04_mlem"
+    "section": "asmasss2024 0.9.3",
+    "text": "asmasss2024 0.9.3\n\nCourse notes 04_mlem"
   },
   {
     "objectID": "about.html#asmasss2024-0.9.4",
     "href": "about.html#asmasss2024-0.9.4",
     "title": "About",
-    "section": "",
-    "text": "Overhead pictures ohp_l09"
+    "section": "asmasss2024 0.9.4",
+    "text": "asmasss2024 0.9.4\n\nOverhead pictures ohp_l09"
   },
   {
     "objectID": "ohp/20240422_ohp_l09/20240422_ohp_l09.html#ohp-picture-2",
@@ -1069,5 +1069,12 @@
     "title": "ASMAS-SS2024 | 0.9.3",
     "section": "OHP Picture 6",
     "text": "OHP Picture 6"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.10.0",
+    "href": "about.html#asmasss2024-0.10.0",
+    "title": "About",
+    "section": "",
+    "text": "Solution asm_sol07\nSolution asm_sol06"
   }
 ]
