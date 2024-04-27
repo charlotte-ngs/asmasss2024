@@ -1,0 +1,140 @@
+---
+title: "Applied Statistical Methods - Solution 7"
+author: "Peter von Rohr"
+date: 2024-04-22
+filters: 
+  - webr
+webr:
+  packages: ['MASS', 'dplyr']  
+---
+
+
+## Problem 1: Sum Contrasts
+Use the following dataset on Body.Weight and `Breed` of beef cattle animals. The data is available from
+
+```{r, echo=FALSE}
+s_ex07p01_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed.csv"
+s_ex07p01_data_path
+```
+
+Fit a fixed linear model with Body.Weight as response and `Breed` as predictor variable. Use the `sum` contrasts for reporting the different effects in the model. Validate the estimates by computing the estimates based on a solution of the least squares normal equations. 
+
+
+### Tasks
+
+* Read the data
+
+```{webr-r}
+s_ex07p01_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed.csv"
+tbl_bw_br <- read.table(s_ex07p01_data_path, 
+                               header = T, sep = ",")
+tbl_bw_br
+```
+
+* Change contrasts and fit linear model
+The type of contrasts can directly be specified when fitting the linear model. For more information see the help function of `contrasts`
+
+```{webr-r}
+lm_bw_br_con_sum <- lm(Body.Weight ~ Breed, 
+                       data = tbl_bw_br,
+                       contrasts = list(Breed = "contr.sum"))
+(smry_lm_bw_br_con_sum <- summary(lm_bw_br_con_sum))
+```
+
+* Solutions of Least Squares Normal Equations
+
+```{webr-r}
+mat_X <- model.matrix(Body.Weight ~ 0 + Breed, tbl_bw_br)
+attr(mat_X, "assign") <- NULL
+attr(mat_X, "contrasts") <- NULL
+colnames(mat_X) <- NULL
+mat_X <- cbind(matrix(rep(1,nrow(mat_X)), ncol = 1), mat_X)
+mat_xtx <- crossprod(mat_X)
+mat_xtx_ginv <- MASS::ginv(mat_xtx)
+mat_xty <- crossprod(mat_X, tbl_bw_br$Body.Weight)
+mat_b_sol <- crossprod(mat_xtx_ginv, mat_xty)
+mat_b_sol
+```
+
+* Contrasts Matrix for Sum Contrasts
+From the contrasts matrix, we get the matrix of estimable functions.
+
+```{webr-r}
+fac_breed <- as.factor(tbl_bw_br$Breed)
+contr_mat_breed_sum <- contrasts(C(fac_breed, sum))
+contr_mat_breed_sum <- cbind(matrix(rep(1,nrow(contr_mat_breed_sum)), ncol = 1), contr_mat_breed_sum)
+est_mat_breed_sum <- solve(contr_mat_breed_sum)
+est_mat_breed_sum
+```
+
+The first row of the above matrix `est_mat_breed_sum` shows how the intercept estimate is computed from the observation means. This means that with the sum contrasts, the intercept is the weighted mean of the mean observation for all breeds. Hence, we get
+
+```{webr-r}
+tbl_bw_br_an <- dplyr::filter(tbl_bw_br, Breed == "Angus")
+tbl_bw_br_li <- dplyr::filter(tbl_bw_br, Breed == "Limousin")
+tbl_bw_br_si <- dplyr::filter(tbl_bw_br, Breed == "Simmental")
+sum(c(mean(tbl_bw_br_an$Body.Weight),
+      mean(tbl_bw_br_li$Body.Weight),
+      mean(tbl_bw_br_si$Body.Weight)))/3
+```
+
+Comparing that to the result of `lm()` from above, we see that they are equal.
+
+```{webr-r}
+smry_lm_bw_br_con_sum$coefficients["(Intercept)","Estimate"]
+```
+
+For the effects estimates, we are looking at the second and the third row of the matrix `est_mat_breed_sum`. We are prepending a column of zeroes to the second and the third row of `est_mat_breed_sum`.
+
+```{webr-r}
+mat_q_efun <- cbind(matrix(rep(0, (nrow(est_mat_breed_sum)-1)), ncol = 1), est_mat_breed_sum[2:3,])
+crossprod(t(mat_q_efun), mat_b_sol) 
+```
+
+These values correspond to the effect estimates from `lm()` 
+
+```{webr-r}
+smry_lm_bw_br_con_sum$coefficients[2:3,1]
+```
+
+
+## Problem 2: Custom Contrasts
+Use the dataset from Problem 1 and use your own contrasts. Your new contrasts should compute the intercept estimate as is done in the `sum` contrasts. The `Breed` effects should be computed the same way as is done in the `treatment` contrast.
+
+* Read the dataset
+
+```{webr-r}
+s_ex07p02_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed.csv"
+tbl_bw_br <- read.table(s_ex07p02_data_path, 
+                        header = T, sep = ",")
+```
+
+* Matrix of Estimable Functions
+The matrix of estimable functions is a combination of the matrices from the sum contrasts and from the treatment contrasts.
+
+```{webr-r}
+fact_breed <- as.factor(tbl_bw_br$Breed)
+# treatment
+mat_cont_treat <- contrasts(C(fact_breed, treatment))
+mat_cont_treat <- cbind(matrix(rep(1, nrow(mat_cont_treat)), ncol = 1), mat_cont_treat)
+mat_estf_treat <- solve(mat_cont_treat)
+# sum
+mat_cont_sum <- contrasts(C(fact_breed, sum))
+mat_cont_sum <- cbind(matrix(rep(1, nrow(mat_cont_sum)), ncol = 1), mat_cont_sum)
+mat_estf_sum <- solve(mat_cont_sum)
+# custom
+mat_estf_cust <- rbind(mat_estf_sum[1,], mat_estf_treat[2:3,])
+mat_cont_cust <- solve(mat_estf_cust)
+mat_cont_cust <- mat_cont_cust[,2:3]
+mat_cont_cust
+```
+
+Using that contrasts matrix in lm leads to 
+
+```{webr-r}
+lm_bw_br_con_cust <- lm(Body.Weight ~ Breed, 
+                       data = tbl_bw_br,
+                       contrasts = list(Breed = mat_cont_cust))
+(smry_lm_bw_br_con_cust <- summary(lm_bw_br_con_cust))
+```
+
