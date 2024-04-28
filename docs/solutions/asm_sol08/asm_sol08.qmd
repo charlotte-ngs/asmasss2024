@@ -1,0 +1,193 @@
+---
+title: "Applied Statistical Methods - Solution 8"
+author: "Peter von Rohr"
+date: 2024-04-29
+filters: 
+  - webr
+---
+
+
+# Problem 1: Interactions
+Use the following dataset on `Breed`, `Breast.Circumference` and `Body.Weight` and fit a fixed linear effects model with `Body.Weight` as response and `Breed` and `Breast.Circumference` as predictors and include an interaction term between the two predictors. Compute the expected difference in `Body.Weight` for two animals which differ in `Breast.Circumference` by $1cm$ for every `Breed`. 
+
+The dataset is available under
+
+```{r data-ex08-p01, echo=FALSE}
+s_tbl_ex08_p01_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_flem.csv"
+s_tbl_ex08_p01_path
+```
+
+
+## Tasks
+
+* Read the data for fitting the linear model
+
+```{webr-r}
+# read data
+s_tbl_ex08_p01_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_flem.csv"
+df_bw_bc_br <- read.table(s_tbl_ex08_p01_path, 
+                          header = T, sep = ",")
+df_bw_bc_br
+```
+
+* Fitting the linear model
+
+```{webr-r}
+# lm with interactions
+lm_bw_bc_br_int <- lm(Body.Weight ~ Breast.Circumference * Breed, 
+                      data = df_bw_bc_br)
+# show results with summary
+smry_lm <- summary(lm_bw_bc_br_int)
+smry_lm
+```
+
+* Expected difference in body weight for the three breeds:
+
+__Angus__: The expected difference in body weight (in kg) of one centimeter increase in breast circumference corresponds to the regression coefficient of Breast.Circumference and is 
+
+```{webr-r}
+# show estimate for BC
+smry_lm$coefficients["Breast.Circumference", "Estimate"]
+```
+
+__Limousin__: Because, for the breed limousin, there is an interaction effect. We have to add the regression coefficient of Breast.Circumference to the interaction effect Breast.Circumference:BreedLimousin. From this we get
+
+```{webr-r}
+# add slope plus interaction effect for LI
+delta_bw_li <- smry_lm$coefficients["Breast.Circumference", "Estimate"] +
+  smry_lm$coefficients["Breast.Circumference:BreedLimousin", "Estimate"]
+delta_bw_li
+```
+
+__Simmental__: The same as for limousin, we have for simmental
+
+```{webr-r}
+# add slope plus interaction effect for SI
+delta_bw_si <- smry_lm$coefficients["Breast.Circumference", "Estimate"] +
+  smry_lm$coefficients["Breast.Circumference:BreedSimmental", "Estimate"]
+delta_bw_si
+```
+
+
+## Problem 2: Simulation
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+n_b_intercept <- -1070
+n_b_slope <- 8.7
+n_res_std_error <- 12
+n_nr_obs <- 10
+n_slope_tol <- 0.1
+
+# take the values for mean and sd for bc from the dataset
+s_tbl_bw_bc_br_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_flem.csv"
+df_bw_bc_br <- read.table(s_tbl_bw_bc_br_path, header = T, sep = ",")
+n_mean_bc <- round(mean(df_bw_bc_br$Breast.Circumference), 0)
+n_sd_bc <- round(sd(df_bw_bc_br$Breast.Circumference), 2)
+```
+
+Use the following values for intercept and regression slope for Body.Weight on Breast.Circumference to simulate a dataset of size $N$. What is the number for $N$ that has to be chosen such that the regression analysis of the simulated data gives the same result as the true regression slope. 
+
+The true values are: 
+
+* Intercept: $`r n_b_intercept`$
+* Regression slope: $`r n_b_slope`$
+* Residual standard error: $`r n_res_std_error`$
+
+### Hints
+
+* Start with $N=`r n_nr_obs`$, simulate a dataset and analyse the data with `lm()`
+* If the result (rounded to 1 digits after decimal point) is not the same then double the size of the dataset, hence use, $N=`r 2*n_nr_obs`$
+* Continue until you get close to the true value.
+* Assume that the random resiudals follow a normal distribution with mean zero and standard devation equal to $`r n_res_std_error`$
+* Take breast circumference to be normally distributed with a mean of $`r n_mean_bc`$ and a standard deviation of $`r n_sd_bc`$
+* Use a linear regression model with an intercept to model expected body weight based on breast circumference.
+
+
+### Tasks
+
+* Assign numbers given in problem description into variables
+
+```{webr-r}
+# intercept and slope
+n_b_intercept <- -1070
+n_b_slope <- 8.7
+# residual standard deviation
+n_res_std_error <- 12
+# number of observations
+n_nr_obs <- 10
+# mean and sd of BC
+n_mean_bc <- 180
+n_sd_bc <- 2.6
+```
+
+* Start with $N=`r n_nr_obs`$ and first generate the matrix $X$ which consists of a column of all ones and a column of breast circumference values in centimeter taken from the given normal distribution. Whenever, we generate some random numbers it is important to first set the seed with the function `set.seed()` to which an integer number is passed. This makes sure that when repeating the simulation the same results are generated.
+
+```{webr-r}
+# start by setting the seed 
+set.seed(2904)
+
+vec_bc <- rnorm(n_nr_obs, mean = n_mean_bc, sd = n_sd_bc)
+mat_X <- matrix(c(rep(1,n_nr_obs), vec_bc), ncol = 2)
+mat_X
+```
+
+* Simulate observations of `Body.Weight`
+
+```{webr-r}
+# vectors for intercept and slope and a vector for observations
+vec_b <- c(n_b_intercept, n_b_slope)
+vec_y <- crossprod(t(mat_X), vec_b) + 
+  rnorm(n_nr_obs, mean=0, sd=n_res_std_error)
+vec_y
+```
+
+* Analyse the simulated data with a regression model
+
+```{webr-r}
+df_bw_bc_sim <- data.frame(Body.Weight = vec_y, 
+                           Breast.Circumference=vec_bc)
+lm_bw_bc_sim <- lm(Body.Weight ~ Breast.Circumference, 
+                   data = df_bw_bc_sim)
+lm_bw_bc_sim
+```
+
+* Compute absolute value of deviation between regression and simulation
+
+```{webr-r}
+# use function abs()
+abs(lm_bw_bc_sim$coefficients[["Breast.Circumference"]] - n_b_slope)
+```
+
+* Use a loop to iteratively increase the number of observations until the absolute deviation of the estimated slope from the true value becomes smaller than `r n_slope_tol`.
+
+```{webr-r}
+n_slope_tol <- 0.1
+n_max_iter <- 10
+n_iter_round <- 0
+n_abs_dev <- abs(lm_bw_bc_sim$coefficients[["Breast.Circumference"]] - n_b_slope)
+while(n_abs_dev > n_slope_tol && 
+      n_iter_round < n_max_iter){
+  # count number of iterations and 
+  # determine number of observations
+  n_iter_round <- n_iter_round + 1
+  n_nr_obs <- 2 * n_nr_obs
+  # simulate breast circumference
+  vec_bc <- rnorm(n_nr_obs, mean = n_mean_bc, sd = n_sd_bc)
+  mat_X <- matrix(c(rep(1,n_nr_obs), vec_bc), ncol = 2)
+  # simulate body weight
+  vec_y <- crossprod(t(mat_X), vec_b) + 
+    rnorm(n_nr_obs, mean=0, sd=n_res_std_error)
+  # analyse simulated data
+  df_bw_bc_sim <- data.frame(Body.Weight = vec_y, 
+                             Breast.Circumference=vec_bc)
+  lm_bw_bc_sim <- lm(Body.Weight ~ Breast.Circumference, 
+                     data = df_bw_bc_sim)
+  n_abs_dev <- abs(lm_bw_bc_sim$coefficients[["Breast.Circumference"]] - n_b_slope)
+  # results
+  cat(" * Iteration: ", n_iter_round, "\n")
+  cat(" * Number of observations: ", n_nr_obs, "\n")
+  cat(" * Regression slope: ", lm_bw_bc_sim$coefficients[["Breast.Circumference"]], "\n")
+  
+}
+```
+
+
