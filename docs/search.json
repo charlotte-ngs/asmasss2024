@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-29 13:22:43 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-29 13:26:37 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Overhead pictures [ohp_l10]https://charlotte-ngs.github.io/asmasss2024/ohp/20240429_ohp_l10.pdf\n\n\n\n\n\nRepeated Observation Data on BW and Breed asm_bw_breed_rep_obs\nRepeated Observation Data on BW and BC asm_bw_bc_rep_obs\nSlides l08_mlem\n\n\n\n\n\nExercise asm_ex08\n\n\n\n\n\nSolution asm_sol07\nSolution asm_sol06"
+    "text": "Overhead pictures ohp_l10\n\n\n\n\n\nRepeated Observation Data on BW and Breed asm_bw_breed_rep_obs\nRepeated Observation Data on BW and BC asm_bw_bc_rep_obs\nSlides l08_mlem\n\n\n\n\n\nExercise asm_ex08\n\n\n\n\n\nSolution asm_sol07\nSolution asm_sol06"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-29 13:22:31 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-29 13:26:28 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -1250,6 +1250,6 @@
     "href": "about.html#asmasss2024-0.10.3",
     "title": "About",
     "section": "",
-    "text": "Overhead pictures [ohp_l10]https://charlotte-ngs.github.io/asmasss2024/ohp/20240429_ohp_l10.pdf"
+    "text": "Overhead pictures ohp_l10"
   }
 ]

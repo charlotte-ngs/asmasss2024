@@ -19,7 +19,7 @@ s_app_url <- s_cn_url
 
 ## asmasss2024 0.10.3
 
-* Overhead pictures [ohp_l10]`r paste0(s_ohp_url, "20240429_ohp_l10.pdf", collapse = "")`
+* Overhead pictures [ohp_l10](`r paste0(s_ohp_url, "20240429_ohp_l10.pdf", collapse = "")`)
 
 ## asmasss2024 0.10.2
 
