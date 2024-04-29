@@ -19,7 +19,7 @@ tbl_cn <- tibble::tibble(Nr = c(1, 2, 3, 4, 5),
                            paste0("[Linear Regression](", s_cn_url, "linear_regression.pdf)", collapse = ""),
                            paste0("[Fixed Linear Effects Model](", s_cn_url, "flem.pdf)", collapse = ""),
                            paste0("[Interactions](", s_cn_url, "interactions.pdf)", collapse = ""),
-                           paste0("[Mixed Linear Effects Models](", s_cn_url, "04_mlem.pdf", collapse = "")
+                           paste0("[Mixed Linear Effects Models](", s_cn_url, "04_mlem.pdf)", collapse = "")
                          ))
 knitr::kable(tbl_cn)
 ```
