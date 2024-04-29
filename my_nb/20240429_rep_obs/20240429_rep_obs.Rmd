@@ -1,0 +1,50 @@
+---
+title: "Repeated Observations"
+output: html_notebook
+---
+
+## Disclaimer
+Some facts on analysis of repeated observations are prepared in this notebook.
+
+
+## Data
+The data we are using is on beef cattle and on blood pressure measurements.
+
+```{r}
+s_rep_path_bw_bc <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv"
+tbl_bw_bc_rep <- readr::read_delim(s_rep_path_bw_bc, delim = ",")
+tbl_bw_bc_rep
+```
+
+The second data set is on body weight and breed, also with repeated observations.
+
+```{r}
+s_rep_path_bw_br <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed_rep_obs.csv"
+tbl_bw_br_rep <- readr::read_delim(s_rep_path_bw_br, delim = ",")
+tbl_bw_br_rep
+```
+
+
+## Plots
+The plots of the data already show certain patterns which are important to be considered in any statistical analysis.
+
+```{r}
+library(ggplot2)
+p_bw_bc_rep <- ggplot(data = tbl_bw_bc_rep,
+                      mapping = aes(x = `Breast Circumference`,
+                                    y = `Body Weight`)) + 
+  geom_point(aes(color = as.factor(Animal)))
+p_bw_bc_rep
+```
+
+A similar plot with `Breed`
+
+```{r}
+library(ggplot2)
+p_bw_br_rep <- ggplot(data = tbl_bw_br_rep,
+                      mapping = aes(x = as.factor(Breed),
+                                    y = `Body Weight`)) + 
+  geom_point(aes(color = as.factor(Animal)))
+p_bw_br_rep
+```
+
