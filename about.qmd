@@ -17,6 +17,10 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 10
 
+## asmasss2024 0.10.2
+
+* Slides [l08_mlem](`r paste0(s_sl_url, "l08_mlem/l08_mlem.pdf", collapse = "")`)
+
 ## asmasss2024 0.10.1
 
 * Exercise [asm_ex08](`r paste0(s_ex_url, "asm_ex08/asm_ex08.html", collapse = "")`)

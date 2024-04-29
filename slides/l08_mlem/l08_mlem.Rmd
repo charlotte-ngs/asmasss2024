@@ -1,0 +1,163 @@
+---
+title: Mixed Linear Effects Models
+author: Peter von Rohr
+date: "2024-04-29"
+output: beamer_presentation
+params:
+  isonline:
+    label: 'Online (y/n)'
+    value: FALSE
+    choices: [TRUE, FALSE]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Repeated Measurements
+
+* Same characteristics (`Body Weight`, `BC`, ...) measured multiple times for the same animal
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+if (params$isonline){
+  s_rep_obs_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv"
+} else {
+  s_rep_obs_path <- file.path(here::here(), "docs", "data", "asm_bw_bc_rep_obs.csv")
+}
+tbl_rep_obs <- readr::read_csv(file = s_rep_obs_path)
+knitr::kable(head(tbl_rep_obs, 8),
+             booktabs = TRUE,
+             longtable = TRUE)
+```
+
+* Column `Animal` no longer just a counter, it becomes a model factor
+
+## Properties 
+
+* What is the benefit of repeated measurements?
+* Equivalent to more animals in the dataset?
+* Assumption: repeated observations of the same animal are more "similar"
+* No longer independence of observations
+
+
+## Data Scatterplot
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, out.width="100%"}
+tbl_rep_obs$Animal <- as.factor(tbl_rep_obs$Animal)
+ggplot2::ggplot(data = tbl_rep_obs, 
+                mapping = ggplot2::aes(x = `Breast Circumference`,
+                                       y = `Body Weight`)) + 
+  ggplot2::geom_point(ggplot2::aes(color = Animal, 
+                                   size = 3))
+
+```
+
+
+## Statistical Analysis
+
+* Technically, same regression analysis is possible
+
+```{r}
+lm_rep_obs <- lm(`Body Weight` ~ `Breast Circumference`, data = tbl_rep_obs)
+```
+
+* But assumption of independence is violoted
+* Consequence of independence
+
+$$var(\mathbf{e}) = \mathbf{I} * \sigma_e^2$$
+* Check residuals plot
+
+
+## Diagnostics Plot
+
+```{r, echo=TRUE}
+plot(lm_rep_obs)
+```
+
+
+## ANOVA
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+s_bw_breed_rep_obs_path <- "https://charlotte-ngs.github.io/asmss2022/data/asm_bw_breed_rep_obs.csv"
+tbl_rep_obs_breed <- readr::read_csv(file = s_bw_breed_rep_obs_path)
+tbl_rep_obs_breed <- dplyr::select(tbl_rep_obs_breed, Animal, `Body Weight`, Breed)
+tbl_rep_obs_breed$Animal <- as.factor(tbl_rep_obs_breed$Animal)
+tbl_rep_obs_no_breed <- dplyr::select(tbl_rep_obs_breed, Animal, `Body Weight`)
+
+```
+
+```{r echo=TRUE}
+aov_bw_breed <- aov(`Body Weight` ~ Breed, 
+                           data = tbl_rep_obs_breed)
+summary(aov_bw_breed)
+```
+
+
+
+## ANOVA I: Breed and Animal 
+
+
+```{r, echo=TRUE}
+aov_bw_breed_animal <- aov(`Body Weight` ~ Breed + Animal, 
+                           data = tbl_rep_obs_breed)
+summary(aov_bw_breed_animal)
+```
+
+
+## ANOVA II 
+
+```{r, echo=TRUE}
+aov_bw_no_breed_rep <- aov(`Body Weight` ~ Error(Animal), 
+                           data = tbl_rep_obs_no_breed)
+summary(aov_bw_no_breed_rep)
+```
+
+
+
+## ANOVA III 
+
+```{r, echo=TRUE}
+aov_bw_breed_rep <- aov(`Body Weight` ~ Breed + 
+                             Error(Animal), 
+                           data = tbl_rep_obs_breed)
+summary(aov_bw_breed_rep)
+```
+
+
+## lme4
+
+```{r, echo=TRUE}
+lme_bw_no_breed_rep <- lme4::lmer(`Body Weight` ~ 
+                                    (1|Animal), 
+                       data = tbl_rep_obs_no_breed)
+summary(lme_bw_no_breed_rep)
+```
+
+
+## With Breed
+
+```{r}
+knitr::kable(tbl_rep_obs_breed,
+             booktabs = TRUE,
+             longtable = TRUE)
+```
+
+## ANOVA
+
+```{r, echo=TRUE}
+aov_bw_breed_rep <- aov(`Body Weight` ~ Breed + 
+                          Error(Animal), 
+                           data = tbl_rep_obs_breed)
+summary(aov_bw_breed_rep)
+```
+
+
+## lme4
+
+```{r, echo=TRUE}
+lme_bw_breed_rep <- lme4::lmer(`Body Weight` ~ Breed + 
+                                 (1|Animal), 
+                                  data = tbl_rep_obs_breed)
+summary(lme_bw_breed_rep)
+```
+
+
