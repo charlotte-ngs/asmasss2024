@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-29 07:41:16 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-29 13:19:47 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Repeated Observation Data on BW and Breed asm_bw_breed_rep_obs\nRepeated Observation Data on BW and BC asm_bw_bc_rep_obs\nSlides l08_mlem\n\n\n\n\n\nExercise asm_ex08\n\n\n\n\n\nSolution asm_sol07\nSolution asm_sol06"
+    "text": "Overhead pictures [ohp_l10]https://charlotte-ngs.github.io/asmasss2024/ohp/20240429_ohp_l10.pdf\n\n\n\n\n\nRepeated Observation Data on BW and Breed asm_bw_breed_rep_obs\nRepeated Observation Data on BW and BC asm_bw_bc_rep_obs\nSlides l08_mlem\n\n\n\n\n\nExercise asm_ex08\n\n\n\n\n\nSolution asm_sol07\nSolution asm_sol06"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-29 07:41:09 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-29 13:21:50 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -151,7 +151,7 @@
     "href": "add_info.html#over-head-pictures",
     "title": "Additional Information",
     "section": "Over-Head Pictures",
-    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n\n\nLatest Changes: 2024-04-29 07:29:58 CEST (pvr)"
+    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n10\n2024-04-29\nRepeated Observations\n\n\n\n\nLatest Changes: 2024-04-29 13:20:04 CEST (pvr)"
   },
   {
     "objectID": "ohp/20240219_ohp_l01/20240219_ohp_l01.html#ohp-picture-2",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.10.2",
+    "title": "asmasss2024 0.10.3",
     "section": "",
-    "text": "asmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1195,5 +1195,61 @@
     "title": "About",
     "section": "",
     "text": "Repeated Observation Data on BW and Breed asm_bw_breed_rep_obs\nRepeated Observation Data on BW and BC asm_bw_bc_rep_obs\nSlides l08_mlem"
+  },
+  {
+    "objectID": "ohp/20240429_ohp_l10/20240429_ohp_l10.html#ohp-picture-2",
+    "href": "ohp/20240429_ohp_l10/20240429_ohp_l10.html#ohp-picture-2",
+    "title": "ASMAS-SS2024 | 0.10.2",
+    "section": "OHP Picture 2",
+    "text": "OHP Picture 2"
+  },
+  {
+    "objectID": "ohp/20240429_ohp_l10/20240429_ohp_l10.html#ohp-picture-3",
+    "href": "ohp/20240429_ohp_l10/20240429_ohp_l10.html#ohp-picture-3",
+    "title": "ASMAS-SS2024 | 0.10.2",
+    "section": "OHP Picture 3",
+    "text": "OHP Picture 3"
+  },
+  {
+    "objectID": "ohp/20240429_ohp_l10/20240429_ohp_l10.html#ohp-picture-4",
+    "href": "ohp/20240429_ohp_l10/20240429_ohp_l10.html#ohp-picture-4",
+    "title": "ASMAS-SS2024 | 0.10.2",
+    "section": "OHP Picture 4",
+    "text": "OHP Picture 4"
+  },
+  {
+    "objectID": "my_nb/20240429_rep_obs/20240429_rep_obs.html",
+    "href": "my_nb/20240429_rep_obs/20240429_rep_obs.html",
+    "title": "Repeated Observations",
+    "section": "",
+    "text": "Some facts on analysis of repeated observations are prepared in this notebook."
+  },
+  {
+    "objectID": "my_nb/20240429_rep_obs/20240429_rep_obs.html#disclaimer",
+    "href": "my_nb/20240429_rep_obs/20240429_rep_obs.html#disclaimer",
+    "title": "Repeated Observations",
+    "section": "",
+    "text": "Some facts on analysis of repeated observations are prepared in this notebook."
+  },
+  {
+    "objectID": "my_nb/20240429_rep_obs/20240429_rep_obs.html#data",
+    "href": "my_nb/20240429_rep_obs/20240429_rep_obs.html#data",
+    "title": "Repeated Observations",
+    "section": "Data",
+    "text": "Data\nThe data we are using is on beef cattle and on blood pressure measurements.\n\ns_rep_path_bw_bc &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv\"\ntbl_bw_bc_rep &lt;- readr::read_delim(s_rep_path_bw_bc, delim = \",\")\n\nRows: 12 Columns: 3\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\ndbl (3): Animal, Breast Circumference, Body Weight\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\ntbl_bw_bc_rep\n\n# A tibble: 12 × 3\n   Animal `Breast Circumference` `Body Weight`\n    &lt;dbl&gt;                  &lt;dbl&gt;         &lt;dbl&gt;\n 1      2                   177           463 \n 2      2                   177.          469.\n 3      2                   177.          468.\n 4      5                   179           496 \n 5      5                   179.          495.\n 6      5                   179.          494.\n 7      7                   181           518 \n 8      7                   181.          509.\n 9      7                   181.          507.\n10     10                   184           541 \n11     10                   185.          547.\n12     10                   183.          534.\n\n\nThe second data set is on body weight and breed, also with repeated observations.\n\ns_rep_path_bw_br &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed_rep_obs.csv\"\ntbl_bw_br_rep &lt;- readr::read_delim(s_rep_path_bw_br, delim = \",\")\n\nRows: 12 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): Breed, Time\ndbl (2): Animal, Body Weight\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\ntbl_bw_br_rep\n\n# A tibble: 12 × 4\n   Animal `Body Weight` Breed     Time  \n    &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt; \n 1      2          463  Angus     first \n 2      2          469. Angus     second\n 3      2          468. Angus     third \n 4      5          496  Simmental first \n 5      5          495. Simmental second\n 6      5          494. Simmental third \n 7      7          518  Limousin  first \n 8      7          509. Limousin  second\n 9      7          507. Limousin  third \n10     10          541  Limousin  first \n11     10          547. Limousin  second\n12     10          534. Limousin  third"
+  },
+  {
+    "objectID": "my_nb/20240429_rep_obs/20240429_rep_obs.html#plots",
+    "href": "my_nb/20240429_rep_obs/20240429_rep_obs.html#plots",
+    "title": "Repeated Observations",
+    "section": "Plots",
+    "text": "Plots\nThe plots of the data already show certain patterns which are important to be considered in any statistical analysis.\n\nlibrary(ggplot2)\np_bw_bc_rep &lt;- ggplot(data = tbl_bw_bc_rep,\n                      mapping = aes(x = `Breast Circumference`,\n                                    y = `Body Weight`)) + \n  geom_point(aes(color = as.factor(Animal)))\np_bw_bc_rep\n\n\n\n\n\n\n\n\nA similar plot with Breed\n\nlibrary(ggplot2)\np_bw_br_rep &lt;- ggplot(data = tbl_bw_br_rep,\n                      mapping = aes(x = as.factor(Breed),\n                                    y = `Body Weight`)) + \n  geom_point(aes(color = as.factor(Animal)))\np_bw_br_rep"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.10.3",
+    "href": "about.html#asmasss2024-0.10.3",
+    "title": "About",
+    "section": "",
+    "text": "Overhead pictures [ohp_l10]https://charlotte-ngs.github.io/asmasss2024/ohp/20240429_ohp_l10.pdf"
   }
 ]

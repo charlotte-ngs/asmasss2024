@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ASMAS-SS2024 | 0.10.2</title>
+<title>ASMAS-SS2024 | 0.10.2 - Repeated Observations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ASMAS-SS2024 | 0.10.2</span>
     </a>
   </div>
@@ -89,27 +123,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./course_notes.html"> 
+    <a class="nav-link" href="../../course_notes.html"> 
 <span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exercises.html"> 
+    <a class="nav-link" href="../../exercises.html"> 
 <span class="menu-text">Exercises</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./solutions.html"> 
+    <a class="nav-link" href="../../solutions.html"> 
 <span class="menu-text">Solutions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./add_info.html"> 
+    <a class="nav-link" href="../../add_info.html"> 
 <span class="menu-text">Additional Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -128,137 +162,140 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#asmasss2024-0.10.3" id="toc-asmasss2024-0.10.3" class="nav-link active" data-scroll-target="#asmasss2024-0.10.3">asmasss2024 0.10.3</a></li>
-  <li><a href="#asmasss2024-0.10.2" id="toc-asmasss2024-0.10.2" class="nav-link" data-scroll-target="#asmasss2024-0.10.2">asmasss2024 0.10.2</a></li>
-  <li><a href="#asmasss2024-0.10.1" id="toc-asmasss2024-0.10.1" class="nav-link" data-scroll-target="#asmasss2024-0.10.1">asmasss2024 0.10.1</a></li>
-  <li><a href="#asmasss2024-0.10.0" id="toc-asmasss2024-0.10.0" class="nav-link" data-scroll-target="#asmasss2024-0.10.0">asmasss2024 0.10.0</a></li>
-  <li><a href="#asmasss2024-0.9.4" id="toc-asmasss2024-0.9.4" class="nav-link" data-scroll-target="#asmasss2024-0.9.4">asmasss2024 0.9.4</a></li>
-  <li><a href="#asmasss2024-0.9.3" id="toc-asmasss2024-0.9.3" class="nav-link" data-scroll-target="#asmasss2024-0.9.3">asmasss2024 0.9.3</a></li>
-  <li><a href="#asmasss2024-0.9.2" id="toc-asmasss2024-0.9.2" class="nav-link" data-scroll-target="#asmasss2024-0.9.2">asmasss2024 0.9.2</a></li>
-  <li><a href="#asmasss2024-0.9.1" id="toc-asmasss2024-0.9.1" class="nav-link" data-scroll-target="#asmasss2024-0.9.1">asmasss2024 0.9.1</a></li>
-  <li><a href="#asmasss2024-0.9.0" id="toc-asmasss2024-0.9.0" class="nav-link" data-scroll-target="#asmasss2024-0.9.0">asmasss2024 0.9.0</a></li>
-  <li><a href="#asmasss2024-0.8.1" id="toc-asmasss2024-0.8.1" class="nav-link" data-scroll-target="#asmasss2024-0.8.1">asmasss2024 0.8.1</a></li>
-  <li><a href="#asmasss2024-0.8.0" id="toc-asmasss2024-0.8.0" class="nav-link" data-scroll-target="#asmasss2024-0.8.0">asmasss2024 0.8.0</a></li>
-  <li><a href="#asmasss2024-0.7.2" id="toc-asmasss2024-0.7.2" class="nav-link" data-scroll-target="#asmasss2024-0.7.2">asmasss2024 0.7.2</a></li>
-  <li><a href="#asmasss2024-0.7.1" id="toc-asmasss2024-0.7.1" class="nav-link" data-scroll-target="#asmasss2024-0.7.1">asmasss2024 0.7.1</a></li>
-  <li><a href="#asmasss2024-0.7.0" id="toc-asmasss2024-0.7.0" class="nav-link" data-scroll-target="#asmasss2024-0.7.0">asmasss2024 0.7.0</a></li>
-  <li><a href="#asmasss2024-0.6.1" id="toc-asmasss2024-0.6.1" class="nav-link" data-scroll-target="#asmasss2024-0.6.1">asmasss2024 0.6.1</a></li>
-  <li><a href="#asmasss2024-0.6.0" id="toc-asmasss2024-0.6.0" class="nav-link" data-scroll-target="#asmasss2024-0.6.0">asmasss2024 0.6.0</a></li>
-  <li><a href="#asmasss2024-0.5.3" id="toc-asmasss2024-0.5.3" class="nav-link" data-scroll-target="#asmasss2024-0.5.3">asmasss2024 0.5.3</a></li>
-  <li><a href="#asmasss2024-0.5.2" id="toc-asmasss2024-0.5.2" class="nav-link" data-scroll-target="#asmasss2024-0.5.2">asmasss2024 0.5.2</a></li>
-  <li><a href="#asmasss2024-0.5.1" id="toc-asmasss2024-0.5.1" class="nav-link" data-scroll-target="#asmasss2024-0.5.1">asmasss2024 0.5.1</a></li>
-  <li><a href="#asmasss2024-0.5.0" id="toc-asmasss2024-0.5.0" class="nav-link" data-scroll-target="#asmasss2024-0.5.0">asmasss2024 0.5.0</a></li>
-  <li><a href="#asmasss2024-0.4.4" id="toc-asmasss2024-0.4.4" class="nav-link" data-scroll-target="#asmasss2024-0.4.4">asmasss2024 0.4.4</a></li>
-  <li><a href="#asmasss2024-0.4.3" id="toc-asmasss2024-0.4.3" class="nav-link" data-scroll-target="#asmasss2024-0.4.3">asmasss2024 0.4.3</a></li>
-  <li><a href="#asmasss2024-0.4.2" id="toc-asmasss2024-0.4.2" class="nav-link" data-scroll-target="#asmasss2024-0.4.2">asmasss2024 0.4.2</a></li>
-  <li><a href="#asmasss2024-0.4.1" id="toc-asmasss2024-0.4.1" class="nav-link" data-scroll-target="#asmasss2024-0.4.1">asmasss2024 0.4.1</a></li>
-  <li><a href="#asmasss2024-0.4.0" id="toc-asmasss2024-0.4.0" class="nav-link" data-scroll-target="#asmasss2024-0.4.0">asmasss2024 0.4.0</a></li>
-  <li><a href="#asmasss2024-0.3.1" id="toc-asmasss2024-0.3.1" class="nav-link" data-scroll-target="#asmasss2024-0.3.1">asmasss2024 0.3.1</a></li>
-  <li><a href="#asmasss2024-0.3.0" id="toc-asmasss2024-0.3.0" class="nav-link" data-scroll-target="#asmasss2024-0.3.0">asmasss2024 0.3.0</a></li>
-  <li><a href="#asmasss2024-0.2.3" id="toc-asmasss2024-0.2.3" class="nav-link" data-scroll-target="#asmasss2024-0.2.3">asmasss2024 0.2.3</a></li>
-  <li><a href="#asmasss2024-0.2.2" id="toc-asmasss2024-0.2.2" class="nav-link" data-scroll-target="#asmasss2024-0.2.2">asmasss2024 0.2.2</a></li>
-  <li><a href="#asmasss2024-0.2.1" id="toc-asmasss2024-0.2.1" class="nav-link" data-scroll-target="#asmasss2024-0.2.1">asmasss2024 0.2.1</a></li>
+  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link active" data-scroll-target="#disclaimer">Disclaimer</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Repeated Observations</h1>
+</div>
 
 
 
-<section id="asmasss2024-0.10.3" class="level1">
-<h1>asmasss2024 0.10.3</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="disclaimer" class="level2">
+<h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
+<p>Some facts on analysis of repeated observations are prepared in this notebook.</p>
 </section>
-<section id="asmasss2024-0.10.2" class="level1">
-<h1>asmasss2024 0.10.2</h1>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data we are using is on beef cattle and on blood pressure measurements.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s_rep_path_bw_bc <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_rep <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(s_rep_path_bw_bc, <span class="at">delim =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 12 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (3): Animal, Breast Circumference, Body Weight
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 3
+   Animal `Breast Circumference` `Body Weight`
+    &lt;dbl&gt;                  &lt;dbl&gt;         &lt;dbl&gt;
+ 1      2                   177           463 
+ 2      2                   177.          469.
+ 3      2                   177.          468.
+ 4      5                   179           496 
+ 5      5                   179.          495.
+ 6      5                   179.          494.
+ 7      7                   181           518 
+ 8      7                   181.          509.
+ 9      7                   181.          507.
+10     10                   184           541 
+11     10                   185.          547.
+12     10                   183.          534.</code></pre>
+</div>
+</div>
+<p>The second data set is on body weight and breed, also with repeated observations.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s_rep_path_bw_br <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed_rep_obs.csv"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tbl_bw_br_rep <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(s_rep_path_bw_br, <span class="at">delim =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 12 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): Breed, Time
+dbl (2): Animal, Body Weight
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_br_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 4
+   Animal `Body Weight` Breed     Time  
+    &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt; 
+ 1      2          463  Angus     first 
+ 2      2          469. Angus     second
+ 3      2          468. Angus     third 
+ 4      5          496  Simmental first 
+ 5      5          495. Simmental second
+ 6      5          494. Simmental third 
+ 7      7          518  Limousin  first 
+ 8      7          509. Limousin  second
+ 9      7          507. Limousin  third 
+10     10          541  Limousin  first 
+11     10          547. Limousin  second
+12     10          534. Limousin  third </code></pre>
+</div>
+</div>
 </section>
-<section id="asmasss2024-0.10.1" class="level1">
-<h1>asmasss2024 0.10.1</h1>
-</section>
-<section id="asmasss2024-0.10.0" class="level1">
-<h1>asmasss2024 0.10.0</h1>
-</section>
-<section id="asmasss2024-0.9.4" class="level1">
-<h1>asmasss2024 0.9.4</h1>
-</section>
-<section id="asmasss2024-0.9.3" class="level1">
-<h1>asmasss2024 0.9.3</h1>
-</section>
-<section id="asmasss2024-0.9.2" class="level1">
-<h1>asmasss2024 0.9.2</h1>
-</section>
-<section id="asmasss2024-0.9.1" class="level1">
-<h1>asmasss2024 0.9.1</h1>
-</section>
-<section id="asmasss2024-0.9.0" class="level1">
-<h1>asmasss2024 0.9.0</h1>
-</section>
-<section id="asmasss2024-0.8.1" class="level1">
-<h1>asmasss2024 0.8.1</h1>
-</section>
-<section id="asmasss2024-0.8.0" class="level1">
-<h1>asmasss2024 0.8.0</h1>
-</section>
-<section id="asmasss2024-0.7.2" class="level1">
-<h1>asmasss2024 0.7.2</h1>
-</section>
-<section id="asmasss2024-0.7.1" class="level1">
-<h1>asmasss2024 0.7.1</h1>
-</section>
-<section id="asmasss2024-0.7.0" class="level1">
-<h1>asmasss2024 0.7.0</h1>
-</section>
-<section id="asmasss2024-0.6.1" class="level1">
-<h1>asmasss2024 0.6.1</h1>
-</section>
-<section id="asmasss2024-0.6.0" class="level1">
-<h1>asmasss2024 0.6.0</h1>
-</section>
-<section id="asmasss2024-0.5.3" class="level1">
-<h1>asmasss2024 0.5.3</h1>
-</section>
-<section id="asmasss2024-0.5.2" class="level1">
-<h1>asmasss2024 0.5.2</h1>
-</section>
-<section id="asmasss2024-0.5.1" class="level1">
-<h1>asmasss2024 0.5.1</h1>
-</section>
-<section id="asmasss2024-0.5.0" class="level1">
-<h1>asmasss2024 0.5.0</h1>
-</section>
-<section id="asmasss2024-0.4.4" class="level1">
-<h1>asmasss2024 0.4.4</h1>
-</section>
-<section id="asmasss2024-0.4.3" class="level1">
-<h1>asmasss2024 0.4.3</h1>
-</section>
-<section id="asmasss2024-0.4.2" class="level1">
-<h1>asmasss2024 0.4.2</h1>
-</section>
-<section id="asmasss2024-0.4.1" class="level1">
-<h1>asmasss2024 0.4.1</h1>
-</section>
-<section id="asmasss2024-0.4.0" class="level1">
-<h1>asmasss2024 0.4.0</h1>
-</section>
-<section id="asmasss2024-0.3.1" class="level1">
-<h1>asmasss2024 0.3.1</h1>
-</section>
-<section id="asmasss2024-0.3.0" class="level1">
-<h1>asmasss2024 0.3.0</h1>
-</section>
-<section id="asmasss2024-0.2.3" class="level1">
-<h1>asmasss2024 0.2.3</h1>
-</section>
-<section id="asmasss2024-0.2.2" class="level1">
-<h1>asmasss2024 0.2.2</h1>
-</section>
-<section id="asmasss2024-0.2.1" class="level1">
-<h1>asmasss2024 0.2.1</h1>
-<ul>
-<li>Initial CRAN submission.</li>
-</ul>
+<section id="plots" class="level2">
+<h2 class="anchored" data-anchor-id="plots">Plots</h2>
+<p>The plots of the data already show certain patterns which are important to be considered in any statistical analysis.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p_bw_bc_rep <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tbl_bw_bc_rep,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y =</span> <span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal)))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>p_bw_bc_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A similar plot with <code>Breed</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p_bw_br_rep <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tbl_bw_br_rep,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Breed),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y =</span> <span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal)))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>p_bw_br_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
