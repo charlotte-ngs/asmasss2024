@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-28 07:07:13 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-29 07:28:55 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Exercise asm_ex08\n\n\n\n\n\nSolution asm_sol07\nSolution asm_sol06"
+    "text": "Slides l08_mlem\n\n\n\n\n\nExercise asm_ex08\n\n\n\n\n\nSolution asm_sol07\nSolution asm_sol06"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,21 +137,21 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-28 07:06:38 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-29 07:29:13 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
     "href": "add_info.html#slides",
     "title": "Additional Information",
     "section": "Slides",
-    "text": "Slides\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions\n\n\n5\n2024-04-15\nContrasts\n\n\n6\n2024-04-22\nInteractions\n\n\n7\n2024-04-22\nSimulation"
+    "text": "Slides\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions\n\n\n5\n2024-04-15\nContrasts\n\n\n6\n2024-04-22\nInteractions\n\n\n7\n2024-04-22\nSimulation\n\n\n8\n2024-04-29\nRepeated Observations"
   },
   {
     "objectID": "add_info.html#over-head-pictures",
     "href": "add_info.html#over-head-pictures",
     "title": "Additional Information",
     "section": "Over-Head Pictures",
-    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n\n\nLatest Changes: 2024-04-24 05:11:45 CEST (pvr)"
+    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n\n\nLatest Changes: 2024-04-29 07:29:07 CEST (pvr)"
   },
   {
     "objectID": "ohp/20240219_ohp_l01/20240219_ohp_l01.html#ohp-picture-2",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.10.1",
+    "title": "asmasss2024 0.10.2",
     "section": "",
-    "text": "asmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1083,5 +1083,117 @@
     "title": "About",
     "section": "",
     "text": "Exercise asm_ex08"
+  },
+  {
+    "objectID": "my_scripts/20240429_mlem/repeated_observations.html",
+    "href": "my_scripts/20240429_mlem/repeated_observations.html",
+    "title": "Repeated Observations",
+    "section": "",
+    "text": "# read data to a data frame\ns_bw_breed_rep_obs_path &lt;- \"https://charlotte-ngs.github.io/asmss2022/data/asm_bw_bc_rep_obs.csv\"\ndf_rep_obs_breed &lt;- read.table(s_bw_breed_rep_obs_path, \n header = T, sep = \",\")\ndf_rep_obs_breed\n\n   Animal Breast.Circumference Body.Weight\n1       2             177.0000    463.0000\n2       2             177.3129    468.8940\n3       2             177.3292    467.8753\n4       5             179.0000    496.0000\n5       5             178.6501    495.0033\n6       5             178.7485    493.6563\n7       7             181.0000    518.0000\n8       7             180.9819    509.3221\n9       7             181.1467    506.5958\n10     10             184.0000    541.0000\n11     10             184.5957    547.3609\n12     10             183.1749    533.9288\n\n# convert animal into a factor\ndf_rep_obs_breed$Animal &lt;- as.factor(df_rep_obs_breed$Animal)\n\n# plot\nlibrary(ggplot2)\np &lt;- ggplot(data = df_rep_obs_breed, \n            mapping = aes(x = Breast.Circumference,\n                          y = Body.Weight)) + \n       geom_point(aes(color = Animal, \n                      size = 3))\np"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html",
+    "href": "slides/l08_mlem/l08_mlem.html",
+    "title": "Mixed Linear Effects Models",
+    "section": "",
+    "text": "Same characteristics (Body Weight, BC, …) measured multiple times for the same animal\n\n\n\n\n\n\nAnimal\nBreast Circumference\nBody Weight\n\n\n\n\n2\n177.0000\n463.0000\n\n\n2\n177.3129\n468.8940\n\n\n2\n177.3292\n467.8753\n\n\n5\n179.0000\n496.0000\n\n\n5\n178.6501\n495.0033\n\n\n5\n178.7485\n493.6563\n\n\n7\n181.0000\n518.0000\n\n\n7\n180.9819\n509.3221\n\n\n\n\n\n\nColumn Animal no longer just a counter, it becomes a model factor"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#repeated-measurements",
+    "href": "slides/l08_mlem/l08_mlem.html#repeated-measurements",
+    "title": "Mixed Linear Effects Models",
+    "section": "",
+    "text": "Same characteristics (Body Weight, BC, …) measured multiple times for the same animal\n\n\n\n\n\n\nAnimal\nBreast Circumference\nBody Weight\n\n\n\n\n2\n177.0000\n463.0000\n\n\n2\n177.3129\n468.8940\n\n\n2\n177.3292\n467.8753\n\n\n5\n179.0000\n496.0000\n\n\n5\n178.6501\n495.0033\n\n\n5\n178.7485\n493.6563\n\n\n7\n181.0000\n518.0000\n\n\n7\n180.9819\n509.3221\n\n\n\n\n\n\nColumn Animal no longer just a counter, it becomes a model factor"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#properties",
+    "href": "slides/l08_mlem/l08_mlem.html#properties",
+    "title": "Mixed Linear Effects Models",
+    "section": "Properties",
+    "text": "Properties\n\nWhat is the benefit of repeated measurements?\nEquivalent to more animals in the dataset?\nAssumption: repeated observations of the same animal are more “similar”\nNo longer independence of observations"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#data-scatterplot",
+    "href": "slides/l08_mlem/l08_mlem.html#data-scatterplot",
+    "title": "Mixed Linear Effects Models",
+    "section": "Data Scatterplot",
+    "text": "Data Scatterplot"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#statistical-analysis",
+    "href": "slides/l08_mlem/l08_mlem.html#statistical-analysis",
+    "title": "Mixed Linear Effects Models",
+    "section": "Statistical Analysis",
+    "text": "Statistical Analysis\n\nTechnically, same regression analysis is possible\n\n\nBut assumption of independence is violoted\nConsequence of independence\n\n\\[var(\\mathbf{e}) = \\mathbf{I} * \\sigma_e^2\\] * Check residuals plot"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#diagnostics-plot",
+    "href": "slides/l08_mlem/l08_mlem.html#diagnostics-plot",
+    "title": "Mixed Linear Effects Models",
+    "section": "Diagnostics Plot",
+    "text": "Diagnostics Plot\n\nplot(lm_rep_obs)"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#anova",
+    "href": "slides/l08_mlem/l08_mlem.html#anova",
+    "title": "Mixed Linear Effects Models",
+    "section": "ANOVA",
+    "text": "ANOVA\n\naov_bw_breed &lt;- aov(`Body Weight` ~ Breed, \n                           data = tbl_rep_obs_breed)\nsummary(aov_bw_breed)\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nBreed        2   7356    3678   22.29 0.000327 ***\nResiduals    9   1485     165                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#anova-i-breed-and-animal",
+    "href": "slides/l08_mlem/l08_mlem.html#anova-i-breed-and-animal",
+    "title": "Mixed Linear Effects Models",
+    "section": "ANOVA I: Breed and Animal",
+    "text": "ANOVA I: Breed and Animal\n\naov_bw_breed_animal &lt;- aov(`Body Weight` ~ Breed + Animal, \n                           data = tbl_rep_obs_breed)\nsummary(aov_bw_breed_animal)\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nBreed        2   7356    3678  160.06 3.53e-07 ***\nAnimal       1   1302    1302   56.64 6.76e-05 ***\nResiduals    8    184      23                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#anova-ii",
+    "href": "slides/l08_mlem/l08_mlem.html#anova-ii",
+    "title": "Mixed Linear Effects Models",
+    "section": "ANOVA II",
+    "text": "ANOVA II\n\naov_bw_no_breed_rep &lt;- aov(`Body Weight` ~ Error(Animal), \n                           data = tbl_rep_obs_no_breed)\nsummary(aov_bw_no_breed_rep)\n\n\nError: Animal\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals  3   8658    2886               \n\nError: Within\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals  8  183.8   22.98"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#anova-iii",
+    "href": "slides/l08_mlem/l08_mlem.html#anova-iii",
+    "title": "Mixed Linear Effects Models",
+    "section": "ANOVA III",
+    "text": "ANOVA III\n\naov_bw_breed_rep &lt;- aov(`Body Weight` ~ Breed + \n                             Error(Animal), \n                           data = tbl_rep_obs_breed)\nsummary(aov_bw_breed_rep)\n\n\nError: Animal\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nBreed      2   7356    3678   2.826  0.388\nResiduals  1   1302    1302               \n\nError: Within\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals  8  183.8   22.98"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#lme4",
+    "href": "slides/l08_mlem/l08_mlem.html#lme4",
+    "title": "Mixed Linear Effects Models",
+    "section": "lme4",
+    "text": "lme4\n\nlme_bw_no_breed_rep &lt;- lme4::lmer(`Body Weight` ~ \n                                    (1|Animal), \n                       data = tbl_rep_obs_no_breed)\nsummary(lme_bw_no_breed_rep)\n\nLinear mixed model fit by REML ['lmerMod']\nFormula: `Body Weight` ~ (1 | Animal)\n   Data: tbl_rep_obs_no_breed\n\nREML criterion at convergence: 82.7\n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-1.36360 -0.50301  0.06086  0.26850  1.43838 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n Animal   (Intercept) 954.34   30.892  \n Residual              22.98    4.794  \nNumber of obs: 12, groups:  Animal, 4\n\nFixed effects:\n            Estimate Std. Error t value\n(Intercept)   503.39      15.51   32.46"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#with-breed",
+    "href": "slides/l08_mlem/l08_mlem.html#with-breed",
+    "title": "Mixed Linear Effects Models",
+    "section": "With Breed",
+    "text": "With Breed\n\n\n\n\n\nAnimal\nBody Weight\nBreed\n\n\n\n\n2\n463.0000\nAngus\n\n\n2\n468.8940\nAngus\n\n\n2\n467.8753\nAngus\n\n\n5\n496.0000\nSimmental\n\n\n5\n495.0033\nSimmental\n\n\n5\n493.6563\nSimmental\n\n\n7\n518.0000\nLimousin\n\n\n7\n509.3221\nLimousin\n\n\n7\n506.5958\nLimousin\n\n\n10\n541.0000\nLimousin\n\n\n10\n547.3609\nLimousin\n\n\n10\n533.9288\nLimousin"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#anova-1",
+    "href": "slides/l08_mlem/l08_mlem.html#anova-1",
+    "title": "Mixed Linear Effects Models",
+    "section": "ANOVA",
+    "text": "ANOVA\n\naov_bw_breed_rep &lt;- aov(`Body Weight` ~ Breed + \n                          Error(Animal), \n                           data = tbl_rep_obs_breed)\nsummary(aov_bw_breed_rep)\n\n\nError: Animal\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nBreed      2   7356    3678   2.826  0.388\nResiduals  1   1302    1302               \n\nError: Within\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals  8  183.8   22.98"
+  },
+  {
+    "objectID": "slides/l08_mlem/l08_mlem.html#lme4-1",
+    "href": "slides/l08_mlem/l08_mlem.html#lme4-1",
+    "title": "Mixed Linear Effects Models",
+    "section": "lme4",
+    "text": "lme4\n\nlme_bw_breed_rep &lt;- lme4::lmer(`Body Weight` ~ Breed + \n                                 (1|Animal), \n                                  data = tbl_rep_obs_breed)\nsummary(lme_bw_breed_rep)\n\nLinear mixed model fit by REML ['lmerMod']\nFormula: `Body Weight` ~ Breed + (1 | Animal)\n   Data: tbl_rep_obs_breed\n\nREML criterion at convergence: 61.8\n\nScaled residuals: \n    Min      1Q  Median      3Q     Max \n-1.3714 -0.5383  0.0640  0.3213  1.4305 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n Animal   (Intercept) 426.21   20.645  \n Residual              22.98    4.794  \nNumber of obs: 12, groups:  Animal, 4\n\nFixed effects:\n               Estimate Std. Error t value\n(Intercept)      466.59      20.83  22.400\nBreedLimousin     59.44      25.51   2.330\nBreedSimmental    28.30      29.46   0.961\n\nCorrelation of Fixed Effects:\n            (Intr) BrdLms\nBreedLimosn -0.816       \nBreedSmmntl -0.707  0.577"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.10.2",
+    "href": "about.html#asmasss2024-0.10.2",
+    "title": "About",
+    "section": "",
+    "text": "Slides l08_mlem"
   }
 ]
