@@ -19,6 +19,7 @@ s_app_url <- s_cn_url
 
 ## asmasss2024 0.10.2
 
+* Repeated Observation Data [asm_bw_bc_rep_obs](`r paste0(s_data_url, "asm_bw_bc_rep_obs.csv", collapse = "")`)
 * Slides [l08_mlem](`r paste0(s_sl_url, "l08_mlem/l08_mlem.pdf", collapse = "")`)
 
 ## asmasss2024 0.10.1
