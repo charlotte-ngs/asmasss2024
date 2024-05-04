@@ -48,3 +48,81 @@ p_bw_br_rep <- ggplot(data = tbl_bw_br_rep,
 p_bw_br_rep
 ```
 
+
+### Statistical Model
+Analysis according to `ChatGPT`
+
+```{r eval=FALSE}
+# Install and load necessary packages
+install.packages("lme4")
+library(lme4)
+
+# Assuming your dataset is called 'data' with columns 'animal_id', 'body_weight', and 'breast_circumference'
+# Fit a linear mixed-effects model
+model <- lmer(body_weight ~ breast_circumference + (1 | animal_id), data = data)
+summary(model)
+```
+
+Applying the above for the BW-BC dataset we get
+
+```{r}
+if (!is.element("lme4", installed.packages())) install.packages("lme4")
+library(lme4)
+
+lmer_bw_bc <- lmer(`Body Weight` ~ `Breast Circumference` + (1 | Animal) , data = tbl_bw_bc_rep)
+summary(lmer_bw_bc)
+```
+
+Is the fixed part of the regression also obtained with fitting a regression through the mean observations
+
+```{r}
+library(dplyr)
+
+tbl_bw_bc_mean <- tbl_bw_bc_rep %>%
+  group_by(Animal) %>% 
+  summarise(mean_bw = mean(`Body Weight`),
+            mean_bc = mean(`Breast Circumference`))
+tbl_bw_bc_mean
+```
+
+Fit the regression model
+
+```{r}
+lm_bw_bc_mean <- lm(mean_bw ~ mean_bc, data = tbl_bw_bc_mean)
+summary(lm_bw_bc_mean)
+```
+
+
+
+## Data on Blood Pressure
+When asking `ChatGPT` the following question
+
+>"How to analyse a dataset with single observations in the response variable and repeated observations in the predictor variable using a regression model in R"
+
+The following answer is provided in summary, the data has to be analysed using 
+
+```{r, eval=FALSE}
+install.packages("lme4")
+library(lme4)
+
+# Assuming your response variable is called 'response' and predictor variable is called 'predictor'
+# 'group' represents the grouping variable (e.g., individual ID or time point)
+# 'data' is your dataset
+
+model <- lmer(response ~ predictor + (1 | group), data = data)
+
+# results
+summary(model)
+
+# diagnostics
+plot(model)
+```
+
+The blood pressure data is given as
+
+```{r}
+
+```
+
+
+
