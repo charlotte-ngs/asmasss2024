@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-04-29 13:26:37 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-04 07:52:17 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Overhead pictures ohp_l10\n\n\n\n\n\nRepeated Observation Data on BW and Breed asm_bw_breed_rep_obs\nRepeated Observation Data on BW and BC asm_bw_bc_rep_obs\nSlides l08_mlem\n\n\n\n\n\nExercise asm_ex08\n\n\n\n\n\nSolution asm_sol07\nSolution asm_sol06"
+    "text": "Blood pressure data 20240429_bp_data\n\n\n\n\n\nOverhead pictures ohp_l10\n\n\n\n\n\nRepeated Observation Data on BW and Breed asm_bw_breed_rep_obs\nRepeated Observation Data on BW and BC asm_bw_bc_rep_obs\nSlides l08_mlem\n\n\n\n\n\nExercise asm_ex08\n\n\n\n\n\nSolution asm_sol07\nSolution asm_sol06"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-04-29 13:26:28 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-04 07:52:37 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.10.3",
+    "title": "asmasss2024 0.10.4",
     "section": "",
-    "text": "asmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1243,7 +1243,7 @@
     "href": "my_nb/20240429_rep_obs/20240429_rep_obs.html#plots",
     "title": "Repeated Observations",
     "section": "Plots",
-    "text": "Plots\nThe plots of the data already show certain patterns which are important to be considered in any statistical analysis.\n\nlibrary(ggplot2)\np_bw_bc_rep &lt;- ggplot(data = tbl_bw_bc_rep,\n                      mapping = aes(x = `Breast Circumference`,\n                                    y = `Body Weight`)) + \n  geom_point(aes(color = as.factor(Animal)))\np_bw_bc_rep\n\n\n\n\n\n\n\n\nA similar plot with Breed\n\nlibrary(ggplot2)\np_bw_br_rep &lt;- ggplot(data = tbl_bw_br_rep,\n                      mapping = aes(x = as.factor(Breed),\n                                    y = `Body Weight`)) + \n  geom_point(aes(color = as.factor(Animal)))\np_bw_br_rep"
+    "text": "Plots\nThe plots of the data already show certain patterns which are important to be considered in any statistical analysis.\n\nlibrary(ggplot2)\np_bw_bc_rep &lt;- ggplot(data = tbl_bw_bc_rep,\n                      mapping = aes(x = `Breast Circumference`,\n                                    y = `Body Weight`)) + \n  geom_point(aes(color = as.factor(Animal)))\np_bw_bc_rep\n\n\n\n\n\n\n\n\nA similar plot with Breed\n\nlibrary(ggplot2)\np_bw_br_rep &lt;- ggplot(data = tbl_bw_br_rep,\n                      mapping = aes(x = as.factor(Breed),\n                                    y = `Body Weight`)) + \n  geom_point(aes(color = as.factor(Animal)))\np_bw_br_rep\n\n\n\n\n\n\n\n\n\nStatistical Model\nAnalysis according to ChatGPT\n\n# Install and load necessary packages\ninstall.packages(\"lme4\")\nlibrary(lme4)\n\n# Assuming your dataset is called 'data' with columns 'animal_id', 'body_weight', and 'breast_circumference'\n# Fit a linear mixed-effects model\nmodel &lt;- lmer(body_weight ~ breast_circumference + (1 | animal_id), data = data)\nsummary(model)\n\nApplying the above for the BW-BC dataset we get\n\nif (!is.element(\"lme4\", installed.packages())) install.packages(\"lme4\")\nlibrary(lme4)\n\nLoading required package: Matrix\n\nlmer_bw_bc &lt;- lmer(`Body Weight` ~ `Breast Circumference` + (1 | Animal) , data = tbl_bw_bc_rep)\nsummary(lmer_bw_bc)\n\nLinear mixed model fit by REML ['lmerMod']\nFormula: `Body Weight` ~ `Breast Circumference` + (1 | Animal)\n   Data: tbl_bw_bc_rep\n\nREML criterion at convergence: 64.5\n\nScaled residuals: \n     Min       1Q   Median       3Q      Max \n-1.67538 -0.23499 -0.08804  0.19610  2.04354 \n\nRandom effects:\n Groups   Name        Variance Std.Dev.\n Animal   (Intercept) 30.02    5.479   \n Residual             12.07    3.474   \nNumber of obs: 12, groups:  Animal, 4\n\nFixed effects:\n                        Estimate Std. Error t value\n(Intercept)            -1357.727    196.186  -6.921\n`Breast Circumference`    10.325      1.088   9.488\n\nCorrelation of Fixed Effects:\n            (Intr)\n`BCrcmfrnc` -1.000\n\n\nIs the fixed part of the regression also obtained with fitting a regression through the mean observations\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\ntbl_bw_bc_mean &lt;- tbl_bw_bc_rep %&gt;%\n  group_by(Animal) %&gt;% \n  summarise(mean_bw = mean(`Body Weight`),\n            mean_bc = mean(`Breast Circumference`))\ntbl_bw_bc_mean\n\n# A tibble: 4 × 3\n  Animal mean_bw mean_bc\n   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1      2    467.    177.\n2      5    495.    179.\n3      7    511.    181.\n4     10    541.    184.\n\n\nFit the regression model\n\nlm_bw_bc_mean &lt;- lm(mean_bw ~ mean_bc, data = tbl_bw_bc_mean)\nsummary(lm_bw_bc_mean)\n\n\nCall:\nlm(formula = mean_bw ~ mean_bc, data = tbl_bw_bc_mean)\n\nResiduals:\n      1       2       3       4 \n-4.9165  6.7035 -0.4726 -1.3144 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)  \n(Intercept) -1392.453    213.013  -6.537   0.0226 *\nmean_bc        10.518      1.182   8.901   0.0124 *\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 5.961 on 2 degrees of freedom\nMultiple R-squared:  0.9754,    Adjusted R-squared:  0.9631 \nF-statistic: 79.23 on 1 and 2 DF,  p-value: 0.01239"
   },
   {
     "objectID": "about.html#asmasss2024-0.10.3",
@@ -1251,5 +1251,19 @@
     "title": "About",
     "section": "",
     "text": "Overhead pictures ohp_l10"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.10.4",
+    "href": "about.html#asmasss2024-0.10.4",
+    "title": "About",
+    "section": "",
+    "text": "Blood pressure data 20240429_bp_data"
+  },
+  {
+    "objectID": "my_nb/20240429_rep_obs/20240429_rep_obs.html#data-on-blood-pressure",
+    "href": "my_nb/20240429_rep_obs/20240429_rep_obs.html#data-on-blood-pressure",
+    "title": "Repeated Observations",
+    "section": "Data on Blood Pressure",
+    "text": "Data on Blood Pressure\nWhen asking ChatGPT the following question\n\n“How to analyse a dataset with single observations in the response variable and repeated observations in the predictor variable using a regression model in R”\n\nThe following answer is provided in summary, the data has to be analysed using\n\ninstall.packages(\"lme4\")\nlibrary(lme4)\n\n# Assuming your response variable is called 'response' and predictor variable is called 'predictor'\n# 'group' represents the grouping variable (e.g., individual ID or time point)\n# 'data' is your dataset\n\nmodel &lt;- lmer(response ~ predictor + (1 | group), data = data)\n\n# results\nsummary(model)\n\n# diagnostics\nplot(model)\n\nThe blood pressure data is given as"
   }
 ]

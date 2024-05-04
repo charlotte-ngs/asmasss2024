@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ASMAS-SS2024 | 0.10.2 - Repeated Observations</title>
+<title>ASMAS-SS2024 | 0.10.3 - Repeated Observations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">ASMAS-SS2024 | 0.10.2</span>
+    <span class="navbar-title">ASMAS-SS2024 | 0.10.3</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -164,7 +164,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link active" data-scroll-target="#disclaimer">Disclaimer</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a></li>
+  <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a>
+  <ul class="collapse">
+  <li><a href="#statistical-model" id="toc-statistical-model" class="nav-link" data-scroll-target="#statistical-model">Statistical Model</a></li>
+  </ul></li>
+  <li><a href="#data-on-blood-pressure" id="toc-data-on-blood-pressure" class="nav-link" data-scroll-target="#data-on-blood-pressure">Data on Blood Pressure</a></li>
   </ul>
 </nav>
     </div>
@@ -296,6 +300,138 @@ dbl (2): Animal, Body Weight
 </div>
 </div>
 </div>
+<section id="statistical-model" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-model">Statistical Model</h3>
+<p>Analysis according to <code>ChatGPT</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and load necessary packages</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your dataset is called 'data' with columns 'animal_id', 'body_weight', and 'breast_circumference'</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit a linear mixed-effects model</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(body_weight <span class="sc">~</span> breast_circumference <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> animal_id), <span class="at">data =</span> data)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Applying the above for the BW-BC dataset we get</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.element</span>(<span class="st">"lme4"</span>, <span class="fu">installed.packages</span>())) <span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Matrix</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lmer_bw_bc <span class="ot">&lt;-</span> <span class="fu">lmer</span>(<span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Animal) , <span class="at">data =</span> tbl_bw_bc_rep)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmer_bw_bc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: `Body Weight` ~ `Breast Circumference` + (1 | Animal)
+   Data: tbl_bw_bc_rep
+
+REML criterion at convergence: 64.5
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.67538 -0.23499 -0.08804  0.19610  2.04354 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Animal   (Intercept) 30.02    5.479   
+ Residual             12.07    3.474   
+Number of obs: 12, groups:  Animal, 4
+
+Fixed effects:
+                        Estimate Std. Error t value
+(Intercept)            -1357.727    196.186  -6.921
+`Breast Circumference`    10.325      1.088   9.488
+
+Correlation of Fixed Effects:
+            (Intr)
+`BCrcmfrnc` -1.000</code></pre>
+</div>
+</div>
+<p>Is the fixed part of the regression also obtained with fitting a regression through the mean observations</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_mean <span class="ot">&lt;-</span> tbl_bw_bc_rep <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_bw =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_bc =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span>))</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  Animal mean_bw mean_bc
+   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+1      2    467.    177.
+2      5    495.    179.
+3      7    511.    181.
+4     10    541.    184.</code></pre>
+</div>
+</div>
+<p>Fit the regression model</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lm_bw_bc_mean <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean_bw <span class="sc">~</span> mean_bc, <span class="at">data =</span> tbl_bw_bc_mean)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_bw_bc_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mean_bw ~ mean_bc, data = tbl_bw_bc_mean)
+
+Residuals:
+      1       2       3       4 
+-4.9165  6.7035 -0.4726 -1.3144 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)  
+(Intercept) -1392.453    213.013  -6.537   0.0226 *
+mean_bc        10.518      1.182   8.901   0.0124 *
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 5.961 on 2 degrees of freedom
+Multiple R-squared:  0.9754,    Adjusted R-squared:  0.9631 
+F-statistic: 79.23 on 1 and 2 DF,  p-value: 0.01239</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-on-blood-pressure" class="level2">
+<h2 class="anchored" data-anchor-id="data-on-blood-pressure">Data on Blood Pressure</h2>
+<p>When asking <code>ChatGPT</code> the following question</p>
+<blockquote class="blockquote">
+<p>“How to analyse a dataset with single observations in the response variable and repeated observations in the predictor variable using a regression model in R”</p>
+</blockquote>
+<p>The following answer is provided in summary, the data has to be analysed using</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your response variable is called 'response' and predictor variable is called 'predictor'</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 'group' represents the grouping variable (e.g., individual ID or time point)</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 'data' is your dataset</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(response <span class="sc">~</span> predictor <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> group), <span class="at">data =</span> data)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># diagnostics</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The blood pressure data is given as</p>
 
 
 </section>

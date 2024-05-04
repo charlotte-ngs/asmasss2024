@@ -17,6 +17,10 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 10
 
+## asmasss2024 0.10.4
+
+* Blood pressure data [20240429_bp_data](`r paste0(s_data_url, "20240429_bp_data.csv", collapse = "")`)
+
 ## asmasss2024 0.10.3
 
 * Overhead pictures [ohp_l10](`r paste0(s_ohp_url, "20240429_ohp_l10.pdf", collapse = "")`)
