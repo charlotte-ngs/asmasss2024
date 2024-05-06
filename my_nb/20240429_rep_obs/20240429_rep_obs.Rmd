@@ -7,6 +7,150 @@ output: html_notebook
 Some facts on analysis of repeated observations are prepared in this notebook.
 
 
+## Classification of Repeated Observation Data
+The following three classes of repeated observation data can be distinguished
+
+1. Repeated observations in the predictors
+2. Repeated observations in the response variables
+3. Repeated observations in both the predictors and the responses
+
+
+### Repeated Observations in Predictors
+This corresponds to the dataset of blood pressure and pulse frequency. This dataset is given by
+
+```{r}
+s_bp_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/20240429_bp_data.csv"
+df_bp <- read.table(s_bp_data_path, header = T, sep = ",")
+df_bp
+```
+
+This data can be displayed as
+
+```{r}
+p_sys_nr <- ggplot(data = df_bp,
+               mapping = aes(x = ManualPulseFreq,
+                             y = SYS)) + 
+  geom_point(aes(color = as.factor(Nr))) + 
+  labs(color = "Individual")
+p_sys_nr
+```
+
+This type of datastructure is comparable to the example where repeated observations are used to predict the breeding value of an animal. The analysis of this type of dataset is done by fitting a linear regression model of the response on the mean of the repeated observations. Hence, we first have to compute the mean of the predictors and then fit the regression model.
+
+
+```{r}
+# compute the mean
+library(dplyr)
+tbl_bp_mfreq_mean <- df_bp %>%
+  group_by(Nr) %>%
+  summarise(mean_sys = mean(SYS),
+            mean_dia = mean(DIA),
+            mean_pul = mean(PUL),
+            mean_mfreq = mean(ManualPulseFreq))
+tbl_bp_mfreq_mean
+```
+
+The fit of the regression model is
+
+```{r}
+lm_msys_mfreq <- lm(mean_sys ~ mean_mfreq, data = tbl_bp_mfreq_mean)
+summary(lm_msys_mfreq)
+```
+
+If there are concerns about outliers in the predictors, then the `median` is more robust against outliers.
+
+
+### Repeated Observations in the Response
+This example corresponds to the dataset with the influence of breed on body weight observed for beef animals. The dataset is given by
+
+```{r}
+s_rep_path_bw_br <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed_rep_obs.csv"
+df_bw_br_rep <- read.table(s_rep_path_bw_br, header = T, sep = ",")
+df_bw_br_rep
+```
+
+The plot 
+
+```{r}
+library(ggplot2)
+ggplot(data = df_bw_br_rep, aes(x = Breed, y = Body.Weight)) + 
+  geom_point(aes(color = as.factor(Animal))) + 
+  labs(color = "Animal")
+
+```
+
+This dataset is analysed with a linear model using the factor as a random effect which accounts for the variance structure
+
+```{r}
+library(lme4)
+lmer_bw_br <- lmer(Body.Weight ~ Breed + (1 | Animal), data = df_bw_br_rep)
+summary(lmer_bw_br)
+```
+
+Comparing the variance part of the results of `lmer` with the results of `aov` is shown below
+
+```{r}
+aov_bw_br <- aov(Body.Weight ~ Breed + Error(Animal), data = df_bw_br_rep)
+summary(aov_bw_br)
+```
+
+
+
+### Repeated Observations in Both Predictors and Response
+This corresponds to the dataset on BW and BC of beef cattle animals. An analysis of such a dataset could be done using Machine Learning techniques. Alternatively, we could also average over the BC-values and treat the data as an instance of the second type by fitting a regression of BW on mean BC. 
+
+The dataset is given by
+
+```{r}
+s_rep_path_bw_bc <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv"
+tbl_bw_bc_rep <- readr::read_delim(s_rep_path_bw_bc, delim = ",")
+tbl_bw_bc_rep
+```
+
+The plot shows variation in both predictor and response
+
+```{r}
+library(ggplot2)
+p_bw_bc_rep <- ggplot(data = tbl_bw_bc_rep,
+                      mapping = aes(x = `Breast Circumference`,
+                                    y = `Body Weight`)) + 
+  geom_point(aes(color = as.factor(Animal))) + 
+  labs(color = "Animal")
+p_bw_bc_rep
+
+```
+
+A simplified analysis is to run a linear model of repeated observations of body weight on the mean of `Breast Circumference`
+
+```{r}
+library(dplyr)
+tbl_bc_mean <- tbl_bw_bc_rep %>%
+  group_by(Animal) %>% 
+  summarise(mean_bc = mean(`Breast Circumference`))
+tbl_bc_mean
+```
+
+Join back the mean values to the original data set
+
+```{r}
+tbl_bw_bc_mean <- tbl_bw_bc_rep %>%
+  inner_join(tbl_bc_mean, by = c("Animal" = "Animal")) %>%
+  select(Animal, `Body Weight`, mean_bc)
+tbl_bw_bc_mean
+```
+
+Fit the linear model
+
+```{r}
+library(lme4)
+lmer_bw_bc <- lmer(`Body Weight` ~ mean_bc + (1 | Animal), data = tbl_bw_bc_mean)
+summary(lmer_bw_bc)
+```
+
+
+## Old Material is Below Here
+The material below is kept for reference purposes.
+
 ## Data
 The data we are using is on beef cattle and on blood pressure measurements.
 
@@ -121,8 +265,25 @@ plot(model)
 The blood pressure data is given as
 
 ```{r}
-
+s_bp_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/20240429_bp_data.csv"
+df_bp <- read.table(s_bp_data_path, header = T, sep = ",")
+df_bp
 ```
+
+This data can be used to fit a regression of either `SYS`, `DIA` or `PUL` on the average of the repeated observations of `ManualPulseFreq`. To do this, we have to create a dataset with the means of `ManualPulseFreq`
+
+```{r}
+library(dplyr)
+tbl_bp_mean <- df_bp %>% 
+  group_by(Nr) %>%
+  summarise(mean_man_freq = mean(ManualPulseFreq),
+            mean_sys = mean(SYS),
+            mean_dia = mean(DIA),
+            mean_pul = mean(PUL))
+tbl_bp_mean
+```
+
+The computation of the regression coefficient has to be adapted to be able to account for the variability of the repeated observations of the predictors. 
 
 
 
