@@ -1,0 +1,132 @@
+---
+title: "Repeated Observations"
+author: "Peter von Rohr"
+date: 2024-05-06
+format: beamer
+---
+
+## Three Types of Datastructures
+
+1. Repeated observations in the predictors
+2. Repeated observations in the response variables
+3. Repeated observations in both the predictors and the responses
+
+
+## Repeated Observations in the Predictors
+
+Dataset on blood pressure and heart frequency
+
+```{r}
+#| echo: false
+s_bp_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/20240429_bp_data.csv"
+df_bp <- read.table(s_bp_data_path, header = T, sep = ",")
+library(ggplot2)
+p_sys_nr <- ggplot(data = df_bp,
+               mapping = aes(x = ManualPulseFreq,
+                             y = SYS)) + 
+  geom_point(aes(color = as.factor(Nr))) + 
+  labs(color = "Individual")
+p_sys_nr
+```
+
+
+## Statistical Analysis
+
+* Linear regression of response on `mean` (`median`) of predictors
+* Example: `SYS` as response
+
+```{r}
+#| echo: false
+library(dplyr)
+tbl_bp_mfreq_mean <- df_bp %>%
+  group_by(Nr) %>%
+  summarise(mean_sys = mean(SYS),
+            mean_mfreq = mean(ManualPulseFreq))
+library(ggplot2)
+p_bp_mfreq_mean <- ggplot(data = tbl_bp_mfreq_mean, 
+                          mapping = aes(x = mean_mfreq,
+                                        y = mean_sys)) + 
+  geom_point(aes(color = as.factor(Nr))) + 
+  labs(color = "Individual")
+p_bp_mfreq_mean
+```
+
+
+## Regression
+
+```{r}
+#| echo: true
+lm_msys_mfreq <- lm(mean_sys ~ mean_mfreq, data = tbl_bp_mfreq_mean)
+summary(lm_msys_mfreq)
+```
+
+
+## Residuals Plot
+
+```{r}
+#| echo: true
+plot(fitted(lm_msys_mfreq), residuals(lm_msys_mfreq))
+```
+
+
+## Repeated observations in the Response
+
+Breed on Body Weight in beef cattle animals
+
+```{r}
+s_rep_path_bw_br <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed_rep_obs.csv"
+df_bw_br_rep <- read.table(s_rep_path_bw_br, header = T, sep = ",")
+library(ggplot2)
+ggplot(data = df_bw_br_rep, aes(x = Breed, y = Body.Weight)) + 
+  geom_point(aes(color = as.factor(Animal))) + 
+  labs(color = "Animal")
+```
+
+
+## Statistical Analysis
+
+* Mixed effects model
+* Use `lme4::lmer()` for analysis
+
+```{r}
+#| echo: true
+library(lme4)
+lmer_bw_br <- lmer(Body.Weight ~ Breed + (1 | Animal), 
+                   data = df_bw_br_rep)
+```
+
+
+## Results
+
+```{r}
+#| echo: true
+summary(lmer_bw_br)
+```
+
+
+## Repeated Observations in Both Predictors and Response
+
+Repeated observations in Body Weight and Breast Circumference
+
+```{r}
+s_rep_path_bw_bc <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv"
+df_bw_bc_rep <- read.table(s_rep_path_bw_bc, header = T, sep = ",")
+library(ggplot2)
+p_bw_bc_rep <- ggplot(data = df_bw_bc_rep,
+                      mapping = aes(x = Breast.Circumference,
+                                    y = Body.Weight)) + 
+  geom_point(aes(color = as.factor(Animal))) + 
+  labs(color = "Animal")
+p_bw_bc_rep
+```
+
+
+## Statistical Analysis
+
+* Use Machine Learning Approaches 
+* First approximation: 
+    + Compute mean/median of BC
+    + Fit repeated observation mixed model as in type 2
+    
+
+
