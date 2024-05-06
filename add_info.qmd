@@ -69,7 +69,7 @@ knitr::kable(tbl_slides)
 #| echo: false
 #| results: asis
 s_ohp_url <- "https://charlotte-ngs.github.io/asmasss2024/ohp/"
-tbl_ohp <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+tbl_ohp <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
                           Date = c("2024-02-19",
                                    "2024-02-26",
                                    "2024-03-04",
@@ -79,7 +79,8 @@ tbl_ohp <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                                    "2024-04-08",
                                    "2024-04-15",
                                    "2024-04-22",
-                                   "2024-04-29"),
+                                   "2024-04-29",
+                                   "2024-05-06"),
                           Topic = c(
                             paste0("[Introduction](",
                                    s_ohp_url,
@@ -120,6 +121,10 @@ tbl_ohp <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                             paste0("[Repeated Observations](",
                                    s_ohp_url,
                                    "20240429_ohp_l10.pdf)",
+                                   collapse = ""),
+                            paste0("[Type of Repeated Observations](",
+                                   s_ohp_url,
+                                   "20240506_ohp_l11.pdf)",
                                    collapse = "")
                           ))
 knitr::kable(tbl_ohp)

@@ -17,6 +17,10 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 11
 
+## asmasss2024 0.11.2
+
+* Overhead [ohp_l11](`r paste0(s_ohp_url, "20240506_ohp_l11.pdf", collapse = "")`)
+
 ## asmasss2024 0.11.1
 
 * Slides [l09_rep_obs](`r paste0(s_sl_url, "l09_rep_obs/l09_rep_obs.pdf", collapse = "")`)
