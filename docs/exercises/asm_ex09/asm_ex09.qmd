@@ -1,0 +1,154 @@
+---
+title: "Applied Statistical Methods - Exercise 9"
+author: "Peter von Rohr"
+date: 2024-05-06
+filters: 
+  - webr
+webr:
+  packages: ['dplyr']
+---
+
+## Problem 1: Repeated Observations in Predictors
+Use the dataset on blood presure and pulse frequency and fit linear regression models with response variables `SYS`, `DIA` and `PUL` on the mean of the manually measured pulse frequencies. Check the distribution of the residuals with a dot-plot of the resiudals of the regression model on the fitted values. For which of the responses (`SYS`, `DIA` and `PUL`), the highest absolute regression coefficient can be found? The dataset is available at 
+
+```{r data-ex09-p01, echo=FALSE}
+s_tbl_ex09_p01_path <- "https://charlotte-ngs.github.io/asmasss2024/data/20240429_bp_data.csv"
+s_tbl_ex09_p01_path
+```
+
+### Tasks
+* Read the data
+
+```{webr-r}
+# read data to a data.frame
+
+```
+
+* Compute mean of manual pulse frequencies
+
+```{webr-r}
+# compute mean values accross individuals
+
+```
+
+* Fit a regression model of `SYS` on mean manual pulse frequency
+
+```{webr-r}
+# fit regression model of SYS on mean_mpf
+
+```
+
+* Plot residuals
+
+```{webr-r}
+# plot fitted values versus residuals
+
+```
+
+* Fit a regression model of `DIA` on mean manual pulse frequency
+
+```{webr-r}
+# fit regression model of DIA on mean_mpf
+
+```
+
+* Plot residuals
+
+```{webr-r}
+# plot fitted values versus residuals
+
+```
+
+* Fit a regression model of `PUL` on mean manual pulse frequency
+
+```{webr-r}
+# fit regression model of PUL on mean_mpf
+
+```
+
+* Plot residuals
+
+```{webr-r}
+# plot fitted values versus residuals
+
+```
+
+* Ranking of the regression coefficients
+
+```{webr-r}
+# rank estimated regression coefficient
+
+```
+
+
+## Problem 2: Median Predictor Variables
+Fit the same type of regression models, but use the median of the predictor variables instead of the mean. 
+
+
+### Tasks
+
+* Read the data
+
+```{webr-r}
+# read data to a data.frame
+
+```
+
+* Compute median of manual pulse frequencies
+
+```{webr-r}
+# compute median values accross individuals
+
+```
+
+* Fit a regression model of `SYS` on median manual pulse frequency
+
+```{webr-r}
+# fit regression model of SYS on median_mpf
+
+```
+
+* Plot residuals
+
+```{webr-r}
+# plot fitted values versus residuals
+
+```
+
+* Fit a regression model of `DIA` on median manual pulse frequency
+
+```{webr-r}
+# fit regression model of DIA on median_mpf
+
+```
+
+* Plot residuals
+
+```{webr-r}
+# plot fitted values versus residuals
+
+```
+
+* Fit a regression model of `PUL` on median manual pulse frequency
+
+```{webr-r}
+# fit regression model of PUL on median_mpf
+
+```
+
+* Plot residuals
+
+```{webr-r}
+# plot fitted values versus residuals
+
+```
+
+* Ranking of the regression coefficients
+
+```{webr-r}
+# rank estimated regression coefficient
+
+```
+
+
+

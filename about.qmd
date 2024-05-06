@@ -15,6 +15,13 @@ s_data_url <- "https://charlotte-ngs.github.io/asmasss2024/data/"
 s_app_url <- s_cn_url
 ```
 
+# asmas -- ss2024: Week 11
+
+## asmasss2024 0.11.0
+
+* Exercise 9 [asm_ex09](`r paste0(s_ex_url, "asm_ex09/asm_ex09.html", collapse = "")`)
+* Solution 8 [asm_sol08](`r paste0(s_sol_url, "asm_sol08/asm_sol08.html", collapse = "")`)
+
 # asmas -- ss2024: Week 10
 
 ## asmasss2024 0.10.4
