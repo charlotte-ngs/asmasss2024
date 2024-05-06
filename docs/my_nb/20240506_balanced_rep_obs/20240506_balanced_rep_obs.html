@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ASMAS-SS2024 | 0.11.1</title>
+<title>ASMAS-SS2024 | 0.11.1 - Repeated Observations – Second Thoughts and Considerations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ASMAS-SS2024 | 0.11.1</span>
     </a>
   </div>
@@ -89,27 +123,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./course_notes.html"> 
+    <a class="nav-link" href="../../course_notes.html"> 
 <span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exercises.html"> 
+    <a class="nav-link" href="../../exercises.html"> 
 <span class="menu-text">Exercises</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./solutions.html"> 
+    <a class="nav-link" href="../../solutions.html"> 
 <span class="menu-text">Solutions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./add_info.html"> 
+    <a class="nav-link" href="../../add_info.html"> 
 <span class="menu-text">Additional Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -128,155 +162,140 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#asmasss2024-0.11.2" id="toc-asmasss2024-0.11.2" class="nav-link active" data-scroll-target="#asmasss2024-0.11.2">asmasss2024 0.11.2</a></li>
-  <li><a href="#asmasss2024-0.11.1" id="toc-asmasss2024-0.11.1" class="nav-link" data-scroll-target="#asmasss2024-0.11.1">asmasss2024 0.11.1</a></li>
-  <li><a href="#asmasss2024-0.11.0" id="toc-asmasss2024-0.11.0" class="nav-link" data-scroll-target="#asmasss2024-0.11.0">asmasss2024 0.11.0</a></li>
-  <li><a href="#asmasss2024-0.10.4" id="toc-asmasss2024-0.10.4" class="nav-link" data-scroll-target="#asmasss2024-0.10.4">asmasss2024 0.10.4</a></li>
-  <li><a href="#asmasss2024-0.10.3" id="toc-asmasss2024-0.10.3" class="nav-link" data-scroll-target="#asmasss2024-0.10.3">asmasss2024 0.10.3</a></li>
-  <li><a href="#asmasss2024-0.10.2" id="toc-asmasss2024-0.10.2" class="nav-link" data-scroll-target="#asmasss2024-0.10.2">asmasss2024 0.10.2</a></li>
-  <li><a href="#asmasss2024-0.10.1" id="toc-asmasss2024-0.10.1" class="nav-link" data-scroll-target="#asmasss2024-0.10.1">asmasss2024 0.10.1</a></li>
-  <li><a href="#asmasss2024-0.10.0" id="toc-asmasss2024-0.10.0" class="nav-link" data-scroll-target="#asmasss2024-0.10.0">asmasss2024 0.10.0</a></li>
-  <li><a href="#asmasss2024-0.9.4" id="toc-asmasss2024-0.9.4" class="nav-link" data-scroll-target="#asmasss2024-0.9.4">asmasss2024 0.9.4</a></li>
-  <li><a href="#asmasss2024-0.9.3" id="toc-asmasss2024-0.9.3" class="nav-link" data-scroll-target="#asmasss2024-0.9.3">asmasss2024 0.9.3</a></li>
-  <li><a href="#asmasss2024-0.9.2" id="toc-asmasss2024-0.9.2" class="nav-link" data-scroll-target="#asmasss2024-0.9.2">asmasss2024 0.9.2</a></li>
-  <li><a href="#asmasss2024-0.9.1" id="toc-asmasss2024-0.9.1" class="nav-link" data-scroll-target="#asmasss2024-0.9.1">asmasss2024 0.9.1</a></li>
-  <li><a href="#asmasss2024-0.9.0" id="toc-asmasss2024-0.9.0" class="nav-link" data-scroll-target="#asmasss2024-0.9.0">asmasss2024 0.9.0</a></li>
-  <li><a href="#asmasss2024-0.8.1" id="toc-asmasss2024-0.8.1" class="nav-link" data-scroll-target="#asmasss2024-0.8.1">asmasss2024 0.8.1</a></li>
-  <li><a href="#asmasss2024-0.8.0" id="toc-asmasss2024-0.8.0" class="nav-link" data-scroll-target="#asmasss2024-0.8.0">asmasss2024 0.8.0</a></li>
-  <li><a href="#asmasss2024-0.7.2" id="toc-asmasss2024-0.7.2" class="nav-link" data-scroll-target="#asmasss2024-0.7.2">asmasss2024 0.7.2</a></li>
-  <li><a href="#asmasss2024-0.7.1" id="toc-asmasss2024-0.7.1" class="nav-link" data-scroll-target="#asmasss2024-0.7.1">asmasss2024 0.7.1</a></li>
-  <li><a href="#asmasss2024-0.7.0" id="toc-asmasss2024-0.7.0" class="nav-link" data-scroll-target="#asmasss2024-0.7.0">asmasss2024 0.7.0</a></li>
-  <li><a href="#asmasss2024-0.6.1" id="toc-asmasss2024-0.6.1" class="nav-link" data-scroll-target="#asmasss2024-0.6.1">asmasss2024 0.6.1</a></li>
-  <li><a href="#asmasss2024-0.6.0" id="toc-asmasss2024-0.6.0" class="nav-link" data-scroll-target="#asmasss2024-0.6.0">asmasss2024 0.6.0</a></li>
-  <li><a href="#asmasss2024-0.5.3" id="toc-asmasss2024-0.5.3" class="nav-link" data-scroll-target="#asmasss2024-0.5.3">asmasss2024 0.5.3</a></li>
-  <li><a href="#asmasss2024-0.5.2" id="toc-asmasss2024-0.5.2" class="nav-link" data-scroll-target="#asmasss2024-0.5.2">asmasss2024 0.5.2</a></li>
-  <li><a href="#asmasss2024-0.5.1" id="toc-asmasss2024-0.5.1" class="nav-link" data-scroll-target="#asmasss2024-0.5.1">asmasss2024 0.5.1</a></li>
-  <li><a href="#asmasss2024-0.5.0" id="toc-asmasss2024-0.5.0" class="nav-link" data-scroll-target="#asmasss2024-0.5.0">asmasss2024 0.5.0</a></li>
-  <li><a href="#asmasss2024-0.4.4" id="toc-asmasss2024-0.4.4" class="nav-link" data-scroll-target="#asmasss2024-0.4.4">asmasss2024 0.4.4</a></li>
-  <li><a href="#asmasss2024-0.4.3" id="toc-asmasss2024-0.4.3" class="nav-link" data-scroll-target="#asmasss2024-0.4.3">asmasss2024 0.4.3</a></li>
-  <li><a href="#asmasss2024-0.4.2" id="toc-asmasss2024-0.4.2" class="nav-link" data-scroll-target="#asmasss2024-0.4.2">asmasss2024 0.4.2</a></li>
-  <li><a href="#asmasss2024-0.4.1" id="toc-asmasss2024-0.4.1" class="nav-link" data-scroll-target="#asmasss2024-0.4.1">asmasss2024 0.4.1</a></li>
-  <li><a href="#asmasss2024-0.4.0" id="toc-asmasss2024-0.4.0" class="nav-link" data-scroll-target="#asmasss2024-0.4.0">asmasss2024 0.4.0</a></li>
-  <li><a href="#asmasss2024-0.3.1" id="toc-asmasss2024-0.3.1" class="nav-link" data-scroll-target="#asmasss2024-0.3.1">asmasss2024 0.3.1</a></li>
-  <li><a href="#asmasss2024-0.3.0" id="toc-asmasss2024-0.3.0" class="nav-link" data-scroll-target="#asmasss2024-0.3.0">asmasss2024 0.3.0</a></li>
-  <li><a href="#asmasss2024-0.2.3" id="toc-asmasss2024-0.2.3" class="nav-link" data-scroll-target="#asmasss2024-0.2.3">asmasss2024 0.2.3</a></li>
-  <li><a href="#asmasss2024-0.2.2" id="toc-asmasss2024-0.2.2" class="nav-link" data-scroll-target="#asmasss2024-0.2.2">asmasss2024 0.2.2</a></li>
-  <li><a href="#asmasss2024-0.2.1" id="toc-asmasss2024-0.2.1" class="nav-link" data-scroll-target="#asmasss2024-0.2.1">asmasss2024 0.2.1</a></li>
+  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link active" data-scroll-target="#disclaimer">Disclaimer</a></li>
+  <li><a href="#balanced-dataset" id="toc-balanced-dataset" class="nav-link" data-scroll-target="#balanced-dataset">Balanced Dataset</a>
+  <ul class="collapse">
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#method-of-moments-estimate" id="toc-method-of-moments-estimate" class="nav-link" data-scroll-target="#method-of-moments-estimate">Method of Moments Estimate</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Repeated Observations – Second Thoughts and Considerations</h1>
+</div>
 
 
 
-<section id="asmasss2024-0.11.2" class="level1">
-<h1>asmasss2024 0.11.2</h1>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="disclaimer" class="level2">
+<h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
+<p>When teaching the topic of repeated observations in Applied Statistical Methods (ASM), the completely unbalanced dataset came to my attention only very late. This might be the reason why the replication of the <code>lme4::lmer()</code> results with <code>aov()</code> was not successful.</p>
 </section>
-<section id="asmasss2024-0.11.1" class="level1">
-<h1>asmasss2024 0.11.1</h1>
-</section>
-<section id="asmasss2024-0.11.0" class="level1">
-<h1>asmasss2024 0.11.0</h1>
-</section>
-<section id="asmasss2024-0.10.4" class="level1">
-<h1>asmasss2024 0.10.4</h1>
-</section>
-<section id="asmasss2024-0.10.3" class="level1">
-<h1>asmasss2024 0.10.3</h1>
-</section>
-<section id="asmasss2024-0.10.2" class="level1">
-<h1>asmasss2024 0.10.2</h1>
-</section>
-<section id="asmasss2024-0.10.1" class="level1">
-<h1>asmasss2024 0.10.1</h1>
-</section>
-<section id="asmasss2024-0.10.0" class="level1">
-<h1>asmasss2024 0.10.0</h1>
-</section>
-<section id="asmasss2024-0.9.4" class="level1">
-<h1>asmasss2024 0.9.4</h1>
-</section>
-<section id="asmasss2024-0.9.3" class="level1">
-<h1>asmasss2024 0.9.3</h1>
-</section>
-<section id="asmasss2024-0.9.2" class="level1">
-<h1>asmasss2024 0.9.2</h1>
-</section>
-<section id="asmasss2024-0.9.1" class="level1">
-<h1>asmasss2024 0.9.1</h1>
-</section>
-<section id="asmasss2024-0.9.0" class="level1">
-<h1>asmasss2024 0.9.0</h1>
-</section>
-<section id="asmasss2024-0.8.1" class="level1">
-<h1>asmasss2024 0.8.1</h1>
-</section>
-<section id="asmasss2024-0.8.0" class="level1">
-<h1>asmasss2024 0.8.0</h1>
-</section>
-<section id="asmasss2024-0.7.2" class="level1">
-<h1>asmasss2024 0.7.2</h1>
-</section>
-<section id="asmasss2024-0.7.1" class="level1">
-<h1>asmasss2024 0.7.1</h1>
-</section>
-<section id="asmasss2024-0.7.0" class="level1">
-<h1>asmasss2024 0.7.0</h1>
-</section>
-<section id="asmasss2024-0.6.1" class="level1">
-<h1>asmasss2024 0.6.1</h1>
-</section>
-<section id="asmasss2024-0.6.0" class="level1">
-<h1>asmasss2024 0.6.0</h1>
-</section>
-<section id="asmasss2024-0.5.3" class="level1">
-<h1>asmasss2024 0.5.3</h1>
-</section>
-<section id="asmasss2024-0.5.2" class="level1">
-<h1>asmasss2024 0.5.2</h1>
-</section>
-<section id="asmasss2024-0.5.1" class="level1">
-<h1>asmasss2024 0.5.1</h1>
-</section>
-<section id="asmasss2024-0.5.0" class="level1">
-<h1>asmasss2024 0.5.0</h1>
-</section>
-<section id="asmasss2024-0.4.4" class="level1">
-<h1>asmasss2024 0.4.4</h1>
-</section>
-<section id="asmasss2024-0.4.3" class="level1">
-<h1>asmasss2024 0.4.3</h1>
-</section>
-<section id="asmasss2024-0.4.2" class="level1">
-<h1>asmasss2024 0.4.2</h1>
-</section>
-<section id="asmasss2024-0.4.1" class="level1">
-<h1>asmasss2024 0.4.1</h1>
-</section>
-<section id="asmasss2024-0.4.0" class="level1">
-<h1>asmasss2024 0.4.0</h1>
-</section>
-<section id="asmasss2024-0.3.1" class="level1">
-<h1>asmasss2024 0.3.1</h1>
-</section>
-<section id="asmasss2024-0.3.0" class="level1">
-<h1>asmasss2024 0.3.0</h1>
-</section>
-<section id="asmasss2024-0.2.3" class="level1">
-<h1>asmasss2024 0.2.3</h1>
-</section>
-<section id="asmasss2024-0.2.2" class="level1">
-<h1>asmasss2024 0.2.2</h1>
-</section>
-<section id="asmasss2024-0.2.1" class="level1">
-<h1>asmasss2024 0.2.1</h1>
+<section id="balanced-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="balanced-dataset">Balanced Dataset</h2>
+<p>To have an easier understanding of repeated observations, we start with a balanced dataset. At the beginning, we have a dataset of 5 each having 3 observations of <code>Body.Weight</code>. Such a dataset can be generated by first sampling mean body weight for each animal</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vec_mean_bw <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_nr_animals, <span class="at">mean =</span> n_bw_mean, <span class="at">sd =</span> n_bw_sd_acc)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>vec_mean_bw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 457.0869 463.8458 463.7075 448.8594 454.0249</code></pre>
+</div>
+</div>
+<p>Based on these means, we add some random deviates to generate individual observations</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_rep <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_nr_animals){</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  vec_bw_dev <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_nr_rep, <span class="at">sd =</span> n_bw_sd_win)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  tbl_cur_obs <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">Animal =</span> <span class="fu">rep</span>(i, n_nr_rep),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                                <span class="at">Body.Weight =</span> vec_mean_bw[<span class="dv">1</span>] <span class="sc">+</span> vec_bw_dev)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.null</span>(tbl_bw_rep)){</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    tbl_bw_rep <span class="ot">&lt;-</span> tbl_cur_obs</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    tbl_bw_rep <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">bind_rows</span>(tbl_bw_rep, tbl_cur_obs)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>tbl_bw_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 2
+   Animal Body.Weight
+    &lt;int&gt;       &lt;dbl&gt;
+ 1      1        457.
+ 2      1        458.
+ 3      1        457.
+ 4      2        458.
+ 5      2        456.
+ 6      2        457.
+ 7      3        457.
+ 8      3        456.
+ 9      3        458.
+10      4        455.
+11      4        456.
+12      4        456.
+13      5        458.
+14      5        456.
+15      5        457.</code></pre>
+</div>
+</div>
+<p>Check by the following plot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> tbl_bw_rep,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Animal,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">y =</span> Body.Weight)) <span class="sc">+</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal))) <span class="sc">+</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Animal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="20240506_balanced_rep_obs_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="analysis" class="level3">
+<h3 class="anchored" data-anchor-id="analysis">Analysis</h3>
+<p>Separate variation using the following</p>
 <ul>
-<li>Initial CRAN submission.</li>
+<li>Animal effect</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>aov_bw_rep <span class="ot">&lt;-</span> <span class="fu">aov</span>(Body.Weight <span class="sc">~</span> Animal, <span class="at">data =</span> tbl_bw_rep)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(aov_bw_rep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            Df Sum Sq Mean Sq F value Pr(&gt;F)
+Animal       1  1.456  1.4560    1.78  0.205
+Residuals   13 10.632  0.8178               </code></pre>
+</div>
+</div>
+<ul>
+<li>Animal in error term</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>aov_bw_err <span class="ot">&lt;-</span> <span class="fu">aov</span>(Body.Weight <span class="sc">~</span> <span class="fu">Error</span>(Animal), <span class="at">data =</span> tbl_bw_rep)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(aov_bw_err)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Error: Animal
+          Df Sum Sq Mean Sq F value Pr(&gt;F)
+Residuals  1  1.456   1.456               
+
+Error: Within
+          Df Sum Sq Mean Sq F value Pr(&gt;F)
+Residuals 13  10.63  0.8178               </code></pre>
+</div>
+</div>
+</section>
+<section id="method-of-moments-estimate" class="level3">
+<h3 class="anchored" data-anchor-id="method-of-moments-estimate">Method of Moments Estimate</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

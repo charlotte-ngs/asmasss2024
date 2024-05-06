@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-06 07:53:32 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-06 13:23:00 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Slides l09_rep_obs\n\n\n\n\n\nExercise 9 asm_ex09\nSolution 8 asm_sol08"
+    "text": "Overhead ohp_l11\n\n\n\n\n\nSlides l09_rep_obs\n\n\n\n\n\nExercise 9 asm_ex09\nSolution 8 asm_sol08"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-06 07:53:20 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-06 13:23:18 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -151,7 +151,7 @@
     "href": "add_info.html#over-head-pictures",
     "title": "Additional Information",
     "section": "Over-Head Pictures",
-    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n10\n2024-04-29\nRepeated Observations\n\n\n\n\nLatest Changes: 2024-05-06 07:53:10 CEST (pvr)"
+    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n10\n2024-04-29\nRepeated Observations\n\n\n11\n2024-05-06\nType of Repeated Observations\n\n\n\n\nLatest Changes: 2024-05-06 13:23:14 CEST (pvr)"
   },
   {
     "objectID": "ohp/20240219_ohp_l01/20240219_ohp_l01.html#ohp-picture-2",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.11.1",
+    "title": "asmasss2024 0.11.2",
     "section": "",
-    "text": "asmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1293,5 +1293,82 @@
     "title": "About",
     "section": "",
     "text": "Slides l09_rep_obs"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.11.2",
+    "href": "about.html#asmasss2024-0.11.2",
+    "title": "About",
+    "section": "",
+    "text": "Overhead ohp_l11"
+  },
+  {
+    "objectID": "my_nb/20240506_balanced_rep_obs/20240506_balanced_rep_obs.html",
+    "href": "my_nb/20240506_balanced_rep_obs/20240506_balanced_rep_obs.html",
+    "title": "Repeated Observations – Second Thoughts and Considerations",
+    "section": "",
+    "text": "When teaching the topic of repeated observations in Applied Statistical Methods (ASM), the completely unbalanced dataset came to my attention only very late. This might be the reason why the replication of the lme4::lmer() results with aov() was not successful."
+  },
+  {
+    "objectID": "my_nb/20240506_balanced_rep_obs/20240506_balanced_rep_obs.html#disclaimer",
+    "href": "my_nb/20240506_balanced_rep_obs/20240506_balanced_rep_obs.html#disclaimer",
+    "title": "Repeated Observations – Second Thoughts and Considerations",
+    "section": "",
+    "text": "When teaching the topic of repeated observations in Applied Statistical Methods (ASM), the completely unbalanced dataset came to my attention only very late. This might be the reason why the replication of the lme4::lmer() results with aov() was not successful."
+  },
+  {
+    "objectID": "my_nb/20240506_balanced_rep_obs/20240506_balanced_rep_obs.html#balanced-dataset",
+    "href": "my_nb/20240506_balanced_rep_obs/20240506_balanced_rep_obs.html#balanced-dataset",
+    "title": "Repeated Observations – Second Thoughts and Considerations",
+    "section": "Balanced Dataset",
+    "text": "Balanced Dataset\nTo have an easier understanding of repeated observations, we start with a balanced dataset. At the beginning, we have a dataset of 5 each having 3 observations of Body.Weight. Such a dataset can be generated by first sampling mean body weight for each animal\n\nvec_mean_bw &lt;- rnorm(n_nr_animals, mean = n_bw_mean, sd = n_bw_sd_acc)\nvec_mean_bw\n\n[1] 457.0869 463.8458 463.7075 448.8594 454.0249\n\n\nBased on these means, we add some random deviates to generate individual observations\n\ntbl_bw_rep &lt;- NULL\nfor (i in 1:n_nr_animals){\n  vec_bw_dev &lt;- rnorm(n_nr_rep, sd = n_bw_sd_win)\n  tbl_cur_obs &lt;- tibble::tibble(Animal = rep(i, n_nr_rep),\n                                Body.Weight = vec_mean_bw[1] + vec_bw_dev)\n  if (is.null(tbl_bw_rep)){\n    tbl_bw_rep &lt;- tbl_cur_obs\n  } else {\n    tbl_bw_rep &lt;- dplyr::bind_rows(tbl_bw_rep, tbl_cur_obs)\n  }\n}\ntbl_bw_rep\n\n# A tibble: 15 × 2\n   Animal Body.Weight\n    &lt;int&gt;       &lt;dbl&gt;\n 1      1        457.\n 2      1        458.\n 3      1        457.\n 4      2        458.\n 5      2        456.\n 6      2        457.\n 7      3        457.\n 8      3        456.\n 9      3        458.\n10      4        455.\n11      4        456.\n12      4        456.\n13      5        458.\n14      5        456.\n15      5        457.\n\n\nCheck by the following plot\n\nlibrary(ggplot2)\nggplot(data = tbl_bw_rep,\n       mapping = aes(x = Animal,\n                     y = Body.Weight)) + \n  geom_point(aes(color = as.factor(Animal))) + \n  labs(color = \"Animal\")\n\n\n\n\n\n\n\n\n\nAnalysis\nSeparate variation using the following\n\nAnimal effect\n\n\naov_bw_rep &lt;- aov(Body.Weight ~ Animal, data = tbl_bw_rep)\nsummary(aov_bw_rep)\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)\nAnimal       1  1.456  1.4560    1.78  0.205\nResiduals   13 10.632  0.8178               \n\n\n\nAnimal in error term\n\n\naov_bw_err &lt;- aov(Body.Weight ~ Error(Animal), data = tbl_bw_rep)\nsummary(aov_bw_err)\n\n\nError: Animal\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals  1  1.456   1.456               \n\nError: Within\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals 13  10.63  0.8178               \n\n\n\n\nMethod of Moments Estimate"
+  },
+  {
+    "objectID": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-2",
+    "href": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-2",
+    "title": "ASMAS-SS2024 | 0.11.1",
+    "section": "OHP Picture 2",
+    "text": "OHP Picture 2"
+  },
+  {
+    "objectID": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-3",
+    "href": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-3",
+    "title": "ASMAS-SS2024 | 0.11.1",
+    "section": "OHP Picture 3",
+    "text": "OHP Picture 3"
+  },
+  {
+    "objectID": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-4",
+    "href": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-4",
+    "title": "ASMAS-SS2024 | 0.11.1",
+    "section": "OHP Picture 4",
+    "text": "OHP Picture 4"
+  },
+  {
+    "objectID": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-5",
+    "href": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-5",
+    "title": "ASMAS-SS2024 | 0.11.1",
+    "section": "OHP Picture 5",
+    "text": "OHP Picture 5"
+  },
+  {
+    "objectID": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-6",
+    "href": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-6",
+    "title": "ASMAS-SS2024 | 0.11.1",
+    "section": "OHP Picture 6",
+    "text": "OHP Picture 6"
+  },
+  {
+    "objectID": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-7",
+    "href": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-7",
+    "title": "ASMAS-SS2024 | 0.11.1",
+    "section": "OHP Picture 7",
+    "text": "OHP Picture 7"
+  },
+  {
+    "objectID": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-8",
+    "href": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-8",
+    "title": "ASMAS-SS2024 | 0.11.1",
+    "section": "OHP Picture 8",
+    "text": "OHP Picture 8"
   }
 ]
