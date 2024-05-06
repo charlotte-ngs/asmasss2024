@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ASMAS-SS2024 | 0.10.3 - Repeated Observations</title>
+<title>ASMAS-SS2024 | 0.11.0 - Repeated Observations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">ASMAS-SS2024 | 0.10.3</span>
+    <span class="navbar-title">ASMAS-SS2024 | 0.11.0</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -163,6 +163,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link active" data-scroll-target="#disclaimer">Disclaimer</a></li>
+  <li><a href="#classification-of-repeated-observation-data" id="toc-classification-of-repeated-observation-data" class="nav-link" data-scroll-target="#classification-of-repeated-observation-data">Classification of Repeated Observation Data</a>
+  <ul class="collapse">
+  <li><a href="#repeated-observations-in-predictors" id="toc-repeated-observations-in-predictors" class="nav-link" data-scroll-target="#repeated-observations-in-predictors">Repeated Observations in Predictors</a></li>
+  <li><a href="#repeated-observations-in-the-response" id="toc-repeated-observations-in-the-response" class="nav-link" data-scroll-target="#repeated-observations-in-the-response">Repeated Observations in the Response</a></li>
+  <li><a href="#repeated-observations-in-both-predictors-and-response" id="toc-repeated-observations-in-both-predictors-and-response" class="nav-link" data-scroll-target="#repeated-observations-in-both-predictors-and-response">Repeated Observations in Both Predictors and Response</a></li>
+  </ul></li>
+  <li><a href="#old-material-is-below-here" id="toc-old-material-is-below-here" class="nav-link" data-scroll-target="#old-material-is-below-here">Old Material is Below Here</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   <li><a href="#plots" id="toc-plots" class="nav-link" data-scroll-target="#plots">Plots</a>
   <ul class="collapse">
@@ -198,12 +205,242 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
 <p>Some facts on analysis of repeated observations are prepared in this notebook.</p>
 </section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>The data we are using is on beef cattle and on blood pressure measurements.</p>
+<section id="classification-of-repeated-observation-data" class="level2">
+<h2 class="anchored" data-anchor-id="classification-of-repeated-observation-data">Classification of Repeated Observation Data</h2>
+<p>The following three classes of repeated observation data can be distinguished</p>
+<ol type="1">
+<li>Repeated observations in the predictors</li>
+<li>Repeated observations in the response variables</li>
+<li>Repeated observations in both the predictors and the responses</li>
+</ol>
+<section id="repeated-observations-in-predictors" class="level3">
+<h3 class="anchored" data-anchor-id="repeated-observations-in-predictors">Repeated Observations in Predictors</h3>
+<p>This corresponds to the dataset of blood pressure and pulse frequency. This dataset is given by</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s_rep_path_bw_bc <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_rep <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(s_rep_path_bw_bc, <span class="at">delim =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s_bp_data_path <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/20240429_bp_data.csv"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df_bp <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_bp_data_path, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df_bp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Nr SYS DIA PUL MP_Rep ManualPulseFreq
+1   1 150  95  92    MP1             104
+2   1 150  95  92    MP2              92
+3   1 150  95  92    MP3              84
+4   2 135  89  70    MP1              72
+5   2 135  89  70    MP2              70
+6   2 135  89  70    MP3              76
+7   3 121  85  69    MP1              66
+8   3 121  85  69    MP2              72
+9   3 121  85  69    MP3              70
+10  4 122  82  65    MP1              62
+11  4 122  82  65    MP2              68
+12  4 122  82  65    MP3              66
+13  5 113  79  76    MP1              85
+14  5 113  79  76    MP2              84
+15  5 113  79  76    MP3              91
+16  6 139  83  64    MP1              56
+17  6 139  83  64    MP2              72
+18  6 139  83  64    MP3              64
+19  7 116  75  72    MP1              60
+20  7 116  75  72    MP2              64
+21  7 116  75  72    MP3              68
+22  8 137  85  93    MP1              76
+23  8 137  85  93    MP2              84
+24  8 137  85  93    MP3              80
+25  9 133  83  90    MP1              64
+26  9 133  83  90    MP2              68
+27  9 133  83  90    MP3              68
+28 10 129  83  65    MP1              60
+29 10 129  83  65    MP2              68
+30 10 129  83  65    MP3              68
+31 11 105  72  64    MP1              72
+32 11 105  72  64    MP2              80
+33 11 105  72  64    MP3              68</code></pre>
+</div>
+</div>
+<p>This data can be displayed as</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>p_sys_nr <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> df_bp,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ManualPulseFreq,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                             <span class="at">y =</span> SYS)) <span class="sc">+</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Nr))) <span class="sc">+</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Individual"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>p_sys_nr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This type of datastructure is comparable to the example where repeated observations are used to predict the breeding value of an animal. The analysis of this type of dataset is done by fitting a linear regression model of the response on the mean of the repeated observations. Hence, we first have to compute the mean of the predictors and then fit the regression model.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># compute the mean</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>tbl_bp_mfreq_mean <span class="ot">&lt;-</span> df_bp <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Nr) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_sys =</span> <span class="fu">mean</span>(SYS),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_dia =</span> <span class="fu">mean</span>(DIA),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_pul =</span> <span class="fu">mean</span>(PUL),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_mfreq =</span> <span class="fu">mean</span>(ManualPulseFreq))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>tbl_bp_mfreq_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 11 × 5
+      Nr mean_sys mean_dia mean_pul mean_mfreq
+   &lt;int&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+ 1     1      150       95       92       93.3
+ 2     2      135       89       70       72.7
+ 3     3      121       85       69       69.3
+ 4     4      122       82       65       65.3
+ 5     5      113       79       76       86.7
+ 6     6      139       83       64       64  
+ 7     7      116       75       72       64  
+ 8     8      137       85       93       80  
+ 9     9      133       83       90       66.7
+10    10      129       83       65       65.3
+11    11      105       72       64       73.3</code></pre>
+</div>
+</div>
+<p>The fit of the regression model is</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lm_msys_mfreq <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean_sys <span class="sc">~</span> mean_mfreq, <span class="at">data =</span> tbl_bp_mfreq_mean)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_msys_mfreq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mean_sys ~ mean_mfreq, data = tbl_bp_mfreq_mean)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-22.459  -6.685   4.270   7.792  15.720 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept) 102.4456    31.4616   3.256   0.0099 **
+mean_mfreq    0.3411     0.4286   0.796   0.4467   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 13.43 on 9 degrees of freedom
+Multiple R-squared:  0.06573,   Adjusted R-squared:  -0.03808 
+F-statistic: 0.6332 on 1 and 9 DF,  p-value: 0.4467</code></pre>
+</div>
+</div>
+<p>If there are concerns about outliers in the predictors, then the <code>median</code> is more robust against outliers.</p>
+</section>
+<section id="repeated-observations-in-the-response" class="level3">
+<h3 class="anchored" data-anchor-id="repeated-observations-in-the-response">Repeated Observations in the Response</h3>
+<p>This example corresponds to the dataset with the influence of breed on body weight observed for beef animals. The dataset is given by</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>s_rep_path_bw_br <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed_rep_obs.csv"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df_bw_br_rep <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_rep_path_bw_br, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df_bw_br_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Animal Body.Weight     Breed   Time
+1       2    463.0000     Angus  first
+2       2    468.8940     Angus second
+3       2    467.8753     Angus  third
+4       5    496.0000 Simmental  first
+5       5    495.0033 Simmental second
+6       5    493.6563 Simmental  third
+7       7    518.0000  Limousin  first
+8       7    509.3221  Limousin second
+9       7    506.5958  Limousin  third
+10     10    541.0000  Limousin  first
+11     10    547.3609  Limousin second
+12     10    533.9288  Limousin  third</code></pre>
+</div>
+</div>
+<p>The plot</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> df_bw_br_rep, <span class="fu">aes</span>(<span class="at">x =</span> Breed, <span class="at">y =</span> Body.Weight)) <span class="sc">+</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal))) <span class="sc">+</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Animal"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This dataset is analysed with a linear model using the factor as a random effect which accounts for the variance structure</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: Matrix</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lmer_bw_br <span class="ot">&lt;-</span> <span class="fu">lmer</span>(Body.Weight <span class="sc">~</span> Breed <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Animal), <span class="at">data =</span> df_bw_br_rep)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmer_bw_br)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: Body.Weight ~ Breed + (1 | Animal)
+   Data: df_bw_br_rep
+
+REML criterion at convergence: 61.8
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-1.3714 -0.5383  0.0640  0.3213  1.4305 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Animal   (Intercept) 426.21   20.645  
+ Residual              22.98    4.794  
+Number of obs: 12, groups:  Animal, 4
+
+Fixed effects:
+               Estimate Std. Error t value
+(Intercept)      466.59      20.83  22.400
+BreedLimousin     59.44      25.51   2.330
+BreedSimmental    28.30      29.46   0.961
+
+Correlation of Fixed Effects:
+            (Intr) BrdLms
+BreedLimosn -0.816       
+BreedSmmntl -0.707  0.577</code></pre>
+</div>
+</div>
+<p>Comparing the variance part of the results of <code>lmer</code> with the results of <code>aov</code> is shown below</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>aov_bw_br <span class="ot">&lt;-</span> <span class="fu">aov</span>(Body.Weight <span class="sc">~</span> Breed <span class="sc">+</span> <span class="fu">Error</span>(Animal), <span class="at">data =</span> df_bw_br_rep)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(aov_bw_br)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Error: Animal
+      Df Sum Sq Mean Sq
+Breed  1   8651    8651
+
+Error: Within
+          Df Sum Sq Mean Sq F value Pr(&gt;F)
+Breed      2   7.38   3.689   0.161  0.854
+Residuals  8 183.84  22.980               </code></pre>
+</div>
+</div>
+</section>
+<section id="repeated-observations-in-both-predictors-and-response" class="level3">
+<h3 class="anchored" data-anchor-id="repeated-observations-in-both-predictors-and-response">Repeated Observations in Both Predictors and Response</h3>
+<p>This corresponds to the dataset on BW and BC of beef cattle animals. An analysis of such a dataset could be done using Machine Learning techniques. Alternatively, we could also average over the BC-values and treat the data as an instance of the second type by fitting a regression of BW on mean BC.</p>
+<p>The dataset is given by</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>s_rep_path_bw_bc <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv"</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_rep <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(s_rep_path_bw_bc, <span class="at">delim =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 12 Columns: 3
 ── Column specification ────────────────────────────────────────────────────────
@@ -213,7 +450,137 @@ dbl (3): Animal, Breast Circumference, Body Weight
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 3
+   Animal `Breast Circumference` `Body Weight`
+    &lt;dbl&gt;                  &lt;dbl&gt;         &lt;dbl&gt;
+ 1      2                   177           463 
+ 2      2                   177.          469.
+ 3      2                   177.          468.
+ 4      5                   179           496 
+ 5      5                   179.          495.
+ 6      5                   179.          494.
+ 7      7                   181           518 
+ 8      7                   181.          509.
+ 9      7                   181.          507.
+10     10                   184           541 
+11     10                   185.          547.
+12     10                   183.          534.</code></pre>
+</div>
+</div>
+<p>The plot shows variation in both predictor and response</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>p_bw_bc_rep <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tbl_bw_bc_rep,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y =</span> <span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal))) <span class="sc">+</span> </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">color =</span> <span class="st">"Animal"</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>p_bw_bc_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A simplified analysis is to run a linear model of repeated observations of body weight on the mean of <code>Breast Circumference</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>tbl_bc_mean <span class="ot">&lt;-</span> tbl_bw_bc_rep <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_bc =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span>))</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>tbl_bc_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  Animal mean_bc
+   &lt;dbl&gt;   &lt;dbl&gt;
+1      2    177.
+2      5    179.
+3      7    181.
+4     10    184.</code></pre>
+</div>
+</div>
+<p>Join back the mean values to the original data set</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_mean <span class="ot">&lt;-</span> tbl_bw_bc_rep <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(tbl_bc_mean, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Animal"</span> <span class="ot">=</span> <span class="st">"Animal"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Animal, <span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>, mean_bc)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 12 × 3
+   Animal `Body Weight` mean_bc
+    &lt;dbl&gt;         &lt;dbl&gt;   &lt;dbl&gt;
+ 1      2          463     177.
+ 2      2          469.    177.
+ 3      2          468.    177.
+ 4      5          496     179.
+ 5      5          495.    179.
+ 6      5          494.    179.
+ 7      7          518     181.
+ 8      7          509.    181.
+ 9      7          507.    181.
+10     10          541     184.
+11     10          547.    184.
+12     10          534.    184.</code></pre>
+</div>
+</div>
+<p>Fit the linear model</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>lmer_bw_bc <span class="ot">&lt;-</span> <span class="fu">lmer</span>(<span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span> <span class="sc">~</span> mean_bc <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Animal), <span class="at">data =</span> tbl_bw_bc_mean)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmer_bw_bc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: `Body Weight` ~ mean_bc + (1 | Animal)
+   Data: tbl_bw_bc_mean
+
+REML criterion at convergence: 69.6
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-1.48481 -0.56881  0.04596  0.37782  1.37516 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ Animal   (Intercept) 27.87    5.279   
+ Residual             22.98    4.794   
+Number of obs: 12, groups:  Animal, 4
+
+Fixed effects:
+             Estimate Std. Error t value
+(Intercept) -1392.453    213.013  -6.537
+mean_bc        10.518      1.182   8.901
+
+Correlation of Fixed Effects:
+        (Intr)
+mean_bc -1.000</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="old-material-is-below-here" class="level2">
+<h2 class="anchored" data-anchor-id="old-material-is-below-here">Old Material is Below Here</h2>
+<p>The material below is kept for reference purposes.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data we are using is on beef cattle and on blood pressure measurements.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>s_rep_path_bw_bc <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_bc_rep_obs.csv"</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_rep <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(s_rep_path_bw_bc, <span class="at">delim =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 12 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+dbl (3): Animal, Breast Circumference, Body Weight
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 3
    Animal `Breast Circumference` `Body Weight`
@@ -234,8 +601,8 @@ dbl (3): Animal, Breast Circumference, Body Weight
 </div>
 <p>The second data set is on body weight and breed, also with repeated observations.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s_rep_path_bw_br <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed_rep_obs.csv"</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tbl_bw_br_rep <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(s_rep_path_bw_br, <span class="at">delim =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>s_rep_path_bw_br <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/asm_bw_breed_rep_obs.csv"</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>tbl_bw_br_rep <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(s_rep_path_bw_br, <span class="at">delim =</span> <span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 12 Columns: 4
 ── Column specification ────────────────────────────────────────────────────────
@@ -246,7 +613,7 @@ dbl (2): Animal, Body Weight
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_br_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_br_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 4
    Animal `Body Weight` Breed     Time  
@@ -270,32 +637,32 @@ dbl (2): Animal, Body Weight
 <h2 class="anchored" data-anchor-id="plots">Plots</h2>
 <p>The plots of the data already show certain patterns which are important to be considered in any statistical analysis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>p_bw_bc_rep <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tbl_bw_bc_rep,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y =</span> <span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>)) <span class="sc">+</span> </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal)))</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>p_bw_bc_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>p_bw_bc_rep <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tbl_bw_bc_rep,</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span>,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y =</span> <span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal)))</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>p_bw_bc_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>A similar plot with <code>Breed</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p_bw_br_rep <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tbl_bw_br_rep,</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Breed),</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y =</span> <span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>)) <span class="sc">+</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal)))</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>p_bw_br_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>p_bw_br_rep <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> tbl_bw_br_rep,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Breed),</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">y =</span> <span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>)) <span class="sc">+</span> </span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">as.factor</span>(Animal)))</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>p_bw_br_rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="20240429_rep_obs_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -304,24 +671,22 @@ dbl (2): Animal, Body Weight
 <h3 class="anchored" data-anchor-id="statistical-model">Statistical Model</h3>
 <p>Analysis according to <code>ChatGPT</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and load necessary packages</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your dataset is called 'data' with columns 'animal_id', 'body_weight', and 'breast_circumference'</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit a linear mixed-effects model</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(body_weight <span class="sc">~</span> breast_circumference <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> animal_id), <span class="at">data =</span> data)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install and load necessary packages</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your dataset is called 'data' with columns 'animal_id', 'body_weight', and 'breast_circumference'</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit a linear mixed-effects model</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(body_weight <span class="sc">~</span> breast_circumference <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> animal_id), <span class="at">data =</span> data)</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Applying the above for the BW-BC dataset we get</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.element</span>(<span class="st">"lme4"</span>, <span class="fu">installed.packages</span>())) <span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: Matrix</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lmer_bw_bc <span class="ot">&lt;-</span> <span class="fu">lmer</span>(<span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Animal) , <span class="at">data =</span> tbl_bw_bc_rep)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmer_bw_bc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.element</span>(<span class="st">"lme4"</span>, <span class="fu">installed.packages</span>())) <span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>lmer_bw_bc <span class="ot">&lt;-</span> <span class="fu">lmer</span>(<span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span> <span class="sc">~</span> <span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> Animal) , <span class="at">data =</span> tbl_bw_bc_rep)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lmer_bw_bc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Linear mixed model fit by REML ['lmerMod']
 Formula: `Body Weight` ~ `Breast Circumference` + (1 | Animal)
@@ -351,26 +716,13 @@ Correlation of Fixed Effects:
 </div>
 <p>Is the fixed part of the regression also obtained with fitting a regression through the mean observations</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_mean <span class="ot">&lt;-</span> tbl_bw_bc_rep <span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_bw =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>),</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_bc =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span>))</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_mean <span class="ot">&lt;-</span> tbl_bw_bc_rep <span class="sc">%&gt;%</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Animal) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_bw =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Body Weight</span><span class="st">`</span>),</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_bc =</span> <span class="fu">mean</span>(<span class="st">`</span><span class="at">Breast Circumference</span><span class="st">`</span>))</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>tbl_bw_bc_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   Animal mean_bw mean_bc
@@ -383,8 +735,8 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p>Fit the regression model</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>lm_bw_bc_mean <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean_bw <span class="sc">~</span> mean_bc, <span class="at">data =</span> tbl_bw_bc_mean)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_bw_bc_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>lm_bw_bc_mean <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean_bw <span class="sc">~</span> mean_bc, <span class="at">data =</span> tbl_bw_bc_mean)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(lm_bw_bc_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -416,22 +768,91 @@ F-statistic: 79.23 on 1 and 2 DF,  p-value: 0.01239</code></pre>
 </blockquote>
 <p>The following answer is provided in summary, the data has to be analysed using</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your response variable is called 'response' and predictor variable is called 'predictor'</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 'group' represents the grouping variable (e.g., individual ID or time point)</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 'data' is your dataset</span></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(response <span class="sc">~</span> predictor <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> group), <span class="at">data =</span> data)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co"># diagnostics</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"lme4"</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming your response variable is called 'response' and predictor variable is called 'predictor'</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 'group' represents the grouping variable (e.g., individual ID or time point)</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 'data' is your dataset</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lmer</span>(response <span class="sc">~</span> predictor <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> group), <span class="at">data =</span> data)</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="co"># diagnostics</span></span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The blood pressure data is given as</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>s_bp_data_path <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data/20240429_bp_data.csv"</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>df_bp <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_bp_data_path, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>df_bp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Nr SYS DIA PUL MP_Rep ManualPulseFreq
+1   1 150  95  92    MP1             104
+2   1 150  95  92    MP2              92
+3   1 150  95  92    MP3              84
+4   2 135  89  70    MP1              72
+5   2 135  89  70    MP2              70
+6   2 135  89  70    MP3              76
+7   3 121  85  69    MP1              66
+8   3 121  85  69    MP2              72
+9   3 121  85  69    MP3              70
+10  4 122  82  65    MP1              62
+11  4 122  82  65    MP2              68
+12  4 122  82  65    MP3              66
+13  5 113  79  76    MP1              85
+14  5 113  79  76    MP2              84
+15  5 113  79  76    MP3              91
+16  6 139  83  64    MP1              56
+17  6 139  83  64    MP2              72
+18  6 139  83  64    MP3              64
+19  7 116  75  72    MP1              60
+20  7 116  75  72    MP2              64
+21  7 116  75  72    MP3              68
+22  8 137  85  93    MP1              76
+23  8 137  85  93    MP2              84
+24  8 137  85  93    MP3              80
+25  9 133  83  90    MP1              64
+26  9 133  83  90    MP2              68
+27  9 133  83  90    MP3              68
+28 10 129  83  65    MP1              60
+29 10 129  83  65    MP2              68
+30 10 129  83  65    MP3              68
+31 11 105  72  64    MP1              72
+32 11 105  72  64    MP2              80
+33 11 105  72  64    MP3              68</code></pre>
+</div>
+</div>
+<p>This data can be used to fit a regression of either <code>SYS</code>, <code>DIA</code> or <code>PUL</code> on the average of the repeated observations of <code>ManualPulseFreq</code>. To do this, we have to create a dataset with the means of <code>ManualPulseFreq</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>tbl_bp_mean <span class="ot">&lt;-</span> df_bp <span class="sc">%&gt;%</span> </span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Nr) <span class="sc">%&gt;%</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_man_freq =</span> <span class="fu">mean</span>(ManualPulseFreq),</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_sys =</span> <span class="fu">mean</span>(SYS),</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_dia =</span> <span class="fu">mean</span>(DIA),</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_pul =</span> <span class="fu">mean</span>(PUL))</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>tbl_bp_mean</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 11 × 5
+      Nr mean_man_freq mean_sys mean_dia mean_pul
+   &lt;int&gt;         &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;
+ 1     1          93.3      150       95       92
+ 2     2          72.7      135       89       70
+ 3     3          69.3      121       85       69
+ 4     4          65.3      122       82       65
+ 5     5          86.7      113       79       76
+ 6     6          64        139       83       64
+ 7     7          64        116       75       72
+ 8     8          80        137       85       93
+ 9     9          66.7      133       83       90
+10    10          65.3      129       83       65
+11    11          73.3      105       72       64</code></pre>
+</div>
+</div>
+<p>The computation of the regression coefficient has to be adapted to be able to account for the variability of the repeated observations of the predictors.</p>
 
 
 </section>

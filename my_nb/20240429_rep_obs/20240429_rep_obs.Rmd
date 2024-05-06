@@ -27,6 +27,7 @@ df_bp
 This data can be displayed as
 
 ```{r}
+library(ggplot2)
 p_sys_nr <- ggplot(data = df_bp,
                mapping = aes(x = ManualPulseFreq,
                              y = SYS)) + 
