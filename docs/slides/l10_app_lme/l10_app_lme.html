@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Peter von Rohr">
+<meta name="dcterms.date" content="2024-05-13">
 
-<title>ASMAS-SS2024 | 0.12.2</title>
+<title>ASMAS-SS2024 | 0.12.3 - Applications of Linear Mixed Effects Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,8 +69,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,8 +109,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">ASMAS-SS2024 | 0.12.2</span>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">ASMAS-SS2024 | 0.12.3</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -89,27 +120,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./course_notes.html"> 
+    <a class="nav-link" href="../../course_notes.html"> 
 <span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exercises.html"> 
+    <a class="nav-link" href="../../exercises.html"> 
 <span class="menu-text">Exercises</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./solutions.html"> 
+    <a class="nav-link" href="../../solutions.html"> 
 <span class="menu-text">Solutions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./add_info.html"> 
+    <a class="nav-link" href="../../add_info.html"> 
 <span class="menu-text">Additional Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -128,168 +159,230 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#asmasss2024-0.12.3" id="toc-asmasss2024-0.12.3" class="nav-link active" data-scroll-target="#asmasss2024-0.12.3">asmasss2024 0.12.3</a></li>
-  <li><a href="#asmasss2024-0.12.2" id="toc-asmasss2024-0.12.2" class="nav-link" data-scroll-target="#asmasss2024-0.12.2">asmasss2024 0.12.2</a></li>
-  <li><a href="#asmasss2024-0.12.1" id="toc-asmasss2024-0.12.1" class="nav-link" data-scroll-target="#asmasss2024-0.12.1">asmasss2024 0.12.1</a></li>
-  <li><a href="#asmasss2024-0.12.0" id="toc-asmasss2024-0.12.0" class="nav-link" data-scroll-target="#asmasss2024-0.12.0">asmasss2024 0.12.0</a></li>
-  <li><a href="#asmasss2024-0.11.2" id="toc-asmasss2024-0.11.2" class="nav-link" data-scroll-target="#asmasss2024-0.11.2">asmasss2024 0.11.2</a></li>
-  <li><a href="#asmasss2024-0.11.1" id="toc-asmasss2024-0.11.1" class="nav-link" data-scroll-target="#asmasss2024-0.11.1">asmasss2024 0.11.1</a></li>
-  <li><a href="#asmasss2024-0.11.0" id="toc-asmasss2024-0.11.0" class="nav-link" data-scroll-target="#asmasss2024-0.11.0">asmasss2024 0.11.0</a></li>
-  <li><a href="#asmasss2024-0.10.4" id="toc-asmasss2024-0.10.4" class="nav-link" data-scroll-target="#asmasss2024-0.10.4">asmasss2024 0.10.4</a></li>
-  <li><a href="#asmasss2024-0.10.3" id="toc-asmasss2024-0.10.3" class="nav-link" data-scroll-target="#asmasss2024-0.10.3">asmasss2024 0.10.3</a></li>
-  <li><a href="#asmasss2024-0.10.2" id="toc-asmasss2024-0.10.2" class="nav-link" data-scroll-target="#asmasss2024-0.10.2">asmasss2024 0.10.2</a></li>
-  <li><a href="#asmasss2024-0.10.1" id="toc-asmasss2024-0.10.1" class="nav-link" data-scroll-target="#asmasss2024-0.10.1">asmasss2024 0.10.1</a></li>
-  <li><a href="#asmasss2024-0.10.0" id="toc-asmasss2024-0.10.0" class="nav-link" data-scroll-target="#asmasss2024-0.10.0">asmasss2024 0.10.0</a></li>
-  <li><a href="#asmasss2024-0.9.4" id="toc-asmasss2024-0.9.4" class="nav-link" data-scroll-target="#asmasss2024-0.9.4">asmasss2024 0.9.4</a></li>
-  <li><a href="#asmasss2024-0.9.3" id="toc-asmasss2024-0.9.3" class="nav-link" data-scroll-target="#asmasss2024-0.9.3">asmasss2024 0.9.3</a></li>
-  <li><a href="#asmasss2024-0.9.2" id="toc-asmasss2024-0.9.2" class="nav-link" data-scroll-target="#asmasss2024-0.9.2">asmasss2024 0.9.2</a></li>
-  <li><a href="#asmasss2024-0.9.1" id="toc-asmasss2024-0.9.1" class="nav-link" data-scroll-target="#asmasss2024-0.9.1">asmasss2024 0.9.1</a></li>
-  <li><a href="#asmasss2024-0.9.0" id="toc-asmasss2024-0.9.0" class="nav-link" data-scroll-target="#asmasss2024-0.9.0">asmasss2024 0.9.0</a></li>
-  <li><a href="#asmasss2024-0.8.1" id="toc-asmasss2024-0.8.1" class="nav-link" data-scroll-target="#asmasss2024-0.8.1">asmasss2024 0.8.1</a></li>
-  <li><a href="#asmasss2024-0.8.0" id="toc-asmasss2024-0.8.0" class="nav-link" data-scroll-target="#asmasss2024-0.8.0">asmasss2024 0.8.0</a></li>
-  <li><a href="#asmasss2024-0.7.2" id="toc-asmasss2024-0.7.2" class="nav-link" data-scroll-target="#asmasss2024-0.7.2">asmasss2024 0.7.2</a></li>
-  <li><a href="#asmasss2024-0.7.1" id="toc-asmasss2024-0.7.1" class="nav-link" data-scroll-target="#asmasss2024-0.7.1">asmasss2024 0.7.1</a></li>
-  <li><a href="#asmasss2024-0.7.0" id="toc-asmasss2024-0.7.0" class="nav-link" data-scroll-target="#asmasss2024-0.7.0">asmasss2024 0.7.0</a></li>
-  <li><a href="#asmasss2024-0.6.1" id="toc-asmasss2024-0.6.1" class="nav-link" data-scroll-target="#asmasss2024-0.6.1">asmasss2024 0.6.1</a></li>
-  <li><a href="#asmasss2024-0.6.0" id="toc-asmasss2024-0.6.0" class="nav-link" data-scroll-target="#asmasss2024-0.6.0">asmasss2024 0.6.0</a></li>
-  <li><a href="#asmasss2024-0.5.3" id="toc-asmasss2024-0.5.3" class="nav-link" data-scroll-target="#asmasss2024-0.5.3">asmasss2024 0.5.3</a></li>
-  <li><a href="#asmasss2024-0.5.2" id="toc-asmasss2024-0.5.2" class="nav-link" data-scroll-target="#asmasss2024-0.5.2">asmasss2024 0.5.2</a></li>
-  <li><a href="#asmasss2024-0.5.1" id="toc-asmasss2024-0.5.1" class="nav-link" data-scroll-target="#asmasss2024-0.5.1">asmasss2024 0.5.1</a></li>
-  <li><a href="#asmasss2024-0.5.0" id="toc-asmasss2024-0.5.0" class="nav-link" data-scroll-target="#asmasss2024-0.5.0">asmasss2024 0.5.0</a></li>
-  <li><a href="#asmasss2024-0.4.4" id="toc-asmasss2024-0.4.4" class="nav-link" data-scroll-target="#asmasss2024-0.4.4">asmasss2024 0.4.4</a></li>
-  <li><a href="#asmasss2024-0.4.3" id="toc-asmasss2024-0.4.3" class="nav-link" data-scroll-target="#asmasss2024-0.4.3">asmasss2024 0.4.3</a></li>
-  <li><a href="#asmasss2024-0.4.2" id="toc-asmasss2024-0.4.2" class="nav-link" data-scroll-target="#asmasss2024-0.4.2">asmasss2024 0.4.2</a></li>
-  <li><a href="#asmasss2024-0.4.1" id="toc-asmasss2024-0.4.1" class="nav-link" data-scroll-target="#asmasss2024-0.4.1">asmasss2024 0.4.1</a></li>
-  <li><a href="#asmasss2024-0.4.0" id="toc-asmasss2024-0.4.0" class="nav-link" data-scroll-target="#asmasss2024-0.4.0">asmasss2024 0.4.0</a></li>
-  <li><a href="#asmasss2024-0.3.1" id="toc-asmasss2024-0.3.1" class="nav-link" data-scroll-target="#asmasss2024-0.3.1">asmasss2024 0.3.1</a></li>
-  <li><a href="#asmasss2024-0.3.0" id="toc-asmasss2024-0.3.0" class="nav-link" data-scroll-target="#asmasss2024-0.3.0">asmasss2024 0.3.0</a></li>
-  <li><a href="#asmasss2024-0.2.3" id="toc-asmasss2024-0.2.3" class="nav-link" data-scroll-target="#asmasss2024-0.2.3">asmasss2024 0.2.3</a></li>
-  <li><a href="#asmasss2024-0.2.2" id="toc-asmasss2024-0.2.2" class="nav-link" data-scroll-target="#asmasss2024-0.2.2">asmasss2024 0.2.2</a></li>
-  <li><a href="#asmasss2024-0.2.1" id="toc-asmasss2024-0.2.1" class="nav-link" data-scroll-target="#asmasss2024-0.2.1">asmasss2024 0.2.1</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a></li>
+  <li><a href="#selection-criterion" id="toc-selection-criterion" class="nav-link" data-scroll-target="#selection-criterion">Selection Criterion</a></li>
+  <li><a href="#model-based-on-decomposition-of-genotype" id="toc-model-based-on-decomposition-of-genotype" class="nav-link" data-scroll-target="#model-based-on-decomposition-of-genotype">Model Based on Decomposition of Genotype</a></li>
+  <li><a href="#statistical-model" id="toc-statistical-model" class="nav-link" data-scroll-target="#statistical-model">Statistical Model</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference">Inference</a></li>
+  <li><a href="#prediction-of-breeding-values" id="toc-prediction-of-breeding-values" class="nav-link" data-scroll-target="#prediction-of-breeding-values">Prediction of Breeding Values</a></li>
+  <li><a href="#prediction-of-breeding-values-ii" id="toc-prediction-of-breeding-values-ii" class="nav-link" data-scroll-target="#prediction-of-breeding-values-ii">Prediction of Breeding Values II</a></li>
+  <li><a href="#generalisation" id="toc-generalisation" class="nav-link" data-scroll-target="#generalisation">Generalisation</a></li>
+  <li><a href="#simplified-solution-mixed-model-equations" id="toc-simplified-solution-mixed-model-equations" class="nav-link" data-scroll-target="#simplified-solution-mixed-model-equations">Simplified Solution: Mixed Model Equations</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="l10_app_lme.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Applications of Linear Mixed Effects Models</h1>
+</div>
 
 
 
-<section id="asmasss2024-0.12.3" class="level1">
-<h1>asmasss2024 0.12.3</h1>
-</section>
-<section id="asmasss2024-0.12.2" class="level1">
-<h1>asmasss2024 0.12.2</h1>
-</section>
-<section id="asmasss2024-0.12.1" class="level1">
-<h1>asmasss2024 0.12.1</h1>
-</section>
-<section id="asmasss2024-0.12.0" class="level1">
-<h1>asmasss2024 0.12.0</h1>
-</section>
-<section id="asmasss2024-0.11.2" class="level1">
-<h1>asmasss2024 0.11.2</h1>
-</section>
-<section id="asmasss2024-0.11.1" class="level1">
-<h1>asmasss2024 0.11.1</h1>
-</section>
-<section id="asmasss2024-0.11.0" class="level1">
-<h1>asmasss2024 0.11.0</h1>
-</section>
-<section id="asmasss2024-0.10.4" class="level1">
-<h1>asmasss2024 0.10.4</h1>
-</section>
-<section id="asmasss2024-0.10.3" class="level1">
-<h1>asmasss2024 0.10.3</h1>
-</section>
-<section id="asmasss2024-0.10.2" class="level1">
-<h1>asmasss2024 0.10.2</h1>
-</section>
-<section id="asmasss2024-0.10.1" class="level1">
-<h1>asmasss2024 0.10.1</h1>
-</section>
-<section id="asmasss2024-0.10.0" class="level1">
-<h1>asmasss2024 0.10.0</h1>
-</section>
-<section id="asmasss2024-0.9.4" class="level1">
-<h1>asmasss2024 0.9.4</h1>
-</section>
-<section id="asmasss2024-0.9.3" class="level1">
-<h1>asmasss2024 0.9.3</h1>
-</section>
-<section id="asmasss2024-0.9.2" class="level1">
-<h1>asmasss2024 0.9.2</h1>
-</section>
-<section id="asmasss2024-0.9.1" class="level1">
-<h1>asmasss2024 0.9.1</h1>
-</section>
-<section id="asmasss2024-0.9.0" class="level1">
-<h1>asmasss2024 0.9.0</h1>
-</section>
-<section id="asmasss2024-0.8.1" class="level1">
-<h1>asmasss2024 0.8.1</h1>
-</section>
-<section id="asmasss2024-0.8.0" class="level1">
-<h1>asmasss2024 0.8.0</h1>
-</section>
-<section id="asmasss2024-0.7.2" class="level1">
-<h1>asmasss2024 0.7.2</h1>
-</section>
-<section id="asmasss2024-0.7.1" class="level1">
-<h1>asmasss2024 0.7.1</h1>
-</section>
-<section id="asmasss2024-0.7.0" class="level1">
-<h1>asmasss2024 0.7.0</h1>
-</section>
-<section id="asmasss2024-0.6.1" class="level1">
-<h1>asmasss2024 0.6.1</h1>
-</section>
-<section id="asmasss2024-0.6.0" class="level1">
-<h1>asmasss2024 0.6.0</h1>
-</section>
-<section id="asmasss2024-0.5.3" class="level1">
-<h1>asmasss2024 0.5.3</h1>
-</section>
-<section id="asmasss2024-0.5.2" class="level1">
-<h1>asmasss2024 0.5.2</h1>
-</section>
-<section id="asmasss2024-0.5.1" class="level1">
-<h1>asmasss2024 0.5.1</h1>
-</section>
-<section id="asmasss2024-0.5.0" class="level1">
-<h1>asmasss2024 0.5.0</h1>
-</section>
-<section id="asmasss2024-0.4.4" class="level1">
-<h1>asmasss2024 0.4.4</h1>
-</section>
-<section id="asmasss2024-0.4.3" class="level1">
-<h1>asmasss2024 0.4.3</h1>
-</section>
-<section id="asmasss2024-0.4.2" class="level1">
-<h1>asmasss2024 0.4.2</h1>
-</section>
-<section id="asmasss2024-0.4.1" class="level1">
-<h1>asmasss2024 0.4.1</h1>
-</section>
-<section id="asmasss2024-0.4.0" class="level1">
-<h1>asmasss2024 0.4.0</h1>
-</section>
-<section id="asmasss2024-0.3.1" class="level1">
-<h1>asmasss2024 0.3.1</h1>
-</section>
-<section id="asmasss2024-0.3.0" class="level1">
-<h1>asmasss2024 0.3.0</h1>
-</section>
-<section id="asmasss2024-0.2.3" class="level1">
-<h1>asmasss2024 0.2.3</h1>
-</section>
-<section id="asmasss2024-0.2.2" class="level1">
-<h1>asmasss2024 0.2.2</h1>
-</section>
-<section id="asmasss2024-0.2.1" class="level1">
-<h1>asmasss2024 0.2.1</h1>
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Peter von Rohr </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 13, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
 <ul>
-<li>Initial CRAN submission.</li>
+<li>Parents pass a random sample of alleles to offspring</li>
+<li>Selection of parents on phenotypes inefficient</li>
+</ul>
+<div class="cell" data-hook_convert_odg="true" data-fig_path="odg">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="odg/info-pass-parents-to-offspring.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="selection-criterion" class="level2">
+<h2 class="anchored" data-anchor-id="selection-criterion">Selection Criterion</h2>
+<ul>
+<li>Quantify value of alleles passed from parent to offspring</li>
+<li>Requires decomposition of effect of genotype on phenotype</li>
+</ul>
+<div class="cell" data-hook_convert_odg="true" data-fig_path="odg">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="odg/basicmodelrearrterm.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="model-based-on-decomposition-of-genotype" class="level2">
+<h2 class="anchored" data-anchor-id="model-based-on-decomposition-of-genotype">Model Based on Decomposition of Genotype</h2>
+<ul>
+<li>Further transformation of genotype decomposition</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="odg/model-based-on-genotype-decomp.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="statistical-model" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-model">Statistical Model</h2>
+<ul>
+<li>Linear Mixed Effects Model</li>
+</ul>
+<p><span class="math display">\[y = Xb + Zu + e \]</span></p>
+<ul>
+<li>with vectors
+<ul>
+<li><span class="math inline">\(y\)</span> of length <span class="math inline">\(n\)</span> with observations</li>
+<li><span class="math inline">\(b\)</span> of length <span class="math inline">\(p\)</span> with fixed effects</li>
+<li><span class="math inline">\(u\)</span> of length <span class="math inline">\(q\)</span> with random breeding values</li>
+<li><span class="math inline">\(e\)</span> of length <span class="math inline">\(n\)</span> with random residuals</li>
+</ul></li>
+<li>with design matrices <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span></li>
+</ul>
+</section>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<p>Expected values and variance-covariance matrices of all random components</p>
+<p><span class="math display">\[
+E\left[\begin{array}{c} y \\ u \\ e \end{array} \right] = \left[\begin{array}{c} Xb \\ 0 \\ 0 \end{array} \right]
+\]</span></p>
+<p><span class="math display">\[
+var\left[\begin{array}{c} y \\ u \\ e \end{array} \right] = \left[\begin{array}{ccc} V  &amp; ZU  &amp;  R\\  UZ^T  &amp;  U  &amp;  0\\ R  &amp;  0  &amp;  R\end{array} \right]
+\]</span></p>
+<p>with</p>
+<ul>
+<li><span class="math inline">\(R = I * \sigma_e^2\)</span></li>
+<li><span class="math inline">\(U = A * \sigma_u^2\)</span>, where <span class="math inline">\(A\)</span> is a genetic relationship matrix</li>
+<li><span class="math inline">\(V = ZUZ^T + R\)</span></li>
+</ul>
+</section>
+<section id="inference" class="level2">
+<h2 class="anchored" data-anchor-id="inference">Inference</h2>
+<ul>
+<li>Estimates of unknown fixed effects (<span class="math inline">\(b\)</span>)</li>
+<li>Predictions of <span class="math inline">\(u\)</span></li>
+</ul>
+<p>Analogous to fixed effects model, estimates <span class="math inline">\(\widehat{b}\)</span> are given by</p>
+<p><span class="math display">\[\widehat{b} = (X^TV^{-1}X)^- X^TV^{-1}y \]</span></p>
+</section>
+<section id="prediction-of-breeding-values" class="level2">
+<h2 class="anchored" data-anchor-id="prediction-of-breeding-values">Prediction of Breeding Values</h2>
+<p>Assume, breeding values (<span class="math inline">\(u\)</span>) and phenotypes (<span class="math inline">\(y\)</span>) can be observed</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="odg/bv-phen.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="prediction-of-breeding-values-ii" class="level2">
+<h2 class="anchored" data-anchor-id="prediction-of-breeding-values-ii">Prediction of Breeding Values II</h2>
+<ul>
+<li>For new animal <span class="math inline">\(i\)</span> with phenotypic observation <span class="math inline">\(y_i\)</span></li>
+<li>Breeding value <span class="math inline">\(u_i\)</span> can be predicted based on regression line, as</li>
+</ul>
+<p><span class="math display">\[\widehat{u_i} = \mu_u + b * (y_i - \mu_y)\]</span></p>
+</section>
+<section id="generalisation" class="level2">
+<h2 class="anchored" data-anchor-id="generalisation">Generalisation</h2>
+<ul>
+<li>Assuming multi-variate normal distributions for <span class="math inline">\(y\)</span>, <span class="math inline">\(u\)</span> and <span class="math inline">\(e\)</span></li>
+<li>For animal <span class="math inline">\(i\)</span></li>
+</ul>
+<p><span class="math display">\[\widehat{u_i} = E(u_i | y_i) = E(u_i) + \frac{cov(u_i, y_i)}{var(y_i)} * (y_i - E(y_i))\]</span></p>
+<ul>
+<li>For a group of animals</li>
+</ul>
+<p><span class="math display">\[\widehat{u} = E(u | y) = E(u) + cov(u, y^T) \cdot var(y)^{-1} \cdot (y - E(y))\]</span></p>
+<p><span class="math display">\[\widehat{u} = UZ^T \cdot V^{-1} \cdot (y - Xb)\]</span></p>
+</section>
+<section id="simplified-solution-mixed-model-equations" class="level2">
+<h2 class="anchored" data-anchor-id="simplified-solution-mixed-model-equations">Simplified Solution: Mixed Model Equations</h2>
+<p><span class="math display">\[
+\left[
+  \begin{array}{lr}
+  X^T R^{-1} X  &amp;  X^T R^{-1} Z \\
+  Z^T R^{-1} X  &amp;  Z^T R^{-1} Z + U^{-1}
+  \end{array}
+\right]
+\left[
+  \begin{array}{c}
+  \hat{\beta} \\
+  \hat{u}
+  \end{array}
+\right]
+=
+\left[
+  \begin{array}{c}
+  X^T R^{-1} y \\
+  Z^T R^{-1} y
+  \end{array}
+\right]
+\]</span></p>
+<p>with <span class="math inline">\(R = I * \sigma_e^2\)</span></p>
+<p><span class="math display">\[
+\left[
+  \begin{array}{lr}
+  X^T X  &amp;  X^T  Z \\
+  Z^T  X  &amp;  Z^T  Z + \lambda A^{-1}
+  \end{array}
+\right]
+\left[
+  \begin{array}{c}
+  \hat{\beta} \\
+  \hat{u}
+  \end{array}
+\right]
+=
+\left[
+  \begin{array}{c}
+  X^T  y \\
+  Z^T  y
+  \end{array}
+\right]
+\]</span></p>
+<p>with <span class="math inline">\(\lambda = \sigma_e^2 / \sigma_u^2\)</span></p>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<ul>
+<li>Sire model</li>
+<li>Animal model</li>
+<li>Genomic BLUP</li>
 </ul>
 
 

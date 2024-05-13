@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-13 07:55:18 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-13 13:44:40 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Slides l10_lme_app\n\n\n\n\n\nTest exam asm_exam_tsk\nSolution to test exam asm_exam_sol\n\n\n\n\n\nCourse notes 042_rep_model.pdf"
+    "text": "OHP ohp_l12\n\n\n\n\n\nSlides l10_lme_app\n\n\n\n\n\nTest exam asm_exam_tsk\nSolution to test exam asm_exam_sol\n\n\n\n\n\nCourse notes 042_rep_model.pdf"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-13 07:54:55 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-13 13:44:01 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -151,7 +151,7 @@
     "href": "add_info.html#over-head-pictures",
     "title": "Additional Information",
     "section": "Over-Head Pictures",
-    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n10\n2024-04-29\nRepeated Observations\n\n\n11\n2024-05-06\nType of Repeated Observations\n\n\n\n\nLatest Changes: 2024-05-13 07:55:10 CEST (pvr)"
+    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n10\n2024-04-29\nRepeated Observations\n\n\n11\n2024-05-06\nType of Repeated Observations\n\n\n12\n2024-05-13\nApplications of LME\n\n\n\n\nLatest Changes: 2024-05-13 13:44:21 CEST (pvr)"
   },
   {
     "objectID": "ohp/20240219_ohp_l01/20240219_ohp_l01.html#ohp-picture-2",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.12.2",
+    "title": "asmasss2024 0.12.3",
     "section": "",
-    "text": "asmasss2024 0.12.2\n\n\nasmasss2024 0.12.1\n\n\nasmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.12.3\n\n\nasmasss2024 0.12.2\n\n\nasmasss2024 0.12.1\n\n\nasmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1440,5 +1440,166 @@
     "title": "About",
     "section": "",
     "text": "Slides l10_lme_app"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.12.3",
+    "href": "about.html#asmasss2024-0.12.3",
+    "title": "About",
+    "section": "",
+    "text": "OHP ohp_l12"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-2",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-2",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 2",
+    "text": "OHP Picture 2"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-3",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-3",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 3",
+    "text": "OHP Picture 3"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-4",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-4",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 4",
+    "text": "OHP Picture 4"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-5",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-5",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 5",
+    "text": "OHP Picture 5"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-6",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-6",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 6",
+    "text": "OHP Picture 6"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-7",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-7",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 7",
+    "text": "OHP Picture 7"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-8",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-8",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 8",
+    "text": "OHP Picture 8"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-9",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-9",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 9",
+    "text": "OHP Picture 9"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-10",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-10",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 10",
+    "text": "OHP Picture 10"
+  },
+  {
+    "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-11",
+    "href": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-11",
+    "title": "ASMAS-SS2024 | 0.12.2",
+    "section": "OHP Picture 11",
+    "text": "OHP Picture 11"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html",
+    "href": "slides/l10_app_lme/l10_app_lme.html",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "",
+    "text": "Parents pass a random sample of alleles to offspring\nSelection of parents on phenotypes inefficient"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#background",
+    "href": "slides/l10_app_lme/l10_app_lme.html#background",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "",
+    "text": "Parents pass a random sample of alleles to offspring\nSelection of parents on phenotypes inefficient"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#selection-criterion",
+    "href": "slides/l10_app_lme/l10_app_lme.html#selection-criterion",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Selection Criterion",
+    "text": "Selection Criterion\n\nQuantify value of alleles passed from parent to offspring\nRequires decomposition of effect of genotype on phenotype"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#model-based-on-decomposition-of-genotype",
+    "href": "slides/l10_app_lme/l10_app_lme.html#model-based-on-decomposition-of-genotype",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Model Based on Decomposition of Genotype",
+    "text": "Model Based on Decomposition of Genotype\n\nFurther transformation of genotype decomposition"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#statistical-model",
+    "href": "slides/l10_app_lme/l10_app_lme.html#statistical-model",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Statistical Model",
+    "text": "Statistical Model\n\nLinear Mixed Effects Model\n\n\\[y = Xb + Zu + e \\]\n\nwith vectors\n\n\\(y\\) of length \\(n\\) with observations\n\\(b\\) of length \\(p\\) with fixed effects\n\\(u\\) of length \\(q\\) with random breeding values\n\\(e\\) of length \\(n\\) with random residuals\n\nwith design matrices \\(X\\) and \\(Z\\)"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#assumptions",
+    "href": "slides/l10_app_lme/l10_app_lme.html#assumptions",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Assumptions",
+    "text": "Assumptions\nExpected values and variance-covariance matrices of all random components\n\\[\nE\\left[\\begin{array}{c} y \\\\ u \\\\ e \\end{array} \\right] = \\left[\\begin{array}{c} Xb \\\\ 0 \\\\ 0 \\end{array} \\right]\n\\]\n\\[\nvar\\left[\\begin{array}{c} y \\\\ u \\\\ e \\end{array} \\right] = \\left[\\begin{array}{ccc} V  & ZU  &  R\\\\  UZ^T  &  U  &  0\\\\ R  &  0  &  R\\end{array} \\right]\n\\]\nwith\n\n\\(R = I * \\sigma_e^2\\)\n\\(U = A * \\sigma_u^2\\), where \\(A\\) is a genetic relationship matrix\n\\(V = ZUZ^T + R\\)"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#inference",
+    "href": "slides/l10_app_lme/l10_app_lme.html#inference",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Inference",
+    "text": "Inference\n\nEstimates of unknown fixed effects (\\(b\\))\nPredictions of \\(u\\)\n\nAnalogous to fixed effects model, estimates \\(\\widehat{b}\\) are given by\n\\[\\widehat{b} = (X^TV^{-1}X)^- X^TV^{-1}y \\]"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#prediction-of-breeding-values",
+    "href": "slides/l10_app_lme/l10_app_lme.html#prediction-of-breeding-values",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Prediction of Breeding Values",
+    "text": "Prediction of Breeding Values\nAssume, breeding values (\\(u\\)) and phenotypes (\\(y\\)) can be observed"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#prediction-of-breeding-values-ii",
+    "href": "slides/l10_app_lme/l10_app_lme.html#prediction-of-breeding-values-ii",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Prediction of Breeding Values II",
+    "text": "Prediction of Breeding Values II\n\nFor new animal \\(i\\) with phenotypic observation \\(y_i\\)\nBreeding value \\(u_i\\) can be predicted based on regression line, as\n\n\\[\\widehat{u_i} = \\mu_u + b * (y_i - \\mu_y)\\]"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#generalisation",
+    "href": "slides/l10_app_lme/l10_app_lme.html#generalisation",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Generalisation",
+    "text": "Generalisation\n\nAssuming multi-variate normal distributions for \\(y\\), \\(u\\) and \\(e\\)\nFor animal \\(i\\)\n\n\\[\\widehat{u_i} = E(u_i | y_i) = E(u_i) + \\frac{cov(u_i, y_i)}{var(y_i)} * (y_i - E(y_i))\\]\n\nFor a group of animals\n\n\\[\\widehat{u} = E(u | y) = E(u) + cov(u, y^T) \\cdot var(y)^{-1} \\cdot (y - E(y))\\]\n\\[\\widehat{u} = UZ^T \\cdot V^{-1} \\cdot (y - Xb)\\]"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#simplified-solution-mixed-model-equations",
+    "href": "slides/l10_app_lme/l10_app_lme.html#simplified-solution-mixed-model-equations",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Simplified Solution: Mixed Model Equations",
+    "text": "Simplified Solution: Mixed Model Equations\n\\[\n\\left[\n  \\begin{array}{lr}\n  X^T R^{-1} X  &  X^T R^{-1} Z \\\\\n  Z^T R^{-1} X  &  Z^T R^{-1} Z + U^{-1}\n  \\end{array}\n\\right]\n\\left[\n  \\begin{array}{c}\n  \\hat{\\beta} \\\\\n  \\hat{u}\n  \\end{array}\n\\right]\n=\n\\left[\n  \\begin{array}{c}\n  X^T R^{-1} y \\\\\n  Z^T R^{-1} y\n  \\end{array}\n\\right]\n\\]\nwith \\(R = I * \\sigma_e^2\\)\n\\[\n\\left[\n  \\begin{array}{lr}\n  X^T X  &  X^T  Z \\\\\n  Z^T  X  &  Z^T  Z + \\lambda A^{-1}\n  \\end{array}\n\\right]\n\\left[\n  \\begin{array}{c}\n  \\hat{\\beta} \\\\\n  \\hat{u}\n  \\end{array}\n\\right]\n=\n\\left[\n  \\begin{array}{c}\n  X^T  y \\\\\n  Z^T  y\n  \\end{array}\n\\right]\n\\]\nwith \\(\\lambda = \\sigma_e^2 / \\sigma_u^2\\)"
+  },
+  {
+    "objectID": "slides/l10_app_lme/l10_app_lme.html#examples",
+    "href": "slides/l10_app_lme/l10_app_lme.html#examples",
+    "title": "Applications of Linear Mixed Effects Models",
+    "section": "Examples",
+    "text": "Examples\n\nSire model\nAnimal model\nGenomic BLUP"
   }
 ]
