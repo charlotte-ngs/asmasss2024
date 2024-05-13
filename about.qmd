@@ -15,6 +15,12 @@ s_data_url <- "https://charlotte-ngs.github.io/asmasss2024/data/"
 s_app_url <- s_cn_url
 ```
 
+# asmas -- ss2024: Week 12
+
+## asmasss2024 0.12.0
+
+* Course notes [042_rep_model.pdf](`r paste0(s_cn_url, "042_rep_model.pdf", collapse = "")`)
+
 # asmas -- ss2024: Week 11
 
 ## asmasss2024 0.11.2

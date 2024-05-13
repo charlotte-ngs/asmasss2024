@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-06 13:24:33 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-13 05:03:12 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Overhead ohp_l11\n\n\n\n\n\nSlides l09_rep_obs\n\n\n\n\n\nExercise 9 asm_ex09\nSolution 8 asm_sol08"
+    "text": "Course notes 042_rep_model.pdf"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-06 13:24:24 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-13 05:03:32 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.11.2",
+    "title": "asmasss2024 0.12.0",
     "section": "",
-    "text": "asmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -697,7 +697,7 @@
     "href": "course_notes.html#list-of-appendix-chapters",
     "title": "Course Notes",
     "section": "List of Appendix Chapters",
-    "text": "List of Appendix Chapters\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-03-04\nLinear Algebra\n\n\n\n\nLatest Changes: 2024-04-29 07:33:02 CEST (pvr)"
+    "text": "List of Appendix Chapters\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-03-04\nLinear Algebra\n\n\n\n\nLatest Changes: 2024-05-13 05:03:31 CEST (pvr)"
   },
   {
     "objectID": "about.html#asmasss2024-0.7.1",
@@ -1270,8 +1270,8 @@
     "objectID": "about.html#asmasss2024-0.11.0",
     "href": "about.html#asmasss2024-0.11.0",
     "title": "About",
-    "section": "",
-    "text": "Exercise 9 asm_ex09\nSolution 8 asm_sol08"
+    "section": "asmasss2024 0.11.0",
+    "text": "asmasss2024 0.11.0\n\nExercise 9 asm_ex09\nSolution 8 asm_sol08"
   },
   {
     "objectID": "my_nb/20240429_rep_obs/20240429_rep_obs.html#classification-of-repeated-observation-data",
@@ -1291,15 +1291,15 @@
     "objectID": "about.html#asmasss2024-0.11.1",
     "href": "about.html#asmasss2024-0.11.1",
     "title": "About",
-    "section": "",
-    "text": "Slides l09_rep_obs"
+    "section": "asmasss2024 0.11.1",
+    "text": "asmasss2024 0.11.1\n\nSlides l09_rep_obs"
   },
   {
     "objectID": "about.html#asmasss2024-0.11.2",
     "href": "about.html#asmasss2024-0.11.2",
     "title": "About",
-    "section": "",
-    "text": "Overhead ohp_l11"
+    "section": "asmasss2024 0.11.2",
+    "text": "asmasss2024 0.11.2\n\nOverhead ohp_l11"
   },
   {
     "objectID": "my_nb/20240506_balanced_rep_obs/20240506_balanced_rep_obs.html",
@@ -1320,7 +1320,7 @@
     "href": "my_nb/20240506_balanced_rep_obs/20240506_balanced_rep_obs.html#balanced-dataset",
     "title": "Repeated Observations – Second Thoughts and Considerations",
     "section": "Balanced Dataset",
-    "text": "Balanced Dataset\nTo have an easier understanding of repeated observations, we start with a balanced dataset. At the beginning, we have a dataset of 5 each having 3 observations of Body.Weight. Such a dataset can be generated by first sampling mean body weight for each animal\n\nvec_mean_bw &lt;- rnorm(n_nr_animals, mean = n_bw_mean, sd = n_bw_sd_acc)\nvec_mean_bw\n\n[1] 457.0869 463.8458 463.7075 448.8594 454.0249\n\n\nBased on these means, we add some random deviates to generate individual observations\n\ntbl_bw_rep &lt;- NULL\nfor (i in 1:n_nr_animals){\n  vec_bw_dev &lt;- rnorm(n_nr_rep, sd = n_bw_sd_win)\n  tbl_cur_obs &lt;- tibble::tibble(Animal = rep(i, n_nr_rep),\n                                Body.Weight = vec_mean_bw[1] + vec_bw_dev)\n  if (is.null(tbl_bw_rep)){\n    tbl_bw_rep &lt;- tbl_cur_obs\n  } else {\n    tbl_bw_rep &lt;- dplyr::bind_rows(tbl_bw_rep, tbl_cur_obs)\n  }\n}\ntbl_bw_rep\n\n# A tibble: 15 × 2\n   Animal Body.Weight\n    &lt;int&gt;       &lt;dbl&gt;\n 1      1        457.\n 2      1        458.\n 3      1        457.\n 4      2        458.\n 5      2        456.\n 6      2        457.\n 7      3        457.\n 8      3        456.\n 9      3        458.\n10      4        455.\n11      4        456.\n12      4        456.\n13      5        458.\n14      5        456.\n15      5        457.\n\n\nCheck by the following plot\n\nlibrary(ggplot2)\nggplot(data = tbl_bw_rep,\n       mapping = aes(x = Animal,\n                     y = Body.Weight)) + \n  geom_point(aes(color = as.factor(Animal))) + \n  labs(color = \"Animal\")\n\n\n\n\n\n\n\n\n\nAnalysis\nSeparate variation using the following\n\nAnimal effect\n\n\naov_bw_rep &lt;- aov(Body.Weight ~ Animal, data = tbl_bw_rep)\nsummary(aov_bw_rep)\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)\nAnimal       1  1.456  1.4560    1.78  0.205\nResiduals   13 10.632  0.8178               \n\n\n\nAnimal in error term\n\n\naov_bw_err &lt;- aov(Body.Weight ~ Error(Animal), data = tbl_bw_rep)\nsummary(aov_bw_err)\n\n\nError: Animal\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals  1  1.456   1.456               \n\nError: Within\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals 13  10.63  0.8178               \n\n\n\n\nMethod of Moments Estimate"
+    "text": "Balanced Dataset\nTo have an easier understanding of repeated observations, we start with a balanced dataset. At the beginning, we have a dataset of 5 each having 3 observations of Body.Weight. Such a dataset can be generated by first sampling mean body weight for each animal\n\nvec_mean_bw &lt;- rnorm(n_nr_animals, mean = n_bw_mean, sd = n_bw_sd_acc)\nvec_mean_bw\n\n[1] 457.1551 463.8557 463.7186 448.9985 454.1195\n\n\nBased on these means, we add some random deviates to generate individual observations\n\ntbl_bw_rep &lt;- NULL\nfor (i in 1:n_nr_animals){\n  vec_bw_dev &lt;- rnorm(n_nr_rep, sd = n_bw_sd_win)\n  tbl_cur_obs &lt;- tibble::tibble(Animal = rep(i, n_nr_rep),\n                                Body.Weight = vec_mean_bw[i] + vec_bw_dev)\n  if (is.null(tbl_bw_rep)){\n    tbl_bw_rep &lt;- tbl_cur_obs\n  } else {\n    tbl_bw_rep &lt;- dplyr::bind_rows(tbl_bw_rep, tbl_cur_obs)\n  }\n}\ntbl_bw_rep\n\n# A tibble: 15 × 2\n   Animal Body.Weight\n    &lt;int&gt;       &lt;dbl&gt;\n 1      1        457.\n 2      1        458.\n 3      1        457.\n 4      2        465.\n 5      2        463.\n 6      2        464.\n 7      3        463.\n 8      3        463.\n 9      3        465.\n10      4        447.\n11      4        448.\n12      4        448.\n13      5        455.\n14      5        453.\n15      5        454.\n\n\nCheck by the following plot\n\nlibrary(ggplot2)\nggplot(data = tbl_bw_rep,\n       mapping = aes(x = Animal,\n                     y = Body.Weight)) + \n  geom_point(aes(color = as.factor(Animal))) + \n  labs(color = \"Animal\")\n\n\n\n\n\n\n\n\n\nAnalysis\nSeparate variation using the following\n\nAnimal effect\n\n\naov_bw_rep &lt;- aov(Body.Weight ~ Animal, data = tbl_bw_rep)\n(smry_aov_bw_rep &lt;- summary(aov_bw_rep))\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)  \nAnimal       1  157.5  157.48   4.969 0.0441 *\nResiduals   13  412.0   31.69                 \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nAnimal in error term\n\n\naov_bw_err &lt;- aov(Body.Weight ~ Error(Animal), data = tbl_bw_rep)\nsummary(aov_bw_err)\n\n\nError: Animal\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals  1  157.5   157.5               \n\nError: Within\n          Df Sum Sq Mean Sq F value Pr(&gt;F)\nResiduals 13    412   31.69               \n\n\n\n\nMethod of Moments Estimate\nEstimates of variance components are defined by\n\\[E(MSq_R) = \\sigma_R^2\\] and\n\\[E(MSq_A) = \\sigma_R^2 + n * \\sigma_A^2 \\]\nFrom the above we get:\n\nn_msq_res &lt;- smry_aov_bw_rep[[1]][\"Residuals\", \"Mean Sq\"]\n\n\\[\\widehat{\\sigma_R^2} =  31.6933174\\]\n\nn_msq_ani &lt;- smry_aov_bw_rep[[1]][\"Animal\", \"Mean Sq\"]\nn_sigma_a_hat &lt;- (n_msq_ani - n_msq_res) / n_nr_rep\n\n\\[\\widehat{\\sigma_A^2} = \\frac{E(MSq_A) - \\widehat{\\sigma_R^2}}{n} = 41.9273499\\]"
   },
   {
     "objectID": "ohp/20240506_ohp_l11/20240506_ohp_l11.html#ohp-picture-2",
@@ -1370,5 +1370,61 @@
     "title": "ASMAS-SS2024 | 0.11.1",
     "section": "OHP Picture 8",
     "text": "OHP Picture 8"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.12.0",
+    "href": "about.html#asmasss2024-0.12.0",
+    "title": "About",
+    "section": "",
+    "text": "Course notes 042_rep_model.pdf"
+  },
+  {
+    "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html",
+    "href": "my_nb/20240510_facts_lme/20240510_facts_lme.html",
+    "title": "Facts about Usage of LME in Livestock Breeding",
+    "section": "",
+    "text": "Facts important for usage of LME in livestock breeding are presented"
+  },
+  {
+    "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html#disclaimer",
+    "href": "my_nb/20240510_facts_lme/20240510_facts_lme.html#disclaimer",
+    "title": "Facts about Usage of LME in Livestock Breeding",
+    "section": "",
+    "text": "Facts important for usage of LME in livestock breeding are presented"
+  },
+  {
+    "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html#background",
+    "href": "my_nb/20240510_facts_lme/20240510_facts_lme.html#background",
+    "title": "Facts about Usage of LME in Livestock Breeding",
+    "section": "Background",
+    "text": "Background\nParents do not pass phenotypes to their offspring but just a random sample of their alleles. This can be seen by the following scheme\n\n\n\n\n\n\n\n\n\nAs a consequence it is not efficient to select animals as parents based on their phenotypic record. What we need is a measure for the random sample of alleles that are passed from parents to offspring. This measure is called the breeding value and is often termed by the variable \\(u\\). As such, the breeding value \\(u_i\\) of animal \\(i\\) cannot be observed. The above figure shows the relationship between the phenotype \\(y_i\\) of animal \\(i\\) and its breeding value \\(u_i\\). Since, the breeding value \\(u_i\\) cannot be observed or measured, we try to predict it based on phenotypic observations \\(y_i\\)."
+  },
+  {
+    "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html#prediction-of-breeding-values",
+    "href": "my_nb/20240510_facts_lme/20240510_facts_lme.html#prediction-of-breeding-values",
+    "title": "Facts about Usage of LME in Livestock Breeding",
+    "section": "Prediction of Breeding Values",
+    "text": "Prediction of Breeding Values\nLet us assume for a moment that breeding values can be observed or measured for a group of animals. Furthermore each of these animals also has a phenotypic observation. Then the breeding values \\(u_i\\) and the phenotypic observations \\(y_i\\) can be plotted in a coordinate system where the breeding values are shown on the ordinate. For a given number of animals this might look as follows\n\nset.seed(1205)\nn_mu_u &lt;- 9.3\nn_sd_u &lt;- 1.7\nn_mu_y &lt;- 12.4\nn_h2 &lt;- 0.36\nn_sd_y &lt;- n_sd_u / sqrt(n_h2)\nn_nr_ani &lt;- 10\nvec_y &lt;- rnorm(n_nr_ani, mean = n_mu_y, sd = n_sd_y)\nvec_u &lt;- n_h2 * vec_y + rnorm(n_nr_ani, sd = 0.2)\nvec_u &lt;- vec_u - mean(vec_u) + n_mu_u\ntbl_data &lt;- tibble::tibble(`Breeding Value` = vec_u,\n                           Phenotype = vec_y)\nlm_bv_phen &lt;- lm(`Breeding Value` ~ Phenotype, data = tbl_data)\n# plot\nlibrary(ggplot2)\nggplot(data = tbl_data, \n       mapping = aes(x = Phenotype,\n                     y = `Breeding Value`)) + \n  geom_point() + \n  geom_abline(slope = lm_bv_phen$coefficients[[\"Phenotype\"]],\n              intercept = lm_bv_phen$coefficients[[\"(Intercept)\"]],\n              colour = \"red\")\n\n\n\n\n\n\n\n\nFor a new animal \\(i\\) with a phenotypic observation \\(y_i\\), the breeding value can be predicted using the regression line. From that we get\n\\[\\widehat{u_i} = \\mu_u + b * (y_i - \\mu_y)\\]\nwith \\(\\mu_u\\), the mean or the expected value of \\(u\\), similarly for \\(\\mu_y\\). The regression coefficient \\(b\\) is computed as\n\\[b = \\frac{cov(u,y)}{var(y)}\\]\nLooking at this prediction process from the point of view of distributions and assuming that \\(y\\) and \\(u\\) are normally distributed, then the above regression equation corresponds to the conditional expectation of \\(u\\) given \\(y\\) interpreted as a function of \\(y\\). Hence\n\\[\\widehat{u_i} = E(u_i | y_i) = E(u_i) + \\frac{cov(u_i, y_i)}{var(y_i)} * (y_i - E(y_i))\\]"
+  },
+  {
+    "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html#generalisation",
+    "href": "my_nb/20240510_facts_lme/20240510_facts_lme.html#generalisation",
+    "title": "Facts about Usage of LME in Livestock Breeding",
+    "section": "Generalisation",
+    "text": "Generalisation\nThe above developed prediction process can be generalized. Given that we have the linear mixed effects model for a vector \\(y\\) of length \\(n\\) with observations, we can write\n\\[y = Xb + Zu + e\\]\nwith vectors\n\n\\(b\\) of length \\(p\\) containing fixed effects,\n\\(u\\) of length \\(q\\) with random breeding values and\n\\(e\\) of length \\(n\\) with random residuals.\n\nIn the above model, there are two vectors with random effects, hence this model is a linear mixed effects model. The expected values and the variance-covariance matrices of the random components can be specified as\n\\[\nE\\left[\\begin{array}{c} y \\\\ u \\\\ e \\end{array} \\right] = \\left[\\begin{array}{c} Xb \\\\ 0 \\\\ 0 \\end{array} \\right]\n\\]\n\\[\nvar\\left[\\begin{array}{c} y \\\\ u \\\\ e \\end{array} \\right] = \\left[\\begin{array}{ccc} V  & ZU  &  R\\\\  UZ^T  &  U  &  0\\\\ R  &  0  &  R\\end{array} \\right]\n\\]\nwith\n\n\\(R = I * \\sigma_e^2\\)\n\\(U = A * \\sigma_u^2\\), where \\(A\\) is a genetic relationship matrix\n\\(V = ZUZ^T + R\\)\n\nThe prediction of the breeding values in vector \\(u\\), is also based on the conditional mean \\(E(u | y)\\). This can be written as shown above\n\\[\\widehat{u} = E(u | y) = E(u) + cov(u, y^T) \\cdot var(y)^{-1} \\cdot (y - E(y))\\]\nInserting the above made specification, we obtain\n\\[\\widehat{u} = UZ^T \\cdot V^{-1} \\cdot (y - Xb)\\]\nBecause \\(b\\) is not known, it is replaced by the BLUE estimate \\(\\widehat{b}\\) which is given by\n\\[\\widehat{b} = (X^TV^{-1}X)^- X^TV^{-1}y \\]"
+  },
+  {
+    "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html#properties-of-estimates",
+    "href": "my_nb/20240510_facts_lme/20240510_facts_lme.html#properties-of-estimates",
+    "title": "Facts about Usage of LME in Livestock Breeding",
+    "section": "Properties of Estimates",
+    "text": "Properties of Estimates\nThe following properties of the estimates can be shown\n\nFixed Effects\nWith\n\\[\\widehat{b} = (X^TV^{-1}X)^- X^TV^{-1}y \\]\n\nThe expected value is obtained by\n\n\\[E((X^TV^{-1}X)\\widehat{b}) = E((X^TV^{-1}X)(X^TV^{-1}X)^- X^TV^{-1}y) = X(X^TV^{-1}X)^- X^TV^{-1} \\cdot E(y) =  (X^TV^{-1}X)(X^TV^{-1}X)^- X^TV^{-1}Xb = (X^TV^{-1}X)b\\] Hence, estimable functions are unbiased.\n\nThe variance of the estimater is\n\n\\[var(\\widehat{b}) = var((X^TV^{-1}X)^- X^TV^{-1}y) = (X^TV^{-1}X)^- X^TV^{-1} var(y) V^{-1} X (X^TV^{-1}X)^- = (X^TV^{-1}X)^- X^T V^{-1} X (X^TV^{-1}X)^- =  (X^TV^{-1}X)^-\\]\nAlternative estimator\n\\[\\widehat{b}^* = \\widehat{b} + \\epsilon\\]\n\n\nRandom Effects\n\nunbiased\nminimum predicetion error variances"
+  },
+  {
+    "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html#solution-via-mixed-model-equations",
+    "href": "my_nb/20240510_facts_lme/20240510_facts_lme.html#solution-via-mixed-model-equations",
+    "title": "Facts about Usage of LME in Livestock Breeding",
+    "section": "Solution via Mixed Model Equations",
+    "text": "Solution via Mixed Model Equations"
   }
 ]
