@@ -1,0 +1,145 @@
+---
+title: "Facts about Usage of LME in Livestock Breeding"
+output: 
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+# rmdhelp::show_knit_hook_call()
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
+```
+
+## Disclaimer
+Facts important for usage of LME in livestock breeding are presented
+
+
+## Background
+Parents do not pass phenotypes to their offspring but just a random sample of their alleles. This can be seen by the following scheme
+
+```{r info-pass-parents-to-offspring, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/info-pass-parents-to-offspring.odg")
+knitr::include_graphics(path = "odg/info-pass-parents-to-offspring.png")
+```
+ 
+As a consequence it is not efficient to select animals as parents based on their phenotypic record. What we need is a measure for the random sample of alleles that are passed from parents to offspring. This measure is called the `breeding value` and is often termed by the variable $u$. As such, the breeding value $u_i$ of animal $i$ cannot be observed. The above figure shows the relationship between the phenotype $y_i$ of animal $i$ and its breeding value $u_i$. Since, the breeding value $u_i$ cannot be observed or measured, we try to predict it based on phenotypic observations $y_i$. 
+
+
+## Prediction of Breeding Values
+Let us assume for a moment that breeding values can be observed or measured for a group of animals. Furthermore each of these animals also has a phenotypic observation. Then the breeding values $u_i$ and the phenotypic observations $y_i$ can be plotted in a coordinate system where the breeding values are shown on the ordinate. For a given number of animals this might look as follows
+
+```{r}
+set.seed(1205)
+n_mu_u <- 9.3
+n_sd_u <- 1.7
+n_mu_y <- 12.4
+n_h2 <- 0.36
+n_sd_y <- n_sd_u / sqrt(n_h2)
+n_nr_ani <- 10
+vec_y <- rnorm(n_nr_ani, mean = n_mu_y, sd = n_sd_y)
+vec_u <- n_h2 * vec_y + rnorm(n_nr_ani, sd = 0.2)
+vec_u <- vec_u - mean(vec_u) + n_mu_u
+tbl_data <- tibble::tibble(`Breeding Value` = vec_u,
+                           Phenotype = vec_y)
+lm_bv_phen <- lm(`Breeding Value` ~ Phenotype, data = tbl_data)
+# plot
+library(ggplot2)
+ggplot(data = tbl_data, 
+       mapping = aes(x = Phenotype,
+                     y = `Breeding Value`)) + 
+  geom_point() + 
+  geom_abline(slope = lm_bv_phen$coefficients[["Phenotype"]],
+              intercept = lm_bv_phen$coefficients[["(Intercept)"]],
+              colour = "red")
+
+```
+
+For a new animal $i$ with a phenotypic observation $y_i$, the breeding value can be predicted using the regression line. From that we get
+
+$$\widehat{u_i} = \mu_u + b * (y_i - \mu_y)$$
+
+with $\mu_u$, the mean or the expected value of $u$, similarly for $\mu_y$. The regression coefficient $b$ is computed as 
+
+$$b = \frac{cov(u,y)}{var(y)}$$
+
+Looking at this prediction process from the point of view of distributions and assuming that $y$ and $u$ are normally distributed, then the above regression equation corresponds to the conditional expectation of $u$ given $y$ interpreted as a function of $y$. Hence
+
+$$\widehat{u_i} = E(u_i | y_i) = E(u_i) + \frac{cov(u_i, y_i)}{var(y_i)} * (y_i - E(y_i))$$
+
+
+## Generalisation
+The above developed prediction process can be generalized. Given that we have the linear mixed effects model for a vector $y$ of length $n$ with observations, we can write
+
+$$y = Xb + Zu + e$$
+
+with vectors 
+
+* $b$ of length $p$ containing fixed effects, 
+* $u$ of length $q$ with random breeding values and 
+* $e$ of length $n$ with random residuals.
+
+In the above model, there are two vectors with random effects, hence this model is a linear mixed effects model. The expected values and the variance-covariance matrices of the random components can be specified as 
+
+$$
+E\left[\begin{array}{c} y \\ u \\ e \end{array} \right] = \left[\begin{array}{c} Xb \\ 0 \\ 0 \end{array} \right]
+$$
+
+$$
+var\left[\begin{array}{c} y \\ u \\ e \end{array} \right] = \left[\begin{array}{ccc} V  & ZU  &  R\\  UZ^T  &  U  &  0\\ R  &  0  &  R\end{array} \right]
+$$
+
+with 
+
+* $R = I * \sigma_e^2$
+* $U = A * \sigma_u^2$, where $A$ is a genetic relationship matrix
+* $V = ZUZ^T + R$
+
+
+The prediction of the breeding values in vector $u$, is also based on the conditional mean $E(u | y)$. This can be written as shown above
+
+$$\widehat{u} = E(u | y) = E(u) + cov(u, y^T) \cdot var(y)^{-1} \cdot (y - E(y))$$
+
+Inserting the above made specification, we obtain
+
+$$\widehat{u} = UZ^T \cdot V^{-1} \cdot (y - Xb)$$
+
+Because $b$ is not known, it is replaced by the BLUE estimate $\widehat{b}$ which is given by 
+
+$$\widehat{b} = (X^TV^{-1}X)^- X^TV^{-1}y $$
+
+
+## Properties of Estimates
+The following properties of the estimates can be shown
+
+### Fixed Effects
+With 
+
+$$\widehat{b} = (X^TV^{-1}X)^- X^TV^{-1}y $$
+
+* The expected value is obtained by 
+
+$$E((X^TV^{-1}X)\widehat{b}) = E((X^TV^{-1}X)(X^TV^{-1}X)^- X^TV^{-1}y) = X(X^TV^{-1}X)^- X^TV^{-1} \cdot E(y) =  (X^TV^{-1}X)(X^TV^{-1}X)^- X^TV^{-1}Xb = (X^TV^{-1}X)b$$
+Hence, estimable functions are __unbiased__. 
+
+* The variance of the estimater is
+
+$$var(\widehat{b}) = var((X^TV^{-1}X)^- X^TV^{-1}y) = (X^TV^{-1}X)^- X^TV^{-1} var(y) V^{-1} X (X^TV^{-1}X)^- = (X^TV^{-1}X)^- X^T V^{-1} X (X^TV^{-1}X)^- =  (X^TV^{-1}X)^-$$
+
+Alternative estimator 
+
+$$\widehat{b}^* = \widehat{b} + \epsilon$$
+
+### Random Effects
+
+* unbiased
+* minimum predicetion error variances
+
+
+## Solution via Mixed Model Equations
+
+
+
+
+
+
+
