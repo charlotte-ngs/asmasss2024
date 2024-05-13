@@ -1,0 +1,194 @@
+---
+title: "Applications of Linear Mixed Effects Models"
+author: "Peter von Rohr"
+format: beamer
+---
+
+```{r}
+#| label: setup
+#| include: false
+# rmdhelp::show_knit_hook_call()
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
+```
+
+
+## Background
+
+* Parents pass a random sample of alleles to offspring
+* Selection of parents on phenotypes inefficient 
+
+```{r}
+#| label: info-pass-parents-to-offspring
+#| echo: false
+#| hook_convert_odg: true
+#| fig_path: "odg"
+#| out-width: "100%"
+#rmdhelp::use_odg_graphic(ps_path = "odg/info-pass-parents-to-offspring.odg")
+knitr::include_graphics(path = "odg/info-pass-parents-to-offspring.png")
+```
+
+
+## Selection Criterion
+
+* Quantify value of alleles passed from parent to offspring
+* Requires decomposition of effect of genotype on phenotype
+
+```{r}
+#| label: basicmodelrearrterm
+#| echo: false
+#| hook_convert_odg: true
+#| fig_path: "odg"
+#| out-width: "80%"
+#rmddochelper::use_odg_graphic(ps_path = "odg/basicmodelrearrterm.odg")
+knitr::include_graphics(path = "odg/basicmodelrearrterm.png")
+```
+
+
+## Model Based on Decomposition of Genotype
+
+* Further transformation of genotype decomposition
+
+```{r}
+#| label: model-based-on-genotype-decomp
+#| echo: false
+#| out-width: "100%"
+#rmdhelp::use_odg_graphic(ps_path = "odg/model-based-on-genotype-decomp.odg")
+knitr::include_graphics(path = "odg/model-based-on-genotype-decomp.png")
+```
+
+
+## Statistical Model
+
+* Linear Mixed Effects Model
+
+$$y = Xb + Zu + e $$
+
+* with vectors 
+    + $y$ of length $n$ with observations
+    + $b$ of length $p$ with fixed effects
+    + $u$ of length $q$ with random breeding values
+    + $e$ of length $n$ with random residuals
+
+* with design matrices $X$ and $Z$
+
+
+## Assumptions
+
+Expected values and variance-covariance matrices of all random components
+
+$$
+E\left[\begin{array}{c} y \\ u \\ e \end{array} \right] = \left[\begin{array}{c} Xb \\ 0 \\ 0 \end{array} \right]
+$$
+
+$$
+var\left[\begin{array}{c} y \\ u \\ e \end{array} \right] = \left[\begin{array}{ccc} V  & ZU  &  R\\  UZ^T  &  U  &  0\\ R  &  0  &  R\end{array} \right]
+$$
+
+with 
+
+* $R = I * \sigma_e^2$
+* $U = A * \sigma_u^2$, where $A$ is a genetic relationship matrix
+* $V = ZUZ^T + R$
+
+
+## Inference
+
+* Estimates of unknown fixed effects ($b$) 
+* Predictions of $u$
+
+Analogous to fixed effects model, estimates $\widehat{b}$ are given by
+
+$$\widehat{b} = (X^TV^{-1}X)^- X^TV^{-1}y $$
+
+
+## Prediction of Breeding Values
+
+Assume, breeding values ($u$) and phenotypes ($y$) can be observed
+
+```{r}
+#| label: bv-phen
+#| echo: false
+#| out-width: "100%"
+# rmdhelp::use_odg_graphic(ps_path = "odg/bv-phen.odg")
+knitr::include_graphics(path = "odg/bv-phen.png")
+```
+
+
+## Prediction of Breeding Values II
+
+* For new animal $i$ with phenotypic observation $y_i$
+* Breeding value $u_i$ can be predicted based on regression line, as 
+
+$$\widehat{u_i} = \mu_u + b * (y_i - \mu_y)$$
+
+
+## Generalisation
+
+* Assuming multi-variate normal distributions for $y$, $u$ and $e$
+* For animal $i$
+
+$$\widehat{u_i} = E(u_i | y_i) = E(u_i) + \frac{cov(u_i, y_i)}{var(y_i)} * (y_i - E(y_i))$$
+
+* For a group of animals
+
+$$\widehat{u} = E(u | y) = E(u) + cov(u, y^T) \cdot var(y)^{-1} \cdot (y - E(y))$$
+
+$$\widehat{u} = UZ^T \cdot V^{-1} \cdot (y - Xb)$$
+
+
+## Simplified Solution: Mixed Model Equations
+
+$$
+\left[
+  \begin{array}{lr}
+  X^T R^{-1} X  &  X^T R^{-1} Z \\
+  Z^T R^{-1} X  &  Z^T R^{-1} Z + U^{-1}
+  \end{array}
+\right]
+\left[
+  \begin{array}{c}
+  \hat{\beta} \\
+  \hat{u}
+  \end{array}
+\right]
+=
+\left[
+  \begin{array}{c}
+  X^T R^{-1} y \\
+  Z^T R^{-1} y
+  \end{array}
+\right]
+$$
+
+with $R = I * \sigma_e^2$
+
+$$
+\left[
+  \begin{array}{lr}
+  X^T X  &  X^T  Z \\
+  Z^T  X  &  Z^T  Z + \lambda A^{-1}
+  \end{array}
+\right]
+\left[
+  \begin{array}{c}
+  \hat{\beta} \\
+  \hat{u}
+  \end{array}
+\right]
+=
+\left[
+  \begin{array}{c}
+  X^T  y \\
+  Z^T  y
+  \end{array}
+\right]
+$$
+
+with $\lambda = \sigma_e^2 / \sigma_u^2$
+
+
+## Examples
+
+* Sire model
+* Animal model
+* Genomic BLUP

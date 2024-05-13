@@ -44,14 +44,15 @@ tbl_data <- tibble::tibble(`Breeding Value` = vec_u,
 lm_bv_phen <- lm(`Breeding Value` ~ Phenotype, data = tbl_data)
 # plot
 library(ggplot2)
-ggplot(data = tbl_data, 
+p <- ggplot(data = tbl_data, 
        mapping = aes(x = Phenotype,
                      y = `Breeding Value`)) + 
   geom_point() + 
   geom_abline(slope = lm_bv_phen$coefficients[["Phenotype"]],
               intercept = lm_bv_phen$coefficients[["(Intercept)"]],
               colour = "red")
-
+ggsave("bv-phen.pdf", p)
+ggsave("bv-phen.png", p)
 ```
 
 For a new animal $i$ with a phenotypic observation $y_i$, the breeding value can be predicted using the regression line. From that we get
