@@ -1,6 +1,7 @@
 ---
 title: "Applications of Linear Mixed Effects Models"
 author: "Peter von Rohr"
+date: 2024-05-13
 format: beamer
 ---
 
