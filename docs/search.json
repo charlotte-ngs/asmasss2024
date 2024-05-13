@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-13 05:18:40 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-13 07:54:12 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Test exam asm_exam_tsk\nSolution to test exam asm_exam_sol\n\n\n\n\n\nCourse notes 042_rep_model.pdf"
+    "text": "Slides l10_lme_app\n\n\n\n\n\nTest exam asm_exam_tsk\nSolution to test exam asm_exam_sol\n\n\n\n\n\nCourse notes 042_rep_model.pdf"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,21 +137,21 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-13 05:17:50 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-13 07:54:27 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
     "href": "add_info.html#slides",
     "title": "Additional Information",
     "section": "Slides",
-    "text": "Slides\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions\n\n\n5\n2024-04-15\nContrasts\n\n\n6\n2024-04-22\nInteractions\n\n\n7\n2024-04-22\nSimulation\n\n\n8\n2024-04-29\nRepeated Observations\n\n\n9\n2024-05-06\nTypes of Repeated Observations"
+    "text": "Slides\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nLinear Regression\n\n\n3\n2024-03-18\nFixed Linear Effects Models\n\n\n4\n2024-03-25\nEstimable Functions\n\n\n5\n2024-04-15\nContrasts\n\n\n6\n2024-04-22\nInteractions\n\n\n7\n2024-04-22\nSimulation\n\n\n8\n2024-04-29\nRepeated Observations\n\n\n9\n2024-05-06\nTypes of Repeated Observations\n\n\n10\n2024-05-13\nApplications of LME"
   },
   {
     "objectID": "add_info.html#over-head-pictures",
     "href": "add_info.html#over-head-pictures",
     "title": "Additional Information",
     "section": "Over-Head Pictures",
-    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n10\n2024-04-29\nRepeated Observations\n\n\n11\n2024-05-06\nType of Repeated Observations\n\n\n\n\nLatest Changes: 2024-05-06 13:24:07 CEST (pvr)"
+    "text": "Over-Head Pictures\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRegression Residuals\n\n\n3\n2024-03-04\nDerive Regression Line\n\n\n4\n2024-03-11\nMultiple Linear Regression\n\n\n5\n2024-03-18\nFixed Linear Effects Models\n\n\n6\n2024-03-25\nLeast Squares Normal Equations\n\n\n7\n2024-04-08\nEstimable Functions\n\n\n8\n2024-04-15\nContrasts\n\n\n9\n2024-04-22\nInteractions and Simulation\n\n\n10\n2024-04-29\nRepeated Observations\n\n\n11\n2024-05-06\nType of Repeated Observations\n\n\n\n\nLatest Changes: 2024-05-13 07:54:22 CEST (pvr)"
   },
   {
     "objectID": "ohp/20240219_ohp_l01/20240219_ohp_l01.html#ohp-picture-2",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.12.0",
+    "title": "asmasss2024 0.12.2",
     "section": "",
-    "text": "asmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.12.2\n\n\nasmasss2024 0.12.1\n\n\nasmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1404,7 +1404,7 @@
     "href": "my_nb/20240510_facts_lme/20240510_facts_lme.html#prediction-of-breeding-values",
     "title": "Facts about Usage of LME in Livestock Breeding",
     "section": "Prediction of Breeding Values",
-    "text": "Prediction of Breeding Values\nLet us assume for a moment that breeding values can be observed or measured for a group of animals. Furthermore each of these animals also has a phenotypic observation. Then the breeding values \\(u_i\\) and the phenotypic observations \\(y_i\\) can be plotted in a coordinate system where the breeding values are shown on the ordinate. For a given number of animals this might look as follows\n\nset.seed(1205)\nn_mu_u &lt;- 9.3\nn_sd_u &lt;- 1.7\nn_mu_y &lt;- 12.4\nn_h2 &lt;- 0.36\nn_sd_y &lt;- n_sd_u / sqrt(n_h2)\nn_nr_ani &lt;- 10\nvec_y &lt;- rnorm(n_nr_ani, mean = n_mu_y, sd = n_sd_y)\nvec_u &lt;- n_h2 * vec_y + rnorm(n_nr_ani, sd = 0.2)\nvec_u &lt;- vec_u - mean(vec_u) + n_mu_u\ntbl_data &lt;- tibble::tibble(`Breeding Value` = vec_u,\n                           Phenotype = vec_y)\nlm_bv_phen &lt;- lm(`Breeding Value` ~ Phenotype, data = tbl_data)\n# plot\nlibrary(ggplot2)\nggplot(data = tbl_data, \n       mapping = aes(x = Phenotype,\n                     y = `Breeding Value`)) + \n  geom_point() + \n  geom_abline(slope = lm_bv_phen$coefficients[[\"Phenotype\"]],\n              intercept = lm_bv_phen$coefficients[[\"(Intercept)\"]],\n              colour = \"red\")\n\n\n\n\n\n\n\n\nFor a new animal \\(i\\) with a phenotypic observation \\(y_i\\), the breeding value can be predicted using the regression line. From that we get\n\\[\\widehat{u_i} = \\mu_u + b * (y_i - \\mu_y)\\]\nwith \\(\\mu_u\\), the mean or the expected value of \\(u\\), similarly for \\(\\mu_y\\). The regression coefficient \\(b\\) is computed as\n\\[b = \\frac{cov(u,y)}{var(y)}\\]\nLooking at this prediction process from the point of view of distributions and assuming that \\(y\\) and \\(u\\) are normally distributed, then the above regression equation corresponds to the conditional expectation of \\(u\\) given \\(y\\) interpreted as a function of \\(y\\). Hence\n\\[\\widehat{u_i} = E(u_i | y_i) = E(u_i) + \\frac{cov(u_i, y_i)}{var(y_i)} * (y_i - E(y_i))\\]"
+    "text": "Prediction of Breeding Values\nLet us assume for a moment that breeding values can be observed or measured for a group of animals. Furthermore each of these animals also has a phenotypic observation. Then the breeding values \\(u_i\\) and the phenotypic observations \\(y_i\\) can be plotted in a coordinate system where the breeding values are shown on the ordinate. For a given number of animals this might look as follows\n\nset.seed(1205)\nn_mu_u &lt;- 9.3\nn_sd_u &lt;- 1.7\nn_mu_y &lt;- 12.4\nn_h2 &lt;- 0.36\nn_sd_y &lt;- n_sd_u / sqrt(n_h2)\nn_nr_ani &lt;- 10\nvec_y &lt;- rnorm(n_nr_ani, mean = n_mu_y, sd = n_sd_y)\nvec_u &lt;- n_h2 * vec_y + rnorm(n_nr_ani, sd = 0.2)\nvec_u &lt;- vec_u - mean(vec_u) + n_mu_u\ntbl_data &lt;- tibble::tibble(`Breeding Value` = vec_u,\n                           Phenotype = vec_y)\nlm_bv_phen &lt;- lm(`Breeding Value` ~ Phenotype, data = tbl_data)\n# plot\nlibrary(ggplot2)\np &lt;- ggplot(data = tbl_data, \n       mapping = aes(x = Phenotype,\n                     y = `Breeding Value`)) + \n  geom_point() + \n  geom_abline(slope = lm_bv_phen$coefficients[[\"Phenotype\"]],\n              intercept = lm_bv_phen$coefficients[[\"(Intercept)\"]],\n              colour = \"red\")\nggsave(\"bv-phen.pdf\", p)\n\nSaving 7 x 5 in image\n\nggsave(\"bv-phen.png\", p)\n\nSaving 7 x 5 in image\n\n\nFor a new animal \\(i\\) with a phenotypic observation \\(y_i\\), the breeding value can be predicted using the regression line. From that we get\n\\[\\widehat{u_i} = \\mu_u + b * (y_i - \\mu_y)\\]\nwith \\(\\mu_u\\), the mean or the expected value of \\(u\\), similarly for \\(\\mu_y\\). The regression coefficient \\(b\\) is computed as\n\\[b = \\frac{cov(u,y)}{var(y)}\\]\nLooking at this prediction process from the point of view of distributions and assuming that \\(y\\) and \\(u\\) are normally distributed, then the above regression equation corresponds to the conditional expectation of \\(u\\) given \\(y\\) interpreted as a function of \\(y\\). Hence\n\\[\\widehat{u_i} = E(u_i | y_i) = E(u_i) + \\frac{cov(u_i, y_i)}{var(y_i)} * (y_i - E(y_i))\\]"
   },
   {
     "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html#generalisation",
@@ -1433,5 +1433,12 @@
     "title": "About",
     "section": "",
     "text": "Test exam asm_exam_tsk\nSolution to test exam asm_exam_sol"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.12.2",
+    "href": "about.html#asmasss2024-0.12.2",
+    "title": "About",
+    "section": "",
+    "text": "Slides l10_lme_app"
   }
 ]

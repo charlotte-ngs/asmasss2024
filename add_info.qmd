@@ -11,7 +11,7 @@ Further information
 #| echo: false
 #| results: asis
 s_sl_url <- "https://charlotte-ngs.github.io/asmasss2024/slides/"
-tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9),
+tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
                          Date = c("2024-02-19",
                                   "2024-02-26",
                                   "2024-03-18",
@@ -20,7 +20,8 @@ tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9),
                                   "2024-04-22",
                                   "2024-04-22",
                                   "2024-04-29",
-                                  "2024-05-06"),
+                                  "2024-05-06",
+                                  "2024-05-13"),
                          Topic = c(
                            paste0("[Introduction](", 
                                   s_sl_url, 
@@ -56,6 +57,10 @@ tbl_slides <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9),
                            paste0("[Types of Repeated Observations](",
                                   s_sl_url,
                                   "l09_rep_obs/l09_rep_obs.pdf)",
+                                  collapse = ""),
+                           paste0("[Applications of LME](",
+                                  s_sl_url, 
+                                  "l10_app_lme/l10_app_lme.pdf)",
                                   collapse = "")
                          ))
 knitr::kable(tbl_slides)
