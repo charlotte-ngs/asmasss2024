@@ -9,7 +9,7 @@ List of solutions to exercises
 #| echo: false
 #| results: asis
 s_sol_url <- "https://charlotte-ngs.github.io/asmasss2024/solutions/"
-tbl_sol <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8),
+tbl_sol <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8, 9),
                          Date = c("2024-02-19",
                                   "2024-02-26",
                                   "2024-03-11",
@@ -17,7 +17,8 @@ tbl_sol <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8),
                                   "2024-04-08",
                                   "2024-04-29",
                                   "2024-04-29",
-                                  "2024-05-06"),
+                                  "2024-05-06",
+                                  "2024-05-13"),
                          Topic = c(
                            paste0("Introduction [html](", 
                                   s_sol_url,
@@ -66,6 +67,16 @@ tbl_sol <- tibble::tibble(Nr = c(1, 2, 3, 4, 5, 6, 7, 8),
                                   "asm_sol08/asm_sol08.html) | [pdf](",
                                   s_sol_url,
                                   "asm_sol08/asm_sol08.pdf)",
+                                  collapse = ""),
+                           paste0("Repeated Observations [html](",
+                                  s_sol_url,
+                                  "asm_sol09/asm_sol09.html) | [pdf](",
+                                  s_sol_url,
+                                  "asm_sol09/asm_sol09.pdf)",
+                                  collapse = ""),
+                           paste0("Test Exam [pdf](",
+                                  s_sol_url,
+                                  "asm_test_sol/asm_exam_sol.pdf)",
                                   collapse = "")
                          ))
 knitr::kable(tbl_sol)
