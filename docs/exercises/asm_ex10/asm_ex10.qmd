@@ -1,0 +1,159 @@
+---
+title: "Applied Statistical Methods - Exercise 10"
+author: "Peter von Rohr"
+date: 2024-05-13
+filters: 
+  - webr
+webr:
+  packages: ['Matrix', 'lme4', 'pedigreemm']
+---
+
+## Problem 1: Sire Model
+
+```{r}
+#| label: ex10-p01-setup
+#| echo: false
+s_ex10_p01_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_ped_sim_data.csv"
+# variance components
+sigma_u2 <- 9
+sigma_s2 <- sigma_u2 / 4
+sigma_e2 <- 36
+```
+
+Use the dataset available from the address shown below to predict sire-breeding values using a sire model.
+
+```{r}
+#| echo: false
+#| results: asis
+cat(s_ex10_p01_data_path, "\n")
+```
+
+
+### Hints
+
+* The variance component $\sigma_s^2$ of the sire effect can be assumed to be  $`r sigma_s2`$.
+* The variance component $\sigma_e^2$ of the random resiudals is $`r sigma_e2`$.
+* Sex is modelled as a fixed effect.
+* The inverse sire relationship matrix can be computed using the function `getAInv()` from the `pedigreemm` package.
+
+
+### Solution
+
+#### Specify the model
+
+$$y = ...$$
+with vectors 
+
+* $y$ of length $n$ containing known phenotypic observations
+* $b$ of length $p$ containing unknown fixed effects
+* $s$ of length $q$ containing unknown random sire breeding values
+* $e$ of length $n$ containing unknown random residuals
+
+Known design matrices 
+
+* $X$ of dimension $n\times p$ linking fixed effects to observations and 
+* $Z$ of dimension $n\times q$ linking random breeding values to observations
+
+The expected values and co-variance matrices of the random effects are 
+
+$$E\left[\begin{array}{c} y \\ s \\ e \end{array}\right] =  \left[\begin{array}{c}  \\  \\  \end{array}\right]$$
+
+$$var\left[\begin{array}{c} y \\ s \\ e \end{array}\right] = \left[\begin{array}{ccc}   &    &  \\   &    &  \\    &    &  \end{array}\right]$$
+
+with $R = $, $G_s = $ and $V = $. 
+
+
+#### Read the data
+
+```{webr-r}
+# read data to data.frame
+
+```
+
+* Inverse Sire Relationship Matrix
+
+```{webr-r}
+#| message: false
+#| warning: false
+# construct vector of all sires
+
+# get sire of sires
+
+# specify sire pedigree with pedigreemm
+
+# inverse sire relationship matrix
+
+```
+
+#### Setup mixed model equations
+
+$$
+\left[ 
+\begin{array}{cc}
+  &   \\
+  &  
+\end{array}
+\right]
+\left[ 
+\begin{array}{c}
+ \\
+
+\end{array}
+\right]
+= 
+\left[ 
+\begin{array}{c}
+ \\
+
+\end{array}
+\right]
+$$
+
+
+Get the known components from the data into the mixed-model equations
+
+* Design matrix $X$
+
+```{webr-r}
+# matrix X
+
+```
+
+* Design matrix $Z$
+
+```{webr-r}
+# matrix Z
+
+```
+
+* Variance ration $\lambda_s = \sigma_e^2/\sigma_s^2$
+
+```{webr-r}
+# variance components
+
+# lambda
+
+```
+
+* Mixed model equations
+
+```{webr-r}
+# coefficient matrix
+
+# right-hand side
+
+# solutions
+
+```
+
+
+#### Interpretation of Results
+
+The first two numbers of the solutions correspond to estimates $\widehat{b}$ which contains the intercept and the difference between group means of sex `f` and `m`. The remaining numbers in the solutions are the predicted breeding values of the three sires `1`, `2` and `8`. At this point the numeric values of the predicted breeding values are not interesting. What we are interested is the ranking of the sires according to the breeding values. This is obtained by
+
+```{webr-r}
+# order sires according to predicted breeding values
+
+```
+
+
