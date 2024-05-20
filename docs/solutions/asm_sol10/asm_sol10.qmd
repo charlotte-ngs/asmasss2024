@@ -42,6 +42,7 @@ cat(s_ex10_p01_data_path, "\n")
 #### Specify the model
 
 $$y = Xb + Zs + e$$
+
 with vectors 
 
 * $y$ of length $n$ containing known phenotypic observations
