@@ -17,6 +17,12 @@ s_app_url <- s_cn_url
 
 # asmas -- ss2024: Week 12
 
+## asmasss2024 0.12.5
+
+* Exercise [asm_ex11](`r paste(s_ex_url, "asm_ex11/asm_ex11.html", collapse = "")`)
+* Solution [asm_sol11](`r paste0(s_sol_url, "asm_sol11/asm_sol11.html", collapse = "")`)
+
+
 ## asmasss2024 0.12.4
 
 * Exercise [asm_ex10](`r paste(s_ex_url, "asm_ex10/asm_ex10.html", collapse = "")`)

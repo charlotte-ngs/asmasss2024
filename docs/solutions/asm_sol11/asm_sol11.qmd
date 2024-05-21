@@ -1,0 +1,191 @@
+---
+title: "Applied Statistical Methods - Solution 11"
+author: "Peter von Rohr"
+date: 2024-05-20
+filters: 
+  - webr
+webr:
+  packages: ['Matrix', 'lme4', 'pedigreemm']
+---
+
+
+## Problem 1: Animal Model
+
+
+```{r}
+#| label: ex10-p01-setup
+#| echo: false
+s_ex10_p01_data_path <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_ped_sim_data.csv"
+# variance components
+sigma_u2 <- 9
+sigma_e2 <- 36
+```
+
+Use the same dataset as in Exercise 10 for the sire model and predict breeding values for all animals in the dataset using an animals model. The dataset is available at 
+
+```{r}
+#| echo: false
+#| results: asis
+cat(s_ex10_p01_data_path, "\n")
+```
+
+
+### Hints
+
+* The variance component $\sigma_u^2$ of the sire effect can be assumed to be  $`r sigma_u2`$.
+* The variance component $\sigma_e^2$ of the random resiudals is $`r sigma_e2`$.
+* Sex is modelled as a fixed effect.
+* The inverse sire relationship matrix can be computed using the function `getAInv()` from the `pedigreemm` package.
+
+
+### Solution
+
+#### Specify the model
+
+$$y = Xb + Zu + e$$
+
+with vectors 
+
+* $y$ of length $n$ containing known phenotypic observations
+* $b$ of length $p$ containing unknown fixed effects
+* $u$ of length $q$ containing unknown random breeding values for all animals
+* $e$ of length $n$ containing unknown random residuals
+
+Known design matrices 
+
+* $X$ of dimension $n\times p$ linking fixed effects to observations and 
+* $Z$ of dimension $n\times q$ linking random breeding values to observations
+
+The expected values and co-variance matrices of the random effects are 
+
+$$E\left[\begin{array}{c} y \\ u \\ e \end{array}\right] =  \left[\begin{array}{c} Xb \\ 0 \\ 0 \end{array}\right]$$
+
+$$var\left[\begin{array}{c} y \\ u \\ e \end{array}\right] = \left[\begin{array}{ccc} V  &  ZG  &  R\\  GZ^T  &  G  &  0\\  R  &  0  & R \end{array}\right]$$
+
+with $R = I * \sigma_e^2$, $G = A * \sigma_u^2$ and $V = ZGZ^T + R$. 
+
+
+#### Read the data
+
+```{webr-r}
+# read data to data.frame
+s_ex11_p01 <- "https://charlotte-ngs.github.io/asmasss2024/data/asm_ped_sim_data.csv"
+df_lme <- read.table(s_ex11_p01, header = T, sep = ",")
+df_lme
+```
+
+* Inverse Numerator Relationship Matrix
+
+```{webr-r}
+#| message: false
+#| warning: false
+# determine founder animals
+vec_sire <- unique(df_lme$SIRE)
+vec_fnd_sire <- setdiff(vec_sire, df_lme$ID)
+vec_dam <- unique(df_lme$DAM)
+vec_fnd_dam <- setdiff(vec_dam, df_lme$ID)
+vec_fnd <- c(vec_fnd_sire, vec_fnd_dam)
+vec_fnd <- vec_fnd[order(vec_fnd)]
+n_nr_fnd <- length(vec_fnd)
+# define pedigree
+library(pedigreemm)
+ped_am <- pedigree(sire = c(rep(NA, n_nr_fnd), df_lme$SIRE),
+                   dam  = c(rep(NA, n_nr_fnd), df_lme$DAM),
+                   label = as.character(c(vec_fnd, df_lme$ID)))
+# inverse numerator relationship matrix
+mat_A_inv <- as.matrix(getAInv(ped_am))
+mat_A_inv
+```
+
+
+#### Setup mixed model equations
+
+$$
+\left[ 
+\begin{array}{cc}
+X^TX  &  X^TZ \\
+Z^TX  &  Z^TZ + \lambda * A^{-1}
+\end{array}
+\right]
+\left[ 
+\begin{array}{c}
+\hat{b} \\
+\hat{u}
+\end{array}
+\right]
+= 
+\left[ 
+\begin{array}{c}
+X^Ty \\
+Z^Ty
+\end{array}
+\right]
+$$
+
+
+Get the known components from the data into the mixed-model equations
+
+* Design matrix $X$
+
+```{webr-r}
+# matrix X
+mat_X <- model.matrix(P ~ SEX, data = df_lme)
+attr(mat_X, "assign") <- NULL
+attr(mat_X, "contrasts") <- NULL
+dimnames(mat_X) <- NULL
+mat_X
+```
+
+* Design matrix $Z$
+
+```{webr-r}
+# matrix Z
+mat_Z <- model.matrix(P ~ 0 + as.factor(ID), data = df_lme)
+attr(mat_Z, "assign") <- NULL
+attr(mat_Z, "contrasts") <- NULL
+dimnames(mat_Z) <- NULL
+mat_Z <- cbind(matrix(0, nrow = nrow(df_lme), ncol = n_nr_fnd), mat_Z)
+mat_Z
+```
+
+* Variance ration $\lambda_s = \sigma_e^2/\sigma_s^2$
+
+```{webr-r}
+# variance components
+sigma_u2 <- 9
+sigma_e2 <- 36
+# lambda
+n_lambda <- sigma_e2 / sigma_u2
+n_lambda
+```
+
+* Mixed model equations
+
+```{webr-r}
+# coefficient matrix
+mat_xtx <- crossprod(mat_X)
+mat_xtz <- crossprod(mat_X, mat_Z)
+mat_ztx <- t(mat_xtz)
+mat_ztz_lam_a_inv <- crossprod(mat_Z) + n_lambda * mat_A_inv
+mat_coef <- rbind(cbind(mat_xtx, mat_xtz), 
+                  cbind(mat_ztx, mat_ztz_lam_a_inv))
+# right-hand side
+mat_rhs <- rbind(crossprod(mat_X, df_lme$P), 
+                 crossprod(mat_Z, df_lme$P))
+# solutions
+mat_sol <- solve(mat_coef, mat_rhs)
+mat_sol
+```
+
+
+#### Results
+The first two numbers of the solutions correspond to estimates $\widehat{b}$ which contains the intercept and the difference between group means of sex `f` and `m`. The remaining numbers in the solutions are the predicted breeding values of all animals in the dataset. At this point the numeric values of the predicted breeding values are not interesting. What we are interested is the ranking of the animals according to the breeding values. This is obtained by
+
+```{webr-r}
+# get order of animals according to predicted breeding values
+vec_ani_pbv <- mat_sol[3:nrow(mat_sol),1]
+vec_ani_pbv[order(vec_ani_pbv, decreasing = T)]
+```
+
+
+
