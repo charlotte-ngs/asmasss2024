@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-20 07:24:18 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-21 06:39:06 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Exercise asm_ex10\nSolution asm_sol10\n\n\n\n\n\nOHP ohp_l12\n\n\n\n\n\nSlides l10_lme_app\n\n\n\n\n\nTest exam asm_exam_tsk\nSolution to test exam asm_exam_sol\n\n\n\n\n\nCourse notes 042_rep_model.pdf"
+    "text": "Exercise asm_ex11\nSolution asm_sol11\n\n\n\n\n\nExercise asm_ex10\nSolution asm_sol10\n\n\n\n\n\nOHP ohp_l12\n\n\n\n\n\nSlides l10_lme_app\n\n\n\n\n\nTest exam asm_exam_tsk\nSolution to test exam asm_exam_sol\n\n\n\n\n\nCourse notes 042_rep_model.pdf"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -67,7 +67,7 @@
     "href": "solutions.html",
     "title": "Solutions",
     "section": "",
-    "text": "List of solutions to exercises\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction html | pdf\n\n\n2\n2024-02-26\nRead Data html | pdf\n\n\n3\n2024-03-11\nSimple Linear Regression html | pdf\n\n\n4\n2024-03-18\nMatrix-Vector-Notation html | pdf\n\n\n5\n2024-04-08\nGenomic Regression html | pdf\n\n\n6\n2024-04-29\nFixed Linear Effects Model html | pdf\n\n\n7\n2024-04-29\nContrasts html | pdf\n\n\n8\n2024-05-06\nInteractions and Simulation html | pdf\n\n\n9\n2024-05-13\nRepeated Observations html | pdf\n\n\n10\n2024-05-13\nTest Exam pdf\n\n\n11\n2024-05-20\nSire Model html | pdf\n\n\n\n\nLatest Changes: 2024-05-20 07:27:50 CEST (pvr)"
+    "text": "List of solutions to exercises\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction html | pdf\n\n\n2\n2024-02-26\nRead Data html | pdf\n\n\n3\n2024-03-11\nSimple Linear Regression html | pdf\n\n\n4\n2024-03-18\nMatrix-Vector-Notation html | pdf\n\n\n5\n2024-04-08\nGenomic Regression html | pdf\n\n\n6\n2024-04-29\nFixed Linear Effects Model html | pdf\n\n\n7\n2024-04-29\nContrasts html | pdf\n\n\n8\n2024-05-06\nInteractions and Simulation html | pdf\n\n\n9\n2024-05-13\nRepeated Observations html | pdf\n\n\n10\n2024-05-13\nTest Exam pdf\n\n\n11\n2024-05-20\nSire Model html | pdf\n\n\n12\n2024-05-20\nAnimal Model html | pdf\n\n\n\n\nLatest Changes: 2024-05-21 06:39:22 CEST (pvr)"
   },
   {
     "objectID": "course_notes.html",
@@ -88,7 +88,7 @@
     "href": "exercises.html",
     "title": "Exercises",
     "section": "",
-    "text": "List of exercises\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRead Data\n\n\n3\n2024-03-11\nLinear Regression\n\n\n4\n2024-03-18\nMatrix-Vector-Notation\n\n\n5\n2024-04-08\nGenomic Regression\n\n\n6\n2024-04-15\nFixed Linear Effects Model\n\n\n7\n2024-04-15\nContrasts\n\n\n8\n2024-04-29\nInteractions and Simulation\n\n\n9\n2024-05-06\nRepeated Observations\n\n\n10\n2024-05-13\nTest Exam\n\n\n11\n2024-05-20\nSire Model\n\n\n\n\nLatest Changes: 2024-05-20 07:23:25 CEST (pvr)"
+    "text": "List of exercises\n\n\n\nNr\nDate\nTopic\n\n\n\n\n1\n2024-02-19\nIntroduction\n\n\n2\n2024-02-26\nRead Data\n\n\n3\n2024-03-11\nLinear Regression\n\n\n4\n2024-03-18\nMatrix-Vector-Notation\n\n\n5\n2024-04-08\nGenomic Regression\n\n\n6\n2024-04-15\nFixed Linear Effects Model\n\n\n7\n2024-04-15\nContrasts\n\n\n8\n2024-04-29\nInteractions and Simulation\n\n\n9\n2024-05-06\nRepeated Observations\n\n\n10\n2024-05-13\nTest Exam\n\n\n11\n2024-05-20\nSire Model\n\n\n12\n2024-05-20\nAnimal Model\n\n\n\n\nLatest Changes: 2024-05-21 06:39:21 CEST (pvr)"
   },
   {
     "objectID": "exercises/asm_ex01/asm_ex01.html",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-20 07:24:00 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-21 06:39:19 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.12.4",
+    "title": "asmasss2024 0.12.5",
     "section": "",
-    "text": "asmasss2024 0.12.4\n\n\nasmasss2024 0.12.3\n\n\nasmasss2024 0.12.2\n\n\nasmasss2024 0.12.1\n\n\nasmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.12.5\n\n\nasmasss2024 0.12.4\n\n\nasmasss2024 0.12.3\n\n\nasmasss2024 0.12.2\n\n\nasmasss2024 0.12.1\n\n\nasmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1608,5 +1608,12 @@
     "title": "About",
     "section": "",
     "text": "Exercise asm_ex10\nSolution asm_sol10"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.12.5",
+    "href": "about.html#asmasss2024-0.12.5",
+    "title": "About",
+    "section": "",
+    "text": "Exercise asm_ex11\nSolution asm_sol11"
   }
 ]
