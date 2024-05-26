@@ -1,0 +1,140 @@
+---
+title: "Exam in Applied Statistical Methods"
+date: 2024-05-27
+---
+
+The following statements can be used to read the datasets for the exam.
+
+
+## Problem 1: Linear Regression
+
+### Dataframe
+```{r}
+#| label: asm_exam_p1_read_data_df
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p1 <- file.path(s_data_url_root, "asm_exam_2024_p01.csv")
+df_p1 <- read.table(s_data_url_p1, header = T, sep = ",")
+dim(df_p1)
+```
+
+
+### Tibble
+```{r}
+#| label: asm_exam_p1_read_data_tbl
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p1 <- file.path(s_data_url_root, "asm_exam_2024_p01.csv")
+tbl_p1 <- readr::read_delim(file = s_data_url_p1, delim = ",")
+dim(tbl_p1)
+```
+
+
+## Problem 2: Fixed Linear Effects Model
+
+### Dataframe
+```{r}
+#| label: asm_exam_p2_read_data_df
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p2 <- file.path(s_data_url_root, "asm_exam_2024_p02.csv")
+df_p2 <- read.table(s_data_url_p2, header = T, sep = ",")
+dim(df_p2)
+```
+
+### Tibble
+```{r}
+#| label: asm_exam_p2_read_data_tbl
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p2 <- file.path(s_data_url_root, "asm_exam_2024_p02.csv")
+tbl_p2 <- readr::read_delim(file = s_data_url_p2, delim = ",")
+dim(tbl_p2)
+```
+
+## Problem 3: Interactions
+
+### Dataframe
+```{r}
+#| label: asm_exam_p3_read_data_df
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p3 <- file.path(s_data_url_root, "asm_exam_2024_p03.csv")
+df_p3 <- read.table(s_data_url_p3, header = T, sep = ",")
+dim(df_p3)
+```
+
+### Tibble
+```{r}
+#| label: asm_exam_p3_read_data_tbl
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p3 <- file.path(s_data_url_root, "asm_exam_2024_p03.csv")
+tbl_p3 <- readr::read_delim(file = s_data_url_p3, delim = ",")
+dim(tbl_p3)
+```
+
+
+## Problem 4: Contrasts
+
+### Dataframe
+```{r}
+#| label: asm_exam_p4_read_data_df
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p4 <- file.path(s_data_url_root, "asm_exam_2024_p04.csv")
+df_p4 <- read.table(s_data_url_p4, header = T, sep = ",")
+dim(df_p4)
+```
+
+### Tibble
+```{r}
+#| label: asm_exam_p4_read_data_tbl
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p4 <- file.path(s_data_url_root, "asm_exam_2024_p04.csv")
+tbl_p4 <- readr::read_delim(file = s_data_url_p4, delim = ",")
+dim(tbl_p4)
+```
+
+
+## Problem 5: Linear Mixed Effects Models
+
+### Dataframe
+```{r}
+#| label: asm_exam_p5_read_data_df
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p5 <- file.path(s_data_url_root, "asm_exam_2024_p05.csv")
+df_p5 <- read.table(s_data_url_p5, header = T, sep = ",")
+dim(df_p5)
+```
+
+### Tibble
+```{r}
+#| label: asm_exam_p5_read_data_tbl
+#| eval: true
+#| message: false
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+s_data_url_p5 <- file.path(s_data_url_root, "asm_exam_2024_p05.csv")
+tbl_p5 <- readr::read_delim(file = s_data_url_p5, delim = ",")
+dim(tbl_p5)
+```
+
+
+```{r}
+#| label: latest-change
+#| echo: false
+#| results: asis
+cat(rmdhelp::get_latest_change())
+```
+

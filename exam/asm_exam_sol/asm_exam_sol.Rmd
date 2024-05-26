@@ -1,0 +1,1250 @@
+---
+output:
+  bookdown::pdf_document2:
+    includes:
+      in_header: tex/header.tex
+    fig_caption: no
+    keep_tex: no
+    toc: no
+    number_sections: no
+bibliography: bibliography.bib  
+output_file: asm_exam_sol.pdf
+params:
+  seed: 2405
+  name: "von Rohr"
+  firstname: Peter
+  leginr: "88-918-123"
+  examdate: "2024-05-27"
+  alias: test
+--- 
+<!-- %\usepackage{fancyhdr} -->
+
+\newcommand{\points}[1]
+{\begin{flushright}\textbf{#1}\end{flushright}}
+
+<!-- %\begin{document} -->
+<!-- %\SweaveOpts{concordance=TRUE} -->
+```{r ChunkOptions, echo=FALSE}
+# knitr::opts_chunk$set(echo = FALSE, results = 'hide')
+#knitr::opts_chunk$set(concordance=TRUE)
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
+# references
+met <- rmdhelp::MendeleyExportToolR6$new(ps_this_rmd_file = ifelse(rstudioapi::isAvailable(),
+    rstudioapi::getActiveDocumentContext()$path, whereami::thisfile()))
+# write the parameters to file
+b_params_to_file <- FALSE
+# check whether seed is set and output it to a file
+s_this_rmd_file = basename(ifelse(rstudioapi::isAvailable(), 
+                         rstudioapi::getSourceEditorContext()$path, 
+                         whereami::thisfile()))
+if (is.null(params$seed)){
+  stop(" ** Error parameter seed has not been set.")
+} else {
+  set.seed(params$seed)
+  s_params_file <- paste0(format(Sys.time(), '%Y%m%d%H%M%S'), "_params_", s_this_rmd_file, ".txt", collapse = "")
+  if (b_params_to_file) dput(params, file = s_params_file)
+}
+```
+
+```{r PointsQ1, echo=FALSE}
+# Assign Points for Q1
+lPointsQ1 <- list(TaskA = 10,
+                  TaskB = 6,
+                  TaskC = 4,
+                  TaskD = 2)
+nPointQ1Total <- sum(unlist(lPointsQ1))
+```
+
+```{r PointsQ2, echo=FALSE}
+# Assign Points for Q2
+lPointsQ2 <- list(TaskA = 6,
+                  TaskB = 6,
+                  TaskC = 6,
+                  TaskD = 0)
+nPointQ2Total <- sum(unlist(lPointsQ2))
+```
+
+```{r PointsQ3, echo=FALSE}
+# Assign Points for Q3
+lPointsQ3 <- list(TaskA = 6,
+                  TaskB = 6,
+                  TaskC = 0,
+                  TaskD = 0)
+nPointQ3Total <- sum(unlist(lPointsQ3))
+```
+
+```{r PointsQ4, echo=FALSE}
+# Assign Points for Q4
+lPointsQ4 <- list(TaskA = 8,
+                  TaskB = 8,
+                  TaskC = 0,
+                  TaskD = 0)
+nPointQ4Total <- sum(unlist(lPointsQ4))
+```
+
+```{r PointsQ5, echo=FALSE}
+# Assign Points for Q4
+lPointsQ5 <- list(TaskA = 20,
+                  TaskB = 20,
+                  TaskC = 0,
+                  TaskD = 0)
+nPointQ5Total <- sum(unlist(lPointsQ5))
+```
+
+```{r PointsTotal, echo=FALSE}
+nPointOverallTotal <- nPointQ1Total + nPointQ2Total + nPointQ3Total + nPointQ4Total + nPointQ5Total
+```
+
+
+\thispagestyle{empty}
+
+\fcolorbox{white}{white}{
+	\centering \parbox[t]{1.0\linewidth}{
+		\fontsize{12pt}{20pt}\selectfont % 
+		\vspace*{0.5cm} % 
+
+   	Peter von Rohr \\ Institute of Agricultural Sciences\\ D-USYS\\ ETH Zurich
+
+		\vspace*{0.5cm} 
+	}
+}
+
+\vspace*{2cm}
+
+\fcolorbox{white}{white}{
+	\parbox[t]{1.0\linewidth}{
+		\centering \fontsize{25pt}{40pt}\selectfont %
+		\vspace*{0.2cm}
+		 751-7602-00 V \\
+     Solutions for Exam in    \\
+     Applied Statistical Methods \\
+     in Animal Sciences \\
+     Spring Semester 2024
+
+		\vspace*{0.7cm} % Space between the end of the title and the bottom of the grey box
+	}
+}
+
+
+\vspace*{0.5cm}
+
+<!-- % Table with Name -->
+\begin{tabular}{p{3cm}p{6cm}}
+Date:     &  `r params$examdate` \\
+          &  \\
+          &  \\
+Name:     &  \\
+          &  \\
+          &  \\
+Legi-Nr:  &  \\
+\end{tabular}
+
+<!-- % Table with Points -->
+
+\vspace{3ex}
+\begin{center}
+\begin{tabular}{|p{3cm}|c|c|}
+\hline
+Problem  &  Maximum Number of Points  &  Number of Points Reached\\
+\hline
+1        &  `r nPointQ1Total`  & \\
+\hline
+2        &  `r nPointQ2Total`  & \\
+\hline
+3        &  `r nPointQ3Total`  & \\
+\hline
+4        &  `r nPointQ4Total`  & \\
+\hline
+5        &  `r nPointQ5Total`  & \\
+\hline
+Total    &  `r nPointOverallTotal` & \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{0.25cm}
+
+\textit{Questions in German are in italics}
+
+\clearpage
+\pagebreak
+
+```{r, asm_exam_general_setup, echo=FALSE}
+s_data_url_root <- "https://charlotte-ngs.github.io/asmasss2024/data"
+```
+
+
+
+# Problem 1: Linear Regression
+```{r prob01-setup, echo=FALSE, message=FALSE, warning=FALSE}
+n_dim_start <- 20
+n_dim_end <- 50
+s_p01_path <- file.path(s_data_url_root, "asm_exam_2024_p01.csv")
+tbl_p01 <- readr::read_delim(s_p01_path, delim = ",")
+n_nr_obs_p01 <- nrow(tbl_p01)
+```
+
+According to Figure 1 of `r met$add("Chen2023b")` the concentration of citrate in milk between days in milk (DIM) `r n_dim_start` and `r n_dim_end` can be modeled by a linear regression. The dataset shown below contains measurements of `r n_nr_obs_p01` cows with their respective days in milk. 
+
+\textit{Gemäss Abbildung 1 von (Chen et al. 2023) kann die Zitratkonzentration in der Milch zwischen DIM `r n_dim_start` und `r n_dim_end` mit einer linearen Regression modelliert werden. Der nachfolgend gezeigte Datensatz enthält Beobachtungen von `r n_nr_obs_p01`  Kühen.}
+
+
+```{r tbl_p01_shown, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(tbl_p01, booktabs = T, longtable = T)
+```
+
+The dataset is available from 
+
+```{r, echo=FALSE}
+cat(s_p01_path, "\n")
+```
+
+
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[a)] Write down the linear regression model in matrix-vector notation. List the meaning of all vectors and matrices used in the model. Furthermore, insert all information known from the dataset into the known components of the dataset.
+
+\textit{Geben Sie das lineare Regressionmodell als Gleichung in Matrix-Vektor-Notation an. Spezifizieren Sie alle verwendeten Vektoren und Matrizen im Modell. Die bekannten Grössen aus dem Datensatz soll in die bekannten Komponenten des Modells eingesetzt werden.}
+
+
+\end{enumerate}
+\points{`r lPointsQ1$TaskA`}
+
+
+## Solution
+
+The regression model is given as 
+
+$$y = Xb + e$$
+
+where vectors 
+
+* $y$: vector of length $n=`r n_nr_obs_p01`$ with known observations of the response variable
+* $b$: vector of length $p=2$ with unknown effects (intercept and slope)
+* $e$: vector of length $n=`r n_nr_obs_p01`$ with unknown random residuals
+
+and Matrix $X$ of dimension $n\times p$ contains a column of all ones and the column with DIM values.
+
+The known components are $y$ and $X$ and they can be specified by the information from the dataset
+
+```{r, echo=FALSE, results='asis'}
+vec_y <- tbl_p01$Citrate
+mat_X <- model.matrix(Citrate ~ DIM, data = tbl_p01)
+attr(mat_X, "assign") <- NULL
+colnames(mat_X) <- NULL
+# output
+cat("$$\n")
+cat(paste0(rmdhelp::bcolumn_vector(pvec = vec_y, ps_name = "y"), collapse = "\n"), "\n")
+cat(" \\text{, } \n")
+cat(paste0(rmdhelp::bmatrix(pmat = mat_X, ps_name = "X"), collapse = "\n"), "\n")
+cat("$$\n")
+```
+
+
+\clearpage
+\pagebreak
+
+\begin{enumerate}
+\item[b)] Fit a linear regression model with Citrate as response variable using the `lm()` function in R. Specify the estimates obtained by the model fit for the following components
+
+\begin{itemize}
+\item slope
+\item  intercept
+\item  residual variance
+\end{itemize}
+
+\textit{Passen Sie ein lineares Regressionsmodell mit Zitratkonzentration als Zielgrösse an. Verwenden Sie dazu die Funktion `lm()` in R. Geben Sie die erhaltenen Schätzwerte für die folgenden Komponenten an}
+
+\begin{itemize}
+\item \textit{die Steigung},
+\item \textit{der Achsenabschnitt und }
+\item \textit{die Varianz der Residuen}
+\end{itemize}
+
+
+\end{enumerate}
+\points{`r lPointsQ1$TaskB`}
+
+
+
+## Solution 
+
+The linear regression model fit is given by
+
+```{r}
+lm_cit_dim <- lm(Citrate ~ DIM, data = tbl_p01)
+smry_lm_cit_dim <- summary(lm_cit_dim)
+smry_lm_cit_dim
+```
+
+The estimates for the quantities asked in the problem are listed in the following table
+
+```{r, echo=FALSE}
+tbl_est_p1 <- tibble::tibble(Quantity = c("Slope", "Intercept", "Variance of Residuals"),
+                             Estimate = c(smry_lm_cit_dim$coefficients["DIM", "Estimate"],
+                                          smry_lm_cit_dim$coefficients["(Intercept)", "Estimate"],
+                                          smry_lm_cit_dim$sigma^2)
+                             )
+knitr::kable(tbl_est_p1,
+             booktabs = TRUE,
+             longtable = TRUE)
+```
+
+
+
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[c)] Which of the two plots reflects the modelling results found under Problem 1b)? If possible insert the following components into the correct plot below
+
+\begin{itemize}
+\item slope
+\item intercept
+\item residual of the data point the the highest citrate concentration
+\end{itemize}
+
+\textit{Welcher der beiden nachfolgend gezeigten Plots spiegelt die unter 1b) gefundenen Modellresultate wieder?}
+
+\begin{itemize}
+\item Steigung
+\item Achsenabschnitt
+\item Residuum des Datenpunktes mit der höchsten Zitratkonzentration
+\end{itemize}
+
+\end{enumerate}
+\points{`r lPointsQ1$TaskC`}
+
+
+```{r cit-dim-empty-p01, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/cit-dim-empty-p01.odg")
+knitr::include_graphics(path = "odg/cit-dim-empty-p01.png")
+```
+
+```{r cit-dim-empty-p02, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/cit-dim-empty-p02.odg")
+knitr::include_graphics(path = "odg/cit-dim-empty-p02.png")
+```
+
+
+
+## Solution 
+The second plot is correct. The following components could be inserted into the plot
+
+\begin{itemize}
+\item slope: inserted as $10*b_1$
+\item intercept: not shown in plot
+\item residual of the data point the the highest citrate concentration: shown as "Residual"
+\end{itemize}
+
+
+```{r cit-dim-inserted, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/cit-dim-inserted.odg")
+knitr::include_graphics(path = "odg/cit-dim-inserted.pdf")
+```
+
+
+\clearpage
+\pagebreak
+
+
+```{r echo=FALSE}
+n_dim_pred_start <- 1
+n_dim_pred_end <- 10
+```
+
+\begin{enumerate}
+\item[d)] Citrate can be used as biomarker for a negative energy balance (NEB). NEB can be problematic in very early stages of the lactation. Hence there is a certain demand in predicting citrate concentration in milk for days in milk between `r n_dim_pred_start` and `r n_dim_pred_end`. Is it possible to use the modelling results found in 1b) to predict citrate concentration for the time span of DIM between `r n_dim_pred_start` and `r n_dim_pred_end`. If yes, how are those citrate concentrations predicted? If no, what is the reason that this is not possible?
+
+\textit{Zitratkonzentration wird als Biomarker für eine negative Energiebilanz (NEB) verwendet. Eine NEB kann zu Beginn einer Laktation zu Problemen führen. Somit besteht ein Bedürfnis die Zitratkonzentration in der Milch für die Zeitperiode von DIM zwischen `r n_dim_pred_start` und `r n_dim_pred_end` vorherzusagen. Ist es möglich die Zitratkonzentration für die Zeitperiode von DIM zwischen `r n_dim_pred_start` und `r n_dim_pred_end` mit den Ergebnissen aus 1b) vorherzusagen? Falls ja, wie würde eine solche Vorhersage gemacht werden? Falls nein, was ist der Grund weshalb eine Vorhersage nicht möglich ist?}
+
+\end{enumerate}
+\points{`r lPointsQ1$TaskD`}
+
+
+## Solution
+
+It is not possible, because DIM between `r n_dim_pred_start` and `r n_dim_pred_end` are outside of the DIM range of the dataset. Figure 1 in `r met$add("Chen2023b")` shows that before DIM `r n_dim_start` the relationship is different from what was modelled in 1b). Hence a prediction of the citrate concentration would be __extrapolation__ which is not allowed here.
+
+
+\clearpage
+\pagebreak
+
+
+# Problem 2: Fixed Linear Effects Model
+```{r prob02-setup, echo=FALSE, message=FALSE, warning=FALSE}
+s_p02_path <- file.path(s_data_url_root, "asm_exam_2024_p02.csv")
+tbl_p02 <- readr::read_delim(s_p02_path, delim = ",")
+n_nr_obs_p02 <- nrow(tbl_p02)
+```
+
+In the dataset below, the influence of the breed on the citrate concentration in milk is investigated. 
+
+\textit{Im nachfolgenden Datensatz soll der Einfluss der Rasse auf die Zitratkonzentration in der Milch untersucht werden.}
+
+```{r tbl-p02-show, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(tbl_p02, booktabs = T, longtable = T)
+```
+
+The dataset is available from
+
+```{r, echo=FALSE}
+cat(s_p02_path, "\n")
+```
+
+
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[a)] Fit a linear fixed effects model to the dataset shown above. Use `Citrate` as response variable, `DIM` as regression predictor and `Breed` as fixed effect.
+
+\textit{Passen Sie ein lineares Modell mit fixen Effekten an den oben gezeigten Datensatz an. Verwenden Sie Citrate als Zielgrösse, DIM als Regressionsvariable und Breed als fixen Effekt.}
+
+
+\end{enumerate}
+\points{`r lPointsQ2$TaskA`}
+
+
+## Solution
+The fixed linear effects model is fitted as follows
+
+```{r}
+lm_cit_dim_br <- lm(Citrate ~ DIM + Breed, data = tbl_p02)
+smry_lm_cit_dim_br <- summary(lm_cit_dim_br)
+smry_lm_cit_dim_br
+```
+
+
+
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[b)] What are the estimates for the following parameters based on the modelling results of 2a)
+
+\begin{itemize}
+\item regression slope
+\item group mean of Citrate for animals of breed BS
+\item group mean of Citrate for animals of breed HO
+\end{itemize}
+
+\textit{Wie lauten die Schätzwerte für die folgenden Parameter aufgrund der Modellresultate}
+
+\begin{itemize}
+\item \textit{Steigung der Regressionsgeraden}
+\item \textit{Gruppenmittel der Tiere der Rasse BS}
+\item \textit{Gruppenmittel der Tiere der Rasse HO}
+\end{itemize}
+
+
+\end{enumerate}
+\points{`r lPointsQ2$TaskB`}
+
+
+
+## Solution
+
+Estimates for the regression slope is: `r smry_lm_cit_dim_br$coefficients["DIM", "Estimate"]`
+
+Group means are determined based on the dataset as check
+
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+tbl_gr_means_p02 <- tbl_p02 %>%
+  group_by(Breed) %>%
+  summarise(GrM_Cit = mean(Citrate),
+            GrM_DIM = mean(DIM))
+tbl_gr_means_p02
+```
+
+Group means based on modelling results for breed `r (cur_breed <- "BS")`
+
+```{r}
+smry_lm_cit_dim_br$coefficients["(Intercept)", "Estimate"] + 
+  tbl_gr_means_p02$GrM_DIM[tbl_gr_means_p02$Breed == cur_breed] * 
+  smry_lm_cit_dim_br$coefficients["DIM", "Estimate"]
+```
+
+Group means based on modelling results for breed `r (cur_breed <- "HO")`
+
+```{r}
+smry_lm_cit_dim_br$coefficients["(Intercept)", "Estimate"] + 
+  tbl_gr_means_p02$GrM_DIM[tbl_gr_means_p02$Breed == cur_breed] * 
+  smry_lm_cit_dim_br$coefficients["DIM", "Estimate"] + 
+  smry_lm_cit_dim_br$coefficients["BreedHO", "Estimate"] 
+```
+
+
+
+\clearpage
+\pagebreak
+
+```{r, echo=FALSE}
+n_dim_pred <- 30
+```
+
+\begin{enumerate}
+\item[c)] What are the expected value for citrate concentration for animals of breed BS and HO at DIM `r n_dim_pred`?
+
+\textit{Wie gross sind die erwarteten Zitratkonzentrationen für Tiere der Rasse BS und HO bei DIM `r n_dim_pred`?}
+
+\end{enumerate}
+\points{`r lPointsQ2$TaskC`}
+
+
+## Solution 
+Expected value of citrate concentration for animals of breed `r (cur_breed <- "BS")`
+
+```{r}
+smry_lm_cit_dim_br$coefficients["(Intercept)", "Estimate"] + 
+  n_dim_pred * smry_lm_cit_dim_br$coefficients["DIM", "Estimate"]
+```
+
+Expected value of citrate concentration for animals of breed `r (cur_breed <- "HO")`
+
+```{r}
+smry_lm_cit_dim_br$coefficients["(Intercept)", "Estimate"] + 
+  n_dim_pred * smry_lm_cit_dim_br$coefficients["DIM", "Estimate"] + 
+  smry_lm_cit_dim_br$coefficients["BreedHO", "Estimate"] 
+```
+
+
+\clearpage
+\pagebreak
+
+
+# Problem 3: Interactions
+```{r prob03-setup, echo=FALSE, message=FALSE, warning=FALSE}
+s_p03_path <- file.path(s_data_url_root, "asm_exam_2024_p03.csv")
+tbl_p03 <- readr::read_delim(s_p03_path, delim = ",")
+n_nr_obs_p03 <- nrow(tbl_p03)
+```
+
+Use the following dataset to fit a fixed linear model assuming that the regression of `Citrate` on `DIM` shows an interaction with the `Breed` factor.
+
+\textit{Verwenden Sie den folgenden Datensatz für die Anpassung eines fixen linearen Modells unter der Annahme, dass die Regression von Citrate auf DIM eine Interaktion mit dem Faktor Breed zeigt.}
+
+```{r tbl-p03-show, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(tbl_p03, booktabs = T, longtable = T)
+```
+
+The dataset is available from
+
+```{r, echo=FALSE}
+cat(s_p03_path, "\n")
+```
+
+
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[a)] Fit a fixed linear effects model including an interaction term between `DIM` and `Breed`. 
+
+\textit{Passen Sie ein fixes lineares Modell an unter Berücksichtigung der Interaktion zwischen DIM und Breed.}
+
+
+\end{enumerate}
+\points{`r lPointsQ3$TaskA`}
+
+
+## Solution
+The fixed linear effects model including an interaction term between `DIM` and `Breed` is fitted to the data by
+
+```{r}
+lm_cit_dim_br_inta <- lm(Citrate ~ DIM * Breed, data = tbl_p03)
+smry_lm_cit_dim_br_inta <- summary(lm_cit_dim_br_inta)
+smry_lm_cit_dim_br_inta
+```
+
+
+\clearpage
+\pagebreak
+
+\begin{enumerate}
+\item[b)] What is the expected difference in citrate concentration in the milk for animals of both breeds (`BS` and `HO`) between DIM `r (n_dim_start_intac <- 30)` and `r (n_dim_end_intac <- 40)`? 
+
+\textit{Was beträgt der erwartete Unterschied in der Zitratkonzentration in der Milch für Tiere der beiden Rassen BS und HO zwischen DIM `r n_dim_start_intac` und `r n_dim_end_intac`?}
+
+
+\end{enumerate}
+\points{`r lPointsQ3$TaskB`}
+
+
+
+## Solution
+The expected difference in citrate concentration in the milk for animals of breed 
+
+* BS corresponds to the regression coefficient times the difference in DIM
+
+```{r}
+n_delta_dim <- n_dim_end_intac - n_dim_start_intac
+n_delta_citr_bs <- smry_lm_cit_dim_br_inta$coefficients["DIM", "Estimate"] * n_delta_dim
+n_delta_citr_bs
+```
+
+
+* HO corresponds to the regression coefficient plus the interaction term times the difference in DIM
+
+```{r}
+n_delta_dim <- n_dim_end_intac - n_dim_start_intac
+n_delta_citr_ho <- (smry_lm_cit_dim_br_inta$coefficients["DIM", "Estimate"] +
+                      smry_lm_cit_dim_br_inta$coefficients["DIM:BreedHO", "Estimate"]) * n_delta_dim
+n_delta_citr_ho
+
+```
+
+<!--
+
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[c)] 
+
+\textit{}
+\end{enumerate}
+\points{`r lPointsQ3$TaskC`}
+
+
+## Solution
+
+-->
+
+\clearpage
+\pagebreak
+
+
+# Problem 4: Contrasts
+```{r prob04-setup, echo=FALSE, message=FALSE, warning=FALSE}
+s_p04_path <- file.path(s_data_url_root, "asm_exam_2024_p04.csv")
+tbl_p04 <- readr::read_delim(s_p04_path, delim = ",")
+n_nr_obs_p04 <- nrow(tbl_p04)
+```
+
+The dataset below is used to fit a fixed linear effects model with `Citrate` as response and `Breed` as fixed effect. 
+
+\textit{Der nachfolgende Datensatz wird für die Anpassung eines fixen linearen Models mit Citrate als Zielgrösse und Breed als fixen Effekt verwendet}
+
+```{r tbl-p04-show, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(tbl_p04, booktabs = T, longtable = T)
+```
+
+The dataset is available from
+
+```{r, echo=FALSE}
+cat(s_p04_path, "\n")
+```
+
+
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[a)] Use `treatement` contrasts to fit a fixed linear model with `Citrate` as response and `Breed` as fixed effect. Verify the obtained `Breed`-effect estimates using appropriate group means of `Citrate` and solutions of the least-squares normal equations.
+
+\textit{Verwenden Sie `treatement` Kontraste für die Anpassung des fixen linearen Modells mit `Citrate` als Zielgrösse und `Breed` als fixen Effekt. Verifizieren Sie die erhaltenen Schätzungen der `Breed`-Effekte anhand der passenden Gruppen-Mittel und anhand von Lösungen der Least-Squares Normalgleichungen.}
+
+
+\end{enumerate}
+\points{`r lPointsQ4$TaskA`}
+
+
+## Solution
+
+Treatment contrasts are used by default by `lm()` when fitting a FLEM. Hence the fit is obtained by 
+
+```{r}
+lm_cit_br <- lm(Citrate ~ Breed, data = tbl_p04)
+smry_lm_cit_br <- summary(lm_cit_br)
+smry_lm_cit_br
+```
+
+Assuming treatment contrasts, verification via group means is done as follows
+
+* Intercept estimate corresponds to the mean of all BS animals
+
+```{r}
+mean(tbl_p04$Citrate[tbl_p04$Breed == "BS"])
+```
+
+This is expected to be the same as 
+
+```{r}
+smry_lm_cit_br$coefficients["(Intercept)", "Estimate"]
+```
+
+* The difference between the group means of HO animals minus the group mean of the BS animals corresponds to the reported breed effect, hence 
+
+```{r}
+mean(tbl_p04$Citrate[tbl_p04$Breed == "HO"]) - mean(tbl_p04$Citrate[tbl_p04$Breed == "BS"])
+```
+
+is expected to be the same as
+
+```{r}
+smry_lm_cit_br$coefficients["BreedHO", "Estimate"]
+```
+
+* The breed effect estimated can also be verified via solutions of the least squares normal equations
+
+```{r}
+mat_X <- model.matrix(Citrate ~ 0 + Breed, tbl_p04)
+attr(mat_X, "assign") <- NULL
+attr(mat_X, "contrasts") <- NULL
+colnames(mat_X) <- NULL
+mat_X <- cbind(matrix(rep(1,nrow(mat_X)), ncol = 1), mat_X)
+mat_xtx <- crossprod(mat_X)
+mat_xtx_ginv <- MASS::ginv(mat_xtx)
+mat_xty <- crossprod(mat_X, tbl_p04$Citrate)
+mat_b_sol <- crossprod(mat_xtx_ginv, mat_xty)
+mat_b_sol
+```
+
+Contrasts matrix for `treatment` contrasts
+
+```{r}
+fac_breed <- as.factor(tbl_p04$Breed)
+contr_mat_breed_treat <- contrasts(fac_breed)
+contr_mat_breed_treat <- cbind(matrix(rep(1,nrow(contr_mat_breed_treat)), ncol = 1), 
+                               contr_mat_breed_treat)
+est_mat_breed_treat <- solve(contr_mat_breed_treat)
+est_mat_breed_treat
+```
+
+For the effects estimates, we are looking at the second and the third row of the matrix `est_mat_breed_treat`. We are prepending a column of zeroes to the second and the third row of `est_mat_breed_treat`.
+
+```{r}
+n_nrow_est_mat <- nrow(est_mat_breed_treat)
+mat_q_efun <- cbind(matrix(0, nrow = (nrow(est_mat_breed_treat)-1), ncol = 1),
+                    matrix(est_mat_breed_treat[2:n_nrow_est_mat,], 
+                           nrow = (nrow(est_mat_breed_treat)-1)))
+crossprod(t(mat_q_efun), mat_b_sol) 
+```
+
+
+
+
+\clearpage
+\pagebreak
+
+\begin{enumerate}
+\item[b)] Use `sum` contrasts to fit a fixed linear model with `Citrate` as response and `Breed` as fixed effect. Verify the obtained `Breed`-effect estimates using appropriate group means of `Citrate` and solutions of the least-squares normal equations.
+
+\textit{Verwenden Sie `sum` Kontraste für die Anpassung des fixen linearen Modells mit `Citrate` als Zielgrösse und `Breed` als fixen Effekt. Verifizieren Sie die erhaltenen Schätzungen der `Breed`-Effekte anhand der passenden Gruppen-Mittel und anhand von Lösungen der Least-Squares Normalgleichungen.}
+
+
+\end{enumerate}
+\points{`r lPointsQ4$TaskB`}
+
+
+
+## Solution
+
+The fixed linear effects model using `sum` contrasts is fitted as shown below
+
+```{r}
+lm_cit_br_csum <- lm(Citrate ~ Breed, data = tbl_p04, contrasts = list(Breed = "contr.sum"))
+smry_lm_cit_br_csum <- summary(lm_cit_br_csum)
+smry_lm_cit_br_csum
+```
+
+* Contrasts Matrix for Sum Contrasts
+From the contrasts matrix, we get the matrix of estimable functions.
+
+```{r}
+fac_breed <- as.factor(tbl_p04$Breed)
+contr_mat_breed_sum <- contrasts(C(fac_breed, sum))
+contr_mat_breed_sum <- cbind(matrix(rep(1,nrow(contr_mat_breed_sum)), ncol = 1), contr_mat_breed_sum)
+est_mat_breed_sum <- solve(contr_mat_breed_sum)
+est_mat_breed_sum
+```
+
+The matrix `est_mat_breed_sum` tells us that the estimate for the intercept (first row) is computed as the mean of the group means for the two breeds and the estimate for the breed effect (second row) is computed as half of the difference between group means for the first breed minus the group mean of the second breed. 
+
+Hence the estimate of the intercept is
+
+```{r}
+mean(c(mean(tbl_p04$Citrate[tbl_p04$Breed == "BS"]),
+       mean(tbl_p04$Citrate[tbl_p04$Breed == "HO"])))
+```
+
+and has to be equal to 
+
+```{r}
+smry_lm_cit_br_csum$coefficients["(Intercept)", "Estimate"]
+```
+
+The estimate for the breed-effect is obtained by
+
+```{r}
+0.5 * (mean(tbl_p04$Citrate[tbl_p04$Breed == "BS"]) - mean(tbl_p04$Citrate[tbl_p04$Breed == "HO"]))
+```
+
+which is the same as
+
+```{r}
+smry_lm_cit_br_csum$coefficients["Breed1", "Estimate"]
+```
+
+The verification with the solution of the least squares normal equation is done with 
+
+```{r}
+n_nrow_est_mat <- nrow(est_mat_breed_sum)
+mat_q_efun <- cbind(matrix(0, nrow = (nrow(est_mat_breed_sum)-1), ncol = 1),
+                    matrix(est_mat_breed_sum[2:n_nrow_est_mat,], 
+                           nrow = (nrow(est_mat_breed_sum)-1)))
+crossprod(t(mat_q_efun), mat_b_sol) 
+```
+
+
+\clearpage
+\pagebreak
+
+<!--
+\begin{enumerate}
+\item[c)] 
+
+\textit{}
+\end{enumerate}
+\points{`r lPointsQ4$TaskC`}
+
+
+## Solution
+
+
+\clearpage
+\pagebreak
+
+-->
+
+# Problem 5: Linear Mixed Effects Models
+```{r prob05-setup, echo=FALSE, message=FALSE, warning=FALSE}
+s_p05_path <- file.path(s_data_url_root, "asm_exam_2024_p05.csv")
+tbl_p05 <- readr::read_delim(s_p05_path, delim = ",")
+n_nr_obs_p05 <- nrow(tbl_p05)
+# parameters
+# genetics
+n_cit_sd <- 0.24
+n_cit_h2 <- 0.36
+n_cit_sigma_u <- sqrt(n_cit_h2) * n_cit_sd
+n_cit_sigma_s <- n_cit_sigma_u / 2
+n_cit_sigma_e <- sqrt(1-n_cit_h2) * n_cit_sd
+n_lambda_s <- round((n_cit_sigma_e/n_cit_sigma_s)^2, digits = 2)
+n_lambda_u <- round((n_cit_sigma_e/n_cit_sigma_u)^2, digits = 2)
+```
+
+Use the dataset below to fit a linear mixed effects model. In this model `Citrate` is the response and `DIM` and `Breed` are regression variables and fixed effects, respectively. You do not have to include any interaction effects. 
+
+
+\textit{Verwenden Sie den nachfolgenden Datensatz um ein lineares gemischtes Modell anzupassen. In diesem Modell sei `Citrate` die Zielgrösse und `DIM` die Regressionvariable und `Breed` ein fixer Effekt. Interaktionseffekte müssen nicht berücksichtigt werden.}
+
+```{r tbl-p05-show, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(tbl_p05, booktabs = T, longtable = T)
+```
+
+The dataset is available from
+
+```{r, echo=FALSE}
+cat(s_p05_path, "\n")
+```
+
+
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[a)] Use a sire model to predict breeding values for all sires. Please specify the model in the form of an equation in matrix-vector notation and explain the meaning of all model components. Write down the expected values and the variance-covariance matrices for all random effects in the model. Put all the information from the data into the model components consisting of response variable, regression and fixed effects, random effects, and their associated design matrices. Construct the mixed model equations and provide solutions to these equations. Extract predicted breeding values for all sires and estimates for the regression and fixed effects from these solutions.
+
+The following assumptions can be made
+
+\begin{itemize}
+\item the ration $\lambda_s$ between residual variance and sire variance is given by $\lambda_s = \sigma_e^2 / \sigma_s^2 = `r n_lambda_s`$
+\item the sires are assumed to be unrelated
+\end{itemize}
+
+\textit{Verwenden Sie ein Vatermodell zur Schätzung der Zuchtwerte aller männlichen Tiere. Bitte geben Sie die Modellgleichung in Matrix-Vektor-Schreibweise an und erläutern Sie die Bedeutung aller Modellkomponenten. Schreiben Sie die Erwartungswerte und die Varianz-Kovarianzmatrizen aller zufälligen Effekte im Modell auf. Verwenden Sie alle Informationen aus den Daten für die genaue Spezifikation der Modellkomponenten, wie zum Beispiel Zielgrösse, Regressionseffekte, fixe Effekte, zufällige Effekte und die zugehörigen Designmatrizen. Stellen Sie die Mixed-Model-Gleichungen auf und lösen Sie diese Gleichungen. Extrahieren Sie die geschätzten Zuchtwerte aller männlichen Tiere und die Schätzungen für die Regressionseffekte und für die fixen Effekte aus den Lösungen.}
+
+\textit{Die folgenden Annahmen können getroffen werden:}
+
+\begin{itemize}
+\item das Verhältnis ($\lambda_s$) zwischen der Residuenvarianz und der Vätervarianz beträgt $\lambda_s = \sigma_e^2 / \sigma_s^2 = `r n_lambda_s`$
+\item die Väter sind untereinander nicht verwandt
+\end{itemize}
+
+\end{enumerate}
+\points{`r lPointsQ5$TaskA`}
+
+
+## Solution
+
+* Model as equation: 
+
+$$y = Xb + Zs + e$$
+where
+
+```{r, echo=FALSE}
+tbl_sire_model_where <- tibble::tibble(Variable = c("$y$",
+                                                    "$b$",
+                                                    "$s$",
+                                                    "$e$",
+                                                    "$X$", 
+                                                    "$Z$"),
+                                       Meaning  = c("vector of observations",
+                                                    "vector of intercept, regression coefficient and fixed effects",
+                                                    "vector of random sire breeding values",
+                                                    "vector of random residuals",
+                                                    "design matrix linking observations to fixed effects",
+                                                    "design matrix linking observations to sire breeding values"))
+knitr::kable(tbl_sire_model_where, col.names = NULL, escape = F)
+```
+
+
+* Expected values and the variance-covariance matrices:
+
+Random effects are $y$, $s$ and $e$. Their expected values correspond to 
+
+$$E\left[\begin{array}{c}y \\ s \\ e \end{array}\right] 
+= \left[\begin{array}{c}Xb \\ 0 \\ 0 \end{array}\right]
+$$
+
+The variance-covariance matrices 
+
+$$
+var\left[\begin{array}{c}y \\ s \\ e \end{array}\right]
+= \left[\begin{array}{ccc} V & ZS & R \\ SZ^T & S & 0 \\ R & 0 & R \end{array}\right]
+$$
+
+where $var(s) = S = I * \sigma_s^2$, $var(e) = R = I * \sigma_e^2$ and $var(y) = V = ZSZ^T + R = ZZ^T\sigma_s^2 + R$ with given sire-variance component $\sigma_s^2$ and given residual variance component $\sigma_e^2$. 
+
+* Information from data to model components
+
+```{r, echo=FALSE, results='asis'}
+# vectors: y, b, s, e
+vec_y <- tbl_p05$Citrate
+n_nr_rec <- length(vec_y)
+vec_b <- c("b_0", "b_{DIM}", "b_{BreedHO}")
+vec_levels_sire <- levels(as.factor(tbl_p05$Sire))
+vec_sire <- paste0("s_{", vec_levels_sire, "}")
+n_nr_sire <- length(vec_sire)
+vec_residuals <- paste0("e_{", ((1:n_nr_rec) + n_nr_sire), "}")
+# matrices X and Z
+mat_X_p05 <- model.matrix(Citrate ~ DIM + Breed, data = tbl_p05)
+attr(mat_X_p05, "assign") <- NULL
+attr(mat_X_p05, "contrasts") <- NULL
+colnames(mat_X_p05) <- NULL
+mat_Z_sire <- model.matrix(Citrate ~ 0 + factor(Sire), data = tbl_p05)
+attr(mat_Z_sire, "assign") <- NULL
+attr(mat_Z_sire, "contrasts") <- NULL
+colnames(mat_Z_sire) <- NULL
+# output
+cat("$$\n")
+cat(rmdhelp::bcolumn_vector(pvec = vec_y, ps_name = "y"))
+cat("\\text{, }")
+cat(rmdhelp::bcolumn_vector(pvec = vec_b, ps_name = "b"))
+cat("\\text{, }")
+cat(rmdhelp::bcolumn_vector(pvec = vec_sire, ps_name = "s"))
+cat("\\text{, }")
+cat(rmdhelp::bcolumn_vector(pvec = vec_residuals, ps_name = "e"))
+cat("$$\n\n")
+cat("$$\n")
+cat(rmdhelp::bmatrix(pmat = mat_X_p05, ps_name = "X"))
+cat("\\text{, }")
+cat(rmdhelp::bmatrix(pmat = mat_Z_sire, ps_name = "Z"))
+cat("$$\n")
+```
+
+* Mixed model equations:
+
+$$
+\left[
+\begin{array}{cc}
+X^TX  &  X^TZ \\
+Z^TX  &  Z^TZ + \lambda_s * I
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+\hat{b} \\
+\hat{s}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c}
+X^Ty \\
+Z^Ty
+\end{array}
+\right]
+$$
+
+* Solutions of MME
+
+```{r}
+mat_xtx <- crossprod(mat_X_p05)
+mat_xtz <- crossprod(mat_X_p05, mat_Z_sire)
+mat_ztx <- t(mat_xtz)
+mat_ztz_lAsinv <- crossprod(mat_Z_sire) + n_lambda_s * diag(1, nrow = n_nr_sire)
+mat_coef_sire <- rbind(cbind(mat_xtx, mat_xtz), cbind(mat_ztx, mat_ztz_lAsinv))
+mat_rhs_sire <- rbind(crossprod(mat_X_p05, vec_y), crossprod(mat_Z_sire, vec_y))
+mat_sol_sire <- solve(mat_coef_sire, mat_rhs_sire)
+mat_sol_sire
+```
+
+* Estimates of intercept, regression coefficient and fixed effect for `BreedHO` are given by
+
+```{r}
+tbl_sire_result <- tibble::tibble(Effect = c("Intercept", 
+                                             "Regression Coefficient", 
+                                             "BreedHO Effect"),
+                                  Estimate = mat_sol_sire[1:3,])
+knitr::kable(tbl_sire_result)
+```
+
+* Predicted breeding values for the sires are 
+
+```{r}
+vec_sire_pbv <- mat_sol_sire[(nrow(mat_sol_sire)-n_nr_sire+1):nrow(mat_sol_sire),]
+vec_sire_pbv
+```
+
+The order of the sires according to the predicted breeding values is given by
+
+```{r}
+vec_sire_pbv[order(vec_sire_pbv, decreasing = T)]
+```
+
+
+
+
+
+\clearpage
+\pagebreak
+
+\begin{enumerate}
+\item[b)] Use an animal model to predict breeding values for all animals in the dataset, including sires and dams. Please specify the model in the form of an equation in matrix-vector notation and explain the meaning of all model components. Write down the expected values and the variance-covariance matrices for all random effects in the model. Put all the information from the data into the model components consisting of response variable, regression and fixed effects, random effects, and their associated design matrices. Construct the mixed model equations and provide solutions to these equations. Extract predicted breeding values for all animals and estimates for the regression and fixed effects from these solutions.
+
+The following assumptions can be made
+
+\begin{itemize}
+\item the ration $\lambda_u$ between residual variance and additive genetic variance is given by $\lambda_u = \sigma_e^2 / \sigma_u^2 = `r n_lambda_u`$
+\end{itemize}
+
+\textit{Verwenden Sie ein Tiermodell zur Schätzung der Zuchtwerte aller Tiere im Datensatz inklusive von Vätern und Müttern. Bitte geben Sie die Modellgleichung in Matrix-Vektor-Schreibweise an und erläutern Sie die Bedeutung aller Modellkomponenten. Schreiben Sie die Erwartungswerte und die Varianz-Kovarianzmatrizen aller zufälligen Effekte im Modell auf. Verwenden Sie alle Informationen aus den Daten für die genaue Spezifikation der Modellkomponenten, wie zum Beispiel Zielgrösse, Regressionseffekte, fixe Effekte, zufällige Effekte und die zugehörigen Designmatrizen. Stellen Sie die Mixed-Model-Gleichungen auf und lösen Sie diese Gleichungen. Extrahieren Sie die geschätzten Zuchtwerte aller  Tiere und die Schätzungen für die Regressionseffekte und für die fixen Effekte aus den Lösungen.}
+
+\textit{Die folgenden Annahmen können getroffen werden:}
+
+\begin{itemize}
+\item das Verhältnis ($\lambda_u$) zwischen der Residuenvarianz und der additiv-genetischen Varianz beträgt $\lambda_u = \sigma_e^2 / \sigma_u^2 = `r n_lambda_u`$
+\end{itemize}
+
+\end{enumerate}
+\points{`r lPointsQ5$TaskB`}
+
+
+
+## Solution
+
+* Model as equation:
+
+$$y = Xb + Zu + e$$
+where
+
+```{r, echo=FALSE}
+tbl_sire_model_where <- tibble::tibble(Variable = c("$y$",
+                                                    "$b$",
+                                                    "$u$",
+                                                    "$e$",
+                                                    "$X$", 
+                                                    "$Z$"),
+                                       Meaning  = c("vector of observations",
+                                                    "vector of intercept, regression coefficient and fixed effects",
+                                                    "vector of random breeding values",
+                                                    "vector of random residuals",
+                                                    "design matrix linking observations to fixed effects",
+                                                    "design matrix linking observations to sire breeding values"))
+knitr::kable(tbl_sire_model_where, col.names = NULL, escape = F)
+```
+
+
+* Expected values and the variance-covariance matrices:
+
+Random effects are $y$, $u$ and $e$. Their expected values correspond to 
+
+$$E\left[\begin{array}{c}y \\ u \\ e \end{array}\right] 
+= \left[\begin{array}{c}Xb \\ 0 \\ 0 \end{array}\right]
+$$
+
+The variance-covariance matrices 
+
+$$
+var\left[\begin{array}{c}y \\ u \\ e \end{array}\right]
+= \left[\begin{array}{ccc} V & ZU & R \\ UZ^T & U & 0 \\ R & 0 & R \end{array}\right]
+$$
+
+where $var(u) = U = A * \sigma_u^2$, $var(e) = R = I * \sigma_e^2$ and $var(y) = V = ZUZ^T + R$ with given additive genetic variance component $\sigma_u^2$ and given residual variance component $\sigma_e^2$. 
+
+
+* Information from data to model components
+
+
+```{r, echo=FALSE, results='asis'}
+# vectors: y, b, u, e
+vec_y <- tbl_p05$Citrate
+n_nr_rec <- length(vec_y)
+vec_b <- c("b_0", "b_{DIM}", "b_{BreedHO}")
+vec_levels_ani <- union(union(unique(tbl_p05$Sire), unique(tbl_p05$Dam)), unique(tbl_p05$ID))
+vec_levels_ani <- vec_levels_ani[!is.na(vec_levels_ani)]
+vec_levels_ani <- vec_levels_ani[order(vec_levels_ani)]
+vec_ani <- paste0("u_{", vec_levels_ani, "}")
+vec_residuals <- paste0("e_{", ((1:n_nr_rec) + n_nr_sire), "}")
+# matrix X
+mat_X_p05 <- model.matrix(Citrate ~ DIM + Breed, data = tbl_p05)
+attr(mat_X_p05, "assign") <- NULL
+attr(mat_X_p05, "contrasts") <- NULL
+colnames(mat_X_p05) <- NULL
+# matrix Z
+n_nr_ani <- length(vec_levels_ani)
+n_nr_founder <- n_nr_ani - n_nr_rec
+mat_Z_ani <- cbind(matrix(0,nrow = n_nr_rec, ncol = n_nr_founder),
+                   diag(1, nrow = n_nr_rec))
+attr(mat_Z_ani, "assign") <- NULL
+attr(mat_Z_ani, "contrasts") <- NULL
+colnames(mat_Z_ani) <- NULL
+# output
+cat("$$\n")
+cat(rmdhelp::bcolumn_vector(pvec = vec_y, ps_name = "y"))
+cat("\\text{, }")
+cat(rmdhelp::bcolumn_vector(pvec = vec_b, ps_name = "b"))
+cat("\\text{, }")
+cat(rmdhelp::bcolumn_vector(pvec = vec_ani, ps_name = "u"))
+cat("\\text{, }")
+cat(rmdhelp::bcolumn_vector(pvec = vec_residuals, ps_name = "e"))
+cat("$$\n\n")
+cat("$$\n")
+cat(rmdhelp::bmatrix(pmat = mat_X_p05, ps_name = "X"))
+cat("$$\n\n")
+cat("$$\n")
+# cat(paste0(rmdhelp::bmatrix(pmat = mat_Z_ani, ps_name = "Z"), collapse = "\n"), "\n")
+cat("Z = ")
+cat("$$\n")
+```
+
+
+* Mixed model equations:
+
+$$
+\left[
+\begin{array}{cc}
+X^TX  &  X^TZ \\
+Z^TX  &  Z^TZ + \lambda_u * A^{-1}
+\end{array}
+\right]
+\left[
+\begin{array}{c}
+\hat{b} \\
+\hat{u}
+\end{array}
+\right]
+=
+\left[
+\begin{array}{c}
+X^Ty \\
+Z^Ty
+\end{array}
+\right]
+$$
+
+```{r, echo=FALSE}
+library(pedigreemm)
+ped_ani <- pedigree(sire = c(rep(NA, n_nr_founder), tbl_p05$Sire),
+                     dam = c(rep(NA, n_nr_founder), tbl_p05$Dam),
+                     label = as.character(1:n_nr_ani))
+mat_A <- as.matrix(getA(ped = ped_ani))
+mat_A_inv <- as.matrix(getAInv(ped = ped_ani))
+```
+
+where $\lambda_u = \frac{\sigma_e^2}{\sigma_u^2} = `r n_lambda_u`$ and $A$ corresponds to the numerator relationship matrix given by
+
+```{r, echo=FALSE, results='asis'}
+#cat(rmdhelp::bmatrix(pmat = mat_A, ps_name = "A", ps_env = "$$"))
+cat("$$A =  $$\n")
+```
+
+The inverse $A_s^{-1}$ is
+
+```{r, echo=FALSE, results='asis'}
+#cat(rmdhelp::bmatrix(pmat = mat_A_inv, ps_name = "A^{-1}", ps_env = "$$"))
+cat("$$A^{-1} = $$\n")
+```
+
+
+* Solutions of MME
+
+```{r}
+mat_xtx <- crossprod(mat_X_p05)
+mat_xtz <- crossprod(mat_X_p05, mat_Z_ani)
+mat_ztx <- t(mat_xtz)
+mat_ztz_lAinv <- crossprod(mat_Z_ani) + n_lambda_u * mat_A_inv
+mat_coef_ani <- rbind(cbind(mat_xtx, mat_xtz), cbind(mat_ztx, mat_ztz_lAinv))
+mat_rhs_ani <- rbind(crossprod(mat_X_p05, vec_y), crossprod(mat_Z_ani, vec_y))
+mat_sol_ani <- solve(mat_coef_ani, mat_rhs_ani)
+mat_sol_ani
+```
+
+* Estimates of intercept, regression coefficient and fixed effect for `BreedHO` are given by
+
+```{r}
+tbl_ani_result <- tibble::tibble(Effect = c("Intercept", 
+                                             "Regression Coefficient", 
+                                             "BreedHO Effect"),
+                                  Estimate = mat_sol_ani[1:3,])
+knitr::kable(tbl_ani_result)
+```
+
+
+
+* Predicted breeding values for all animals: The first two elements are solutions of fixed effects, the remaining elements are predicted breeding values
+
+```{r, echo=FALSE}
+tbl_ani_pbv <- tibble::tibble(Animals = vec_levels_ani,
+                               `Predicted Breeding Values` = mat_sol_ani[(length(vec_b)+1):nrow(mat_sol_ani),])
+knitr::kable(tbl_ani_pbv)
+```
+
+
+
+<!--
+\clearpage
+\pagebreak
+
+
+\begin{enumerate}
+\item[c)] 
+
+\textit{}
+\end{enumerate}
+\points{`r lPointsQ5$TaskC`}
+
+
+## Solution
+
+-->
+
+\clearpage
+\pagebreak
+
+
+# References
+    

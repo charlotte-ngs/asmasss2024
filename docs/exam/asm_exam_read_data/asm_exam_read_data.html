@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ASMAS-SS2024 | 0.12.5 - Welcome to the Website of</title>
+<title>ASMAS-SS2024 | 0.12.5 - Exam in Applied Statistical Methods</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +20,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">ASMAS-SS2024 | 0.12.5</span>
     </a>
   </div>
@@ -89,27 +123,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./course_notes.html"> 
+    <a class="nav-link" href="../../course_notes.html"> 
 <span class="menu-text">Course Notes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./exercises.html"> 
+    <a class="nav-link" href="../../exercises.html"> 
 <span class="menu-text">Exercises</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./solutions.html"> 
+    <a class="nav-link" href="../../solutions.html"> 
 <span class="menu-text">Solutions</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./add_info.html"> 
+    <a class="nav-link" href="../../add_info.html"> 
 <span class="menu-text">Additional Information</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -128,19 +162,31 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#topics-for-master-theses" id="toc-topics-for-master-theses" class="nav-link active" data-scroll-target="#topics-for-master-theses">Topics for Master Theses</a></li>
-  <li><a href="#information" id="toc-information" class="nav-link" data-scroll-target="#information">Information</a>
+  <li><a href="#problem-1-linear-regression" id="toc-problem-1-linear-regression" class="nav-link active" data-scroll-target="#problem-1-linear-regression">Problem 1: Linear Regression</a>
   <ul class="collapse">
-  <li><a href="#exercise-platform" id="toc-exercise-platform" class="nav-link" data-scroll-target="#exercise-platform">Exercise Platform</a></li>
-  <li><a href="#exam" id="toc-exam" class="nav-link" data-scroll-target="#exam">Exam</a></li>
+  <li><a href="#dataframe" id="toc-dataframe" class="nav-link" data-scroll-target="#dataframe">Dataframe</a></li>
+  <li><a href="#tibble" id="toc-tibble" class="nav-link" data-scroll-target="#tibble">Tibble</a></li>
   </ul></li>
-  <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a>
+  <li><a href="#problem-2-fixed-linear-effects-model" id="toc-problem-2-fixed-linear-effects-model" class="nav-link" data-scroll-target="#problem-2-fixed-linear-effects-model">Problem 2: Fixed Linear Effects Model</a>
   <ul class="collapse">
-  <li><a href="#applied-statistical-methods-in-animal-science" id="toc-applied-statistical-methods-in-animal-science" class="nav-link" data-scroll-target="#applied-statistical-methods-in-animal-science">Applied Statistical Methods in Animal Science</a></li>
+  <li><a href="#dataframe-1" id="toc-dataframe-1" class="nav-link" data-scroll-target="#dataframe-1">Dataframe</a></li>
+  <li><a href="#tibble-1" id="toc-tibble-1" class="nav-link" data-scroll-target="#tibble-1">Tibble</a></li>
   </ul></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#lecture-program" id="toc-lecture-program" class="nav-link" data-scroll-target="#lecture-program">Lecture Program</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  <li><a href="#problem-3-interactions" id="toc-problem-3-interactions" class="nav-link" data-scroll-target="#problem-3-interactions">Problem 3: Interactions</a>
+  <ul class="collapse">
+  <li><a href="#dataframe-2" id="toc-dataframe-2" class="nav-link" data-scroll-target="#dataframe-2">Dataframe</a></li>
+  <li><a href="#tibble-2" id="toc-tibble-2" class="nav-link" data-scroll-target="#tibble-2">Tibble</a></li>
+  </ul></li>
+  <li><a href="#problem-4-contrasts" id="toc-problem-4-contrasts" class="nav-link" data-scroll-target="#problem-4-contrasts">Problem 4: Contrasts</a>
+  <ul class="collapse">
+  <li><a href="#dataframe-3" id="toc-dataframe-3" class="nav-link" data-scroll-target="#dataframe-3">Dataframe</a></li>
+  <li><a href="#tibble-3" id="toc-tibble-3" class="nav-link" data-scroll-target="#tibble-3">Tibble</a></li>
+  </ul></li>
+  <li><a href="#problem-5-linear-mixed-effects-models" id="toc-problem-5-linear-mixed-effects-models" class="nav-link" data-scroll-target="#problem-5-linear-mixed-effects-models">Problem 5: Linear Mixed Effects Models</a>
+  <ul class="collapse">
+  <li><a href="#dataframe-4" id="toc-dataframe-4" class="nav-link" data-scroll-target="#dataframe-4">Dataframe</a></li>
+  <li><a href="#tibble-4" id="toc-tibble-4" class="nav-link" data-scroll-target="#tibble-4">Tibble</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -149,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to the Website of</h1>
+<h1 class="title">Exam in Applied Statistical Methods</h1>
 </div>
 
 
@@ -166,172 +212,145 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?semkez=2024S&amp;ansicht=ALLE&amp;lerneinheitId=178644&amp;lang=en">751-7602-00L Applied Statistical Methods in Animal Sciences</a></p>
-<section id="topics-for-master-theses" class="level2">
-<h2 class="anchored" data-anchor-id="topics-for-master-theses">Topics for Master Theses</h2>
-<p>Topics for Master Theses at Qualitas AG together with ETH will follow here …</p>
+<p>The following statements can be used to read the datasets for the exam.</p>
+<section id="problem-1-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="problem-1-linear-regression">Problem 1: Linear Regression</h2>
+<section id="dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="dataframe">Dataframe</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p1 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p01.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df_p1 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_data_url_p1, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df_p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  3</code></pre>
+</div>
+</div>
 </section>
-<section id="information" class="level2">
-<h2 class="anchored" data-anchor-id="information">Information</h2>
-<ul>
-<li>Lecturer: Peter von Rohr</li>
-<li>Date: Montag 8-10</li>
-<li>Room: LFW C11</li>
-</ul>
-<section id="exercise-platform" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-platform">Exercise Platform</h3>
-<p>Three options are available</p>
-<ol type="1">
-<li>Webr: <a href="https://webr.r-wasm.org/latest">https://webr.r-wasm.org/latest</a></li>
-<li>Posit cloud: <a href="https://posit.cloud">https://posit.cloud</a></li>
-<li>Run your own platform: Follow steps on <a href="https://posit.co/download/rstudio-desktop">https://posit.co/download/rstudio-desktop</a></li>
-</ol>
-<p>A more detailed description is available from <a href="https://charlotte-ngs.github.io/asmasss2024/misc/rexpf/rexpf_docu.html">here</a></p>
-</section>
-<section id="exam" class="level3">
-<h3 class="anchored" data-anchor-id="exam">Exam</h3>
-<ul>
-<li>Written exam</li>
-<li>Date: 27.05.2024 - 08:15 - 10:00</li>
-<li>Room: LFW C 11</li>
-<li>Data Read Statements: <a href="https://charlotte-ngs.github.io/asmasss2024/exam/asm_exam_read_data/asm_exam_read_data.html">asm_exam_read_data</a></li>
-</ul>
+<section id="tibble" class="level3">
+<h3 class="anchored" data-anchor-id="tibble">Tibble</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p1 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p01.csv"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tbl_p1 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(<span class="at">file =</span> s_data_url_p1, <span class="at">delim =</span> <span class="st">","</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(tbl_p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  3</code></pre>
+</div>
+</div>
 </section>
 </section>
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>The following descriptions are taken from the course catalog</p>
-<section id="applied-statistical-methods-in-animal-science" class="level3">
-<h3 class="anchored" data-anchor-id="applied-statistical-methods-in-animal-science">Applied Statistical Methods in Animal Science</h3>
-<p>Genomic selection is currently the method of choice for improving the genetic potential of selection candidates in livestock breeding programs. This lecture introduces the reason why regression cannot be used in genomic selection. Alternatives to regression analysis that are suitable for genomic selection are presented. The concepts introduced are illustrated by excersises in R.</p>
-<p>The students are familiar with the properties of multiple linear regression and they are able to analyse simple data sets using regression methods. The students know why multiple linear regression cannot be used for genomic selection. The students know the statistical methods used in genomic selection, such as BLUP-based approaches, Bayesian procedures and LASSO. The students are able to solve simple exercise problems using the statistical framework R.</p>
+<section id="problem-2-fixed-linear-effects-model" class="level2">
+<h2 class="anchored" data-anchor-id="problem-2-fixed-linear-effects-model">Problem 2: Fixed Linear Effects Model</h2>
+<section id="dataframe-1" class="level3">
+<h3 class="anchored" data-anchor-id="dataframe-1">Dataframe</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p2 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p02.csv"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df_p2 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_data_url_p2, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df_p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  4</code></pre>
+</div>
+</div>
+</section>
+<section id="tibble-1" class="level3">
+<h3 class="anchored" data-anchor-id="tibble-1">Tibble</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p2 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p02.csv"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tbl_p2 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(<span class="at">file =</span> s_data_url_p2, <span class="at">delim =</span> <span class="st">","</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(tbl_p2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  4</code></pre>
+</div>
+</div>
 </section>
 </section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>Questions can be asked during the lecture and during the exercise hour or via e-mail:</p>
-<ul>
-<li>Peter von Rohr (peter.vonrohr <code>at</code> usys.ethz.ch)</li>
-</ul>
+<section id="problem-3-interactions" class="level2">
+<h2 class="anchored" data-anchor-id="problem-3-interactions">Problem 3: Interactions</h2>
+<section id="dataframe-2" class="level3">
+<h3 class="anchored" data-anchor-id="dataframe-2">Dataframe</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p3 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p03.csv"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df_p3 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_data_url_p3, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df_p3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  4</code></pre>
+</div>
+</div>
 </section>
-<section id="lecture-program" class="level2">
-<h2 class="anchored" data-anchor-id="lecture-program">Lecture Program</h2>
-<table class="table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 72%">
-<col style="width: 15%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Week</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Lecture Mode</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">19.02</td>
-<td style="text-align: left;">Introduction to Applied Statistical Methods in Animal Science</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">26.02</td>
-<td style="text-align: left;">Linear Regression Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">04.03</td>
-<td style="text-align: left;">Linear Fixed Effect Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">11.03</td>
-<td style="text-align: left;">Model Selection</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">18.03</td>
-<td style="text-align: left;">Pedigree BLUP</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">25.03</td>
-<td style="text-align: left;">Variance Components</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">01.04</td>
-<td style="text-align: left;"><strong>Easter Monday</strong> (Ostermontag)</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">08.04</td>
-<td style="text-align: left;">GBLUP - Marker-Effects Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">15.04</td>
-<td style="text-align: left;">GBLUP - Breeding Value Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">22.04</td>
-<td style="text-align: left;">Lasso</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">29.04</td>
-<td style="text-align: left;">SVM</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">06.05</td>
-<td style="text-align: left;">Bayesian Approaches in Linear Mixed Effects Models</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">13.05</td>
-<td style="text-align: left;">Test Exam</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14</td>
-<td style="text-align: left;">20.05</td>
-<td style="text-align: left;">Pentcote Monday (Pfingstmontag)</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">27.05</td>
-<td style="text-align: left;">Exam</td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
+<section id="tibble-2" class="level3">
+<h3 class="anchored" data-anchor-id="tibble-2">Tibble</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p3 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p03.csv"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>tbl_p3 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(<span class="at">file =</span> s_data_url_p3, <span class="at">delim =</span> <span class="st">","</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(tbl_p3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  4</code></pre>
+</div>
+</div>
 </section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License</h2>
-<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+</section>
+<section id="problem-4-contrasts" class="level2">
+<h2 class="anchored" data-anchor-id="problem-4-contrasts">Problem 4: Contrasts</h2>
+<section id="dataframe-3" class="level3">
+<h3 class="anchored" data-anchor-id="dataframe-3">Dataframe</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p4 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p04.csv"</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>df_p4 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_data_url_p4, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df_p4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  3</code></pre>
+</div>
+</div>
+</section>
+<section id="tibble-3" class="level3">
+<h3 class="anchored" data-anchor-id="tibble-3">Tibble</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p4 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p04.csv"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>tbl_p4 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(<span class="at">file =</span> s_data_url_p4, <span class="at">delim =</span> <span class="st">","</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(tbl_p4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  3</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="problem-5-linear-mixed-effects-models" class="level2">
+<h2 class="anchored" data-anchor-id="problem-5-linear-mixed-effects-models">Problem 5: Linear Mixed Effects Models</h2>
+<section id="dataframe-4" class="level3">
+<h3 class="anchored" data-anchor-id="dataframe-4">Dataframe</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p5 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p05.csv"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>df_p5 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(s_data_url_p5, <span class="at">header =</span> T, <span class="at">sep =</span> <span class="st">","</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df_p5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  6</code></pre>
+</div>
+</div>
+</section>
+<section id="tibble-4" class="level3">
+<h3 class="anchored" data-anchor-id="tibble-4">Tibble</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>s_data_url_root <span class="ot">&lt;-</span> <span class="st">"https://charlotte-ngs.github.io/asmasss2024/data"</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>s_data_url_p5 <span class="ot">&lt;-</span> <span class="fu">file.path</span>(s_data_url_root, <span class="st">"asm_exam_2024_p05.csv"</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>tbl_p5 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_delim</span>(<span class="at">file =</span> s_data_url_p5, <span class="at">delim =</span> <span class="st">","</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(tbl_p5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20  6</code></pre>
+</div>
+</div>
 <hr>
-<p><em>Latest Changes: 2024-05-26 08:56:03 CEST (pvr)</em></p>
+<p><em>Latest Changes: 2024-05-26 06:57:56 CEST (pvr)</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

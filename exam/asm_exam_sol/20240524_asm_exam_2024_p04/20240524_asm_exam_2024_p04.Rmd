@@ -1,0 +1,41 @@
+---
+title: 'ASM Exam 2024: Problem 4'
+author: "Peter von Rohr"
+date: "2024-05-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Background
+Use a dataset with citrate and breed alone to be used in Problem 4 dealing with contrasts.
+
+
+## Data
+Read data from problem 2
+
+```{r}
+s_cit_dim_br_path <- here::here("docs", "data", "asm_exam_2024_p02.csv")
+tbl_cit_dim_br <- readr::read_delim(s_cit_dim_br_path, delim = ",")
+tbl_cit_dim_br
+```
+
+Remove DIM and save new data
+
+```{r}
+library(dplyr)
+tbl_cit_br <- tbl_cit_dim_br %>%
+  select(-DIM)
+# write data to file
+s_cit_br_path <- here::here("docs", "data", "asm_exam_2024_p04.csv")
+if (!file.exists(s_cit_br_path)){
+  readr::write_delim(tbl_cit_br, file = s_cit_br_path, delim = ",")
+}
+```
+
+
+
+

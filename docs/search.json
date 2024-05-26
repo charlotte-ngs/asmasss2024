@@ -18,7 +18,7 @@
     "href": "index.html#information",
     "title": "Welcome to the Website of",
     "section": "Information",
-    "text": "Information\n\nLecturer: Peter von Rohr\nDate: Montag 8-10\nRoom: LFW C11\n\n\nExercise Platform\nThree options are available\n\nWebr: https://webr.r-wasm.org/latest\nPosit cloud: https://posit.cloud\nRun your own platform: Follow steps on https://posit.co/download/rstudio-desktop\n\nA more detailed description is available from here\n\n\nExam\n\nWritten exam\nDate: 27.05.2024 - 08:15 - 10:00\nRoom: LFW C 11"
+    "text": "Information\n\nLecturer: Peter von Rohr\nDate: Montag 8-10\nRoom: LFW C11\n\n\nExercise Platform\nThree options are available\n\nWebr: https://webr.r-wasm.org/latest\nPosit cloud: https://posit.cloud\nRun your own platform: Follow steps on https://posit.co/download/rstudio-desktop\n\nA more detailed description is available from here\n\n\nExam\n\nWritten exam\nDate: 27.05.2024 - 08:15 - 10:00\nRoom: LFW C 11\nData Read Statements: asm_exam_read_data"
   },
   {
     "objectID": "index.html#description",
@@ -46,14 +46,14 @@
     "href": "index.html#license",
     "title": "Welcome to the Website of",
     "section": "License",
-    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-21 06:40:53 CEST (pvr)"
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License.\n\nLatest Changes: 2024-05-26 08:56:03 CEST (pvr)"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Exercise asm_ex11\nSolution asm_sol11\n\n\n\n\n\nExercise asm_ex10\nSolution asm_sol10\n\n\n\n\n\nOHP ohp_l12\n\n\n\n\n\nSlides l10_lme_app\n\n\n\n\n\nTest exam asm_exam_tsk\nSolution to test exam asm_exam_sol\n\n\n\n\n\nCourse notes 042_rep_model.pdf"
+    "text": "Exam Data asm_exam_read_data"
   },
   {
     "objectID": "about.html#asmas---ss2024",
@@ -137,7 +137,7 @@
     "href": "about.html#asmas---ss2024-v0.1.0",
     "title": "About",
     "section": "asmas - ss2024: v0.1.0",
-    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-21 06:40:33 CEST (pvr)"
+    "text": "asmas - ss2024: v0.1.0\n\nSet up initial version of website\n\n\nLatest Changes: 2024-05-26 08:56:14 CEST (pvr)"
   },
   {
     "objectID": "add_info.html#slides",
@@ -247,9 +247,9 @@
   {
     "objectID": "NEWS.html",
     "href": "NEWS.html",
-    "title": "asmasss2024 0.12.5",
+    "title": "asmasss2024 0.13.0",
     "section": "",
-    "text": "asmasss2024 0.12.5\n\n\nasmasss2024 0.12.4\n\n\nasmasss2024 0.12.3\n\n\nasmasss2024 0.12.2\n\n\nasmasss2024 0.12.1\n\n\nasmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
+    "text": "asmasss2024 0.13.0\n\n\nasmasss2024 0.12.5\n\n\nasmasss2024 0.12.4\n\n\nasmasss2024 0.12.3\n\n\nasmasss2024 0.12.2\n\n\nasmasss2024 0.12.1\n\n\nasmasss2024 0.12.0\n\n\nasmasss2024 0.11.2\n\n\nasmasss2024 0.11.1\n\n\nasmasss2024 0.11.0\n\n\nasmasss2024 0.10.4\n\n\nasmasss2024 0.10.3\n\n\nasmasss2024 0.10.2\n\n\nasmasss2024 0.10.1\n\n\nasmasss2024 0.10.0\n\n\nasmasss2024 0.9.4\n\n\nasmasss2024 0.9.3\n\n\nasmasss2024 0.9.2\n\n\nasmasss2024 0.9.1\n\n\nasmasss2024 0.9.0\n\n\nasmasss2024 0.8.1\n\n\nasmasss2024 0.8.0\n\n\nasmasss2024 0.7.2\n\n\nasmasss2024 0.7.1\n\n\nasmasss2024 0.7.0\n\n\nasmasss2024 0.6.1\n\n\nasmasss2024 0.6.0\n\n\nasmasss2024 0.5.3\n\n\nasmasss2024 0.5.2\n\n\nasmasss2024 0.5.1\n\n\nasmasss2024 0.5.0\n\n\nasmasss2024 0.4.4\n\n\nasmasss2024 0.4.3\n\n\nasmasss2024 0.4.2\n\n\nasmasss2024 0.4.1\n\n\nasmasss2024 0.4.0\n\n\nasmasss2024 0.3.1\n\n\nasmasss2024 0.3.0\n\n\nasmasss2024 0.2.3\n\n\nasmasss2024 0.2.2\n\n\nasmasss2024 0.2.1\n\nInitial CRAN submission."
   },
   {
     "objectID": "about.html#asmasss2024-0.2.2",
@@ -1375,8 +1375,8 @@
     "objectID": "about.html#asmasss2024-0.12.0",
     "href": "about.html#asmasss2024-0.12.0",
     "title": "About",
-    "section": "",
-    "text": "Course notes 042_rep_model.pdf"
+    "section": "asmasss2024 0.12.0",
+    "text": "asmasss2024 0.12.0\n\nCourse notes 042_rep_model.pdf"
   },
   {
     "objectID": "my_nb/20240510_facts_lme/20240510_facts_lme.html",
@@ -1431,22 +1431,22 @@
     "objectID": "about.html#asmasss2024-0.12.1",
     "href": "about.html#asmasss2024-0.12.1",
     "title": "About",
-    "section": "",
-    "text": "Test exam asm_exam_tsk\nSolution to test exam asm_exam_sol"
+    "section": "asmasss2024 0.12.1",
+    "text": "asmasss2024 0.12.1\n\nTest exam asm_exam_tsk\nSolution to test exam asm_exam_sol"
   },
   {
     "objectID": "about.html#asmasss2024-0.12.2",
     "href": "about.html#asmasss2024-0.12.2",
     "title": "About",
-    "section": "",
-    "text": "Slides l10_lme_app"
+    "section": "asmasss2024 0.12.2",
+    "text": "asmasss2024 0.12.2\n\nSlides l10_lme_app"
   },
   {
     "objectID": "about.html#asmasss2024-0.12.3",
     "href": "about.html#asmasss2024-0.12.3",
     "title": "About",
-    "section": "",
-    "text": "OHP ohp_l12"
+    "section": "asmasss2024 0.12.3",
+    "text": "asmasss2024 0.12.3\n\nOHP ohp_l12"
   },
   {
     "objectID": "ohp/20240513_ohp_l12/20240513_ohp_l12.html#ohp-picture-2",
@@ -1606,14 +1606,420 @@
     "objectID": "about.html#asmasss2024-0.12.4",
     "href": "about.html#asmasss2024-0.12.4",
     "title": "About",
-    "section": "",
-    "text": "Exercise asm_ex10\nSolution asm_sol10"
+    "section": "asmasss2024 0.12.4",
+    "text": "asmasss2024 0.12.4\n\nExercise asm_ex10\nSolution asm_sol10"
   },
   {
     "objectID": "about.html#asmasss2024-0.12.5",
     "href": "about.html#asmasss2024-0.12.5",
     "title": "About",
+    "section": "asmasss2024 0.12.5",
+    "text": "asmasss2024 0.12.5\n\nExercise asm_ex11\nSolution asm_sol11"
+  },
+  {
+    "objectID": "exam/asm_exam_read_data/asm_exam_read_data.html",
+    "href": "exam/asm_exam_read_data/asm_exam_read_data.html",
+    "title": "Exam in Applied Statistical Methods",
     "section": "",
-    "text": "Exercise asm_ex11\nSolution asm_sol11"
+    "text": "The following statements can be used to read the datasets for the exam."
+  },
+  {
+    "objectID": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-1-linear-regression",
+    "href": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-1-linear-regression",
+    "title": "Exam in Applied Statistical Methods",
+    "section": "Problem 1: Linear Regression",
+    "text": "Problem 1: Linear Regression\n\nDataframe\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p1 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p01.csv\")\ndf_p1 &lt;- read.table(s_data_url_p1, header = T, sep = \",\")\ndim(df_p1)\n\n[1] 20  3\n\n\n\n\nTibble\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p1 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p01.csv\")\ntbl_p1 &lt;- readr::read_delim(file = s_data_url_p1, delim = \",\")\ndim(tbl_p1)\n\n[1] 20  3"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-1",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-1",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-2",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-2",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-3",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-3",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-4",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-4",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-5",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-5",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-6",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-6",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-7",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-7",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-8",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-8",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-9",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-9",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-10",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-10",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-11",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-11",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-12",
+    "href": "exam/asm_exam_tsk/asm_exam_tsk.html#solution-12",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html",
+    "title": "ASM Exam 2024: Problem 5",
+    "section": "",
+    "text": "The data for LME is constructed. This includes adding parents to current records. Use parameter from Problem 1 …\n\nset.seed(2405)\nn_nr_obs &lt;- 20\n# dim\nn_dim_start &lt;- 20\nn_dim_end &lt;- 50\n# citrate\nn_cit_max &lt;- 9.2\nn_cit_min &lt;- 8.5\nn_cit_mean &lt;- mean(c(n_cit_max, n_cit_min))\nn_cit_sd &lt;- 0.24\nn_reg_coef &lt;- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)\nn_reg_intc &lt;- 9.5\n# genetics\nn_cit_h2 &lt;- 0.36\nn_cit_sigma_u &lt;- sqrt(n_cit_h2) * n_cit_sd\nn_cit_sigma_e &lt;- sqrt(1-n_cit_h2) * n_cit_sd\n# pedigree\nn_nr_sire &lt;- 4\nvec_nr_daughter &lt;- c(6,5,6,3)\nn_nr_anim &lt;- n_nr_sire + n_nr_obs"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html#background",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html#background",
+    "title": "ASM Exam 2024: Problem 5",
+    "section": "",
+    "text": "The data for LME is constructed. This includes adding parents to current records. Use parameter from Problem 1 …\n\nset.seed(2405)\nn_nr_obs &lt;- 20\n# dim\nn_dim_start &lt;- 20\nn_dim_end &lt;- 50\n# citrate\nn_cit_max &lt;- 9.2\nn_cit_min &lt;- 8.5\nn_cit_mean &lt;- mean(c(n_cit_max, n_cit_min))\nn_cit_sd &lt;- 0.24\nn_reg_coef &lt;- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)\nn_reg_intc &lt;- 9.5\n# genetics\nn_cit_h2 &lt;- 0.36\nn_cit_sigma_u &lt;- sqrt(n_cit_h2) * n_cit_sd\nn_cit_sigma_e &lt;- sqrt(1-n_cit_h2) * n_cit_sd\n# pedigree\nn_nr_sire &lt;- 4\nvec_nr_daughter &lt;- c(6,5,6,3)\nn_nr_anim &lt;- n_nr_sire + n_nr_obs"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html#pedigree",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html#pedigree",
+    "title": "ASM Exam 2024: Problem 5",
+    "section": "Pedigree",
+    "text": "Pedigree\nBuild up the components of the pedigree\n\n# sires\nvec_sire &lt;- NULL\nfor (s_idx in 1:n_nr_sire){\n  vec_cur_sire &lt;- rep(s_idx, vec_nr_daughter[s_idx])\n  if (is.null(vec_sire)){\n    vec_sire &lt;- vec_cur_sire\n  } else {\n    vec_sire &lt;- c(vec_sire, vec_cur_sire)\n  }\n}\n#vec_sire\n# equal number of daughters per dam\nvec_dam &lt;- rep(1:9, 2)\nvec_dam &lt;- vec_dam[order(vec_dam)] + n_nr_sire\nn_nr_dam &lt;- length(vec_dam)\nvec_dam &lt;- c(rep(NA,(n_nr_obs-n_nr_dam)), vec_dam)\n# setup pedigree\nlibrary(pedigreemm)\n\nLoading required package: lme4\n\n\nLoading required package: Matrix\n\nped_p05 &lt;- pedigree(sire = c(rep(NA, n_nr_sire), vec_sire),\n                                dam =  c(rep(NA, n_nr_sire), vec_dam),\n                                label = as.character(1:n_nr_anim))\nmat_A_p05 &lt;- as.matrix(getA(ped = ped_p05))\n\n'as(&lt;dtTMatrix&gt;, \"dtCMatrix\")' is deprecated.\nUse 'as(., \"CsparseMatrix\")' instead.\nSee help(\"Deprecated\") and help(\"Matrix-deprecated\").\n\nmat_chol_A &lt;- chol(mat_A_p05)"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html#data-simulation",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html#data-simulation",
+    "title": "ASM Exam 2024: Problem 5",
+    "section": "Data Simulation",
+    "text": "Data Simulation\nThe DIM values are sampled from a uniform distribution determined by the DIM-range.\n\nvec_dim &lt;- round(runif(n_nr_obs, min = n_dim_start, max = n_dim_end), digits = 0)\nvec_dim &lt;- vec_dim[order(vec_dim)]\nvec_dim\n\n [1] 22 22 22 24 24 24 25 26 27 29 29 30 31 33 35 36 42 44 44 46\n\n\nThe vector of breeds is sampled randomly\n\nvec_breed_eff &lt;- c(0, 0.46)\nvec_breed_name &lt;- c(\"BS\", \"HO\")\nvec_breed &lt;- sample(vec_breed_name, n_nr_obs, replace = T)\nvec_breed\n\n [1] \"BS\" \"HO\" \"BS\" \"BS\" \"BS\" \"BS\" \"BS\" \"HO\" \"HO\" \"BS\" \"BS\" \"BS\" \"HO\" \"HO\" \"HO\"\n[16] \"HO\" \"HO\" \"HO\" \"BS\" \"BS\"\n\n\nThe data is generated using breed as factor\n\nvec_breed_fct &lt;- as.factor(vec_breed)\nmat_X_breed &lt;- model.matrix(y ~ breed, data = data.frame(y = rep(1, n_nr_obs), breed = vec_breed_fct))\nattr(mat_X_breed, \"assign\") &lt;- NULL\nattr(mat_X_breed, \"contrasts\") &lt;- NULL\ndimnames(mat_X_breed) &lt;- NULL\nmat_X_breed\n\n      [,1] [,2]\n [1,]    1    0\n [2,]    1    1\n [3,]    1    0\n [4,]    1    0\n [5,]    1    0\n [6,]    1    0\n [7,]    1    0\n [8,]    1    1\n [9,]    1    1\n[10,]    1    0\n[11,]    1    0\n[12,]    1    0\n[13,]    1    1\n[14,]    1    1\n[15,]    1    1\n[16,]    1    1\n[17,]    1    1\n[18,]    1    1\n[19,]    1    0\n[20,]    1    0\n\n\nGenerate the data\n\nvec_true_u &lt;- crossprod(t(mat_chol_A), rnorm(n_nr_anim, sd = n_cit_sigma_u))\nvec_cit &lt;- n_reg_intc + n_reg_coef * vec_dim + \n  crossprod(t(mat_X_breed), vec_breed_eff) + \n  vec_true_u[(n_nr_sire + 1):n_nr_anim] + \n  rnorm(n_nr_obs, mean = 0, sd = n_cit_sigma_e)\nvec_cit_round &lt;- round(vec_cit, digits = 2)\ntbl_cit_dim_br &lt;- tibble::tibble(ID = c((n_nr_sire + 1):n_nr_anim),\n                                 Sire = vec_sire,\n                                 Dam = vec_dam,\n                                 DIM = vec_dim,\n                                 Breed = vec_breed,\n                                 Citrate = vec_cit_round[,1])\ntbl_cit_dim_br\n\n# A tibble: 20 × 6\n      ID  Sire   Dam   DIM Breed Citrate\n   &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;\n 1     5     1    NA    22 BS       9.3 \n 2     6     1    NA    22 HO       9.26\n 3     7     1     5    22 BS       8.92\n 4     8     1     5    24 BS       9.3 \n 5     9     1     6    24 BS       9.03\n 6    10     1     6    24 BS       8.82\n 7    11     2     7    25 BS       9.09\n 8    12     2     7    26 HO       9.04\n 9    13     2     8    27 HO       9.71\n10    14     2     8    29 BS       8.52\n11    15     2     9    29 BS       9.18\n12    16     3     9    30 BS       8.85\n13    17     3    10    31 HO       9.04\n14    18     3    10    33 HO       9.04\n15    19     3    11    35 HO       9.44\n16    20     3    11    36 HO       9.18\n17    21     3    12    42 HO       8.88\n18    22     4    12    44 HO       8.96\n19    23     4    13    44 BS       8.74\n20    24     4    13    46 BS       8.52"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html#write-data",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p05/20240524_asm_exam_2024_p05.html#write-data",
+    "title": "ASM Exam 2024: Problem 5",
+    "section": "Write Data",
+    "text": "Write Data\n\ns_cit_dim_br_path &lt;- here::here(\"docs\", \"data\", \"asm_exam_2024_p05.csv\")\n# unlink(s_cit_dim_br_path)\nif (!file.exists(s_cit_dim_br_path)){\n  readr::write_delim(tbl_cit_dim_br, file = s_cit_dim_br_path, delim = \",\")\n}"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html",
+    "title": "ASM Exam 2024: Problem 3",
+    "section": "",
+    "text": "Include interactions between breed and DIM into the dataset. Use parameter from Problem 1 …\n\nset.seed(2405)\nn_nr_obs &lt;- 20\n# dim\nn_dim_start &lt;- 20\nn_dim_end &lt;- 50\n# citrate\nn_cit_max &lt;- 9.2\nn_cit_min &lt;- 8.5\nn_cit_mean &lt;- mean(c(n_cit_max, n_cit_min))\nn_cit_sd &lt;- 0.24\nn_reg_coef &lt;- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)\nn_reg_intc &lt;- 9.0\nn_intac_br_dim &lt;- -n_reg_coef / 25"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#background",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#background",
+    "title": "ASM Exam 2024: Problem 3",
+    "section": "",
+    "text": "Include interactions between breed and DIM into the dataset. Use parameter from Problem 1 …\n\nset.seed(2405)\nn_nr_obs &lt;- 20\n# dim\nn_dim_start &lt;- 20\nn_dim_end &lt;- 50\n# citrate\nn_cit_max &lt;- 9.2\nn_cit_min &lt;- 8.5\nn_cit_mean &lt;- mean(c(n_cit_max, n_cit_min))\nn_cit_sd &lt;- 0.24\nn_reg_coef &lt;- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)\nn_reg_intc &lt;- 9.0\nn_intac_br_dim &lt;- -n_reg_coef / 25"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#data-simulation",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#data-simulation",
+    "title": "ASM Exam 2024: Problem 3",
+    "section": "Data Simulation",
+    "text": "Data Simulation\nThe DIM values are sampled from a uniform distribution determined by the DIM-range.\n\nvec_dim &lt;- round(runif(n_nr_obs, min = n_dim_start, max = n_dim_end), digits = 0)\nvec_dim &lt;- vec_dim[order(vec_dim)]\nvec_dim\n\n [1] 22 22 22 24 24 24 25 26 27 29 29 30 31 33 35 36 42 44 44 46\n\n\nThe vector of breeds is sampled randomly\n\nvec_breed_eff &lt;- c(0, 0.46)\nvec_breed_name &lt;- c(\"BS\", \"HO\")\nvec_breed &lt;- sample(vec_breed_name, n_nr_obs, replace = T)\nvec_breed\n\n [1] \"BS\" \"HO\" \"BS\" \"BS\" \"BS\" \"BS\" \"BS\" \"HO\" \"HO\" \"BS\" \"BS\" \"BS\" \"HO\" \"HO\" \"HO\"\n[16] \"HO\" \"HO\" \"HO\" \"BS\" \"BS\"\n\n\nThe data is generated using breed as factor, DIM as regression coefficient and an interaction between DIM and breed\n\nvec_breed_fct &lt;- as.factor(vec_breed)\nmat_X_dim_breed &lt;- model.matrix(y ~ breed * dim, \n                                data = data.frame(y = rep(1, n_nr_obs), \n                                                  breed = vec_breed_fct,\n                                                  dim = vec_dim))\nattr(mat_X_dim_breed, \"assign\") &lt;- NULL\nattr(mat_X_dim_breed, \"contrasts\") &lt;- NULL\ndimnames(mat_X_dim_breed) &lt;- NULL\nmat_X_dim_breed\n\n      [,1] [,2] [,3] [,4]\n [1,]    1    0   22    0\n [2,]    1    1   22   22\n [3,]    1    0   22    0\n [4,]    1    0   24    0\n [5,]    1    0   24    0\n [6,]    1    0   24    0\n [7,]    1    0   25    0\n [8,]    1    1   26   26\n [9,]    1    1   27   27\n[10,]    1    0   29    0\n[11,]    1    0   29    0\n[12,]    1    0   30    0\n[13,]    1    1   31   31\n[14,]    1    1   33   33\n[15,]    1    1   35   35\n[16,]    1    1   36   36\n[17,]    1    1   42   42\n[18,]    1    1   44   44\n[19,]    1    0   44    0\n[20,]    1    0   46    0\n\n\nGenerate the data\n\nvec_dim_br_int_eff &lt;- c(n_reg_intc, vec_breed_eff[2], n_reg_coef, n_intac_br_dim)\nvec_cit &lt;- crossprod(t(mat_X_dim_breed), vec_dim_br_int_eff) + rnorm(n_nr_obs, mean = 0, sd = n_cit_sd)\nvec_cit_round &lt;- round(vec_cit, digits = 2)\ntbl_cit_dim_br_intac &lt;- tibble::tibble(Cow = c(1:n_nr_obs),\n                                 DIM = vec_dim,\n                                 Breed = vec_breed,\n                                 Citrate = vec_cit_round[,1])\ntbl_cit_dim_br_intac\n\n# A tibble: 20 × 4\n     Cow   DIM Breed Citrate\n   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;\n 1     1    22 BS       8.21\n 2     2    22 HO       9.51\n 3     3    22 BS       8.34\n 4     4    24 BS       8.37\n 5     5    24 BS       8.53\n 6     6    24 BS       8.07\n 7     7    25 BS       8.75\n 8     8    26 HO       8.74\n 9     9    27 HO       9.1 \n10    10    29 BS       8.16\n11    11    29 BS       8.3 \n12    12    30 BS       8.3 \n13    13    31 HO       9.2 \n14    14    33 HO       8.75\n15    15    35 HO       9.16\n16    16    36 HO       8.36\n17    17    42 HO       8.3 \n18    18    44 HO       8.49\n19    19    44 BS       8.17\n20    20    46 BS       8.06"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#plot",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#plot",
+    "title": "ASM Exam 2024: Problem 3",
+    "section": "Plot",
+    "text": "Plot\n\nlibrary(ggplot2)\np &lt;- ggplot(data = tbl_cit_dim_br_intac, \n            aes(x = DIM, y = Citrate)) + \n  geom_point(aes(color = Breed))\np"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#write-data",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#write-data",
+    "title": "ASM Exam 2024: Problem 3",
+    "section": "Write Data",
+    "text": "Write Data\nThe data is written to a file\n\ns_cit_dim_br_intac_path &lt;- here::here(\"docs\", \"data\", \"asm_exam_2024_p03.csv\")\n#unlink(s_cit_dim_br_intac_path)\nif (!file.exists(s_cit_dim_br_intac_path)){\n  readr::write_delim(tbl_cit_dim_br_intac, file = s_cit_dim_br_intac_path, delim = \",\")\n}"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#group-means",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#group-means",
+    "title": "ASM Exam 2024: Problem 3",
+    "section": "Group Means",
+    "text": "Group Means\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\ntbl_cit_dim_br_intac_gr_mean &lt;- tbl_cit_dim_br_intac %&gt;% \n  group_by(Breed) %&gt;%\n  summarise(Cit_Group_Mean = mean(Citrate),\n            DIM_Group_Mean = mean(DIM))\ntbl_cit_dim_br_intac_gr_mean\n\n# A tibble: 2 × 3\n  Breed Cit_Group_Mean DIM_Group_Mean\n  &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;\n1 BS              8.30           29  \n2 HO              8.85           32.9"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#linear-model",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p03/20240524_asm_exam_2024_p03.html#linear-model",
+    "title": "ASM Exam 2024: Problem 3",
+    "section": "Linear Model",
+    "text": "Linear Model\n\nlm_cit_dim_br_intac &lt;- lm(Citrate ~ DIM * Breed, data = tbl_cit_dim_br_intac)\nsmry_lm_cit_dim_br_intac &lt;- summary(lm_cit_dim_br_intac)\nsmry_lm_cit_dim_br_intac\n\n\nCall:\nlm(formula = Citrate ~ DIM * Breed, data = tbl_cit_dim_br_intac)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.40476 -0.13973  0.00115  0.13979  0.40915 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  8.618906   0.274677  31.378 8.45e-16 ***\nDIM         -0.011122   0.009131  -1.218  0.24084    \nBreedHO      1.655131   0.481022   3.441  0.00336 ** \nDIM:BreedHO -0.032311   0.014883  -2.171  0.04531 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.2423 on 16 degrees of freedom\nMultiple R-squared:  0.7172,    Adjusted R-squared:  0.6642 \nF-statistic: 13.53 on 3 and 16 DF,  p-value: 0.0001181"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p01/20240524_asm_exam_2024_p01.html",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p01/20240524_asm_exam_2024_p01.html",
+    "title": "ASM Exam 2024: Problem 1",
+    "section": "",
+    "text": "According to (Chen et al. 2023), Milk Citrate concentration (mmol/L) is an important biomarker for Negative Energy Balance (NEB). In their paper they found the following numbers\n\nset.seed(2405)\nn_nr_obs &lt;- 20\nn_dim_start &lt;- 20\nn_dim_end &lt;- 50\ntbl_cit_desc_stat &lt;- tibble::tibble(Trait = c(\"Citrate1\", \"Citrate2\", \"Citrate3+\"),\n                                    Minimum = c(4.07, 4.05, 3.97), \n                                    Maximum = c(14.14, 14.18, 14.18), \n                                    Mean = c(8.93, 8.93, 9.18), \n                                    SD = c(1.48, 1.63, 1.76))\ntbl_cit_desc_stat\n\n# A tibble: 3 × 5\n  Trait     Minimum Maximum  Mean    SD\n  &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Citrate1     4.07    14.1  8.93  1.48\n2 Citrate2     4.05    14.2  8.93  1.63\n3 Citrate3+    3.97    14.2  9.18  1.76\n\n\nBetween DIM 20 and 50, the relationship between Milk Citrate and DIM is nearly linear. This is shown by the following screenshot of Figure 1 in (Chen et al. 2023).\n\n\n\n\n\n\n\n\n\nThis can be modeled by a regression model. Based on the plot and due to the fact that we restrict the DIM range, we have to adapt some of the parameters.\n\nn_cit_max &lt;- 9.2\nn_cit_min &lt;- 8.5\nn_cit_mean &lt;- mean(c(n_cit_max, n_cit_min))\nn_cit_sd &lt;- 0.24\nn_reg_coef &lt;- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)\nn_reg_intc &lt;- 9.5"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p01/20240524_asm_exam_2024_p01.html#background",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p01/20240524_asm_exam_2024_p01.html#background",
+    "title": "ASM Exam 2024: Problem 1",
+    "section": "",
+    "text": "According to (Chen et al. 2023), Milk Citrate concentration (mmol/L) is an important biomarker for Negative Energy Balance (NEB). In their paper they found the following numbers\n\nset.seed(2405)\nn_nr_obs &lt;- 20\nn_dim_start &lt;- 20\nn_dim_end &lt;- 50\ntbl_cit_desc_stat &lt;- tibble::tibble(Trait = c(\"Citrate1\", \"Citrate2\", \"Citrate3+\"),\n                                    Minimum = c(4.07, 4.05, 3.97), \n                                    Maximum = c(14.14, 14.18, 14.18), \n                                    Mean = c(8.93, 8.93, 9.18), \n                                    SD = c(1.48, 1.63, 1.76))\ntbl_cit_desc_stat\n\n# A tibble: 3 × 5\n  Trait     Minimum Maximum  Mean    SD\n  &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 Citrate1     4.07    14.1  8.93  1.48\n2 Citrate2     4.05    14.2  8.93  1.63\n3 Citrate3+    3.97    14.2  9.18  1.76\n\n\nBetween DIM 20 and 50, the relationship between Milk Citrate and DIM is nearly linear. This is shown by the following screenshot of Figure 1 in (Chen et al. 2023).\n\n\n\n\n\n\n\n\n\nThis can be modeled by a regression model. Based on the plot and due to the fact that we restrict the DIM range, we have to adapt some of the parameters.\n\nn_cit_max &lt;- 9.2\nn_cit_min &lt;- 8.5\nn_cit_mean &lt;- mean(c(n_cit_max, n_cit_min))\nn_cit_sd &lt;- 0.24\nn_reg_coef &lt;- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)\nn_reg_intc &lt;- 9.5"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p01/20240524_asm_exam_2024_p01.html#data-simulation",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p01/20240524_asm_exam_2024_p01.html#data-simulation",
+    "title": "ASM Exam 2024: Problem 1",
+    "section": "Data Simulation",
+    "text": "Data Simulation\nThe DIM values are sampled from a uniform distribution determined by the DIM-range.\n\nvec_dim &lt;- round(runif(n_nr_obs, min = n_dim_start, max = n_dim_end), digits = 0)\nvec_dim &lt;- vec_dim[order(vec_dim)]\nvec_dim\n\n [1] 22 22 22 24 24 24 25 26 27 29 29 30 31 33 35 36 42 44 44 46\n\n\nGenerate the data\n\nvec_cit &lt;- n_reg_intc + n_reg_coef * vec_dim + rnorm(n_nr_obs, mean = 0, sd = n_cit_sd)\nvec_cit_round &lt;- round(vec_cit, digits = 2)\ntbl_cit_dim &lt;- tibble::tibble(Cow = c(1:n_nr_obs),\n                              DIM = vec_dim,\n                              Citrate = vec_cit_round)\ntbl_cit_dim\n\n# A tibble: 20 × 3\n     Cow   DIM Citrate\n   &lt;int&gt; &lt;dbl&gt;   &lt;dbl&gt;\n 1     1    22    9.1 \n 2     2    22    9.23\n 3     3    22    9.1 \n 4     4    24    8.68\n 5     5    24    9.1 \n 6     6    24    9.14\n 7     7    25    8.69\n 8     8    26    8.85\n 9     9    27    8.93\n10    10    29    8.67\n11    11    29    8.54\n12    12    30    9.34\n13    13    31    8.63\n14    14    33    8.66\n15    15    35    8.78\n16    16    36    8.29\n17    17    42    8.86\n18    18    44    8.34\n19    19    44    8.72\n20    20    46    8.26\n\n\nWrite data to file\n\ns_cit_dim_path &lt;- here::here(\"docs\", \"data\", \"asm_exam_2024_p01.csv\")\n# unlink(s_cit_dim_path)\nif (!file.exists(s_cit_dim_path)){\n  readr::write_delim(tbl_cit_dim, file = s_cit_dim_path, delim = \",\")\n}\n\nPlot\n\nlibrary(ggplot2)\np &lt;-ggplot(data = tbl_cit_dim, aes(x = DIM, y = Citrate)) + \n  geom_point()\np\n\n\n\n\n\n\n\n\nFit regression model\n\nlm_cit_dim &lt;- lm(Citrate ~ DIM, data = tbl_cit_dim)\nsmry_lm_cit_dim &lt;- summary(lm_cit_dim)\nsmry_lm_cit_dim\n\n\nCall:\nlm(formula = Citrate ~ DIM, data = tbl_cit_dim)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.37391 -0.16177 -0.01203  0.14531  0.52570 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  9.566262   0.221608  43.168  &lt; 2e-16 ***\nDIM         -0.025065   0.006988  -3.587  0.00211 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.2424 on 18 degrees of freedom\nMultiple R-squared:  0.4168,    Adjusted R-squared:  0.3845 \nF-statistic: 12.87 on 1 and 18 DF,  p-value: 0.002107\n\n\nAdd regression line to plot\n\np &lt;- p + geom_abline(slope = smry_lm_cit_dim$coefficients[\"DIM\", \"Estimate\"],\n                     intercept = smry_lm_cit_dim$coefficients[\"(Intercept)\", \"Estimate\"],\n                     color = \"red\")\np\n\n\n\n\n\n\n\n\nSave plot to file\n\ns_plot_p1_dir &lt;- \"png\"\nif (!dir.exists(s_plot_p1_dir)){\n  dir.create(s_plot_p1_dir)\n}\ns_plot01_pat &lt;- file.path(s_plot_p1_dir, \"asm_exam_2024_p01_plot01.png\")\nif (!file.exists(s_plot01_pat)){\n  ggsave(filename = s_plot01_pat, p)\n}\n\nSecond Plot\n\nvec_rand &lt;- n_cit_min - 0.5 - n_reg_coef * vec_dim + rnorm(n_nr_obs, mean = 0, sd = n_cit_sd)\nvec_rand_round &lt;- round(vec_rand, digits = 2)\ntbl_rand_dim &lt;- tibble::tibble(DIM = vec_dim,\n                      Citrate = vec_rand_round)\n\nlm_rand_dim &lt;- lm(Citrate ~ DIM, data = tbl_rand_dim)\nsmry_lm_rand_dim &lt;- summary(lm_rand_dim)\n\np_rand &lt;- ggplot(data = tbl_rand_dim, aes(x = DIM, y = Citrate)) + \n  geom_point() + \n  geom_abline(slope = smry_lm_rand_dim$coefficients[\"DIM\", \"Estimate\"],\n              intercept = smry_lm_rand_dim$coefficients[\"(Intercept)\", \"Estimate\"],\n              color = \"red\")\np_rand\n\n\n\n\n\n\n\n\nSave plot to file\n\ns_plot02_pat &lt;- file.path(s_plot_p1_dir, \"asm_exam_2024_p01_plot02.png\")\nif (!file.exists(s_plot02_pat)){\n  ggsave(filename = s_plot02_pat, p_rand)\n}"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p04/20240524_asm_exam_2024_p04.html",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p04/20240524_asm_exam_2024_p04.html",
+    "title": "ASM Exam 2024: Problem 4",
+    "section": "",
+    "text": "Use a dataset with citrate and breed alone to be used in Problem 4 dealing with contrasts."
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p04/20240524_asm_exam_2024_p04.html#background",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p04/20240524_asm_exam_2024_p04.html#background",
+    "title": "ASM Exam 2024: Problem 4",
+    "section": "",
+    "text": "Use a dataset with citrate and breed alone to be used in Problem 4 dealing with contrasts."
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p04/20240524_asm_exam_2024_p04.html#data",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p04/20240524_asm_exam_2024_p04.html#data",
+    "title": "ASM Exam 2024: Problem 4",
+    "section": "Data",
+    "text": "Data\nRead data from problem 2\n\ns_cit_dim_br_path &lt;- here::here(\"docs\", \"data\", \"asm_exam_2024_p02.csv\")\ntbl_cit_dim_br &lt;- readr::read_delim(s_cit_dim_br_path, delim = \",\")\n\nRows: 20 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Breed\ndbl (3): Cow, DIM, Citrate\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\ntbl_cit_dim_br\n\n# A tibble: 20 × 4\n     Cow   DIM Breed Citrate\n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;\n 1     1    22 BS       8.71\n 2     2    22 HO       9.99\n 3     3    22 BS       8.84\n 4     4    24 BS       8.87\n 5     5    24 BS       9.03\n 6     6    24 BS       8.57\n 7     7    25 BS       9.25\n 8     8    26 HO       9.22\n 9     9    27 HO       9.57\n10    10    29 BS       8.66\n11    11    29 BS       8.8 \n12    12    30 BS       8.8 \n13    13    31 HO       9.67\n14    14    33 HO       9.21\n15    15    35 HO       9.63\n16    16    36 HO       8.83\n17    17    42 HO       8.76\n18    18    44 HO       8.95\n19    19    44 BS       8.67\n20    20    46 BS       8.56\n\n\nRemove DIM and save new data\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\ntbl_cit_br &lt;- tbl_cit_dim_br %&gt;%\n  select(-DIM)\n# write data to file\ns_cit_br_path &lt;- here::here(\"docs\", \"data\", \"asm_exam_2024_p04.csv\")\nif (!file.exists(s_cit_br_path)){\n  readr::write_delim(tbl_cit_br, file = s_cit_br_path, delim = \",\")\n}"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html",
+    "title": "ASM Exam 2024: Problem 2",
+    "section": "",
+    "text": "Include breed as additional fixed effects into the dataset. Use parameter from Problem 1 …\n\nset.seed(2405)\nn_nr_obs &lt;- 20\n# dim\nn_dim_start &lt;- 20\nn_dim_end &lt;- 50\n# citrate\nn_cit_max &lt;- 9.2\nn_cit_min &lt;- 8.5\nn_cit_mean &lt;- mean(c(n_cit_max, n_cit_min))\nn_cit_sd &lt;- 0.24\nn_reg_coef &lt;- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)\nn_reg_intc &lt;- 9.5"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#background",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#background",
+    "title": "ASM Exam 2024: Problem 2",
+    "section": "",
+    "text": "Include breed as additional fixed effects into the dataset. Use parameter from Problem 1 …\n\nset.seed(2405)\nn_nr_obs &lt;- 20\n# dim\nn_dim_start &lt;- 20\nn_dim_end &lt;- 50\n# citrate\nn_cit_max &lt;- 9.2\nn_cit_min &lt;- 8.5\nn_cit_mean &lt;- mean(c(n_cit_max, n_cit_min))\nn_cit_sd &lt;- 0.24\nn_reg_coef &lt;- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)\nn_reg_intc &lt;- 9.5"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#data-simulation",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#data-simulation",
+    "title": "ASM Exam 2024: Problem 2",
+    "section": "Data Simulation",
+    "text": "Data Simulation\nThe DIM values are sampled from a uniform distribution determined by the DIM-range.\n\nvec_dim &lt;- round(runif(n_nr_obs, min = n_dim_start, max = n_dim_end), digits = 0)\nvec_dim &lt;- vec_dim[order(vec_dim)]\nvec_dim\n\n [1] 22 22 22 24 24 24 25 26 27 29 29 30 31 33 35 36 42 44 44 46\n\n\nThe vector of breeds is sampled randomly\n\nvec_breed_eff &lt;- c(0, 0.46)\nvec_breed_name &lt;- c(\"BS\", \"HO\")\nvec_breed &lt;- sample(vec_breed_name, n_nr_obs, replace = T)\nvec_breed\n\n [1] \"BS\" \"HO\" \"BS\" \"BS\" \"BS\" \"BS\" \"BS\" \"HO\" \"HO\" \"BS\" \"BS\" \"BS\" \"HO\" \"HO\" \"HO\"\n[16] \"HO\" \"HO\" \"HO\" \"BS\" \"BS\"\n\n\nThe data is generated using breed as factor\n\nvec_breed_fct &lt;- as.factor(vec_breed)\nmat_X_breed &lt;- model.matrix(y ~ breed, data = data.frame(y = rep(1, n_nr_obs), breed = vec_breed_fct))\nattr(mat_X_breed, \"assign\") &lt;- NULL\nattr(mat_X_breed, \"contrasts\") &lt;- NULL\ndimnames(mat_X_breed) &lt;- NULL\nmat_X_breed\n\n      [,1] [,2]\n [1,]    1    0\n [2,]    1    1\n [3,]    1    0\n [4,]    1    0\n [5,]    1    0\n [6,]    1    0\n [7,]    1    0\n [8,]    1    1\n [9,]    1    1\n[10,]    1    0\n[11,]    1    0\n[12,]    1    0\n[13,]    1    1\n[14,]    1    1\n[15,]    1    1\n[16,]    1    1\n[17,]    1    1\n[18,]    1    1\n[19,]    1    0\n[20,]    1    0\n\n\nGenerate the data\n\nvec_cit &lt;- n_reg_intc + n_reg_coef * vec_dim + crossprod(t(mat_X_breed), vec_breed_eff) + rnorm(n_nr_obs, mean = 0, sd = n_cit_sd)\nvec_cit_round &lt;- round(vec_cit, digits = 2)\ntbl_cit_dim_br &lt;- tibble::tibble(Cow = c(1:n_nr_obs),\n                                 DIM = vec_dim,\n                                 Breed = vec_breed,\n                                 Citrate = vec_cit_round[,1])\ntbl_cit_dim_br\n\n# A tibble: 20 × 4\n     Cow   DIM Breed Citrate\n   &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;\n 1     1    22 BS       8.71\n 2     2    22 HO       9.99\n 3     3    22 BS       8.84\n 4     4    24 BS       8.87\n 5     5    24 BS       9.03\n 6     6    24 BS       8.57\n 7     7    25 BS       9.25\n 8     8    26 HO       9.22\n 9     9    27 HO       9.57\n10    10    29 BS       8.66\n11    11    29 BS       8.8 \n12    12    30 BS       8.8 \n13    13    31 HO       9.67\n14    14    33 HO       9.21\n15    15    35 HO       9.63\n16    16    36 HO       8.83\n17    17    42 HO       8.76\n18    18    44 HO       8.95\n19    19    44 BS       8.67\n20    20    46 BS       8.56"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#plot",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#plot",
+    "title": "ASM Exam 2024: Problem 2",
+    "section": "Plot",
+    "text": "Plot\n\nlibrary(ggplot2)\np &lt;- ggplot(data = tbl_cit_dim_br, \n            aes(x = DIM, y = Citrate)) + \n  geom_point(aes(color = Breed))\np"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#write-data",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#write-data",
+    "title": "ASM Exam 2024: Problem 2",
+    "section": "Write Data",
+    "text": "Write Data\nThe data is written to a file\n\ns_cit_dim_br_path &lt;- here::here(\"docs\", \"data\", \"asm_exam_2024_p02.csv\")\n# unlink(s_cit_dim_br_path)\nif (!file.exists(s_cit_dim_br_path)){\n  readr::write_delim(tbl_cit_dim_br, file = s_cit_dim_br_path, delim = \",\")\n}"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#group-means",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#group-means",
+    "title": "ASM Exam 2024: Problem 2",
+    "section": "Group Means",
+    "text": "Group Means\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\ntbl_cit_dim_br_gr_mean &lt;- tbl_cit_dim_br %&gt;% \n  group_by(Breed) %&gt;%\n  summarise(Cit_Group_Mean = mean(Citrate),\n            DIM_Group_Mean = mean(DIM))\ntbl_cit_dim_br_gr_mean\n\n# A tibble: 2 × 3\n  Breed Cit_Group_Mean DIM_Group_Mean\n  &lt;chr&gt;          &lt;dbl&gt;          &lt;dbl&gt;\n1 BS              8.80           29  \n2 HO              9.31           32.9"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#linear-model",
+    "href": "exam/asm_exam_sol/20240524_asm_exam_2024_p02/20240524_asm_exam_2024_p02.html#linear-model",
+    "title": "ASM Exam 2024: Problem 2",
+    "section": "Linear Model",
+    "text": "Linear Model\n\nlm_cit_dim_br &lt;- lm(Citrate ~ DIM + Breed, data = tbl_cit_dim_br)\nsmry_lm_cit_dim_br &lt;- summary(lm_cit_dim_br)\nsmry_lm_cit_dim_br\n\n\nCall:\nlm(formula = Citrate ~ DIM + Breed, data = tbl_cit_dim_br)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.41096 -0.16520 -0.02042  0.18088  0.41835 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  9.481374   0.245866  38.563  &lt; 2e-16 ***\nDIM         -0.023621   0.008004  -2.951 0.008936 ** \nBreedHO      0.609940   0.124814   4.887 0.000139 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.2689 on 17 degrees of freedom\nMultiple R-squared:  0.6144,    Adjusted R-squared:  0.569 \nF-statistic: 13.54 on 2 and 17 DF,  p-value: 0.0003038\n\n\nGroup means\n\nsmry_lm_cit_dim_br$coefficients[\"(Intercept)\",\"Estimate\"] + \n  tbl_cit_dim_br_gr_mean$DIM_Group_Mean[tbl_cit_dim_br_gr_mean$Breed == \"BS\"] * \n  smry_lm_cit_dim_br$coefficients[\"DIM\",\"Estimate\"]\n\n[1] 8.796364"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nThe regression model is given as\n\\[y = Xb + e\\]\nwhere vectors\n\n\\(y\\): vector of length \\(n=20\\) with known observations of the response variable\n\\(b\\): vector of length \\(p=2\\) with unknown effects (intercept and slope)\n\\(e\\): vector of length \\(n=20\\) with unknown random residuals\n\nand Matrix \\(X\\) of dimension \\(n\\times p\\) contains a column of all ones and the column with DIM values.\nThe known components are \\(y\\) and \\(X\\) and they can be specified by the information from the dataset\n\\[\ny = \\begin{bmatrix} 9.1 \\\\9.23 \\\\9.1 \\\\8.68 \\\\9.1 \\\\9.14 \\\\8.69 \\\\8.85 \\\\8.93 \\\\8.67 \\\\8.54 \\\\9.34 \\\\8.63 \\\\8.66 \\\\8.78 \\\\8.29 \\\\8.86 \\\\8.34 \\\\8.72 \\\\8.26\\end{bmatrix}\n\\text{, }\nX = \\begin{bmatrix} 1 & 22 \\\\1 & 22 \\\\1 & 22 \\\\1 & 24 \\\\1 & 24 \\\\1 & 24 \\\\1 & 25 \\\\1 & 26 \\\\1 & 27 \\\\1 & 29 \\\\1 & 29 \\\\1 & 30 \\\\1 & 31 \\\\1 & 33 \\\\1 & 35 \\\\1 & 36 \\\\1 & 42 \\\\1 & 44 \\\\1 & 44 \\\\1 & 46\\end{bmatrix}\n\\]"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-1",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-1",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nThe linear regression model fit is given by\n\nlm_cit_dim &lt;- lm(Citrate ~ DIM, data = tbl_p01)\nsmry_lm_cit_dim &lt;- summary(lm_cit_dim)\nsmry_lm_cit_dim\n\n\nCall:\nlm(formula = Citrate ~ DIM, data = tbl_p01)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.37391 -0.16177 -0.01203  0.14531  0.52570 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  9.566262   0.221608  43.168  &lt; 2e-16 ***\nDIM         -0.025065   0.006988  -3.587  0.00211 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.2424 on 18 degrees of freedom\nMultiple R-squared:  0.4168,    Adjusted R-squared:  0.3845 \nF-statistic: 12.87 on 1 and 18 DF,  p-value: 0.002107\n\n\nThe estimates for the quantities asked in the problem are listed in the following table\n\n\n\n\n\nQuantity\nEstimate\n\n\n\n\nSlope\n-0.0250654\n\n\nIntercept\n9.5662617\n\n\nVariance of Residuals\n0.0587783"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-2",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-2",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nThe second plot is correct. The following components could be inserted into the plot"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-3",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-3",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nIt is not possible, because DIM between 1 and 10 are outside of the DIM range of the dataset. Figure 1 in (Chen et al. 2023) shows that before DIM 20 the relationship is different from what was modelled in 1b). Hence a prediction of the citrate concentration would be extrapolation which is not allowed here."
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-4",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-4",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nThe fixed linear effects model is fitted as follows\n\nlm_cit_dim_br &lt;- lm(Citrate ~ DIM + Breed, data = tbl_p02)\nsmry_lm_cit_dim_br &lt;- summary(lm_cit_dim_br)\nsmry_lm_cit_dim_br\n\n\nCall:\nlm(formula = Citrate ~ DIM + Breed, data = tbl_p02)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.41096 -0.16520 -0.02042  0.18088  0.41835 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  9.481374   0.245866  38.563  &lt; 2e-16 ***\nDIM         -0.023621   0.008004  -2.951 0.008936 ** \nBreedHO      0.609940   0.124814   4.887 0.000139 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.2689 on 17 degrees of freedom\nMultiple R-squared:  0.6144,    Adjusted R-squared:  0.569 \nF-statistic: 13.54 on 2 and 17 DF,  p-value: 0.0003038"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-5",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-5",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nEstimates for the regression slope is: -0.0236211\nGroup means are determined based on the dataset as check\n\nlibrary(dplyr)\ntbl_gr_means_p02 &lt;- tbl_p02 %&gt;%\n  group_by(Breed) %&gt;%\n  summarise(GrM_Cit = mean(Citrate),\n            GrM_DIM = mean(DIM))\ntbl_gr_means_p02\n\n# A tibble: 2 × 3\n  Breed GrM_Cit GrM_DIM\n  &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1 BS       8.80    29  \n2 HO       9.31    32.9\n\n\nGroup means based on modelling results for breed BS\n\nsmry_lm_cit_dim_br$coefficients[\"(Intercept)\", \"Estimate\"] + \n  tbl_gr_means_p02$GrM_DIM[tbl_gr_means_p02$Breed == cur_breed] * \n  smry_lm_cit_dim_br$coefficients[\"DIM\", \"Estimate\"]\n\n[1] 8.796364\n\n\nGroup means based on modelling results for breed HO\n\nsmry_lm_cit_dim_br$coefficients[\"(Intercept)\", \"Estimate\"] + \n  tbl_gr_means_p02$GrM_DIM[tbl_gr_means_p02$Breed == cur_breed] * \n  smry_lm_cit_dim_br$coefficients[\"DIM\", \"Estimate\"] + \n  smry_lm_cit_dim_br$coefficients[\"BreedHO\", \"Estimate\"] \n\n[1] 9.314444"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-6",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-6",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nExpected value of citrate concentration for animals of breed BS\n\nsmry_lm_cit_dim_br$coefficients[\"(Intercept)\", \"Estimate\"] + \n  n_dim_pred * smry_lm_cit_dim_br$coefficients[\"DIM\", \"Estimate\"]\n\n[1] 8.772743\n\n\nExpected value of citrate concentration for animals of breed HO\n\nsmry_lm_cit_dim_br$coefficients[\"(Intercept)\", \"Estimate\"] + \n  n_dim_pred * smry_lm_cit_dim_br$coefficients[\"DIM\", \"Estimate\"] + \n  smry_lm_cit_dim_br$coefficients[\"BreedHO\", \"Estimate\"] \n\n[1] 9.382683"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-7",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-7",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nThe fixed linear effects model including an interaction term between DIM and Breed is fitted to the data by\n\nlm_cit_dim_br_inta &lt;- lm(Citrate ~ DIM * Breed, data = tbl_p03)\nsmry_lm_cit_dim_br_inta &lt;- summary(lm_cit_dim_br_inta)\nsmry_lm_cit_dim_br_inta\n\n\nCall:\nlm(formula = Citrate ~ DIM * Breed, data = tbl_p03)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.40476 -0.13973  0.00115  0.13979  0.40915 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  8.618906   0.274677  31.378 8.45e-16 ***\nDIM         -0.011122   0.009131  -1.218  0.24084    \nBreedHO      1.655131   0.481022   3.441  0.00336 ** \nDIM:BreedHO -0.032311   0.014883  -2.171  0.04531 *  \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.2423 on 16 degrees of freedom\nMultiple R-squared:  0.7172,    Adjusted R-squared:  0.6642 \nF-statistic: 13.53 on 3 and 16 DF,  p-value: 0.0001181"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-8",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-8",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nThe expected difference in citrate concentration in the milk for animals of breed\n\nBS corresponds to the regression coefficient times the difference in DIM\n\n\nn_delta_dim &lt;- n_dim_end_intac - n_dim_start_intac\nn_delta_citr_bs &lt;- smry_lm_cit_dim_br_inta$coefficients[\"DIM\", \"Estimate\"] * n_delta_dim\nn_delta_citr_bs\n\n[1] -0.1112216\n\n\n\nHO corresponds to the regression coefficient plus the interaction term times the difference in DIM\n\n\nn_delta_dim &lt;- n_dim_end_intac - n_dim_start_intac\nn_delta_citr_ho &lt;- (smry_lm_cit_dim_br_inta$coefficients[\"DIM\", \"Estimate\"] +\n                      smry_lm_cit_dim_br_inta$coefficients[\"DIM:BreedHO\", \"Estimate\"]) * n_delta_dim\nn_delta_citr_ho\n\n[1] -0.4343358"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-9",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-9",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nTreatment contrasts are used by default by lm() when fitting a FLEM. Hence the fit is obtained by\n\nlm_cit_br &lt;- lm(Citrate ~ Breed, data = tbl_p04)\nsmry_lm_cit_br &lt;- summary(lm_cit_br)\nsmry_lm_cit_br\n\n\nCall:\nlm(formula = Citrate ~ Breed, data = tbl_p04)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.55444 -0.15886 -0.04136  0.23912  0.67556 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   8.7964     0.0969  90.774  &lt; 2e-16 ***\nBreedHO       0.5181     0.1445   3.586  0.00211 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.3214 on 18 degrees of freedom\nMultiple R-squared:  0.4168,    Adjusted R-squared:  0.3844 \nF-statistic: 12.86 on 1 and 18 DF,  p-value: 0.00211\n\n\nAssuming treatment contrasts, verification via group means is done as follows\n\nIntercept estimate corresponds to the mean of all BS animals\n\n\nmean(tbl_p04$Citrate[tbl_p04$Breed == \"BS\"])\n\n[1] 8.796364\n\n\nThis is expected to be the same as\n\nsmry_lm_cit_br$coefficients[\"(Intercept)\", \"Estimate\"]\n\n[1] 8.796364\n\n\n\nThe difference between the group means of HO animals minus the group mean of the BS animals corresponds to the reported breed effect, hence\n\n\nmean(tbl_p04$Citrate[tbl_p04$Breed == \"HO\"]) - mean(tbl_p04$Citrate[tbl_p04$Breed == \"BS\"])\n\n[1] 0.5180808\n\n\nis expected to be the same as\n\nsmry_lm_cit_br$coefficients[\"BreedHO\", \"Estimate\"]\n\n[1] 0.5180808\n\n\n\nThe breed effect estimated can also be verified via solutions of the least squares normal equations\n\n\nmat_X &lt;- model.matrix(Citrate ~ 0 + Breed, tbl_p04)\nattr(mat_X, \"assign\") &lt;- NULL\nattr(mat_X, \"contrasts\") &lt;- NULL\ncolnames(mat_X) &lt;- NULL\nmat_X &lt;- cbind(matrix(rep(1,nrow(mat_X)), ncol = 1), mat_X)\nmat_xtx &lt;- crossprod(mat_X)\nmat_xtx_ginv &lt;- MASS::ginv(mat_xtx)\nmat_xty &lt;- crossprod(mat_X, tbl_p04$Citrate)\nmat_b_sol &lt;- crossprod(mat_xtx_ginv, mat_xty)\nmat_b_sol\n\n         [,1]\n[1,] 6.036936\n[2,] 2.759428\n[3,] 3.277508\n\n\nContrasts matrix for treatment contrasts\n\nfac_breed &lt;- as.factor(tbl_p04$Breed)\ncontr_mat_breed_treat &lt;- contrasts(fac_breed)\ncontr_mat_breed_treat &lt;- cbind(matrix(rep(1,nrow(contr_mat_breed_treat)), ncol = 1), \n                               contr_mat_breed_treat)\nest_mat_breed_treat &lt;- solve(contr_mat_breed_treat)\nest_mat_breed_treat\n\n   BS HO\n    1  0\nHO -1  1\n\n\nFor the effects estimates, we are looking at the second and the third row of the matrix est_mat_breed_treat. We are prepending a column of zeroes to the second and the third row of est_mat_breed_treat.\n\nn_nrow_est_mat &lt;- nrow(est_mat_breed_treat)\nmat_q_efun &lt;- cbind(matrix(0, nrow = (nrow(est_mat_breed_treat)-1), ncol = 1),\n                    matrix(est_mat_breed_treat[2:n_nrow_est_mat,], \n                           nrow = (nrow(est_mat_breed_treat)-1)))\ncrossprod(t(mat_q_efun), mat_b_sol) \n\n          [,1]\n[1,] 0.5180808"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-10",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-10",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\nThe fixed linear effects model using sum contrasts is fitted as shown below\n\nlm_cit_br_csum &lt;- lm(Citrate ~ Breed, data = tbl_p04, contrasts = list(Breed = \"contr.sum\"))\nsmry_lm_cit_br_csum &lt;- summary(lm_cit_br_csum)\nsmry_lm_cit_br_csum\n\n\nCall:\nlm(formula = Citrate ~ Breed, data = tbl_p04, contrasts = list(Breed = \"contr.sum\"))\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-0.55444 -0.15886 -0.04136  0.23912  0.67556 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  9.05540    0.07223 125.373  &lt; 2e-16 ***\nBreed1      -0.25904    0.07223  -3.586  0.00211 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.3214 on 18 degrees of freedom\nMultiple R-squared:  0.4168,    Adjusted R-squared:  0.3844 \nF-statistic: 12.86 on 1 and 18 DF,  p-value: 0.00211\n\n\n\nContrasts Matrix for Sum Contrasts From the contrasts matrix, we get the matrix of estimable functions.\n\n\nfac_breed &lt;- as.factor(tbl_p04$Breed)\ncontr_mat_breed_sum &lt;- contrasts(C(fac_breed, sum))\ncontr_mat_breed_sum &lt;- cbind(matrix(rep(1,nrow(contr_mat_breed_sum)), ncol = 1), contr_mat_breed_sum)\nest_mat_breed_sum &lt;- solve(contr_mat_breed_sum)\nest_mat_breed_sum\n\n      BS   HO\n[1,] 0.5  0.5\n[2,] 0.5 -0.5\n\n\nThe matrix est_mat_breed_sum tells us that the estimate for the intercept (first row) is computed as the mean of the group means for the two breeds and the estimate for the breed effect (second row) is computed as half of the difference between group means for the first breed minus the group mean of the second breed.\nHence the estimate of the intercept is\n\nmean(c(mean(tbl_p04$Citrate[tbl_p04$Breed == \"BS\"]),\n       mean(tbl_p04$Citrate[tbl_p04$Breed == \"HO\"])))\n\n[1] 9.055404\n\n\nand has to be equal to\n\nsmry_lm_cit_br_csum$coefficients[\"(Intercept)\", \"Estimate\"]\n\n[1] 9.055404\n\n\nThe estimate for the breed-effect is obtained by\n\n0.5 * (mean(tbl_p04$Citrate[tbl_p04$Breed == \"BS\"]) - mean(tbl_p04$Citrate[tbl_p04$Breed == \"HO\"]))\n\n[1] -0.2590404\n\n\nwhich is the same as\n\nsmry_lm_cit_br_csum$coefficients[\"Breed1\", \"Estimate\"]\n\n[1] -0.2590404\n\n\nThe verification with the solution of the least squares normal equation is done with\n\nn_nrow_est_mat &lt;- nrow(est_mat_breed_sum)\nmat_q_efun &lt;- cbind(matrix(0, nrow = (nrow(est_mat_breed_sum)-1), ncol = 1),\n                    matrix(est_mat_breed_sum[2:n_nrow_est_mat,], \n                           nrow = (nrow(est_mat_breed_sum)-1)))\ncrossprod(t(mat_q_efun), mat_b_sol) \n\n           [,1]\n[1,] -0.2590404"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-11",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-11",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\n\nModel as equation:\n\n\\[y = Xb + Zs + e\\] where\n\n\n\n\n\n\\(y\\)\nvector of observations\n\n\n\\(b\\)\nvector of intercept, regression coefficient and fixed effects\n\n\n\\(s\\)\nvector of random sire breeding values\n\n\n\\(e\\)\nvector of random residuals\n\n\n\\(X\\)\ndesign matrix linking observations to fixed effects\n\n\n\\(Z\\)\ndesign matrix linking observations to sire breeding values\n\n\n\n\n\n\nExpected values and the variance-covariance matrices:\n\nRandom effects are \\(y\\), \\(s\\) and \\(e\\). Their expected values correspond to\n\\[E\\left[\\begin{array}{c}y \\\\ s \\\\ e \\end{array}\\right]\n= \\left[\\begin{array}{c}Xb \\\\ 0 \\\\ 0 \\end{array}\\right]\n\\]\nThe variance-covariance matrices\n\\[\nvar\\left[\\begin{array}{c}y \\\\ s \\\\ e \\end{array}\\right]\n= \\left[\\begin{array}{ccc} V & ZS & R \\\\ SZ^T & S & 0 \\\\ R & 0 & R \\end{array}\\right]\n\\]\nwhere \\(var(s) = S = I * \\sigma_s^2\\), \\(var(e) = R = I * \\sigma_e^2\\) and \\(var(y) = V = ZSZ^T + R = ZZ^T\\sigma_s^2 + R\\) with given sire-variance component \\(\\sigma_s^2\\) and given residual variance component \\(\\sigma_e^2\\).\n\nInformation from data to model components\n\n\\[\ny = \\begin{bmatrix} 9.3 \\\\9.26 \\\\8.92 \\\\9.3 \\\\9.03 \\\\8.82 \\\\9.09 \\\\9.04 \\\\9.71 \\\\8.52 \\\\9.18 \\\\8.85 \\\\9.04 \\\\9.04 \\\\9.44 \\\\9.18 \\\\8.88 \\\\8.96 \\\\8.74 \\\\8.52\\end{bmatrix}\\text{, }b = \\begin{bmatrix} b_0 \\\\b_{DIM} \\\\b_{BreedHO}\\end{bmatrix}\\text{, }s = \\begin{bmatrix} s_{1} \\\\s_{2} \\\\s_{3} \\\\s_{4}\\end{bmatrix}\\text{, }e = \\begin{bmatrix} e_{5} \\\\e_{6} \\\\e_{7} \\\\e_{8} \\\\e_{9} \\\\e_{10} \\\\e_{11} \\\\e_{12} \\\\e_{13} \\\\e_{14} \\\\e_{15} \\\\e_{16} \\\\e_{17} \\\\e_{18} \\\\e_{19} \\\\e_{20} \\\\e_{21} \\\\e_{22} \\\\e_{23} \\\\e_{24}\\end{bmatrix}\\]\n\\[\nX = \\begin{bmatrix} 1 & 22 & 0 \\\\1 & 22 & 1 \\\\1 & 22 & 0 \\\\1 & 24 & 0 \\\\1 & 24 & 0 \\\\1 & 24 & 0 \\\\1 & 25 & 0 \\\\1 & 26 & 1 \\\\1 & 27 & 1 \\\\1 & 29 & 0 \\\\1 & 29 & 0 \\\\1 & 30 & 0 \\\\1 & 31 & 1 \\\\1 & 33 & 1 \\\\1 & 35 & 1 \\\\1 & 36 & 1 \\\\1 & 42 & 1 \\\\1 & 44 & 1 \\\\1 & 44 & 0 \\\\1 & 46 & 0\\end{bmatrix}\\text{, }Z = \\begin{bmatrix} 1 & 0 & 0 & 0 \\\\1 & 0 & 0 & 0 \\\\1 & 0 & 0 & 0 \\\\1 & 0 & 0 & 0 \\\\1 & 0 & 0 & 0 \\\\1 & 0 & 0 & 0 \\\\0 & 1 & 0 & 0 \\\\0 & 1 & 0 & 0 \\\\0 & 1 & 0 & 0 \\\\0 & 1 & 0 & 0 \\\\0 & 1 & 0 & 0 \\\\0 & 0 & 1 & 0 \\\\0 & 0 & 1 & 0 \\\\0 & 0 & 1 & 0 \\\\0 & 0 & 1 & 0 \\\\0 & 0 & 1 & 0 \\\\0 & 0 & 1 & 0 \\\\0 & 0 & 0 & 1 \\\\0 & 0 & 0 & 1 \\\\0 & 0 & 0 & 1\\end{bmatrix}\\]\n\nMixed model equations:\n\n\\[\n\\left[\n\\begin{array}{cc}\nX^TX  &  X^TZ \\\\\nZ^TX  &  Z^TZ + \\lambda_s * I\n\\end{array}\n\\right]\n\\left[\n\\begin{array}{c}\n\\hat{b} \\\\\n\\hat{s}\n\\end{array}\n\\right]\n=\n\\left[\n\\begin{array}{c}\nX^Ty \\\\\nZ^Ty\n\\end{array}\n\\right]\n\\]\n\nSolutions of MME\n\n\nmat_xtx &lt;- crossprod(mat_X_p05)\nmat_xtz &lt;- crossprod(mat_X_p05, mat_Z_sire)\nmat_ztx &lt;- t(mat_xtz)\nmat_ztz_lAsinv &lt;- crossprod(mat_Z_sire) + n_lambda_s * diag(1, nrow = n_nr_sire)\nmat_coef_sire &lt;- rbind(cbind(mat_xtx, mat_xtz), cbind(mat_ztx, mat_ztz_lAsinv))\nmat_rhs_sire &lt;- rbind(crossprod(mat_X_p05, vec_y), crossprod(mat_Z_sire, vec_y))\nmat_sol_sire &lt;- solve(mat_coef_sire, mat_rhs_sire)\nmat_sol_sire\n\n              [,1]\n[1,]  9.5007575600\n[2,] -0.0196080127\n[3,]  0.3196246901\n[4,]  0.0008951716\n[5,]  0.0052561969\n[6,] -0.0086811736\n[7,]  0.0025298051\n\n\n\nEstimates of intercept, regression coefficient and fixed effect for BreedHO are given by\n\n\ntbl_sire_result &lt;- tibble::tibble(Effect = c(\"Intercept\", \n                                             \"Regression Coefficient\", \n                                             \"BreedHO Effect\"),\n                                  Estimate = mat_sol_sire[1:3,])\nknitr::kable(tbl_sire_result)\n\n\n\n\nEffect\nEstimate\n\n\n\n\nIntercept\n9.5007576\n\n\nRegression Coefficient\n-0.0196080\n\n\nBreedHO Effect\n0.3196247\n\n\n\n\n\n\nPredicted breeding values for the sires are\n\n\nvec_sire_pbv &lt;- mat_sol_sire[(nrow(mat_sol_sire)-n_nr_sire+1):nrow(mat_sol_sire),]\nvec_sire_pbv\n\n[1]  0.0008951716  0.0052561969 -0.0086811736  0.0025298051\n\n\nThe order of the sires according to the predicted breeding values is given by\n\nvec_sire_pbv[order(vec_sire_pbv, decreasing = T)]\n\n[1]  0.0052561969  0.0025298051  0.0008951716 -0.0086811736"
+  },
+  {
+    "objectID": "exam/asm_exam_sol/asm_exam_sol.html#solution-12",
+    "href": "exam/asm_exam_sol/asm_exam_sol.html#solution-12",
+    "title": "Problem 1: Linear Regression",
+    "section": "Solution",
+    "text": "Solution\n\nModel as equation:\n\n\\[y = Xb + Zu + e\\] where\n\n\n\n\n\n\\(y\\)\nvector of observations\n\n\n\\(b\\)\nvector of intercept, regression coefficient and fixed effects\n\n\n\\(u\\)\nvector of random breeding values\n\n\n\\(e\\)\nvector of random residuals\n\n\n\\(X\\)\ndesign matrix linking observations to fixed effects\n\n\n\\(Z\\)\ndesign matrix linking observations to sire breeding values\n\n\n\n\n\n\nExpected values and the variance-covariance matrices:\n\nRandom effects are \\(y\\), \\(u\\) and \\(e\\). Their expected values correspond to\n\\[E\\left[\\begin{array}{c}y \\\\ u \\\\ e \\end{array}\\right]\n= \\left[\\begin{array}{c}Xb \\\\ 0 \\\\ 0 \\end{array}\\right]\n\\]\nThe variance-covariance matrices\n\\[\nvar\\left[\\begin{array}{c}y \\\\ u \\\\ e \\end{array}\\right]\n= \\left[\\begin{array}{ccc} V & ZU & R \\\\ UZ^T & U & 0 \\\\ R & 0 & R \\end{array}\\right]\n\\]\nwhere \\(var(u) = U = A * \\sigma_u^2\\), \\(var(e) = R = I * \\sigma_e^2\\) and \\(var(y) = V = ZUZ^T + R\\) with given additive genetic variance component \\(\\sigma_u^2\\) and given residual variance component \\(\\sigma_e^2\\).\n\nInformation from data to model components\n\n\\[\ny = \\begin{bmatrix} 9.3 \\\\9.26 \\\\8.92 \\\\9.3 \\\\9.03 \\\\8.82 \\\\9.09 \\\\9.04 \\\\9.71 \\\\8.52 \\\\9.18 \\\\8.85 \\\\9.04 \\\\9.04 \\\\9.44 \\\\9.18 \\\\8.88 \\\\8.96 \\\\8.74 \\\\8.52\\end{bmatrix}\\text{, }b = \\begin{bmatrix} b_0 \\\\b_{DIM} \\\\b_{BreedHO}\\end{bmatrix}\\text{, }u = \\begin{bmatrix} u_{1} \\\\u_{2} \\\\u_{3} \\\\u_{4} \\\\u_{5} \\\\u_{6} \\\\u_{7} \\\\u_{8} \\\\u_{9} \\\\u_{10} \\\\u_{11} \\\\u_{12} \\\\u_{13} \\\\u_{14} \\\\u_{15} \\\\u_{16} \\\\u_{17} \\\\u_{18} \\\\u_{19} \\\\u_{20} \\\\u_{21} \\\\u_{22} \\\\u_{23} \\\\u_{24}\\end{bmatrix}\\text{, }e = \\begin{bmatrix} e_{5} \\\\e_{6} \\\\e_{7} \\\\e_{8} \\\\e_{9} \\\\e_{10} \\\\e_{11} \\\\e_{12} \\\\e_{13} \\\\e_{14} \\\\e_{15} \\\\e_{16} \\\\e_{17} \\\\e_{18} \\\\e_{19} \\\\e_{20} \\\\e_{21} \\\\e_{22} \\\\e_{23} \\\\e_{24}\\end{bmatrix}\\]\n\\[\nX = \\begin{bmatrix} 1 & 22 & 0 \\\\1 & 22 & 1 \\\\1 & 22 & 0 \\\\1 & 24 & 0 \\\\1 & 24 & 0 \\\\1 & 24 & 0 \\\\1 & 25 & 0 \\\\1 & 26 & 1 \\\\1 & 27 & 1 \\\\1 & 29 & 0 \\\\1 & 29 & 0 \\\\1 & 30 & 0 \\\\1 & 31 & 1 \\\\1 & 33 & 1 \\\\1 & 35 & 1 \\\\1 & 36 & 1 \\\\1 & 42 & 1 \\\\1 & 44 & 1 \\\\1 & 44 & 0 \\\\1 & 46 & 0\\end{bmatrix}\\]\n\\[\nZ = \\]\n\nMixed model equations:\n\n\\[\n\\left[\n\\begin{array}{cc}\nX^TX  &  X^TZ \\\\\nZ^TX  &  Z^TZ + \\lambda_u * A^{-1}\n\\end{array}\n\\right]\n\\left[\n\\begin{array}{c}\n\\hat{b} \\\\\n\\hat{u}\n\\end{array}\n\\right]\n=\n\\left[\n\\begin{array}{c}\nX^Ty \\\\\nZ^Ty\n\\end{array}\n\\right]\n\\]\n\n\nLoading required package: lme4\n\n\nLoading required package: Matrix\n\n\n'as(&lt;dtTMatrix&gt;, \"dtCMatrix\")' is deprecated.\nUse 'as(., \"CsparseMatrix\")' instead.\nSee help(\"Deprecated\") and help(\"Matrix-deprecated\").\n\n\nwhere \\(\\lambda_u = \\frac{\\sigma_e^2}{\\sigma_u^2} = 1.78\\) and \\(A\\) corresponds to the numerator relationship matrix given by\n\\[A =  \\]\nThe inverse \\(A_s^{-1}\\) is\n\\[A^{-1} = \\]\n\nSolutions of MME\n\n\nmat_xtx &lt;- crossprod(mat_X_p05)\nmat_xtz &lt;- crossprod(mat_X_p05, mat_Z_ani)\nmat_ztx &lt;- t(mat_xtz)\nmat_ztz_lAinv &lt;- crossprod(mat_Z_ani) + n_lambda_u * mat_A_inv\nmat_coef_ani &lt;- rbind(cbind(mat_xtx, mat_xtz), cbind(mat_ztx, mat_ztz_lAinv))\nmat_rhs_ani &lt;- rbind(crossprod(mat_X_p05, vec_y), crossprod(mat_Z_ani, vec_y))\nmat_sol_ani &lt;- solve(mat_coef_ani, mat_rhs_ani)\nmat_sol_ani\n\n           [,1]\n    9.539690005\n   -0.021267432\n    0.349117898\n1  -0.019522398\n2   0.015023764\n3  -0.007240318\n4   0.004130529\n5   0.060900627\n6  -0.069010391\n7  -0.025382473\n8   0.066991716\n9  -0.015315320\n10 -0.100579302\n11  0.036875067\n12 -0.065712408\n13  0.109473105\n14 -0.046579510\n15  0.050600530\n16 -0.019246384\n17 -0.080664433\n18 -0.072272549\n19  0.076382029\n20  0.024028396\n21 -0.053822726\n22 -0.022512425\n23  0.074186722\n24  0.035268929\n\n\n\nEstimates of intercept, regression coefficient and fixed effect for BreedHO are given by\n\n\ntbl_ani_result &lt;- tibble::tibble(Effect = c(\"Intercept\", \n                                             \"Regression Coefficient\", \n                                             \"BreedHO Effect\"),\n                                  Estimate = mat_sol_ani[1:3,])\nknitr::kable(tbl_ani_result)\n\n\n\n\nEffect\nEstimate\n\n\n\n\nIntercept\n9.5396900\n\n\nRegression Coefficient\n-0.0212674\n\n\nBreedHO Effect\n0.3491179\n\n\n\n\n\n\nPredicted breeding values for all animals: The first two elements are solutions of fixed effects, the remaining elements are predicted breeding values\n\n\n\n\n\n\nAnimals\nPredicted Breeding Values\n\n\n\n\n1\n-0.0195224\n\n\n2\n0.0150238\n\n\n3\n-0.0072403\n\n\n4\n0.0041305\n\n\n5\n0.0609006\n\n\n6\n-0.0690104\n\n\n7\n-0.0253825\n\n\n8\n0.0669917\n\n\n9\n-0.0153153\n\n\n10\n-0.1005793\n\n\n11\n0.0368751\n\n\n12\n-0.0657124\n\n\n13\n0.1094731\n\n\n14\n-0.0465795\n\n\n15\n0.0506005\n\n\n16\n-0.0192464\n\n\n17\n-0.0806644\n\n\n18\n-0.0722725\n\n\n19\n0.0763820\n\n\n20\n0.0240284\n\n\n21\n-0.0538227\n\n\n22\n-0.0225124\n\n\n23\n0.0741867\n\n\n24\n0.0352689"
+  },
+  {
+    "objectID": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-2-fixed-linear-effects-model",
+    "href": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-2-fixed-linear-effects-model",
+    "title": "Exam in Applied Statistical Methods",
+    "section": "Problem 2: Fixed Linear Effects Model",
+    "text": "Problem 2: Fixed Linear Effects Model\n\nDataframe\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p2 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p02.csv\")\ndf_p2 &lt;- read.table(s_data_url_p2, header = T, sep = \",\")\ndim(df_p2)\n\n[1] 20  4\n\n\n\n\nTibble\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p2 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p02.csv\")\ntbl_p2 &lt;- readr::read_delim(file = s_data_url_p2, delim = \",\")\ndim(tbl_p2)\n\n[1] 20  4"
+  },
+  {
+    "objectID": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-3-interactions",
+    "href": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-3-interactions",
+    "title": "Exam in Applied Statistical Methods",
+    "section": "Problem 3: Interactions",
+    "text": "Problem 3: Interactions\n\nDataframe\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p3 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p03.csv\")\ndf_p3 &lt;- read.table(s_data_url_p3, header = T, sep = \",\")\ndim(df_p3)\n\n[1] 20  4\n\n\n\n\nTibble\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p3 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p03.csv\")\ntbl_p3 &lt;- readr::read_delim(file = s_data_url_p3, delim = \",\")\ndim(tbl_p3)\n\n[1] 20  4"
+  },
+  {
+    "objectID": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-4-contrasts",
+    "href": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-4-contrasts",
+    "title": "Exam in Applied Statistical Methods",
+    "section": "Problem 4: Contrasts",
+    "text": "Problem 4: Contrasts\n\nDataframe\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p4 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p04.csv\")\ndf_p4 &lt;- read.table(s_data_url_p4, header = T, sep = \",\")\ndim(df_p4)\n\n[1] 20  3\n\n\n\n\nTibble\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p4 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p04.csv\")\ntbl_p4 &lt;- readr::read_delim(file = s_data_url_p4, delim = \",\")\ndim(tbl_p4)\n\n[1] 20  3"
+  },
+  {
+    "objectID": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-5-linear-mixed-effects-models",
+    "href": "exam/asm_exam_read_data/asm_exam_read_data.html#problem-5-linear-mixed-effects-models",
+    "title": "Exam in Applied Statistical Methods",
+    "section": "Problem 5: Linear Mixed Effects Models",
+    "text": "Problem 5: Linear Mixed Effects Models\n\nDataframe\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p5 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p05.csv\")\ndf_p5 &lt;- read.table(s_data_url_p5, header = T, sep = \",\")\ndim(df_p5)\n\n[1] 20  6\n\n\n\n\nTibble\n\ns_data_url_root &lt;- \"https://charlotte-ngs.github.io/asmasss2024/data\"\ns_data_url_p5 &lt;- file.path(s_data_url_root, \"asm_exam_2024_p05.csv\")\ntbl_p5 &lt;- readr::read_delim(file = s_data_url_p5, delim = \",\")\ndim(tbl_p5)\n\n[1] 20  6\n\n\n\nLatest Changes: 2024-05-26 06:57:56 CEST (pvr)"
+  },
+  {
+    "objectID": "about.html#asmasss2024-0.13.0",
+    "href": "about.html#asmasss2024-0.13.0",
+    "title": "About",
+    "section": "",
+    "text": "Exam Data asm_exam_read_data"
   }
 ]

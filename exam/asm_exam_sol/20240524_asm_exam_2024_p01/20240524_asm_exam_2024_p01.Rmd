@@ -1,0 +1,156 @@
+---
+title: "ASM Exam 2024: Problem 1"
+date: 2024-05-24
+output:
+  bookdown::html_document2: default
+  bookdown::pdf_document2: default
+bibliography: bibliography.bib  
+---
+
+```{r setup, echo=FALSE}
+# rmdhelp::show_knit_hook_call()
+knitr::knit_hooks$set(hook_convert_odg = rmdhelp::hook_convert_odg)
+met <- rmdhelp::MendeleyExportToolR6$new(ps_this_rmd_file = ifelse(rstudioapi::isAvailable(),
+    rstudioapi::getActiveDocumentContext()$path, whereami::thisfile()))
+
+```
+
+
+## Background
+According to `r met$add("Chen2023b")`, Milk Citrate concentration (mmol/L) is an important biomarker for Negative Energy Balance (NEB). In their paper they found the following numbers
+
+```{r}
+set.seed(2405)
+n_nr_obs <- 20
+n_dim_start <- 20
+n_dim_end <- 50
+tbl_cit_desc_stat <- tibble::tibble(Trait = c("Citrate1", "Citrate2", "Citrate3+"),
+                                    Minimum = c(4.07, 4.05, 3.97), 
+                                    Maximum = c(14.14, 14.18, 14.18), 
+                                    Mean = c(8.93, 8.93, 9.18), 
+                                    SD = c(1.48, 1.63, 1.76))
+tbl_cit_desc_stat
+```
+
+Between DIM `r n_dim_start` and `r n_dim_end`, the relationship between Milk Citrate and DIM is nearly linear. This is shown by the following screenshot of Figure 1 in `r met$add("Chen2023b")`. 
+
+```{r chen-scshot-fig1, echo=FALSE, hook_convert_odg=TRUE, fig_path="odg", out.width="100%"}
+#rmdhelp::use_odg_graphic(ps_path = "odg/chen-scshot-fig1.odg")
+knitr::include_graphics(path = "odg/chen-scshot-fig1.png")
+```
+
+This can be modeled by a regression model. Based on the plot and due to the fact that we restrict the DIM range, we have to adapt some of the parameters. 
+
+```{r}
+n_cit_max <- 9.2
+n_cit_min <- 8.5
+n_cit_mean <- mean(c(n_cit_max, n_cit_min))
+n_cit_sd <- 0.24
+n_reg_coef <- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)
+n_reg_intc <- 9.5
+```
+
+
+## Data Simulation
+The DIM values are sampled from a uniform distribution determined by the DIM-range.
+
+```{r}
+vec_dim <- round(runif(n_nr_obs, min = n_dim_start, max = n_dim_end), digits = 0)
+vec_dim <- vec_dim[order(vec_dim)]
+vec_dim
+```
+
+Generate the data
+
+```{r}
+vec_cit <- n_reg_intc + n_reg_coef * vec_dim + rnorm(n_nr_obs, mean = 0, sd = n_cit_sd)
+vec_cit_round <- round(vec_cit, digits = 2)
+tbl_cit_dim <- tibble::tibble(Cow = c(1:n_nr_obs),
+                              DIM = vec_dim,
+                              Citrate = vec_cit_round)
+tbl_cit_dim
+```
+
+Write data to file
+
+```{r}
+s_cit_dim_path <- here::here("docs", "data", "asm_exam_2024_p01.csv")
+# unlink(s_cit_dim_path)
+if (!file.exists(s_cit_dim_path)){
+  readr::write_delim(tbl_cit_dim, file = s_cit_dim_path, delim = ",")
+}
+```
+
+
+Plot
+
+```{r}
+library(ggplot2)
+p <-ggplot(data = tbl_cit_dim, aes(x = DIM, y = Citrate)) + 
+  geom_point()
+p
+```
+
+Fit regression model
+
+```{r}
+lm_cit_dim <- lm(Citrate ~ DIM, data = tbl_cit_dim)
+smry_lm_cit_dim <- summary(lm_cit_dim)
+smry_lm_cit_dim
+```
+
+Add regression line to plot
+
+```{r}
+p <- p + geom_abline(slope = smry_lm_cit_dim$coefficients["DIM", "Estimate"],
+                     intercept = smry_lm_cit_dim$coefficients["(Intercept)", "Estimate"],
+                     color = "red")
+p
+
+```
+
+Save plot to file
+
+```{r}
+s_plot_p1_dir <- "png"
+if (!dir.exists(s_plot_p1_dir)){
+  dir.create(s_plot_p1_dir)
+}
+s_plot01_pat <- file.path(s_plot_p1_dir, "asm_exam_2024_p01_plot01.png")
+if (!file.exists(s_plot01_pat)){
+  ggsave(filename = s_plot01_pat, p)
+}
+```
+
+
+Second Plot
+
+```{r}
+vec_rand <- n_cit_min - 0.5 - n_reg_coef * vec_dim + rnorm(n_nr_obs, mean = 0, sd = n_cit_sd)
+vec_rand_round <- round(vec_rand, digits = 2)
+tbl_rand_dim <- tibble::tibble(DIM = vec_dim,
+                      Citrate = vec_rand_round)
+
+lm_rand_dim <- lm(Citrate ~ DIM, data = tbl_rand_dim)
+smry_lm_rand_dim <- summary(lm_rand_dim)
+
+p_rand <- ggplot(data = tbl_rand_dim, aes(x = DIM, y = Citrate)) + 
+  geom_point() + 
+  geom_abline(slope = smry_lm_rand_dim$coefficients["DIM", "Estimate"],
+              intercept = smry_lm_rand_dim$coefficients["(Intercept)", "Estimate"],
+              color = "red")
+p_rand
+```
+
+        
+Save plot to file
+
+```{r}
+s_plot02_pat <- file.path(s_plot_p1_dir, "asm_exam_2024_p01_plot02.png")
+if (!file.exists(s_plot02_pat)){
+  ggsave(filename = s_plot02_pat, p_rand)
+}
+```               
+
+
+## Reference      

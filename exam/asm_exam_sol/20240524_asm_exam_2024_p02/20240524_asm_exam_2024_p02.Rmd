@@ -1,0 +1,127 @@
+---
+title: 'ASM Exam 2024: Problem 2'
+author: "Peter von Rohr"
+date: "2024-05-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Background
+Include breed as additional fixed effects into the dataset. Use parameter from Problem 1 ...
+
+```{r}
+set.seed(2405)
+n_nr_obs <- 20
+# dim
+n_dim_start <- 20
+n_dim_end <- 50
+# citrate
+n_cit_max <- 9.2
+n_cit_min <- 8.5
+n_cit_mean <- mean(c(n_cit_max, n_cit_min))
+n_cit_sd <- 0.24
+n_reg_coef <- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)
+n_reg_intc <- 9.5
+
+```
+
+
+## Data Simulation
+The DIM values are sampled from a uniform distribution determined by the DIM-range.
+
+```{r}
+vec_dim <- round(runif(n_nr_obs, min = n_dim_start, max = n_dim_end), digits = 0)
+vec_dim <- vec_dim[order(vec_dim)]
+vec_dim
+```
+
+The vector of breeds is sampled randomly
+
+```{r}
+vec_breed_eff <- c(0, 0.46)
+vec_breed_name <- c("BS", "HO")
+vec_breed <- sample(vec_breed_name, n_nr_obs, replace = T)
+vec_breed
+```
+
+The data is generated using breed as factor
+
+```{r}
+vec_breed_fct <- as.factor(vec_breed)
+mat_X_breed <- model.matrix(y ~ breed, data = data.frame(y = rep(1, n_nr_obs), breed = vec_breed_fct))
+attr(mat_X_breed, "assign") <- NULL
+attr(mat_X_breed, "contrasts") <- NULL
+dimnames(mat_X_breed) <- NULL
+mat_X_breed
+```
+
+
+
+Generate the data
+
+```{r}
+vec_cit <- n_reg_intc + n_reg_coef * vec_dim + crossprod(t(mat_X_breed), vec_breed_eff) + rnorm(n_nr_obs, mean = 0, sd = n_cit_sd)
+vec_cit_round <- round(vec_cit, digits = 2)
+tbl_cit_dim_br <- tibble::tibble(Cow = c(1:n_nr_obs),
+                                 DIM = vec_dim,
+                                 Breed = vec_breed,
+                                 Citrate = vec_cit_round[,1])
+tbl_cit_dim_br
+```
+
+
+## Plot
+
+```{r}
+library(ggplot2)
+p <- ggplot(data = tbl_cit_dim_br, 
+            aes(x = DIM, y = Citrate)) + 
+  geom_point(aes(color = Breed))
+p
+```
+
+
+## Write Data
+The data is written to a file
+
+```{r}
+s_cit_dim_br_path <- here::here("docs", "data", "asm_exam_2024_p02.csv")
+# unlink(s_cit_dim_br_path)
+if (!file.exists(s_cit_dim_br_path)){
+  readr::write_delim(tbl_cit_dim_br, file = s_cit_dim_br_path, delim = ",")
+}
+```
+
+
+## Group Means
+
+```{r}
+library(dplyr)
+tbl_cit_dim_br_gr_mean <- tbl_cit_dim_br %>% 
+  group_by(Breed) %>%
+  summarise(Cit_Group_Mean = mean(Citrate),
+            DIM_Group_Mean = mean(DIM))
+tbl_cit_dim_br_gr_mean
+```
+
+## Linear Model
+
+```{r}
+lm_cit_dim_br <- lm(Citrate ~ DIM + Breed, data = tbl_cit_dim_br)
+smry_lm_cit_dim_br <- summary(lm_cit_dim_br)
+smry_lm_cit_dim_br
+```
+
+
+Group means
+
+```{r}
+smry_lm_cit_dim_br$coefficients["(Intercept)","Estimate"] + 
+  tbl_cit_dim_br_gr_mean$DIM_Group_Mean[tbl_cit_dim_br_gr_mean$Breed == "BS"] * 
+  smry_lm_cit_dim_br$coefficients["DIM","Estimate"]
+```
+

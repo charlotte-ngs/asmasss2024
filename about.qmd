@@ -13,7 +13,14 @@ s_sl_url <- "https://charlotte-ngs.github.io/asmasss2024/slides/"
 s_cn_url <- "https://charlotte-ngs.github.io/asmasss2024/cn/"
 s_data_url <- "https://charlotte-ngs.github.io/asmasss2024/data/"
 s_app_url <- s_cn_url
+s_exam_url <- "https://charlotte-ngs.github.io/asmasss2024/exam/"
 ```
+
+# asmas -- ss2024: Week 15
+
+## asmasss2024 0.13.0
+
+* Exam Data [asm_exam_read_data](`r paste0(s_exam_url, "asm_exam_read_data/asm_exam_read_data.html", collapse = "")`)
 
 # asmas -- ss2024: Week 12
 

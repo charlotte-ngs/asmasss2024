@@ -1,0 +1,130 @@
+---
+title: 'ASM Exam 2024: Problem 5'
+author: "Peter von Rohr"
+date: "2024-05-24"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Background
+The data for LME is constructed. This includes adding parents to current records. Use parameter from Problem 1 ...
+
+```{r}
+set.seed(2405)
+n_nr_obs <- 20
+# dim
+n_dim_start <- 20
+n_dim_end <- 50
+# citrate
+n_cit_max <- 9.2
+n_cit_min <- 8.5
+n_cit_mean <- mean(c(n_cit_max, n_cit_min))
+n_cit_sd <- 0.24
+n_reg_coef <- (n_cit_min - n_cit_max) / (n_dim_end - n_dim_start)
+n_reg_intc <- 9.5
+# genetics
+n_cit_h2 <- 0.36
+n_cit_sigma_u <- sqrt(n_cit_h2) * n_cit_sd
+n_cit_sigma_e <- sqrt(1-n_cit_h2) * n_cit_sd
+# pedigree
+n_nr_sire <- 4
+vec_nr_daughter <- c(6,5,6,3)
+n_nr_anim <- n_nr_sire + n_nr_obs
+```
+
+
+## Pedigree
+Build up the components of the pedigree
+
+```{r}
+# sires
+vec_sire <- NULL
+for (s_idx in 1:n_nr_sire){
+  vec_cur_sire <- rep(s_idx, vec_nr_daughter[s_idx])
+  if (is.null(vec_sire)){
+    vec_sire <- vec_cur_sire
+  } else {
+    vec_sire <- c(vec_sire, vec_cur_sire)
+  }
+}
+#vec_sire
+# equal number of daughters per dam
+vec_dam <- rep(1:9, 2)
+vec_dam <- vec_dam[order(vec_dam)] + n_nr_sire
+n_nr_dam <- length(vec_dam)
+vec_dam <- c(rep(NA,(n_nr_obs-n_nr_dam)), vec_dam)
+# setup pedigree
+library(pedigreemm)
+ped_p05 <- pedigree(sire = c(rep(NA, n_nr_sire), vec_sire),
+                                dam =  c(rep(NA, n_nr_sire), vec_dam),
+                                label = as.character(1:n_nr_anim))
+mat_A_p05 <- as.matrix(getA(ped = ped_p05))
+mat_chol_A <- chol(mat_A_p05)
+```
+
+
+## Data Simulation
+The DIM values are sampled from a uniform distribution determined by the DIM-range.
+
+```{r}
+vec_dim <- round(runif(n_nr_obs, min = n_dim_start, max = n_dim_end), digits = 0)
+vec_dim <- vec_dim[order(vec_dim)]
+vec_dim
+```
+
+The vector of breeds is sampled randomly
+
+```{r}
+vec_breed_eff <- c(0, 0.46)
+vec_breed_name <- c("BS", "HO")
+vec_breed <- sample(vec_breed_name, n_nr_obs, replace = T)
+vec_breed
+```
+
+The data is generated using breed as factor
+
+```{r}
+vec_breed_fct <- as.factor(vec_breed)
+mat_X_breed <- model.matrix(y ~ breed, data = data.frame(y = rep(1, n_nr_obs), breed = vec_breed_fct))
+attr(mat_X_breed, "assign") <- NULL
+attr(mat_X_breed, "contrasts") <- NULL
+dimnames(mat_X_breed) <- NULL
+mat_X_breed
+```
+
+
+
+Generate the data
+
+```{r}
+vec_true_u <- crossprod(t(mat_chol_A), rnorm(n_nr_anim, sd = n_cit_sigma_u))
+vec_cit <- n_reg_intc + n_reg_coef * vec_dim + 
+  crossprod(t(mat_X_breed), vec_breed_eff) + 
+  vec_true_u[(n_nr_sire + 1):n_nr_anim] + 
+  rnorm(n_nr_obs, mean = 0, sd = n_cit_sigma_e)
+vec_cit_round <- round(vec_cit, digits = 2)
+tbl_cit_dim_br <- tibble::tibble(ID = c((n_nr_sire + 1):n_nr_anim),
+                                 Sire = vec_sire,
+                                 Dam = vec_dam,
+                                 DIM = vec_dim,
+                                 Breed = vec_breed,
+                                 Citrate = vec_cit_round[,1])
+tbl_cit_dim_br
+```
+
+
+## Write Data
+
+```{r}
+s_cit_dim_br_path <- here::here("docs", "data", "asm_exam_2024_p05.csv")
+# unlink(s_cit_dim_br_path)
+if (!file.exists(s_cit_dim_br_path)){
+  readr::write_delim(tbl_cit_dim_br, file = s_cit_dim_br_path, delim = ",")
+}
+
+```
+
