@@ -16,6 +16,12 @@ s_app_url <- s_cn_url
 s_exam_url <- "https://charlotte-ngs.github.io/asmasss2024/exam/"
 ```
 
+# asmas -- ss2024: Week 16
+
+## asmasss2024 0.14.0
+
+* Exam Solutions []()
+
 # asmas -- ss2024: Week 15
 
 ## asmasss2024 0.13.0

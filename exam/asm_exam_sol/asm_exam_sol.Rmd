@@ -1136,8 +1136,7 @@ cat("$$\n")
 cat(rmdhelp::bmatrix(pmat = mat_X_p05, ps_name = "X"))
 cat("$$\n\n")
 cat("$$\n")
-# cat(paste0(rmdhelp::bmatrix(pmat = mat_Z_ani, ps_name = "Z"), collapse = "\n"), "\n")
-cat("Z = ")
+cat(paste0(rmdhelp::bmatrix(pmat = mat_Z_ani, ps_name = "Z", ps_out_format = "latex"), collapse = "\n"), "\n")
 cat("$$\n")
 ```
 
@@ -1166,7 +1165,7 @@ Z^Ty
 \right]
 $$
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(pedigreemm)
 ped_ani <- pedigree(sire = c(rep(NA, n_nr_founder), tbl_p05$Sire),
                      dam = c(rep(NA, n_nr_founder), tbl_p05$Dam),
@@ -1177,18 +1176,35 @@ mat_A_inv <- as.matrix(getAInv(ped = ped_ani))
 
 where $\lambda_u = \frac{\sigma_e^2}{\sigma_u^2} = `r n_lambda_u`$ and $A$ corresponds to the numerator relationship matrix given by
 
+\newpage
+\blandscape
+
 ```{r, echo=FALSE, results='asis'}
-#cat(rmdhelp::bmatrix(pmat = mat_A, ps_name = "A", ps_env = "$$"))
-cat("$$A =  $$\n")
+mat_A_round <- round(mat_A, digits = 3)
+cat("\\tiny \n")
+cat(rmdhelp::bmatrix(pmat = mat_A_round, 
+                     ps_name = "A", 
+                     ps_env = "$$", 
+                     ps_out_format = "latex"))
+cat("\\normalsize \n")
+
 ```
 
 The inverse $A_s^{-1}$ is
 
 ```{r, echo=FALSE, results='asis'}
-#cat(rmdhelp::bmatrix(pmat = mat_A_inv, ps_name = "A^{-1}", ps_env = "$$"))
-cat("$$A^{-1} = $$\n")
+mat_A_inv_round <- round(mat_A_inv, digits = 3)
+cat("\\tiny \n")
+cat(rmdhelp::bmatrix(pmat = mat_A_inv_round, 
+                     ps_name = "A^{-1}", 
+                     ps_env = "$$", 
+                     ps_out_format = "latex"))
+cat("\\normalsize \n")
+
 ```
 
+\elandscape
+\newpage
 
 * Solutions of MME
 

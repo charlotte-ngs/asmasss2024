@@ -1,0 +1,7 @@
+Dear Students,
+the statements to read the datasets for the exam of Applied Statistical Methods in Animal Sciences into R is available from: 
+
+https://charlotte-ngs.github.io/asmasss2024/exam/asm_exam_read_data/asm_exam_read_data.html
+
+All the best for the exam, 
+Peter von Rohr
