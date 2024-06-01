@@ -48,7 +48,7 @@ A more detailed description is available from [here](https://charlotte-ngs.githu
 - Date: 27.05.2024 - 08:15 - 10:00
 - Room: LFW C 11
 - Data Read Statements: [asm_exam_read_data](https://charlotte-ngs.github.io/asmasss2024/exam/asm_exam_read_data/asm_exam_read_data.html)
-- Solutions: []()
+- Solutions: [asm_exam_sol](https://charlotte-ngs.github.io/asmasss2024/exam/asm_exam_sol/asm_exam_sol.pdf)
 
 
 ## Description

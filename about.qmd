@@ -20,7 +20,8 @@ s_exam_url <- "https://charlotte-ngs.github.io/asmasss2024/exam/"
 
 ## asmasss2024 0.14.0
 
-* Exam Solutions []()
+* Exam Solutions [asm_exam_sol](`r paste0(s_exam_url, "asm_exam_sol/asm_exam_sol.pdf", collapse = "")`)
+
 
 # asmas -- ss2024: Week 15
 
